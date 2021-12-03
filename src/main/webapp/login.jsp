@@ -17,11 +17,11 @@
          <a href="index.jsp" class="ps-3 ms-5"> <img src="assets/img/logo_small.png" alt="logo" 
           class="d-inline-flex pt-1 pb-2 w-75" ></a>
         </div>
-        <form class="row g-3 needs-validation" novalidate  action="dashboard.jsp">
+        <form class="row g-3 needs-validation" novalidate  action="login" method="post">
           <div class="mb-4">
-            <label for="Email" class="form-labe">Email</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailhelp" required>
-            <div id="emailhelp" class="form-text">ingrese su correo</div>
+            <label for="nombre" class="form-label">Nombre</label>
+            <input name="nombre" class="form-control" id="nombre" aria-describedby="emailhelp" required>
+            <div id="emailhelp" class="form-text">ingrese su nombre de usuario</div>
           </div>
 
           <div class="mb-4">
