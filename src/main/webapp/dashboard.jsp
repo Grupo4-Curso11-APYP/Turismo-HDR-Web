@@ -26,7 +26,7 @@
 
 <!---DASHBOARD ESTILOS Y SCRRIPTS-->
 
-<link href="estilos/dashboard-2.css" rel="stylesheet">
+<link href="assets/stylesheets/dashboard-2.css" rel="stylesheet">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -96,7 +96,7 @@
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.jsp">
 				<div class="sidebar-brand-icon ">
-					<img src="img/logo_small_icon_only.png" alt="" width="60px">
+					<img src="assets/img/logo_small_icon_only.png" alt="" width="60px">
 
 				</div>
 
@@ -222,7 +222,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">Jeremias
-									Lapalma</span> <img class="img-profile rounded-circle"
+									Lapalma</span> <img class="assets/img-profile rounded-circle"
 								src="img/undraw_profile.svg">
 						</a>
 

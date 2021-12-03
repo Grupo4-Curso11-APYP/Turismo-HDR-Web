@@ -11,7 +11,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- Optional JavaScript; choose one of the two! -->
 
-  <link rel="stylesheet" href="estilos/login.css">
+  <link rel="stylesheet" href="assets/stylesheets/login.css">
 
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -30,7 +30,7 @@
     <div class="row vh-100 align-items-center justify-content-center">
       <div class="col-sm-8 pt-1 col-md-6 col-lg-4 bg-white p4 shadow rounded-1">
         <div class="row justify-content-center mb-4">
-         <a href="index.jsp" class="ps-3 ms-5"> <img src="img/logo_small.png" alt="logo" 
+         <a href="index.jsp" class="ps-3 ms-5"> <img src="assets/img/logo_small.png" alt="logo" 
           class="d-inline-flex pt-1 pb-2 w-75" ></a>
         </div>
         <form class="row g-3 needs-validation" novalidate  action="dashboard.jsp">

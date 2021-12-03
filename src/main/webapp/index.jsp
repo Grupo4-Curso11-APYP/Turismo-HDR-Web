@@ -11,7 +11,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Optional JavaScript; choose one of the two! -->
 
-    <link rel="stylesheet" href="estilos\estilos-index.css">
+    <link rel="stylesheet" href="assets/stylesheets/estilos-index.css">
   <!---OTROS CDN-->
 
 
@@ -35,7 +35,7 @@
     <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
     <script defer src="scripts\validacion-contacto.js"></script>
-    <script defer src="scripts\xhr.js" ></script>
+    
 
     <title>Turismo En Tierra Media</title>
 </head>
@@ -45,7 +45,7 @@
     <!---NAV BAR --->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="img/logo_small.png" alt="" width="200px"
+            <a class="navbar-brand" href="#"><img src="assets/img/logo_small.png" alt="" width="200px"
                     class="d-inline-block align-text-center pt-1 pb-2"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -93,7 +93,7 @@
 
     <!---FIN NAVBAR-->
     <!---Sectccion Imagen y breve despcripcion-->
-    <section id="hero" style=" background-image: url(img/img5.jpg)">
+    <section id="hero" style=" background-image: url(assets/img/img5.jpg)">
       
         <div class="container align-items-center  text-center pt-2 mb-5 mt-5   ">
             <h1 class="text-center fw-bolder pt-5">Turismo En Tierra Media</h1>
@@ -131,7 +131,7 @@
                         <div class=" pt-5 row row-cols-1 row-cols-md-3 g-4">
                             <div class="col-lg-6 col-sm-6" id="col1">
                                 <div class="card h-100 card_1">
-                                    <img src="img/card-1.jpg" class="card-img-top" alt="mordor">
+                                    <img src="assets/img/card-1.jpg" class="card-img-top" alt="mordor">
                                     <div class="card-body card-1">
                                         <h5 class="card-title fw-bold">Mordor</h5>
                                         <p class="card-text">Mordor es una atraccion muy tenebrosa <br>su costo de
@@ -145,7 +145,7 @@
                             </div>
                             <div class="col-lg-6  col-sm-6" id="col2">
                                 <div class="card h-100">
-                                    <img src="img/card-2.jpg" class="card-img-top" alt="minas-thirt">
+                                    <img src="assets/img/card-2.jpg" class="card-img-top" alt="minas-thirt">
                                     <div class="card-body" id="card-2">
                                         <h5 class="card-title fw-bold">Minas Thirt</h5>
                                         <p class="card-text">Minas Thirt es una de las Atracciones mas visitadas <br> su
@@ -159,7 +159,7 @@
                             </div>
                             <div class="col-lg-6  col-sm-6" id="col3">
                                 <div class="card h-100">
-                                    <img src="img/card-3.png" class="card-img-top" alt="...">
+                                    <img src="assets/img/card-3.png" class="card-img-top" alt="...">
                                     <div class="card-body" id="card-3">
                                         <h5 class="card-title fw-bold">Abismo de Helm</h5>
                                         <p class="card-text">Abismo de Helm es una atraccion que tiene el mejor campo de
@@ -173,7 +173,7 @@
                             </div>
                             <div class="col-lg-6  col-sm-6" id="col4">
                                 <div class="card h-100">
-                                    <img src="img/card-4.jpg" class="card-img-top" alt="...">
+                                    <img src="assets/img/card-4.jpg" class="card-img-top" alt="...">
                                     <div class="card-body" id="card-4">
                                         <h5 class="card-title  fw-bold">Moria</h5>
                                         <p class="card-text">Moria es una atraccion donde siempre pasan hechos
@@ -186,7 +186,7 @@
                             </div>
                             <div class="col-lg-6  col-sm-6" id="col5">
                                 <div class="card h-100">
-                                    <img src="img/card-5.jpg" class="card-img-top" alt="...">
+                                    <img src="assets/img/card-5.jpg" class="card-img-top" alt="...">
                                     <div class="card-body" id="card-5">
                                         <h5 class="card-title fw-bold">Bosque Negro</h5>
                                         <p class="card-text">Bosque Negro es una atraccion donde predomina la oscuridad
@@ -200,7 +200,7 @@
                             </div>
                             <div class="col-lg-6   col-sm-6" id="col6">
                                 <div class="card h-100">
-                                    <img src="img/card-6.jpg" class="card-img-top" alt="...">
+                                    <img src="assets/img/card-6.jpg" class="card-img-top" alt="...">
                                     <div class="card-body" id="card-6">
                                         <h5 class="card-title fw-bold">La Comarca</h5>
                                         <p class="card-text">La Comarca es una de las atracciones mas alegres y mas
@@ -227,7 +227,7 @@
                         <div class=" pt-5 row row-cols-1 row-cols-md-3 g-4">
                             <div class="col-lg-6 col-sm-6" id="col1">
                                 <div class="card h-100 card_1">
-                                    <img src="img/card-promo4.jpg" class="card-img-top" alt="Degustacion">
+                                    <img src="assets/img/card-promo4.jpg" class="card-img-top" alt="Degustacion">
                                     <div class="card-body card-1">
                                         <h5 class="card-title fw-bold">Pack Degustacion</h5>
                                         <p class="card-text"> ¡NO TE PIERDAS ESTA OFERTA INCREIBLE!<br> Llevando
@@ -241,7 +241,7 @@
                             </div>
                             <div class="col-lg-6  col-sm-6" id="col2">
                                 <div class="card h-100">
-                                    <img src="img/card-promo3.jpg" class="card-img-top" alt="Paisaje">
+                                    <img src="assets/img/card-promo3.jpg" class="card-img-top" alt="Paisaje">
                                     <div class="card-body" id="card-2">
                                         <h5 class="card-title fw-bold">Pack Paisaje</h5>
                                         <p class="card-text">Con la compra de Erebor y Minas Tirith te llevas de regalo
@@ -255,7 +255,7 @@
                             </div>
                             <div class="col-lg-6  col-sm-6" id="col3">
                                 <div class="card h-100">
-                                    <img src="img/card-promo2.jpg" class="card-img-top" alt="adrenalina">
+                                    <img src="assets/img/card-promo2.jpg" class="card-img-top" alt="adrenalina">
                                     <div class="card-body" id="card-3">
                                         <h5 class="card-title fw-bold">Pack Adrenalina</h5>
                                         <p class="card-text">¡QUERES VIVIR UNA EXPERIENCIA UNICA?!<br>
@@ -270,7 +270,7 @@
                             </div>
                             <div class="col-lg-6  col-sm-6" id="col4">
                                 <div class="card h-100">
-                                    <img src="img/card-promo.jpg" class="card-img-top" alt="Aventura">
+                                    <img src="assets/img/card-promo.jpg" class="card-img-top" alt="Aventura">
                                     <div class="card-body" id="card-4">
                                         <h5 class="card-title  fw-bold">Pack Aventura</h5>
                                         <p class="card-text">¡APROVECHA ESTE COMBO INCREIBLE!<br>
@@ -338,7 +338,7 @@
                                     </a></li>
                             </ul>
                         </div>
-                        <img src="img/pf-1.jpg" class="img-fluid" alt="perfil-1">
+                        <img src="assets/img/pf-1.jpg" class="img-fluid" alt="perfil-1">
                     </div>
 
                 </div>
@@ -362,7 +362,7 @@
                                     </a></li>
                             </ul>
                         </div>
-                        <img src="img/pf-2.jpg" class="img-fluid" alt="perfil-2">
+                        <img src="assets/img/pf-2.jpg" class="img-fluid" alt="perfil-2">
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -385,7 +385,7 @@
                                     </a></li>
                             </ul>
                         </div>
-                        <img src="img/pf-3.jpg" class="img-fluid" alt="perfil-3">
+                        <img src="assets/img/pf-3.jpg" class="img-fluid" alt="perfil-3">
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -408,7 +408,7 @@
                                     </a></li>
                             </ul>
                         </div>
-                        <img src="img/pf-4.jpg" class="img-fluid" alt="perfil-4">
+                        <img src="assets/img/pf-4.jpg" class="img-fluid" alt="perfil-4">
                     </div>
                 </div>
             </div>
@@ -512,7 +512,7 @@
 
             <div class="row">
                 <div class="col-lg-3 mb-3 ">
-                    <a class="d-inline-flex align-items-center mb-2" href=""> <img src="img/logo_small.png" alt="logo"
+                    <a class="d-inline-flex align-items-center mb-2" href=""> <img src="assets/img/logo_small.png" alt="logo"
                             width="200px"></a>
                     <div>
                         <ul class="list-unstyled  small  text-muted">
