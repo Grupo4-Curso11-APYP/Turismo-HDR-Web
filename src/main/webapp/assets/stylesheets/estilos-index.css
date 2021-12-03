@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;1,600&display=swap');
+
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+    
+}
+
+h1{
+font-size: 60px; font-weight: 600; line-height: 80px;
+}
+p{
+    font-size: 18px; color: #000000;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+#atracciones  p{
+    color: black;
+}
+
+#promociones p{
+    color: black;
+
+}
+a {
+ text-decoration: none;
+ color: #000000;
+}
+a ion-icon{
+    font-size: 23px; color:#ffffff;
+}
+
+.btn{
+    font-size: 18px;
+    font-family:'Titillium Web', sans-serif; 
+     padding-bottom: 8px;
+     padding-top: 5px;
+}
+.btn :focus{
+    outline: none;
+}
+
+.btn ion-icon{
+    font-size: 14px;
+    margin-left: 5px ;
+    margin-top: 3px;
+    padding-top: 6px;
+   
+} 
+ion-icon{
+    padding-top:5px ;
+}
+
+.navbar{
+
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    min-height: 100px;
+}
+
+.nav-link{
+    color: black;
+}
+.nav-link :hover {
+color: #1a1a1a
+
+}
+
+
+.navbar-toggler{
+    font-size: 40px;
+}
+.navbar-toggler:focus{
+    outline:none ;
+}
+#hero{
+   
+    background-size: cover;
+    min-height: 700px;
+    padding-top: 90px;
+    color: #ffffff;
+    
+}
+
+#hero p {
+    color:#ffffff;
+}
+
+
+
+button :hover{
+    color: #a1a1a1;
+
+}
+
+.contenido-empresa > p {
+ color: #000000;
+}
+
+.contenido-miembro{
+    position: relative;
+    margin: 10px 0;
+
+}
+
+.contenido-detalles{
+    position: absolute;
+    color: #ffffff;
+    bottom: 0px;
+    left: 20px;
+}
+
+.contenido-detalles span{
+    font-size: 14px;
+}
+
+.contenido-detalles ion-icon {
+    padding:5px;
+}
+
+.pp{
+    color: #000000;
+}
+
+ @media (max-width: 575.98px) { 
+     h1{
+         font-size: 40px;line-height:normal ;
+     }
+ }
+
+
+@media (max-width: 767.98px) {  }
+
+
+@media (max-width: 991.98px) {  }
+
+
+@media (max-width: 1199.98px) {  }
+
+
+@media (max-width: 1399.98px) { }
