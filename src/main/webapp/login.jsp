@@ -1,27 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <link rel="stylesheet" href="assets/stylesheets/login.css">
-
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
-    defer></script>
-  <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-  <script defer src="scripts/validacion-login.js"></script>
-  <title>Turismo En Tierra Media || Login</title>
+ <jsp:include page="partials/head.jsp"></jsp:include>
 </head>
 
 <body class="bg-light">
@@ -41,9 +25,9 @@
           </div>
 
           <div class="mb-4">
-            <label for="password" class="form-labe">Contraseña</label>
+            <label for="password" class="form-labe">ContraseÃ±a</label>
             <input type="password" class="form-control" id="password" aria-describedby="passwordhelp" required>
-            <div id="passwordhelp" class="form-text">ingrese su Contraseña</div>
+            <div id="passwordhelp" class="form-text">ingrese su ContraseÃ±a</div>
           </div>
           <div class="mb-4 form-check">
             <input type="checkbox" class="form-check-input " id="recordar">
