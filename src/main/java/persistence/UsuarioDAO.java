@@ -4,7 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Set;
 
-import turismoEnLaTierraMediaGrupo4.Usuario;
+import model.Usuario;
+import persistence.commons.GenericDAO;
 
 public interface UsuarioDAO extends GenericDAO<Usuario> {
 	public abstract Usuario findByNombre(String nombre) throws SQLException;
