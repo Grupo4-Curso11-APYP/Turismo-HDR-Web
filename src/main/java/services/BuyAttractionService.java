@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import model.Attraction;
-import model.User;
+import model.Usuario;
 import persistence.AttractionDAO;
 import persistence.UserDAO;
 import persistence.commons.DAOFactory;
@@ -17,7 +17,7 @@ public class BuyAttractionService {
 	public Map<String, String> buy(Integer userId, Integer attractionId) {
 		Map<String, String> errors = new HashMap<String, String>();
 
-		User user = userDAO.find(userId);
+		Usuario user = userDAO.find(userId);
 		Attraction attraction = attractionDAO.find(attractionId);
 
 		if (!attraction.canHost(1)) {

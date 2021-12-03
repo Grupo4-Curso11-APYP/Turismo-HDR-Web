@@ -1,0 +1,150 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
+import dao.UsuarioDaoImpl;
+
+public class Usuario {
+	private String nombre;
+	private double presupuesto;
+	private double tiempoDisponible;
+	private TipoAtraccion tipoFavorito;
+	private Set<Ofertable> ofertables; // Las sugerencias que va aceptando.
+
+	public Usuario(String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito)
+			throws Exception {
+		this.nombre = nombre;
+		validandoPresupuesto(presupuesto);
+		validandoTiempoDisponible(tiempoDisponible);
+		this.tipoFavorito = tipoFavorito;
+		this.ofertables = new LinkedHashSet<>();
+
+	}
+
+	public Usuario(String string, double i, double j, TipoAtraccion tipo, Set<Ofertable> object) throws Exception {
+		this.nombre = string;
+		validandoPresupuesto(i);
+		validandoTiempoDisponible(j);
+		this.tipoFavorito = tipo;
+		this.ofertables = new LinkedHashSet<>();
+	}
+
+	/*
+	 * validación para evitar presupuesto negativo, si lo es, lanza una excepción
+	 */
+	private void validandoPresupuesto(double presupuesto) throws Exception {
+		if (presupuesto < 0.0)
+			throw new SinMontoDisponible();
+		this.presupuesto = presupuesto;
+	}
+
+	/*
+	 * validación para evitar tiempo negativo, si lo es, lanza una excepción
+	 */
+	private void validandoTiempoDisponible(double tiempo) throws Exception {
+		if (tiempo < 0.0)
+			throw new SinTiempoDisponible();
+		this.tiempoDisponible = tiempo;
+	}
+
+	/*
+	 * se espera que devuelva el tiempo disponible
+	 */
+	public double getTiempoDisponible() {
+		return this.tiempoDisponible;
+	}
+
+	/*
+	 * se espera que devuelva el presupuesto
+	 */
+	public double getPresupuesto() {
+		return this.presupuesto;
+	}
+
+	/*
+	 * se espera que devuelva el tipo favorito de atraccion
+	 */
+	public TipoAtraccion getTipoFavorito() {
+		return this.tipoFavorito;
+	}
+
+	/*
+	 * se espera que devuelva el nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/*
+	 * se espera que devuelva una lista de ofertables
+	 */
+	public Set<Ofertable> getOfertables() {
+		return this.ofertables;
+	}
+
+	/*
+	 * Muestra todos los datos del usuario mas sus ofertables aceptados en formato
+	 * itinerario, calculando el tiempo y costo total para completar su agenda.
+	 */
+	@Override
+	public String toString() {
+
+		double horas = 0;
+		double costoFinal = 0;
+		for (Ofertable ofertable : ofertables) {
+			horas += ofertable.getTiempo();
+			costoFinal += ofertable.getCosto();
+		}
+
+		var aux = '\n' + "Usuario: " + nombre + ", presupuesto: " + presupuesto + ", tiempo disponible: "
+				+ tiempoDisponible + ", tipo favorito: " + tipoFavorito + '\n'
+				+ "Su itinerario final le tomara un total " + "de: " + horas + " horas; con un costo final de: "
+				+ (int) costoFinal + " monedas." + '\n' + "Sugerencias incluidas:\n";
+
+		for (Ofertable ofertable : ofertables) {
+			aux += ofertable.toString();
+		}
+		return aux;
+	}
+
+	/*
+	 * @Param tiempo metodo privado para restar un tiempo al atributo
+	 * tiempoDisponible
+	 */
+	double restarTiempo(double tiempo) {
+		return this.tiempoDisponible -= tiempo;
+	}
+
+	/*
+	 * @Param monto metodo privado para restar un presupuesto al atributo
+	 * presupuesto
+	 */
+	double restarPresupuesto(double monto) {
+		return this.presupuesto -= monto;
+	}
+
+	/*
+	 * @Param o pasa el ofertable que el usuario va a comprar al aceptar sugerencia
+	 * una vez que el usuario compra un ofertable sugerido se le restara el
+	 * presupuesto y el tiempo del ofertable comprado finalmente guarda el ofertable
+	 * en su lista de ofertables
+	 */
+	public void comprarOfertable(Ofertable o) {
+		double tiempoO = o.getTiempo();
+		double presupuesto = o.getCosto();
+
+		restarTiempo(tiempoO);
+		restarPresupuesto(presupuesto);
+		ofertables.add(o);
+
+	}
+	
+	public boolean puedeComprar(Ofertable ofertable) {
+		return this.getPresupuesto() >= ofertable.getCosto()
+				&& this.getTiempoDisponible() >= ofertable.getTiempo();
+	}
+
+}

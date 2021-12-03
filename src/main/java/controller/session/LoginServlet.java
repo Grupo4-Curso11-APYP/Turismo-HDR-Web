@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.User;
+import model.Usuario;
 import services.LoginService;
 
 @WebServlet("/login")
@@ -24,14 +24,14 @@ public class LoginServlet extends HttpServlet {
 	}
 	
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String username = req.getParameter("username");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	String nombre = req.getParameter("nombre");
     	String password = req.getParameter("password");
     	
-    	User user = loginService.login(username, password);
+    	Usuario usuario = loginService.login(nombre, password);
     	
-    	if (!user.isNull()) {
-    		req.getSession().setAttribute("user", user);
+    	if (!usuario.isNull()) {
+    		req.getSession().setAttribute("user", usuario);
     		resp.sendRedirect("index.jsp");    		
        	} else {
     		req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");

@@ -1,10 +1,10 @@
 package model.nullobjects;
 
-import model.User;
+import model.Usuario;
 
-public class NullUser extends User {
+public class NullUser extends Usuario {
 
-	public static User build() {
+	public static Usuario build() {
 		return new NullUser();
 	}
 	
