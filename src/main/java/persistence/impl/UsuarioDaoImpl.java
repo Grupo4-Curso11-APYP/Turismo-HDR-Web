@@ -1,13 +1,10 @@
 package persistence.impl;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.LinkedHashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 import model.TipoAtraccion;
@@ -61,7 +58,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	@Override
 	public int insert(Usuario usuario) throws SQLException {
 		String sql = "INSERT INTO USUARIO (NOMBRE, PRESUPUESTO,TIEMPODISPONIBLE,"
-				+ "TIPOFAVORITO, OFERTABLE) VALUES (?, ?, ?, ?, ?)";
+				+ "TIPOFAVORITO, PASSWORD) VALUES (?, ?, ?, ?, ?)";
 		Connection conn = ConnectionProvider.getConnection();
 
 		PreparedStatement statement = conn.prepareStatement(sql);
@@ -69,7 +66,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		statement.setDouble(2, usuario.getPresupuesto());
 		statement.setDouble(3, usuario.getTiempoDisponible());
 		statement.setObject(4, usuario.getTipoFavorito());
-		statement.setObject(5, usuario.getOfertables());
+		statement.setString(5, usuario.getPassword());
 
 		int rows = statement.executeUpdate();
 
@@ -141,7 +138,10 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		Double presupuesto = resultados.getDouble(3);
 		Double tiempoDisponible = resultados.getDouble(4);
 		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(resultados.getString(5));
-		return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito);
+		String password = resultados.getString(6);
+		Boolean admin = resultados.getBoolean(7);
+		return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, 
+				password, admin);
 	}
 
 }
