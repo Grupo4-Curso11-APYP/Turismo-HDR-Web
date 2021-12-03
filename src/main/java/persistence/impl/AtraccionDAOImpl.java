@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jdbc.ConnectionProvider;
+import persistence.AtraccionDAO;
 import turismoEnLaTierraMediaGrupo4.Atraccion;
 import turismoEnLaTierraMediaGrupo4.TipoAtraccion;
 

@@ -11,6 +11,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 import jdbc.ConnectionProvider;
+import persistence.UsuarioDAO;
 import turismoEnLaTierraMediaGrupo4.EscribirItinerarios;
 import turismoEnLaTierraMediaGrupo4.Ofertable;
 import turismoEnLaTierraMediaGrupo4.TipoAtraccion;
