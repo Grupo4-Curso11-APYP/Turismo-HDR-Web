@@ -2,6 +2,7 @@ package controller.session;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -28,10 +29,15 @@ public class LoginServlet extends HttpServlet {
     	String nombre = req.getParameter("nombre");
     	String password = req.getParameter("password");
     	
-    	Usuario usuario = loginService.login(nombre, password);
+    	Usuario usuario = null;
+		try {
+			usuario = loginService.login(nombre, password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
     	
     	if (!usuario.isNull()) {
-    		req.getSession().setAttribute("user", usuario);
+    		req.getSession().setAttribute("usuario", usuario);
     		resp.sendRedirect("index.jsp");    		
        	} else {
     		req.setAttribute("flash", "Nombre de usuario o contraseña incorrectos");
