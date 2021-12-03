@@ -20,22 +20,21 @@
         <form class="row g-3 needs-validation" novalidate  action="login" method="post">
           <div class="mb-4">
             <label for="nombre" class="form-label">Nombre</label>
-            <input name="nombre" class="form-control" id="nombre" aria-describedby="emailhelp" required>
-            <div id="emailhelp" class="form-text">ingrese su nombre de usuario</div>
+            <input name="nombre" class="form-control" id="nombre" aria-describedby="nombrehelp" required>
+            <div id="nombrehelp" class="form-text">Por favor, ingrese su nombre de usuario</div>
           </div>
 
           <div class="mb-4">
-            <label for="password" class="form-labe">Contraseña</label>
-            <input type="password" class="form-control" id="password" aria-describedby="passwordhelp" required>
-            <div id="passwordhelp" class="form-text">ingrese su Contraseña</div>
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" name="password" class="form-control" id="password" aria-describedby="passwordhelp" required>
+            <div id="passwordhelp" class="form-text">Por favor, ingrese su contraseña</div>
           </div>
           <div class="mb-4 form-check">
             <input type="checkbox" class="form-check-input " id="recordar">
-            <label for=" recordar" class="form-check-label ">Recordar usuraio </label>
+            <label for=" recordar" class="form-check-label ">Recordar usuario </label>
           </div>
           <button type="submit" class="btn btn-primary w-100 mb-2">Ingresar</button>
         </form>
-        <p class="mb-0 text-center " style="font-size: 14px;" >Aun no te Registraste? <a href="registro.jsp">Ingresa Ahora!</a></p>
       </div>
     </div>
 
