@@ -1,11 +1,9 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
-import dao.UsuarioDaoImpl;
+import utils.Crypt;
 
 public class Usuario {
 	private String nombre;
@@ -13,14 +11,19 @@ public class Usuario {
 	private double tiempoDisponible;
 	private TipoAtraccion tipoFavorito;
 	private Set<Ofertable> ofertables; // Las sugerencias que va aceptando.
+	private String password;
+	private Boolean admin;
 
-	public Usuario(String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito)
+	public Usuario(String nombre, double presupuesto, double tiempoDisponible, 
+			TipoAtraccion tipoFavorito, String password, Boolean admin)
 			throws Exception {
 		this.nombre = nombre;
 		validandoPresupuesto(presupuesto);
 		validandoTiempoDisponible(tiempoDisponible);
 		this.tipoFavorito = tipoFavorito;
 		this.ofertables = new LinkedHashSet<>();
+		this.password = password;
+		this.admin = admin;
 
 	}
 
@@ -99,7 +102,7 @@ public class Usuario {
 			costoFinal += ofertable.getCosto();
 		}
 
-		var aux = '\n' + "Usuario: " + nombre + ", presupuesto: " + presupuesto + ", tiempo disponible: "
+		String aux = '\n' + "Usuario: " + nombre + ", presupuesto: " + presupuesto + ", tiempo disponible: "
 				+ tiempoDisponible + ", tipo favorito: " + tipoFavorito + '\n'
 				+ "Su itinerario final le tomara un total " + "de: " + horas + " horas; con un costo final de: "
 				+ (int) costoFinal + " monedas." + '\n' + "Sugerencias incluidas:\n";
@@ -145,6 +148,43 @@ public class Usuario {
 	public boolean puedeComprar(Ofertable ofertable) {
 		return this.getPresupuesto() >= ofertable.getCosto()
 				&& this.getTiempoDisponible() >= ofertable.getTiempo();
+	}
+	
+	public boolean checkPassword(String password) {
+		// this.password en realidad es el hash del password
+		return Crypt.match(password, this.password);
+	}
+	
+	public Boolean getAdmin() {
+		return admin;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public Boolean isAdmin() {
+		return admin;
+	}
+
+	public boolean isNull() {
+		return false;
+	}
+
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
+	}
+	
+	public void setPassword(String password) {
+		this.password = Crypt.hash(password);
+	}
+
+	public void setTiempoDisponible(Double tiempo) {
+		this.tiempoDisponible = tiempo;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 }

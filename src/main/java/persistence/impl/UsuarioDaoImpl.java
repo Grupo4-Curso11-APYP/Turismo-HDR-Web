@@ -10,12 +10,11 @@ import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-import jdbc.ConnectionProvider;
+import model.TipoAtraccion;
+import model.Usuario;
+import persistence.commons.ConnectionProvider;
+import persistence.commons.MissingDataException;
 import persistence.UsuarioDAO;
-import turismoEnLaTierraMediaGrupo4.EscribirItinerarios;
-import turismoEnLaTierraMediaGrupo4.Ofertable;
-import turismoEnLaTierraMediaGrupo4.TipoAtraccion;
-import turismoEnLaTierraMediaGrupo4.Usuario;
 
 public class UsuarioDaoImpl implements UsuarioDAO {
 
