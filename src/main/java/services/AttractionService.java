@@ -9,7 +9,7 @@ import persistence.commons.DAOFactory;
 public class AttractionService {
 
 	public List<Attraction> list() {
-		return DAOFactory.getAttractionDAO().findAll();
+		return DAOFactory.getAtraccionDAO().findAll();
 	}
 
 	public Attraction create(String name, Integer cost, Double duration, Integer capacity) {
@@ -17,7 +17,7 @@ public class AttractionService {
 		Attraction attraction = new Attraction(-1, name, cost, duration, capacity);
 
 		if (attraction.isValid()) {
-			AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
+			AttractionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 			attractionDAO.insert(attraction);
 			// XXX: si no devuelve "1", es que hubo más errores
 		}
@@ -27,7 +27,7 @@ public class AttractionService {
 
 	public Attraction update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
 
-		AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
+		AttractionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 		Attraction attraction = attractionDAO.find(id);
 
 		attraction.setName(name);
@@ -46,12 +46,12 @@ public class AttractionService {
 	public void delete(Integer id) {
 		Attraction attraction = new Attraction(id, null, null, null, null);
 
-		AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
+		AttractionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 		attractionDAO.delete(attraction);
 	}
 
 	public Attraction find(Integer id) {
-		AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
+		AttractionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 		return attractionDAO.find(id);
 	}
 

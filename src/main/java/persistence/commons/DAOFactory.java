@@ -7,11 +7,11 @@ import persistence.impl.UsuarioDaoImpl;
 
 public class DAOFactory {
 
-	public static UsuarioDAO getUserDAO() {
+	public static UsuarioDAO getUsuarioDAO() {
 		return new UsuarioDaoImpl();
 	}
 	
-	public static AtraccionDAO getAttractionDAO() {
+	public static AtraccionDAO getAtraccionDAO() {
 		return new AtraccionDAOImpl();
 	}
 }
