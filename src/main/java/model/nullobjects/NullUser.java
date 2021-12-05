@@ -1,6 +1,5 @@
 package model.nullobjects;
 
-import model.TipoAtraccion;
 import model.Usuario;
 
 public class NullUser extends Usuario {
@@ -10,7 +9,7 @@ public class NullUser extends Usuario {
 	}
 	
 	public NullUser() throws Exception {
-		super("", 0.0, 0.0, (TipoAtraccion)null, "", false);
+		super("", 0.0, 0.0, null, "", false);
 	}
 	
 	public boolean isNull() {

@@ -17,6 +17,15 @@
          <a href="index.jsp" class="ps-3 ms-5"> <img src="assets/img/logo_small.png" alt="logo" 
           class="d-inline-flex pt-1 pb-2 w-75" ></a>
         </div>
+
+<c:if test="${flash != null}">
+				<div class="alert alert-danger">
+					<p>
+						<c:out value="${flash}" />
+					</p>
+				</div>
+			</c:if>
+			
         <form class="row g-3 needs-validation" novalidate  action="login" method="post">
           <div class="mb-4">
             <label for="nombre" class="form-label">Nombre</label>

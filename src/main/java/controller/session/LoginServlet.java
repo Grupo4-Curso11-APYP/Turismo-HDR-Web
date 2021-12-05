@@ -25,14 +25,14 @@ public class LoginServlet extends HttpServlet {
 	}
 	
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	String nombre = req.getParameter("nombre");
     	String password = req.getParameter("password");
     	
     	Usuario usuario = null;
 		try {
 			usuario = loginService.login(nombre, password);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
     	
