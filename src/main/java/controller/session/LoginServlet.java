@@ -26,6 +26,8 @@ public class LoginServlet extends HttpServlet {
 	
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	resp.getWriter().append("usuario");    	
+    	/*
     	String nombre = req.getParameter("nombre");
     	String password = req.getParameter("password");
     	
@@ -45,6 +47,6 @@ public class LoginServlet extends HttpServlet {
     		RequestDispatcher dispatcher = getServletContext()
       		      .getRequestDispatcher("/login.jsp");
       		    dispatcher.forward(req, resp);
-    	}
+    	}*/
     }
 }
