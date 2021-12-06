@@ -12,7 +12,7 @@ public class AtraccionService {
 	public List<Atraccion> list() throws Exception {
 		return DAOFactory.getAtraccionDAO().findAll();
 	}
-
+/*
 	public Atraccion create(String name, Integer cost, Double duration, Integer capacity) {
 
 		Atraccion atraccion = new Atraccion(-1, name, cost, duration, capacity);
@@ -55,5 +55,6 @@ public class AtraccionService {
 		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 		return attractionDAO.find(id);
 	}
+	*/
 
 }

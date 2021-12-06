@@ -100,7 +100,7 @@ public class PromocionAxB extends Promocion {
 		for (Atraccion atraccion : packAtracciones) {
 			aux += atraccion.toString();
 		}
-		aux += "Atracciï¿½n gratis: " + atraccionGratis;
+		aux += "Atraccion gratis: " + atraccionGratis;
 		return aux;
 	}
 

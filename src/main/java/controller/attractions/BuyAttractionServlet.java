@@ -24,7 +24,7 @@ public class BuyAttractionServlet extends HttpServlet {
 		super.init();
 		this.buyAttractionService = new BuyAttractionService();
 	}
-
+/*
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -46,4 +46,5 @@ public class BuyAttractionServlet extends HttpServlet {
 				.getRequestDispatcher("/attractions/index.do");
 		dispatcher.forward(req, resp);
 	}
+	*/
 }

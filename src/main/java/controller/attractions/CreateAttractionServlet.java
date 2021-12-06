@@ -30,7 +30,7 @@ public class CreateAttractionServlet extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
 		dispatcher.forward(req, resp);
 	}
-
+/*
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String name = req.getParameter("name");
@@ -50,5 +50,6 @@ public class CreateAttractionServlet extends HttpServlet {
 		}
 
 	}
+	*/
 
 }

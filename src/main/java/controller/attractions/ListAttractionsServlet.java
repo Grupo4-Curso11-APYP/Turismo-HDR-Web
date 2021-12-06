@@ -24,7 +24,7 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		super.init();
 		this.atraccionService = new AtraccionService();
 	}
-
+/*
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Atraccion> atracciones;
@@ -40,5 +40,6 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		dispatcher.forward(req, resp);
 
 	}
+	*/
 
 }
