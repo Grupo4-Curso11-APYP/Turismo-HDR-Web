@@ -164,25 +164,10 @@
 			<hr class="sidebar-divider">
 
 
-			<!-- ITEM Collapse Menu Tablas -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseUtilities"
-				aria-expanded="true" aria-controls="collapseUtilities"> <i class="fas fa-address-card"></i>
-				 <span>Hijos Del Rigor</span>
-			</a>
-				<div id="collapseUtilities" class="collapse"
-					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
+			
+		
 
-
-						<a class="collapse-item" href="Perfil-admin.jsp">Quienes Somos?
-						</a> <a class="collapse-item" href="perfil-usuarios.jsp">Contacto </a>
-
-					</div>
-				</div></li>
-
-			<!-- Divider -->
-			<hr class="sidebar-divider d-none d-md-block">
+			
 
 			<!-- SIDEBAR TOGGLE -->
 			<div class="text-center d-none d-md-inline">
@@ -224,8 +209,8 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">Jeremias
-									Lapalma</span> <img class="assets/img-profile rounded-circle"
-								src="img/undraw_profile.svg">
+									Lapalma</span> <img class="img-profile rounded-circle"
+								src="assets/img/undraw_profile.svg">
 						</a>
 
 							<div
@@ -941,7 +926,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancelar</button>
-					<a class="btn btn-primary" href="index.jsp">Cerrar sesion</a>
+					<a class="btn btn-primary" href="login.jsp">Cerrar sesion</a>
 				</div>
 			</div>
 		</div>
