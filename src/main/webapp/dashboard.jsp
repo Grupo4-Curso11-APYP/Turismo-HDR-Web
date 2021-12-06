@@ -137,32 +137,11 @@
 				</div></li>
 
 			<!-- ITEM  Collapse Menu PERFILES -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseUtilities"
-				aria-expanded="true" aria-controls="collapseUtilities"> <i
-					class="fas fa-fw fa-wrench"></i> <span>Perfiles Creados</span>
-			</a>
-				<div id="collapseUtilities" class="collapse"
-					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-
-
-						<a class="collapse-item" href="Perfil-admin.jsp">Perfil
-							administrador</a> <a class="collapse-item" href="perfil-usuarios.jsp">Perfil
-							Usuarios </a>
-
-					</div>
-				</div></li>
-
-			<!-- Divider -->
-			<hr class="sidebar-divider">
-
-
-			<!-- ITEM Collapse Menu Tablas -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
+			
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
 				data-toggle="collapse" data-target="#collapseTablas"
 				aria-expanded="true" aria-controls="collapseTablas"> <i
-					class="fas fa-fw fa-table"></i> <span>Tablas</span>
+					class="fas fa-fw fa-user"></i> <span>Opciones De Usuarios</span>
 			</a>
 				<div id="collapseTablas" class="collapse"
 					aria-labelledby="headingTablas" data-parent="#accordionSidebar">
@@ -176,6 +155,29 @@
 							onclick="ShowHideItinerario()">Itinerario </a> <a
 							class="collapse-item" href="#" id="btn-historial"
 							onclick="ShowHideHistorial()">Historial </a>
+					</div>
+				</div></li>
+			
+		
+
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+
+			<!-- ITEM Collapse Menu Tablas -->
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapseUtilities"
+				aria-expanded="true" aria-controls="collapseUtilities"> <i class="fas fa-address-card"></i>
+				 <span>Hijos Del Rigor</span>
+			</a>
+				<div id="collapseUtilities" class="collapse"
+					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+
+
+						<a class="collapse-item" href="Perfil-admin.jsp">Quienes Somos?
+						</a> <a class="collapse-item" href="perfil-usuarios.jsp">Contacto </a>
+
 					</div>
 				</div></li>
 
