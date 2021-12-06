@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
+import persistence.commons.MissingDataException;
 import services.LoginService;
 
 
@@ -24,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 	}	
 	
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException  {
     	String nombre = req.getParameter("nombre");
     	String password = req.getParameter("password");
     	
@@ -32,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			usuario = loginService.login(nombre, password);
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new MissingDataException(e);
 		}
     	
     	if (!usuario.isNull()) {

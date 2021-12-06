@@ -19,7 +19,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	 * Busca y devuelve todos los usuarios de la base de datos
 	 */
 	@Override
-	public Set<Usuario> findAll() throws SQLException {
+	public Set<Usuario> findAll() {
 		try {
 			String sql = "SELECT * FROM USUARIO";
 			Connection conn = ConnectionProvider.getConnection();
@@ -57,6 +57,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	 */
 	@Override
 	public int insert(Usuario usuario) throws SQLException {
+		try {
 		String sql = "INSERT INTO USUARIO (NOMBRE, PRESUPUESTO,TIEMPODISPONIBLE,"
 				+ "TIPOFAVORITO, PASSWORD) VALUES (?, ?, ?, ?, ?)";
 		Connection conn = ConnectionProvider.getConnection();
@@ -71,6 +72,9 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		int rows = statement.executeUpdate();
 
 		return rows;
+		}catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 
 	/*
@@ -111,7 +115,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	 * Busca por nombre a un usuario en la base de datos y lo devuelve
 	 */
 	@Override
-	public Usuario findByNombre(String nombre) throws SQLException {
+	public Usuario findByNombre(String nombre){
 		try {
 			String sql = "SELECT * FROM USUARIO WHERE NOMBRE = ?";
 			Connection conn = ConnectionProvider.getConnection();

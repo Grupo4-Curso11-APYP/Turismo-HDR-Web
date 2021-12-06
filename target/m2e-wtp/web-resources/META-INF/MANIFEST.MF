@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: Woolita
 Build-Jdk: 16.0.1
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: Casa
+Build-Jdk: 17.0.1
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> 7ceb294691d76709a3f50925d0b04e99646ea9f7
