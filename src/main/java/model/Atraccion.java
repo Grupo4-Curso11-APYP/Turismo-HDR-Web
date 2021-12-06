@@ -3,7 +3,7 @@ package model;
 import java.sql.SQLException;
 import java.util.Objects;
 
-import dao.AtraccionDAOImpl;
+import persistence.impl.AtraccionDAOImpl;
 
 public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	protected double costo;
@@ -25,7 +25,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	}
 
 	/*
-	 * validaci�n para evitar costo negativo, si lo es, lanza una excepci�n
+	 * validaciï¿½n para evitar costo negativo, si lo es, lanza una excepciï¿½n
 	 */
 	private void validandoCosto(double costo) throws Exception {
 		if (costo < 0.0)
@@ -33,7 +33,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		this.costo = costo;
 	}
 	/*
-	 * validaci�n para evitar tiempo negativo, si lo es, lanza una excepci�n
+	 * validaciï¿½n para evitar tiempo negativo, si lo es, lanza una excepciï¿½n
 	 */
 	private void validandoTiempo(double tiempo) throws Exception {
 		if (tiempo < 0.0)
@@ -41,7 +41,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		this.tiempo = tiempo;
 	}
 	/*
-	 * validaci�n para evitar cupo negativo, si lo es, lanza una excepci�n
+	 * validaciï¿½n para evitar cupo negativo, si lo es, lanza una excepciï¿½n
 	 */
 	private void validandoCupo(int cupoDisponible) throws Exception {
 		if (cupoDisponible < 0)
@@ -141,7 +141,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 
 	/*
 	 * aplica toString a las atracciones para que se muestren en el formato
-	 * requerido. Aplica un salto de l�nea con \n para mayor legibilidad.
+	 * requerido. Aplica un salto de lï¿½nea con \n para mayor legibilidad.
 	 */
 	@Override
 	public String toString() {

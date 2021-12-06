@@ -8,10 +8,10 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
-import dao.AtraccionDAOImpl;
-import dao.ItinerarioDAOImpl;
-import dao.PromocionDAOImpl;
-import dao.UsuarioDaoImpl;
+import persistence.impl.AtraccionDAOImpl;
+import persistence.impl.ItinerarioDAOImpl;
+import persistence.impl.PromocionDAOImpl;
+import persistence.impl.UsuarioDaoImpl;
 
 public class Sistema {
 
@@ -107,21 +107,21 @@ public class Sistema {
 	 * Carga los usuarios en sistema
 	 */
 	public void agregarUsuariosDesdeArchivo() throws Exception {
-		this.usuarios.addAll(ManejadorArchivos.cargarUsuarios());
+		//this.usuarios.addAll(ManejadorArchivos.cargarUsuarios());
 	}
 
 	/*
 	 * Carga las promociones en sistema
 	 */
 	public void agregarPromociones() {
-		this.ofertables.addAll(ManejadorArchivos.cargarPromociones(this.ofertables));
+		//this.ofertables.addAll(ManejadorArchivos.cargarPromociones(this.ofertables));
 	}
 
 	/*
 	 * Carga las atracciones en sistema
 	 */
 	public void agregarAtraccion() throws Exception {
-		this.ofertables.addAll(ManejadorArchivos.cargarAtracciones());
+		//this.ofertables.addAll(ManejadorArchivos.cargarAtracciones());
 	}
 
 	@Override

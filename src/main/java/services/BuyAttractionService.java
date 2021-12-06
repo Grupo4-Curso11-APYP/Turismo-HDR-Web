@@ -3,40 +3,40 @@ package services;
 import java.util.HashMap;
 import java.util.Map;
 
-import model.Attraction;
+import model.Atraccion;
 import model.Usuario;
-import persistence.AttractionDAO;
-import persistence.UserDAO;
+import persistence.AtraccionDAO;
+import persistence.UsuarioDAO;
 import persistence.commons.DAOFactory;
 
 public class BuyAttractionService {
 
-	AttractionDAO attractionDAO = DAOFactory.getAtraccionDAO();
-	UserDAO userDAO = DAOFactory.getUsuarioDAO();
+	AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
 	public Map<String, String> buy(Integer userId, Integer attractionId) {
 		Map<String, String> errors = new HashMap<String, String>();
 
-		Usuario user = userDAO.find(userId);
-		Attraction attraction = attractionDAO.find(attractionId);
+		Usuario user = usuarioDAO.find(userId);
+		Atraccion atraccion = atraccionDAO.find(attractionId);
 
-		if (!attraction.canHost(1)) {
-			errors.put("attraction", "No hay cupo disponible");
+		if (!atraccion.canHost(1)) {
+			errors.put("atraccion", "No hay cupo disponible");
 		}
-		if (!user.canAfford(attraction)) {
+		if (!user.canAfford(atraccion)) {
 			errors.put("user", "No tienes dinero suficiente");
 		}
-		if (!user.canAttend(attraction)) {
+		if (!user.canAttend(atraccion)) {
 			errors.put("user", "No tienes tiempo suficiente");
 		}
 
 		if (errors.isEmpty()) {
-			user.addToItinerary(attraction);
-			attraction.host(1);
+			user.addToItinerary(atraccion);
+			atraccion.host(1);
 
 			// no grabamos para no afectar la base de pruebas
-			attractionDAO.update(attraction);
-			userDAO.update(user);
+			atraccionDAO.update(atraccion);
+			usuarioDAO.update(user);
 		}
 
 		return errors;

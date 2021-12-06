@@ -3,7 +3,7 @@ package model;
 import java.sql.SQLException;
 import java.util.Objects;
 
-import dao.AtraccionDAOImpl;
+import persistence.impl.AtraccionDAOImpl;
 
 public class PromocionAxB extends Promocion {
 
@@ -100,7 +100,7 @@ public class PromocionAxB extends Promocion {
 		for (Atraccion atraccion : packAtracciones) {
 			aux += atraccion.toString();
 		}
-		aux += "Atracci�n gratis: " + atraccionGratis;
+		aux += "Atracciï¿½n gratis: " + atraccionGratis;
 		return aux;
 	}
 

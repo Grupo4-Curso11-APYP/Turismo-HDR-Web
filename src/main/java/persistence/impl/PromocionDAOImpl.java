@@ -7,9 +7,17 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import jdbc.ConnectionProvider;
+import model.PromocionAxB;
+import model.PromocionPorcentual;
+import model.TipoAtraccion;
+import model.PromocionAbsoluta;
 
-import turismoEnLaTierraMediaGrupo4.*;
+import persistence.PromocionDAO;
+import persistence.commons.ConnectionProvider;
+import persistence.commons.MissingDataException;
+import model.Atraccion;
+import model.Promocion;
+
 
 public class PromocionDAOImpl implements PromocionDAO {
 
@@ -188,7 +196,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 	}
 
 	/*
-	 * sql utilizado en el m�todo atraccionesDeLaPromocion
+	 * sql utilizado en el mï¿½todo atraccionesDeLaPromocion
 	 */
 	private String sqlAtraccion() {
 		String sql = "select *" + "from Atraccion WHERE ID_Atraccion = ?";

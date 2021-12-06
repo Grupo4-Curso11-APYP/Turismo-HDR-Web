@@ -28,12 +28,12 @@ public class BuyAttractionServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Integer attractionId = Integer.parseInt(req.getParameter("id"));
-		Usuario user = (Usuario) req.getSession().getAttribute("user");
-		Map<String, String> errors = buyAttractionService.buy(user.getId(), attractionId);
+		Integer atraccionId = Integer.parseInt(req.getParameter("id"));
+		Usuario usuario = (Usuario) req.getSession().getAttribute("user");
+		Map<String, String> errors = buyAttractionService.buy(usuario.getId(), atraccionId);
 		
-		Usuario user2 = DAOFactory.getUsuarioDAO().find(user.getId());
-		req.getSession().setAttribute("user", user2);
+		Usuario usuario2 = DAOFactory.getUsuarioDAO().find(usuario.getId());
+		req.getSession().setAttribute("user", usuario2);
 		
 		if (errors.isEmpty()) {
 			req.setAttribute("flash", "¡Gracias por comprar!");

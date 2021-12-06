@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
 import services.LoginService;
 
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 8308079314140233763L;
@@ -20,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 	public void init() throws ServletException {
 		super.init();
 		loginService = new LoginService();
-	}
+	}	
 	
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,4 +46,5 @@ public class LoginServlet extends HttpServlet {
       		    dispatcher.forward(req, resp);
     	}
     }
+    
 }

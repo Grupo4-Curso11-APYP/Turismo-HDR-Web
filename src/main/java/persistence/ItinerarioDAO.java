@@ -1,7 +1,9 @@
 package persistence;
 
 import java.sql.SQLException;
-import turismoEnLaTierraMediaGrupo4.Usuario;
+
+import persistence.commons.GenericDAO;
+import model.Usuario;
 
 
 public interface ItinerarioDAO extends GenericDAO<Usuario>{

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Objects;
 
-import dao.AtraccionDAOImpl;
+import persistence.impl.AtraccionDAOImpl;
 
 public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
     

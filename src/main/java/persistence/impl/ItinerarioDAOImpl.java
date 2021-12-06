@@ -7,8 +7,10 @@ import java.sql.SQLException;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import jdbc.ConnectionProvider;
-import turismoEnLaTierraMediaGrupo4.*;
+import model.Ofertable;
+import persistence.commons.ConnectionProvider;
+import persistence.ItinerarioDAO;
+import persistence.commons.MissingDataException;
 
 public class ItinerarioDAOImpl implements ItinerarioDAO {
 
@@ -39,8 +41,8 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	}
 
 	/*
-	 * m�todo usado por findByNombre para determinar si el ofertable de un
-	 * itinerario es una promoci�n o atracci�n.
+	 * mï¿½todo usado por findByNombre para determinar si el ofertable de un
+	 * itinerario es una promociï¿½n o atracciï¿½n.
 	 */
 	private void esPromoOesAtraccion(ResultSet resultados, Set<Ofertable> itinerario) throws SQLException {
 		while (resultados.next()) {

@@ -8,10 +8,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import jdbc.ConnectionProvider;
+import persistence.commons.ConnectionProvider;
+import persistence.commons.MissingDataException;
 import persistence.AtraccionDAO;
-import turismoEnLaTierraMediaGrupo4.Atraccion;
-import turismoEnLaTierraMediaGrupo4.TipoAtraccion;
+import model.Atraccion;
+import model.TipoAtraccion;
 
 public class AtraccionDAOImpl implements AtraccionDAO {
 
@@ -42,7 +43,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Instancia un objeto atracci�n a partir de la base de datos
+	 * Instancia un objeto atracciï¿½n a partir de la base de datos
 	 */
 	public Atraccion toAtraccion(ResultSet resultados) throws Exception {
 
@@ -73,7 +74,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Inserta una atracci�n nueva en la base de datos
+	 * Inserta una atracciï¿½n nueva en la base de datos
 	 */
 	@Override
 	public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
@@ -96,7 +97,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Actualiza una atracci�n en la base de datos
+	 * Actualiza una atracciï¿½n en la base de datos
 	 */
 	@Override
 	public int update(Atraccion atraccion) throws SQLException {
@@ -117,7 +118,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Borra una atracci�n en la base de datos
+	 * Borra una atracciï¿½n en la base de datos
 	 */
 	@Override
 	public int delete(Atraccion atraccion) throws SQLException {
@@ -132,14 +133,14 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Busca una atracci�n por su ID en la base de datos
+	 * Busca una atracciï¿½n por su ID en la base de datos
 	 */
 	@Override
-	public Atraccion buscarPorId(Long IdAtraccion) { 
+	public Atraccion buscarPorId(Long IdAtraccion) {
 		try {
 			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre,Atraccion.Costo ,"
-					+ " Atraccion.Tiempo, Atraccion.Cupo_Disponible," + "  Atraccion.TipoDeAtraccion" + " FROM Atraccion"
-					+ " WHERE Atraccion.Id_Atraccion = ?";
+					+ " Atraccion.Tiempo, Atraccion.Cupo_Disponible," + "  Atraccion.TipoDeAtraccion"
+					+ " FROM Atraccion" + " WHERE Atraccion.Id_Atraccion = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setLong(1, IdAtraccion);

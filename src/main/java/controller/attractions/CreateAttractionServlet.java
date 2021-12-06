@@ -8,19 +8,20 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Attraction;
-import services.AttractionService;
+import model.Atraccion;
+import services.AtraccionService;
+
 
 @WebServlet("/attractions/create.do")
 public class CreateAttractionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 3455721046062278592L;
-	private AttractionService attractionService;
+	private AtraccionService atraccionService;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		this.attractionService = new AttractionService();
+		this.atraccionService = new AtraccionService();
 	}
 
 	@Override
@@ -37,7 +38,7 @@ public class CreateAttractionServlet extends HttpServlet {
 		Double duration = Double.parseDouble(req.getParameter("duration"));
 		Integer capacity = Integer.parseInt(req.getParameter("capacity"));
 
-		Attraction attraction = attractionService.create(name, cost, duration, capacity);
+		Atraccion attraction = atraccionService.create(name, cost, duration, capacity);
 		if (attraction.isValid()) {
 			resp.sendRedirect("/turismo/attractions/index.do");
 		} else {

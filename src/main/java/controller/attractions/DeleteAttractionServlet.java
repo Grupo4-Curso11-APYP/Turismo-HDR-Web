@@ -7,18 +7,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import services.AttractionService;
+import services.AtraccionService;
 
 @WebServlet("/attractions/delete.do")
 public class DeleteAttractionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1537949074766873118L;
-	private AttractionService attractionService;
+	private AtraccionService attractionService;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		this.attractionService = new AttractionService();
+		this.attractionService = new AtraccionService();
 	}
 	
 	@Override
