@@ -31,10 +31,9 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		try {
 			atracciones = atraccionService.list();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		req.setAttribute("atraccion", atracciones);
+		req.setAttribute("atracciones", atracciones);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/attractions/index.jsp");
 		dispatcher.forward(req, resp);
