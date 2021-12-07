@@ -126,6 +126,7 @@
 			<div class="sidebar-heading">Crud</div>
 
 			<!-- ITEM Collapse Menu CRUD-->
+			<c:if test="${usuario.admin}">
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
 				data-toggle="collapse" data-target="#collapseTwo"
 				aria-expanded="true" aria-controls="collapseTwo"> <i
@@ -143,7 +144,7 @@
 							class="collapse-item" href="#" id="btn-borrar"
 							onclick="ShowHideBorrar()">Borrar</a>
 					</div>
-				</div></li>
+				</div></li></c:if>
 
 			<!-- ITEM  Collapse Menu PERFILES -->
 
