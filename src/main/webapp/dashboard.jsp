@@ -89,7 +89,10 @@
 </head>
 
 <body id="page-top">
-
+<!-- sin sesion no hay panel para el usuario kakersillo -->
+<% if (session.getAttribute("usuario") == null) { %>
+	<jsp:forward page="login.jsp" />
+<% } %>
 	<!-- ENVOLTURA -->
 	<div id="wrapper">
 
