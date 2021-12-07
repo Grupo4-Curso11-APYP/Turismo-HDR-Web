@@ -15,18 +15,21 @@ public class AtraccionService {
 		return DAOFactory.getAtraccionDAO().findAll();
 	}
 
-	/*public Atraccion create(String name, Integer cost, Double duration, Integer capacity, TipoAtraccion tipo) {
+	public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
 
-		Atraccion atraccion = new Atraccion(name, cost, duration, capacity,tipo);
+		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipo);
 
 		if (atraccion.esValido(name, cost, duration, capacity,tipo)) {
-			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-			atraccionDAO.insertarAtrac(name, cost, duration, capacity,tipo);
+			//AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+			AtraccionDAOImpl atracDI = new AtraccionDAOImpl();
+			String tipo_s = tipo.name();
+			//public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
+			atracDI.insertarAtrac(name, cost, duration, capacity, tipo_s);
 			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
 		}
 
 		return atraccion;
-	}*/
+	}
 
 	/*public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
 
