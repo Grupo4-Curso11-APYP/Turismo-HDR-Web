@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en">
 
@@ -55,11 +58,11 @@
 
 		<div
 			class="container align-items-center  text-center pt-2 mb-5 mt-5   ">
-			<h1 class="text-center fw-bolder pt-5">Turismo En Tierra Media</h1>
-			<p class="pt-2">La Secretaría de Turismo de la Tierra Media ha
-				decidido crear un sistema para promocionar el turismo en su
-				territorio. Éste contará con la información de las distintas
-				atracciones de toda la Tierra Media.</p>
+			<h1 class="text-center fw-bolder pt-5">¡Bienvenido A Turismo En Tierra Media!</h1>
+			
+			<h2 class="display-3 fw-bolder">
+				<c:out value="${usuario.nombre}"></c:out>
+			</h2>
 			<a type="menu"
 				class=" text-center btn btn-light btn-sm mt-5   border border-light fw-bold "
 				 href="#ayp"> Explorar Ahora
@@ -85,9 +88,9 @@
 
 					
 
-						<p class="">La secretaría de turismo de la Tierra Media ha
+						<p class="">La secretarÃ­a de turismo de la Tierra Media ha
 							decidido crear un sistema para promocionar el turismo en su
-							territorio. Éste contará con la información de las distintas
+							territorio. Ãste contarÃ¡ con la informaciÃ³n de las distintas
 							atracciones de toda la Tierra Media.</p>
 
 
@@ -206,7 +209,7 @@
 								<div class="card h-100">
 									<img src="assets/img/card-8.jpg" class="card-img-top" alt="...">
 									<div class="card-body" id="card-6">
-										<h5 class="card-title fw-bold">Lothl�rien</h5>
+										<h5 class="card-title fw-bold">Lothlórien</h5>
 										<p class="card-text">
 											La Comarca es una de las atracciones mas alegres y mas
 											tranquilas del parque <br> su costo de entrada es $ 8 y
@@ -239,7 +242,7 @@
 									<div class="card-body card-1">
 										<h5 class="card-title fw-bold">Pack Degustacion</h5>
 										<p class="card-text">
-											¡NO TE PIERDAS ESTA OFERTA INCREIBLE!<br> Llevando
+											Â¡NO TE PIERDAS ESTA OFERTA INCREIBLE!<br> Llevando
 											Lothlorien y La Comarca Te hacemos un descuento unico de $36
 											monedas
 										</p>
@@ -257,7 +260,7 @@
 										<h5 class="card-title fw-bold">Pack Paisaje</h5>
 										<p class="card-text">
 											Con la compra de Erebor y Minas Tirith te llevas de regalo
-											una visita a Abismo de Helm <br> ¡LLEVATE ESTE
+											una visita a Abismo de Helm <br> Â¡LLEVATE ESTE
 											INCREIBLE COMBO POR SOLO $120 MONEDAS!
 										</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
@@ -273,7 +276,7 @@
 									<div class="card-body" id="card-3">
 										<h5 class="card-title fw-bold">Pack Adrenalina</h5>
 										<p class="card-text">
-											¡QUERES VIVIR UNA EXPERIENCIA UNICA?!<br> ¡QUE TE DEJE
+											Â¡QUERES VIVIR UNA EXPERIENCIA UNICA?!<br> Â¡QUE TE DEJE
 											LOS PELOS DE PUNTA?!<br> Entonces este pack es el tuyo,
 											no esperes mas y empeza a disfrutar de Mordor y Bosque Negro.
 											<br>comprando ahora te hacemos un descuento del 25%
@@ -290,7 +293,7 @@
 									<div class="card-body" id="card-4">
 										<h5 class="card-title  fw-bold">Pack Aventura</h5>
 										<p class="card-text">
-											¡APROVECHA ESTE COMBO INCREIBLE!<br> Combo ideal para
+											Â¡APROVECHA ESTE COMBO INCREIBLE!<br> Combo ideal para
 											visitar con la familia, no te pierdas la posibilidad de
 											conocer Mordor y Moria,<br> y tener una experiencia
 											unica a tan solo el precio de $ 140 monedas
@@ -470,13 +473,13 @@
 							<label for="validationCustom01" class="form-label">Nombre</label>
 							<input type="text" class="form-control" id="validationCustom01"
 								required>
-							<div class="valid-feedback">¡Se ve bien!</div>
+							<div class="valid-feedback">Â¡Se ve bien!</div>
 						</div>
 						<div class="col-md-4">
 							<label for="validationCustom02" class="form-label">Apellido</label>
 							<input type="text" class="form-control" id="validationCustom02"
 								required>
-							<div class="valid-feedback">¡Se ve bien!</div>
+							<div class="valid-feedback">Â¡Se ve bien!</div>
 						</div>
 						<div class="col-md-4">
 							<label type="Email" for="validationCustomUsername"
@@ -494,7 +497,7 @@
 							<input type="text" class="form-control" id="validationCustom03"
 								required>
 							<div class="invalid-feedback">Proporcione una ciudad
-								válida.</div>
+								vÃ¡lida.</div>
 						</div>
 
 						<div class="col-md-3">
@@ -615,7 +618,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">�Preparado para
+					<h5 class="modal-title" id="exampleModalLabel">¿Preparado para
 						Salir?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
