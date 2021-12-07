@@ -7,7 +7,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- Optional JavaScript; choose one of the two! -->
 
-  <link rel="stylesheet" href="assets/stylesheets/login.css">
+  <link rel="stylesheet" href="assets/stylesheets/estilos-index.css">
 
 <!---OTROS CDN-->
 
