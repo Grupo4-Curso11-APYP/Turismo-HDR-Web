@@ -9,7 +9,7 @@ import persistence.commons.DAOFactory;
 
 public class AtraccionService {
 
-	public List<Atraccion> list() throws Exception {
+/*	public List<Atraccion> list() throws Exception {
 		return DAOFactory.getAtraccionDAO().findAll();
 	}
 /*
