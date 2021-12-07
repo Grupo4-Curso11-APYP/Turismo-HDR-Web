@@ -216,17 +216,15 @@
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#"> <i
-									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
-								</a> <a class="dropdown-item" href="#"> <i
-									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-									configuracion
-								</a> <a class="dropdown-item" href="#"> <i
-									class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-									Historial
-								</a>
+								<a class="dropdown-item disabled" style="color: black;">
+							<i title="monedas" style="color: gold;" class="bi bi-coin"></i>Presupuesto: <c:out value="${usuario.presupuesto}"></c:out>
+						</a> <a class="dropdown-item disabled" style="color: black;">
+							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i>Tiempo: <c:out value="${usuario.tiempoDisponible}h"></c:out>
+						</a> <a class="dropdown-item disabled" style="color: black;">
+							<i title="tipoFavorito" style="color: blue;" class="bi bi-clock-fill"></i>Preferencia: <c:out value="${usuario.tipoFavorito}"></c:out>
+						</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#" data-toggle="modal"
+								<a class="dropdown-item" href="/turismoHDR/logout" data-toggle="modal"
 									data-target="#logoutModal"> <i
 									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 									Salir
