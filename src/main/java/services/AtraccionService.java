@@ -4,29 +4,31 @@ import java.sql.SQLException;
 import java.util.List;
 
 import model.Atraccion;
+import model.TipoAtraccion;
 import persistence.AtraccionDAO;
 import persistence.commons.DAOFactory;
+import persistence.impl.AtraccionDAOImpl;
 
 public class AtraccionService {
 
-/*	public List<Atraccion> list() throws Exception {
+	public List<Atraccion> list() throws Exception {
 		return DAOFactory.getAtraccionDAO().findAll();
 	}
-/*
-	public Atraccion create(String name, Integer cost, Double duration, Integer capacity) {
 
-		Atraccion atraccion = new Atraccion(-1, name, cost, duration, capacity);
+	/*public Atraccion create(String name, Integer cost, Double duration, Integer capacity, TipoAtraccion tipo) {
 
-		if (atraccion.isValid()) {
+		Atraccion atraccion = new Atraccion(name, cost, duration, capacity,tipo);
+
+		if (atraccion.esValido(name, cost, duration, capacity,tipo)) {
 			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-			atraccionDAO.insert(atraccion);
+			atraccionDAO.insertarAtrac(name, cost, duration, capacity,tipo);
 			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
 		}
 
 		return atraccion;
-	}
+	}*/
 
-	public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
+	/*public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
 
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		Atraccion atraccion = atraccionDAO.find(id);
@@ -54,7 +56,6 @@ public class AtraccionService {
 	public Atraccion find(Integer id) {
 		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 		return attractionDAO.find(id);
-	}
-	*/
+	}*/
 
 }

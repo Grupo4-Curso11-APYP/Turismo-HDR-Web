@@ -16,12 +16,17 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 * @Param nombre , costo, tiempo , cupoDisponible y tipo se inicializan todos
 	 * los atributos de la atraccion
 	 */
-	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipo) throws Exception {
+	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipo)
+			throws Exception {
 		this.nombre = nombre;
 		validandoCosto(costo);
 		validandoTiempo(tiempo);
 		validandoCupo(cupoDisponible);
 		this.tipoAtraccion = tipo;
+	}
+
+	public boolean esValido(String nombre, double costo, double tiempo, int cupo, TipoAtraccion tipo) {
+		return ((nombre != null) && (costo > 0) && (tiempo > 0) && (cupo > 0) && ((tipo==TipoAtraccion.DEGUSTACION||tipo==TipoAtraccion.PAISAJE)||tipo==TipoAtraccion.AVENTURA));
 	}
 
 	/*
@@ -32,6 +37,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 			throw new CostoNegativoExcepcion();
 		this.costo = costo;
 	}
+
 	/*
 	 * validaciï¿½n para evitar tiempo negativo, si lo es, lanza una excepciï¿½n
 	 */
@@ -40,6 +46,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 			throw new SinTiempoDisponible();
 		this.tiempo = tiempo;
 	}
+
 	/*
 	 * validaciï¿½n para evitar cupo negativo, si lo es, lanza una excepciï¿½n
 	 */
