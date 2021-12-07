@@ -39,7 +39,7 @@
 						tabindex="-1" aria-disabled="false">Quienes Somos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#contacto"
 						tabindex="-1" aria-disabled="false">Contacto</a></li>
-					<li class="nav-item"><a class="nav-link " href="#"
+					<li class="nav-item"><a class="nav-link " href="/turismo/logout"
 						data-toggle="modal" data-target="#logoutModal">Salir</a></li>
 				</ul>
 
