@@ -22,5 +22,7 @@ public class IndexServlet extends HttpServlet {
 		  		      .getRequestDispatcher("/login.jsp");
 		  		    dispatcher.forward(req, resp);
 		}
+		// otra forma es mandarlo directamente al login.jsp usando es response
+		//resp.sendRedirect("/login.jsp");
     }
 }
