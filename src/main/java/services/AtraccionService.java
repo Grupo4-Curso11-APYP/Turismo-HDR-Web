@@ -19,7 +19,7 @@ public class AtraccionService {
 
 		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipo);
 
-		if (atraccion.esValido(name, cost, duration, capacity,tipo)) {
+		if (atraccion.esValido(name, cost, duration, capacity,tipo.name())) {
 			//AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 			AtraccionDAOImpl atracDI = new AtraccionDAOImpl();
 			String tipo_s = tipo.name();
