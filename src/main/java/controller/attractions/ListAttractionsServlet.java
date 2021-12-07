@@ -13,10 +13,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
 import services.AtraccionService;
 
-@WebServlet("attractions/index.do")
+//@WebServlet("attractions/index.do")
 public class ListAttractionsServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = -8346640902238722429L;
+/*	private static final long serialVersionUID = -8346640902238722429L;
 	private AtraccionService atraccionService;
 
 	@Override
@@ -41,5 +41,5 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 
 	}
 	
-
+*/
 }

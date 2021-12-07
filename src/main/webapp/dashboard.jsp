@@ -828,7 +828,8 @@
 					<div id="atraccion-oculto" class="row row-cols-12 row-cols-xl-12">
 						<h2 class="fw-bolder display-4 mb-3 ">Atracciones</h2>
 						<div class="col-lg-12">
-					      <jsp:include page="/views/attractions/index.jsp"></jsp:include>
+		
+
 
 						</div>
 					</div>
