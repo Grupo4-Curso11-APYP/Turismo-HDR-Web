@@ -38,10 +38,7 @@
             <input type="password" name="password" class="form-control" id="password" aria-describedby="passwordhelp" required>
             <div id="passwordhelp" class="form-text">Por favor, ingrese su contraseña</div>
           </div>
-          <div class="mb-4 form-check">
-            <input type="checkbox" class="form-check-input " id="recordar">
-            <label for=" recordar" class="form-check-label ">Recordar usuario </label>
-          </div>
+          
           <button type="submit" class="btn btn-primary w-100 mb-2">Ingresar</button>
         </form>
       </div>
