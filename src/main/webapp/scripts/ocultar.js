@@ -16,14 +16,14 @@ function ShowHideInsertar(){
 
 
 $("#buscar-oculto").hide();
-function ShowHideBuscar(){
+function ShowHideListar(){
     let text = "";
-    if($("#btn-buscar").text() === "Buscar"){
+    if($("#btn-buscar").text() === "Listar"){
         $("#buscar-oculto").show();
-        text= "Hide buscar"
+        text= "Hide Listar"
     }else{
         $("#buscar-oculto").hide();
-        text ="Buscar";
+        text ="Listar";
     }
 
     $("#btn-buscar").html(text);

@@ -24,17 +24,19 @@
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="#" id="inicio">Inicio</a></li>
-					<li class="nav-item"></li>
-					<li class="nav-item"></li>
-					<li class="nav-item dropdown"><a id="perfiles-creados"
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Perfil </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="dashboard.jsp"
-								id="usuario">Ver Perfil</a></li>
+				
+					      <li class="nav-item dropdown">
+                        <a id="perfiles-creados" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Perfil
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="dashboard.jsp" id="usuario">Ver Perfil</a></li>
 
-						</ul></li>
+                          
+
+                        </ul>
+                    </li>
 					<li class="nav-item"><a class="nav-link" href="#quienes-somos"
 						tabindex="-1" aria-disabled="false">Quienes Somos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#contacto"
@@ -58,10 +60,10 @@
 				decidido crear un sistema para promocionar el turismo en su
 				territorio. Éste contará con la información de las distintas
 				atracciones de toda la Tierra Media.</p>
-			<button type="menu"
-				class=" text-center btn btn-light btn-sm mt-5   border border-light fw-bold ">
-				<a href="#ayp"> Explorar Ahora</a>
-			</button>
+			<a type="menu"
+				class=" text-center btn btn-light btn-sm mt-5   border border-light fw-bold "
+				 href="#ayp"> Explorar Ahora
+			</a>
 		</div>
 	</section>
 	<!---FIN SECCION-->
@@ -73,11 +75,11 @@
 
 			<!-----CARRUSEL SLIDER-->
 
-			<div id="carouselExampleInterval" class="carousel slide"
-				data-bs-ride="carousel">
+			<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
+                data-bs-interval="false">
 				<div class="carousel-inner">
 					<!--PRIMER ITEM-->
-					<div class="carousel-item active" data-bs-interval="4000"
+					<div class="carousel-item active"
 						id="atracciones">
 						<h2 class="display-2 fw-bold">Atracciones</h2>
 
@@ -183,6 +185,38 @@
 									</div>
 								</div>
 							</div>
+							
+							<div class="col-lg-6   col-sm-6" id="col6">
+								<div class="card h-100">
+									<img src="assets/img/card-7.jpg" class="card-img-top" alt="...">
+									<div class="card-body" id="card-6">
+										<h5 class="card-title fw-bold">Erebor</h5>
+										<p class="card-text">
+											Erebor es una de las atracciones mas alegres y mas
+											tranquilas del parque <br> su costo de entrada es $ 8 y
+											requiere un tiempo de 4 horas.
+										</p>
+										<a type="button" class="btn btn-transparent border-dark mt-2"
+											href="dashboard.jsp">Visitar</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-lg-6   col-sm-6" id="col6">
+								<div class="card h-100">
+									<img src="assets/img/card-8.jpg" class="card-img-top" alt="...">
+									<div class="card-body" id="card-6">
+										<h5 class="card-title fw-bold">Lothl�rien</h5>
+										<p class="card-text">
+											La Comarca es una de las atracciones mas alegres y mas
+											tranquilas del parque <br> su costo de entrada es $ 8 y
+											requiere un tiempo de 4 horas.
+										</p>
+										<a type="button" class="btn btn-transparent border-dark mt-2"
+											href="dashboard.jsp">Visitar</a>
+									</div>
+								</div>
+							</div>
 							<!---FIN ATRACCIONES-->
 						</div>
 					</div>
@@ -191,7 +225,7 @@
 
 
 					<!---SEGUNDO ITEM-->
-					<div class="carousel-item " data-bs-interval="4000"
+					<div class="carousel-item " 
 						id="promociones">
 						<h2 class="display-2 fw-bold">Promociones</h2>
 						<p class="">Lorem ipsum, dolor sit amet consectetur
@@ -275,14 +309,16 @@
 					</div>
 					<!--FIN SEGUNDO ITEM-->
 				</div>
-				<button class="carousel-control-prev" type="button"
-					data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+				<button class="carousel-control-prev bg-dark-50" type="button"
+					data-bs-target="#carouselExampleControlsNoTouching"
+                            data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Previous</span>
 				</button>
-				<button class="carousel-control-next" type="button"
-					data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<button class="carousel-control-next bg-dark-50" type="button"
+					data-bs-target="#carouselExampleControlsNoTouching"
+                            data-bs-slide="next">
+					<span class="carousel-control-next-icon " aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
 
