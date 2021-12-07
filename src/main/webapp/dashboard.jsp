@@ -236,7 +236,7 @@
 										value="${usuario.tipoFavorito}"></c:out>
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"
+								<a class="dropdown-item" href="/turismoHDR/logout"
 									data-toggle="modal" data-target="#logoutModal"> <i
 									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 "
 									style="color: black;"></i> Salir
