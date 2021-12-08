@@ -24,25 +24,31 @@ public class CreateAttractionServlet extends HttpServlet {
 		this.atraccionService = new AtraccionService();
 	}
 
+	/*
+	 * Muestra el formulario para crear atracción
+	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
 		dispatcher.forward(req, resp);
 	}
+	/*
+	 * Envía los datos introducidos en el formulario para crear la atracción
+	 */
 /*
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = req.getParameter("name");
-		Integer cost = Integer.parseInt(req.getParameter("cost"));
-		Double duration = Double.parseDouble(req.getParameter("duration"));
-		Integer capacity = Integer.parseInt(req.getParameter("capacity"));
+		String nombre = req.getParameter("nombre");
+		Double costo = Double.parseDouble(req.getParameter("costo"));
+		Double tiempo = Double.parseDouble(req.getParameter("tiempo"));
+		Integer cupoDisponible = Integer.parseInt(req.getParameter("cupoDisponible"));
 
-		Atraccion attraction = atraccionService.create(name, cost, duration, capacity);
-		if (attraction.isValid()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+		Atraccion attraction = atraccionService.create(nombre, costo, tiempo, cupoDisponible);
+		if (atraccion.isValid()) {
+			resp.sendRedirect("/turismoHDR/attractions/index.do");
 		} else {
-			req.setAttribute("attraction", attraction);
+			req.setAttribute("atraccion", atraccion);
 
 			RequestDispatcher dispatcher = getServletContext()
 					.getRequestDispatcher("/views/attractions/create.jsp");
