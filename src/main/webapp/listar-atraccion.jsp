@@ -165,7 +165,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Listar</a>
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Usuario</a>
+                        <a class="collapse-item" href="#">Usuarios</a>
                     </div>
                 </div>
             </li>
@@ -196,13 +196,13 @@
 
               <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOpciones"
-                    aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
+                    aria-expanded="true" aria-controls="collapseTwo">Gestión del usuario</a>
                 <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="#">Atraccion</a>
-                        <a class="collapse-item" href="#">Promocion</a>
-                        <a class="collapse-item" href="#">Itinerario</a>
-                        <a class="collapse-item" href="#">Historial</a>
+                        <a class="collapse-item active" href="#">Ver atracciones</a>
+                        <a class="collapse-item" href="#">Ver promociones</a>
+                        <a class="collapse-item" href="#">Tu itinerario</a>
+                        <a class="collapse-item" href="#">Tu historial</a>
                     </div>
                 </div>
             </li>
@@ -350,7 +350,7 @@
                                                 <c:out value="${atraccion.cupoDisponible}"></c:out>
                                             </td>
                                             <td>
-                                                <c:out value="${atraccion.tipoAtraccion}"></c:out>
+                                                <c:out value="${atraccion.tipo}"></c:out>
                                             </td>
 
 
