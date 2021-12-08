@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,10 +91,14 @@
 </head>
 
 <body id="page-top">
-<!-- sin sesion no hay panel para el usuario kakersillo -->
-<% if (session.getAttribute("usuario") == null) { %>
+	<!-- sin sesion no hay panel para el usuario kakersillo -->
+	<%
+	if (session.getAttribute("usuario") == null) {
+	%>
 	<jsp:forward page="login.jsp" />
-<% } %>
+	<%
+	}
+	%>
 	<!-- ENVOLTURA -->
 	<div id="wrapper">
 
@@ -127,24 +133,25 @@
 
 			<!-- ITEM Collapse Menu CRUD-->
 			<c:if test="${usuario.admin}">
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseTwo"
-				aria-expanded="true" aria-controls="collapseTwo"> <i
-					class="fas fa-fw fa-cog"></i> <span id="Tipo_usuario">Opciones
-						de Admin</span>
-			</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-					data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="# " id="btn-insertar"
-							onclick="ShowHideInsertar()">Insertar</a><a class="collapse-item"
-							href="#" id="btn-buscar" onclick="ShowHideListar()">Listar</a> <a
-							class="collapse-item" href="#" id="btn-modificar"
-							onclick=" ShowHideModificar()">Modificar</a> <a
-							class="collapse-item" href="#" id="btn-borrar"
-							onclick="ShowHideBorrar()">Borrar</a>
-					</div>
-				</div></li></c:if>
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseTwo"
+					aria-expanded="true" aria-controls="collapseTwo"> <i
+						class="fas fa-fw fa-cog"></i> <span id="Tipo_usuario">Opciones
+							de Admin</span>
+				</a>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+						data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="# " id="btn-insertar"
+								onclick="ShowHideInsertar()">Insertar</a><a
+								class="collapse-item" href="#" id="btn-buscar"
+								onclick="ShowHideListar()">Listar</a> <a class="collapse-item"
+								href="#" id="btn-modificar" onclick=" ShowHideModificar()">Modificar</a>
+							<a class="collapse-item" href="#" id="btn-borrar"
+								onclick="ShowHideBorrar()">Borrar</a>
+						</div>
+					</div></li>
+			</c:if>
 
 			<!-- ITEM  Collapse Menu PERFILES -->
 
@@ -278,7 +285,7 @@
 									<label for="validationCustom01" class="form-label">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom02" class="form-label">Costo</label>
@@ -334,19 +341,19 @@
 									<label for="validationCustom01" class="form-label">ID-Atraccion1</label>
 									<input type="number" class="form-control"
 										id="validationCustom01" required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom01" class="form-label">ID-Atraccion2</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom01" class="form-label">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom02" class="form-label">Tipo</label>
@@ -410,7 +417,7 @@
 									<label for="validationCustom01" class="form-label">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom02" class="form-label">Presupuesto</label>
@@ -459,7 +466,7 @@
 									<label for="validationCustom01" class="form-label">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 
 								<div class="col-12">
@@ -536,7 +543,7 @@
 									<label for="validationCustom01" class="form-label text-white">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback text-white">¡Se ve bien!</div>
+									<div class="valid-feedback text-white">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom02" class="form-label text-white">Costo</label>
@@ -591,7 +598,7 @@
 									<label for="validationCustom01" class="form-label text-white">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback text-white">¡Se ve bien!</div>
+									<div class="valid-feedback text-white">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom02" class="form-label text-white">Tipo</label>
@@ -654,7 +661,7 @@
 									<label for="validationCustom01" class="form-label text-white">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback text-white">¡Se ve bien!</div>
+									<div class="valid-feedback text-white">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-md-4">
 									<label for="validationCustom02" class="form-label text-white">Presupuesto</label>
@@ -702,7 +709,7 @@
 									<label for="validationCustom01" class="form-labe text-white">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback text-white">¡Se ve bien!</div>
+									<div class="valid-feedback text-white">Â¡Se ve bien!</div>
 								</div>
 
 								<div class="col-12">
@@ -736,7 +743,7 @@
 									<label for="validationCustom01" class="form-label text-white">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-12">
 									<button class="btn btn-danger mb-3" type="submit">Eliminar
@@ -758,7 +765,7 @@
 									<label for="validationCustom01" class="form-label text-white">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-12">
 									<button class="btn btn-danger mb-3" type="submit">Eliminar
@@ -779,7 +786,7 @@
 									<label for="validationCustom01" class="form-label text-white">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 								<div class="col-12">
 									<button class="btn btn-danger mb-3" type="submit">Eliminar
@@ -801,7 +808,7 @@
 									<label for="validationCustom01" class="form-label">Nombre</label>
 									<input type="text" class="form-control" id="validationCustom01"
 										required>
-									<div class="valid-feedback">¡Se ve bien!</div>
+									<div class="valid-feedback">Â¡Se ve bien!</div>
 								</div>
 
 								<div class="col-12">
@@ -829,10 +836,43 @@
 					<!-----SECCION TABLA ATRACCIONES-->
 
 					<!-----SECCION TABLA ATRACCIONES-->
-					<div id="atraccion-oculto" class="row row-cols-12 row-cols-xl-12">
-						<h2 class="fw-bolder display-4 mb-3 ">Atracciones</h2>
+					<div  id="atraccion-oculto" class="row row-cols-12 row-cols-xl-12">
+						
+							<h2 class="fw-bolder display-4 mb-3 ">Atracciones</h2>
 						<div class="col-lg-12">
-		
+
+							<c:if test="${flash != null}">
+								<div class="alert alert-danger">
+									<p>
+										<c:out value="${flash}" />
+
+									</p>
+								</div>
+							</c:if>
+							<table class="table table-stripped table-hover">
+								<thead>
+									<tr>
+										<th><a > Atraccion</a></th>
+										<th>Costo</th>
+										<th>Tiempo</th>
+										<th>Cupo</th>
+										<th>Acciones</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach items="${atracciones}" var="atraccion">
+										<tr>
+											<td><strong><c:out value="${atraccion.nombre}"></c:out></strong>
+											</td>
+											<td><c:out value="${atraccion.costo}"></c:out></td>
+											<td><c:out value="${atraccion.tiempo}"></c:out></td>
+											<td><c:out value="${atraccion.cupoDisponible}"></c:out></td>
+
+
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
 
 
 						</div>
@@ -1036,7 +1076,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">ï¿½Preparado
+					<h5 class="modal-title" id="exampleModalLabel">Ã¯Â¿Â½Preparado
 						para Salir?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">

@@ -12,7 +12,8 @@ import persistence.impl.AtraccionDAOImpl;
 public class AtraccionService {
 
 	public List<Atraccion> list() throws Exception {
-		return DAOFactory.getAtraccionDAO().findAll();
+		AtraccionDAOImpl a = new AtraccionDAOImpl();
+		return a.findAll();
 	}
 
 	public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
@@ -54,8 +55,8 @@ public class AtraccionService {
 
 		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 		attractionDAO.delete(attraction);
-	}*/
-
+	}
+*/
 	public int find(String nombreAtrac) throws SQLException {
 		
 		

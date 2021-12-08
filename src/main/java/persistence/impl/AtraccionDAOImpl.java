@@ -8,8 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import persistence.commons.ConnectionProvider;
+
 import persistence.commons.MissingDataException;
 import persistence.AtraccionDAO;
 import model.Atraccion;
@@ -28,7 +28,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 					+ " FROM Atraccion INNER JOIN TipoAtraccion "
 					+ " ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion";
 
-			Connection conn = DriverManager.getConnection("jdbc:Sqlite:TurismoTierraMediaBD.db");
+			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
 
