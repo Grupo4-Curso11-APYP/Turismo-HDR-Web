@@ -9,8 +9,8 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	protected double costo;
 	protected double tiempo;
 	protected int cupoDisponible;
-	private TipoAtraccion tipoAtraccion;
-	private String nombre;
+	protected TipoAtraccion tipoAtraccion;
+	protected String nombre;
 
 	/*
 	 * @Param nombre , costo, tiempo , cupoDisponible y tipo se inicializan todos

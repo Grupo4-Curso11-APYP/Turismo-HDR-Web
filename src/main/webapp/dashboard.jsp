@@ -124,7 +124,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
                 <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.jsp">Atraccion</a>
+                        <a class="collapse-item" href="listar-atraccion.do">Atraccion</a>
                         <a class="collapse-item" href="listar-promo.jsp">Promocion</a>
                         <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
                         

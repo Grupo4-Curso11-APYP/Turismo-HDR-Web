@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
 import services.AtraccionService;
 
-@WebServlet("/dashboard.do")
+@WebServlet("/listar-atraccion.do")
 public class ListAttractionsServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = -8346640902238722429L;
@@ -36,7 +36,7 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		}
 		req.setAttribute("atracciones", atracciones);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/dashboard.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listar-atraccion.jsp");
 		dispatcher.forward(req, resp);
 
 	}

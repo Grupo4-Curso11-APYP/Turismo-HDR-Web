@@ -326,11 +326,11 @@
                             <table class="table table-stripped table-hover">
                                 <thead>
                                     <tr>
-                                        <th><a> Atraccion</a></th>
+                                        <th><a> Nombre</a></th>
                                         <th>Costo</th>
                                         <th>Tiempo</th>
                                         <th>Cupo</th>
-                                        <th>Acciones</th>
+                                        <th>Tipo</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -348,6 +348,9 @@
                                             </td>
                                             <td>
                                                 <c:out value="${atraccion.cupoDisponible}"></c:out>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.tipoAtraccion}"></c:out>
                                             </td>
 
 
