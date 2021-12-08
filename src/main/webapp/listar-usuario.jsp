@@ -62,7 +62,7 @@
 <script defer src="scripts/dashboard-2-min.js"></script>
 
 
-
+<script ></script>
 <script src="scripts/jQuery3.6.0.js" defer></script>
 <!----FIN DASHBOARD ESTILOS Y SCRIPTS-->
 
@@ -91,14 +91,7 @@
 </head>
 
 <body id="page-top">
-	<!-- sin sesion no hay panel para el usuario kakersillo -->
-	<%
-	if (session.getAttribute("usuario") == null) {
-	%>
-	<jsp:forward page="login.jsp" />
-	<%
-	}
-	%>
+	
 	<!-- ENVOLTURA -->
 	<div id="wrapper">
 
@@ -129,97 +122,97 @@
 			<hr class="sidebar-divider">
 
 			<!-- SIDEBAR HEADING MENU ADMIN  -->
-			<div class="sidebar-heading"> 
-			  <a href="#" style="text-decoration: none;">Crud</a> 
-           
+			<div class="sidebar-heading">
+				<a href="#" style="text-decoration: none;">Crud</a>
 
-            <!-- ITEMS DEL MENU COLAPSE-->
-           
-                          <!---Insertar Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInsertar"
-                    aria-expanded="true" aria-controls="collapseTwo">Insertar</a>
-                <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                        <a class="collapse-item" href="insertar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
-                        <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="insertar-tipoAtraccion.jsp">Tipo Atraccion</a>
-                    </div>
-                </div>
-            </li>
-            <!---Fin insertar Menu-->
 
-            <!---Actualizar Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseActualizar"
-                    aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
-                <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="actualizar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="actualizar-tipo.jsp">Tipo Atraccion</a>
-                    </div>
-                </div>
-            </li>
-            <!---Fin Actualizar Menu-->
+				<!-- ITEMS DEL MENU COLAPSE-->
 
-            <!---Listar  Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseListar"
-                    aria-expanded="true" aria-controls="collapseTwo">Listar</a>
-                <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-usuario.jsp">Usuario</a>
-                    </div>
-                </div>
-            </li>
-            <!---Fin Listar Menu-->
+				<!---Insertar Menu -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseInsertar"
+					aria-expanded="true" aria-controls="collapseTwo">Insertar</a>
+					<div id="collapseInsertar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
+							<a class="collapse-item" href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item" href="#">Usuario</a> <a
+								class="collapse-item" href="#">Tipo Atraccion</a>
+						</div>
+					</div></li>
+				<!---Fin insertar Menu-->
 
-             <!-- -BORRAR MENU -->
-             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBorrar"
-                    aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
-                <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="borrar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="borrar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="borrar-usuario.jsp">Usuario</a>
-                        <a class="collapse-item" href="borrar-tipo.jsp">Tipo Atraccion</a>
-                    </div>
-                </div>
-            </li>
-            <!-- BORRAR MENU -->
-            <!-- BORRAR MENU -->
-			
-</div>
+				<!---Actualizar Menu -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseActualizar"
+					aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
+					<div id="collapseActualizar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item" href="#">Usuario</a> <a
+								class="collapse-item" href="#">Tipo Atraccion</a>
+						</div>
+					</div></li>
+				<!---Fin Actualizar Menu-->
+
+				<!---Listar  Menu -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseListar"
+					aria-expanded="true" aria-controls="collapseTwo">Listar</a>
+					<div id="collapseListar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item active" href="#">Usuario</a>
+						</div>
+					</div></li>
+				<!---Fin Listar Menu-->
+
+				<!-- -BORRAR MENU -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseBorrar"
+					aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
+					<div id="collapseBorrar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item" href="#">Usuario</a> <a
+								class="collapse-item" href="#">Tipo Atraccion</a>
+						</div>
+					</div></li>
+				<!-- BORRAR MENU -->
+				<!-- BORRAR MENU -->
+
+			</div>
 			<!-- ITEM  Collapse Menu PERFILES -->
 
-		  <div class="sidebar-heading">
-             
+			<div class="sidebar-heading">
 
 
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOpciones"
-                    aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
-                <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="listar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
-                        
-                    </div>
-                </div>
-            </li>
-            <!---Fin insertar Menu-->
 
-         
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseOpciones"
+					aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
+					<div id="collapseOpciones" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item" href="#">Itinerario</a> 
+							
+						</div>
+					</div></li>
+				<!---Fin insertar Menu-->
 
-          
-         
-            </div>
+
+
+
+
+			</div>
 
 
 			<!-- Divider -->
@@ -316,12 +309,57 @@
 					<!-- HAEDER FIN  -->
 
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
-				
+					<div id="" class="row row-cols-12 row-cols-xl-12">
+
+						<div class="col-lg-12">
+							<table id="example"
+								class="table  table-bordered table-white  table-hover"
+								style="width: 100%">
+								<thead>
+									<tr class="table-dark">
+										<th>Nombre</th>
+										<th>Presupuesto</th>
+										<th>Tiempo Disponible</th>
+										<th>Tipo Favorito</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Gandalf</td>
+										<td>100</td>
+										<td>5</td>
+										<td>Paisaje</td>
+
+									</tr>
+									<tr>
+										<td>Sam</td>
+										<td>36</td>
+										<td>8</td>
+										<td>Degustacion</td>
+
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>Nombre</th>
+										<th>Presupuesto</th>
+										<th>Tiempo Disponible</th>
+										<th>Tipo Favorito</th>
+									</tr>
+								</tfoot>
+							</table>
+
+						</div>
+
+					</div>
+					<!-- FIN SECCION BUSCAR LISTAR -->
 					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
 
 
 
-					
+
 
 				</div>
 			</div>

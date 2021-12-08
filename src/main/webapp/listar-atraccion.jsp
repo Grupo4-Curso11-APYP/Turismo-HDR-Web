@@ -62,7 +62,7 @@
 <script defer src="scripts/dashboard-2-min.js"></script>
 
 
-
+<script src="scripts/ocultar.js" defer></script>
 <script src="scripts/jQuery3.6.0.js" defer></script>
 <!----FIN DASHBOARD ESTILOS Y SCRIPTS-->
 
@@ -91,14 +91,7 @@
 </head>
 
 <body id="page-top">
-	<!-- sin sesion no hay panel para el usuario kakersillo -->
-	<%
-	if (session.getAttribute("usuario") == null) {
-	%>
-	<jsp:forward page="login.jsp" />
-	<%
-	}
-	%>
+	
 	<!-- ENVOLTURA -->
 	<div id="wrapper">
 
@@ -142,10 +135,10 @@
                 <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                        <a class="collapse-item" href="insertar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
-                        <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="insertar-tipoAtraccion.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -157,10 +150,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
                 <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="actualizar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="actualizar-tipo.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -172,7 +165,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Listar</a>
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-usuario.jsp">Usuario</a>
+                        <a class="collapse-item" href="#">Usuario</a>
                     </div>
                 </div>
             </li>
@@ -184,10 +177,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
                 <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="borrar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="borrar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="borrar-usuario.jsp">Usuario</a>
-                        <a class="collapse-item" href="borrar-tipo.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                        <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -199,17 +192,17 @@
 
 		  <div class="sidebar-heading">
              
-
+<!-- --OTRAS OPCIONES -->
 
               <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOpciones"
                     aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
                 <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="listar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
-                        
+                        <a class="collapse-item active" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Itinerario</a>
+                        <a class="collapse-item" href="#">Historial</a>
                     </div>
                 </div>
             </li>
@@ -316,6 +309,56 @@
 					<!-- HAEDER FIN  -->
 
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
+				  <!-----SECCION TABLA ATRACCIONES-->
+                    <div id="" class="row row-cols-12 row-cols-xl-12">
+
+                        <h2 class="fw-bolder display-4 mb-3 ">Atracciones</h2>
+                        <div class="col-lg-12">
+
+                            <c:if test="${flash != null}">
+                                <div class="alert alert-danger">
+                                    <p>
+                                        <c:out value="${flash}" />
+
+                                    </p>
+                                </div>
+                            </c:if>
+                            <table class="table table-stripped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th><a> Atraccion</a></th>
+                                        <th>Costo</th>
+                                        <th>Tiempo</th>
+                                        <th>Cupo</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${atracciones}" var="atraccion">
+                                        <tr>
+                                            <td><strong>
+                                                    <c:out value="${atraccion.nombre}"></c:out>
+                                                </strong>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.costo}"></c:out>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.tiempo}"></c:out>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.cupoDisponible}"></c:out>
+                                            </td>
+
+
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
 				
 					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
 

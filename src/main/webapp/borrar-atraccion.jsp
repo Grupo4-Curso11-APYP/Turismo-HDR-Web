@@ -62,7 +62,7 @@
 <script defer src="scripts/dashboard-2-min.js"></script>
 
 
-
+<script src="scripts/ocultar.js" defer></script>
 <script src="scripts/jQuery3.6.0.js" defer></script>
 <!----FIN DASHBOARD ESTILOS Y SCRIPTS-->
 
@@ -91,14 +91,7 @@
 </head>
 
 <body id="page-top">
-	<!-- sin sesion no hay panel para el usuario kakersillo -->
-	<%
-	if (session.getAttribute("usuario") == null) {
-	%>
-	<jsp:forward page="login.jsp" />
-	<%
-	}
-	%>
+	
 	<!-- ENVOLTURA -->
 	<div id="wrapper">
 
@@ -142,10 +135,10 @@
                 <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                        <a class="collapse-item" href="insertar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
-                        <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="insertar-tipoAtraccion.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -157,10 +150,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
                 <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="actualizar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="actualizar-tipo.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -172,7 +165,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Listar</a>
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-usuario.jsp">Usuario</a>
+                        <a class="collapse-item" href="#">Usuario</a>
                     </div>
                 </div>
             </li>
@@ -184,10 +177,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
                 <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="borrar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="borrar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="borrar-usuario.jsp">Usuario</a>
-                        <a class="collapse-item" href="borrar-tipo.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item active" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                        <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -206,10 +199,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
                 <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="listar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
-                        
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Itinerario</a>
+                        <a class="collapse-item" href="#">Historial</a>
                     </div>
                 </div>
             </li>
@@ -316,7 +309,24 @@
 					<!-- HAEDER FIN  -->
 
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
-				
+				  <!--BORRAR ACTRACCION-->
+                        <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
+                            <h2 class="fw-bolder mt-3 text-white ">
+                                Ingrese el Nombre de la Atraccion <br> Que desea Eliminar
+                            </h2>
+                            <form id="form-contact" class="row g-3 needs-validation " novalidate>
+                                <div class="col-md-4">
+                                    <label for="validationCustom01" class="form-label text-white">Nombre</label>
+                                    <input type="text" class="form-control" id="validationCustom01" required>
+                                    <div class="valid-feedback">¡Se ve bien!</div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-danger mb-3" type="submit">Eliminar
+                                        Atraccion</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--FIN BORRAR ATRACCION-->
 					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
 
 

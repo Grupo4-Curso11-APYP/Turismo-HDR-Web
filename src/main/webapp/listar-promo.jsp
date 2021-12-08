@@ -91,14 +91,7 @@
 </head>
 
 <body id="page-top">
-	<!-- sin sesion no hay panel para el usuario kakersillo -->
-	<%
-	if (session.getAttribute("usuario") == null) {
-	%>
-	<jsp:forward page="login.jsp" />
-	<%
-	}
-	%>
+	
 	<!-- ENVOLTURA -->
 	<div id="wrapper">
 
@@ -142,10 +135,10 @@
                 <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                        <a class="collapse-item" href="insertar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
-                        <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="insertar-tipoAtraccion.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -157,10 +150,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
                 <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="actualizar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="actualizar-tipo.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -172,7 +165,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Listar</a>
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-usuario.jsp">Usuario</a>
+                        <a class="collapse-item" href="#">Usuario</a>
                     </div>
                 </div>
             </li>
@@ -184,10 +177,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
                 <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="borrar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="borrar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="borrar-usuario.jsp">Usuario</a>
-                        <a class="collapse-item" href="borrar-tipo.jsp">Tipo Atraccion</a>
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                        <a class="collapse-item" href="#">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -206,10 +199,10 @@
                     aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
                 <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="listar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
-                        
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item active" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Itinerario</a>
+                     
                     </div>
                 </div>
             </li>
@@ -316,7 +309,57 @@
 					<!-- HAEDER FIN  -->
 
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
-				
+				        <!---SECCION TABLA PROMOCIONES-->
+                    <div id="promocion-oculto" class="row row-cols-12 row-cols-xl-12">
+                        <h2 class="fw-bolder display-4 mb-3 ">Promociones</h2>
+                        <div class="col-lg-12">
+                            <table id="promocion" class="table  table-bordered table-white  table-hover"
+                                style="width: 100%">
+                                <thead>
+                                    <tr class="table-dark">
+                                        <th>Nombre</th>
+                                        <th>Tipo</th>
+                                        <th>Monto</th>
+                                        <th>Tiempo</th>
+                                        <th>Atraccion Gratis</th>
+                                        <th>Descuento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Pack Aventura</td>
+                                        <td>Aventura</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>null</td>
+                                        <td>20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pack Paisaje</td>
+                                        <td>Paisaje</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>5</td>
+                                        <td>null</td>
+
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr class="table-dark">
+                                        <th>Nombre</th>
+                                        <th>Tipo</th>
+                                        <th>Monto</th>
+                                        <th>Tiempo</th>
+                                        <th>Atraccion Gratis</th>
+                                        <th>Descuento</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!----FIN SECCION TALBA PROMOCIONES-->
 					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
 
 

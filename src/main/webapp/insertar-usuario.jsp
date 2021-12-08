@@ -5,7 +5,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -88,17 +87,14 @@
 
 
 
+
+
 </head>
 
 <body id="page-top">
 	<!-- sin sesion no hay panel para el usuario kakersillo -->
-	<%
-	if (session.getAttribute("usuario") == null) {
-	%>
-	<jsp:forward page="login.jsp" />
-	<%
-	}
-	%>
+
+
 	<!-- ENVOLTURA -->
 	<div id="wrapper">
 
@@ -128,98 +124,101 @@
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
-			<!-- SIDEBAR HEADING MENU ADMIN  -->
-			<div class="sidebar-heading"> 
-			  <a href="#" style="text-decoration: none;">Crud</a> 
-           
+			<div class="sidebar-heading">
 
-            <!-- ITEMS DEL MENU COLAPSE-->
-           
-                          <!---Insertar Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInsertar"
-                    aria-expanded="true" aria-controls="collapseTwo">Insertar</a>
-                <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                        <a class="collapse-item" href="insertar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
-                        <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="insertar-tipoAtraccion.jsp">Tipo Atraccion</a>
-                    </div>
-                </div>
-            </li>
-            <!---Fin insertar Menu-->
+				<!---OPCIONES-->
+				<a href="" style="text-decoration: none;">Crud</a>
 
-            <!---Actualizar Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseActualizar"
-                    aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
-                <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="actualizar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="actualizar-tipo.jsp">Tipo Atraccion</a>
-                    </div>
-                </div>
-            </li>
-            <!---Fin Actualizar Menu-->
 
-            <!---Listar  Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseListar"
-                    aria-expanded="true" aria-controls="collapseTwo">Listar</a>
-                <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-usuario.jsp">Usuario</a>
-                    </div>
-                </div>
-            </li>
-            <!---Fin Listar Menu-->
+				<!-- ITEMS DEL MENU COLAPSE-->
 
-             <!-- -BORRAR MENU -->
-             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBorrar"
-                    aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
-                <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="borrar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="borrar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="borrar-usuario.jsp">Usuario</a>
-                        <a class="collapse-item" href="borrar-tipo.jsp">Tipo Atraccion</a>
-                    </div>
-                </div>
-            </li>
-            <!-- BORRAR MENU -->
-            <!-- BORRAR MENU -->
-			
-</div>
+				<!---Insertar Menu -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseInsertar"
+					aria-expanded="true" aria-controls="collapseTwo">Insertar</a>
+					<div id="collapseInsertar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item " href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item active" href="#">Usuario</a> <a
+								class="collapse-item" href="#">Tipo Atraccion</a>
+						</div>
+					</div></li>
+				<!---Fin insertar Menu-->
+
+				<!---Listar Menu -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseActualizar"
+					aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
+					<div id="collapseActualizar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item" href="#">Usuario</a> <a
+								class="collapse-item" href="#">Tipo Atraccion</a>
+						</div>
+					</div></li>
+				<!---Fin Listar Menu-->
+
+				<!---Actualizar  Menu -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseListar"
+					aria-expanded="true" aria-controls="collapseTwo">Listar</a>
+					<div id="collapseListar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+
+							<a class="collapse-item" href="#">Usuario</a>
+
+						</div>
+					</div></li>
+				<!---Fin Actualizar Menu-->
+
+				<!-- -BORRAR MENU -->
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseBorrar"
+					aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
+					<div id="collapseBorrar" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item" href="#">Usuario</a> <a
+								class="collapse-item" href="#">Tipo Atraccion</a>
+						</div>
+					</div></li>
+				<!-- BORRAR MENU -->
+
+			</div>
+
 			<!-- ITEM  Collapse Menu PERFILES -->
-
-		  <div class="sidebar-heading">
-             
+			<div class="sidebar-heading">
 
 
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOpciones"
-                    aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
-                <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="listar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
-                        
-                    </div>
-                </div>
-            </li>
-            <!---Fin insertar Menu-->
 
-         
+				<li class="nav-item"><a class="nav-link collapsed" href="#"
+					data-toggle="collapse" data-target="#collapseOpciones"
+					aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
+					<div id="collapseOpciones" class="collapse"
+						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="#">Atraccion</a> <a
+								class="collapse-item" href="#">Promocion</a> <a
+								class="collapse-item" href="#">Itinerario</a> <a
+								class="collapse-item" href="#">Historial</a>
+						</div>
+					</div></li>
+				<!---Fin insertar Menu-->
 
-          
-         
-            </div>
+
+
+
+
+			</div>
+
+
 
 
 			<!-- Divider -->
@@ -270,9 +269,9 @@
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 small"><c:out
-										value="${usuario.nombre}"></c:out></span> <img
-								class="img-profile rounded-circle"
+								class="mr-2 d-none d-lg-inline text-gray-600 small"> <c:out
+										value="${usuario.nombre}"></c:out>
+							</span> <img class="img-profile rounded-circle"
 								src="assets/img/undraw_profile.svg">
 						</a>
 
@@ -315,13 +314,65 @@
 					</div>
 					<!-- HAEDER FIN  -->
 
-					<!-- ----------------------------------CRUD-------------------------------------------------- -->
-				
-					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
+
+					<!-- -USUARIOS ALTA -->
+					<div class="col-xl-5 col-lg-6 bg-dark ms-5 mb-3 rounded-2">
+						<h2 class="fw-bolder mt-3  text-white">Ingresar Una Nuevo
+							Usuario</h2>
+
+						<form id="form-contact"
+							class="row text-white g-3 needs-validation " novalidate>
+							<div class="col-md-4">
+								<label for="validationCustom01" class="form-label">Nombre</label>
+								<input type="text" class="form-control" id="validationCustom01"
+									required>
+								<div class="valid-feedback">¡Se ve bien!</div>
+							</div>
+							<div class="col-md-4">
+								<label for="validationCustom02" class="form-label">Presupuesto</label>
+								<input type="number" class="form-control"
+									id="validationCustom02" required>
+								<div class="valid-feedback">Por favor , Ingrese un costo
+									valido</div>
+							</div>
+							<div class="col-md-4">
+								<label for="validationCustom02" class="form-label">Tiempo
+									Disponible</label> <input type="number" class="form-control"
+									id="validationCustom02" required>
+								<div class="invalid-feedback">Por favor, Ingrese un tiempo
+									valido.</div>
+							</div>
 
 
 
-					
+							<div class="col-md-6">
+								<label for="validationCustom02" class="form-label">Tipo
+									de Atraccion Favorito</label> <input type="text" class="form-control"
+									id="validationCustom02" required>
+
+								<div class="invalid-feedback">por favor ingrese un Tipo de
+									Atraccion valido</div>
+							</div>
+
+							<div class="col-12">
+								<button class="btn btn-primary mb-3" type="submit">Ingresar
+									Usuario</button>
+							</div>
+						</form>
+
+					</div>
+
+					<!-- FIN USUARIO ALTA -->
+
+
+
+
+
+
+
+
+
+
 
 				</div>
 			</div>
