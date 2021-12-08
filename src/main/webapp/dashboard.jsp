@@ -164,7 +164,7 @@
 					aria-labelledby="headingTablas" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 
-						<a class="collapse-item" href="#" id="btn-atraccion"
+						<a class="collapse-item" href="/turismoHDR/dashboard.do" id="btn-atraccion"
 							onclick="ShowHideAtracciones()">Atracciones</a> <a
 							class="collapse-item" href="#" id="btn-promocion"
 							onclick="ShowHidePromociones()">Promociones </a> <a

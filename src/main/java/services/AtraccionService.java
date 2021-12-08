@@ -11,11 +11,16 @@ import persistence.impl.AtraccionDAOImpl;
 
 public class AtraccionService {
 
+	/*
+	 * Servicio usado por ListAttractionsServlet
+	 */
 	public List<Atraccion> list() throws Exception {
-		AtraccionDAOImpl a = new AtraccionDAOImpl();
-		return a.findAll();
+		return DAOFactory.getAtraccionDAO().findAll();
 	}
 
+	/*
+	 * Servicio usado por CreateAttractionServlet
+	 */
 	public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
 
 		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipo);
@@ -32,6 +37,9 @@ public class AtraccionService {
 		return atraccion;
 	}
 
+	/*
+	 * Servicio usado por EditAttractionServlet
+	 */
 	/*public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
 
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
@@ -50,6 +58,10 @@ public class AtraccionService {
 		return atraccion;
 	}
 
+/*
+ * Servicio usado por DeleteAttractionServlet
+ */
+	/*
 	public void delete(Integer id) {
 		Atraccion attraction = new Atraccion(id, null, null, null, null);
 

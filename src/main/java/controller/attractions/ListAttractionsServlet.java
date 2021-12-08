@@ -32,7 +32,6 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		try {
 			atraccion = atraccionService.list();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		req.setAttribute("atracciones", atraccion);
