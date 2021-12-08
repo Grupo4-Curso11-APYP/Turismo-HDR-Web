@@ -28,13 +28,13 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Atraccion> atraccion = null;
+		List<Atraccion> atracciones = null;
 		try {
-			atraccion = atraccionService.list();
+			atracciones = atraccionService.list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		req.setAttribute("atracciones", atraccion);
+		req.setAttribute("atracciones", atracciones);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/dashboard.jsp");
 		dispatcher.forward(req, resp);
