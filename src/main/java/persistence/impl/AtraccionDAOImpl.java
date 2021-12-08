@@ -1,5 +1,6 @@
 package persistence.impl;
 
+import java.awt.Cursor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -156,5 +157,18 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
+	}
+
+	@Override
+	public int find(String nombre) throws SQLException {
+
+		String sql = "SELECT ID_Atraccion, Nombre FROM Atraccion WHERE Nombre LIKE \"%" + nombre + "%\"";
+
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement statement = conn.prepareStatement(sql);
+		ResultSet resultados = statement.executeQuery();
+
+		return Integer.parseInt(resultados.getString(1));
+
 	}
 }

@@ -54,11 +54,17 @@ public class AtraccionService {
 
 		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
 		attractionDAO.delete(attraction);
-	}
-
-	public Atraccion find(Integer id) {
-		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
-		return attractionDAO.find(id);
 	}*/
+
+	public int find(String nombreAtrac) throws SQLException {
+		
+		
+		//AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
+		//return attractionDAO.buscarPorId(id_Atrac);
+		
+		AtraccionDAO atrac = new AtraccionDAOImpl();
+		return atrac.find(nombreAtrac);
+		//return (Atraccion) atrac;
+	}
 
 }
