@@ -31,6 +31,19 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 		return packAtracciones;
 	}
 
+	@Override
+	public String toString() {
+		return Arrays.toString(packAtracciones);
+	}
+	
+	public Atraccion getPackAtracciones1() {
+		return packAtracciones[0];
+	}
+	
+	public Atraccion getPackAtracciones2() {
+		return packAtracciones[1];
+	}
+
 	/*
 	 * se espera que devuelva el nombre
 	 */

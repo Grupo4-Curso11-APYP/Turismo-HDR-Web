@@ -331,8 +331,8 @@
                                 <c:forEach items="${promociones}" var="promocion">
                                     <tr>
                                         <td><c:out value="${promocion.nombre}"></c:out></td>
-                                        <td><c:out value="${promocion.nombre}"></c:out></td>
-                                        <td><c:out value="${promocion.nombre}"></c:out></td>
+                                        <td><c:out value="${promocion.packAtracciones[0]}"></c:out></td>
+                                        <td><c:out value="${promocion.packAtracciones[1]}"></c:out></td>
                                         <td><c:out value="${promocion.tipo}"></c:out></td>
                                         <td><c:out value="${promocion.nombre}"></c:out></td>
                                         <td><c:out value="${promocion.tiempo}"></c:out></td>
