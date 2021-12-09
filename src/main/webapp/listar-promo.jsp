@@ -318,6 +318,8 @@
                                 <thead>
                                     <tr class="table-dark">
                                         <th>Nombre</th>
+                                        <th>Atraccion 1</th>
+                                        <th>Atraccion 2</th>
                                         <th>Tipo</th>
                                         <th>Monto</th>
                                         <th>Tiempo</th>
@@ -326,35 +328,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach items="${promociones}" var="promocion">
                                     <tr>
-                                        <td>Pack Aventura</td>
-                                        <td>Aventura</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>null</td>
-                                        <td>20</td>
+                                        <td><c:out value="${promocion.nombre}"></c:out></td>
+                                        <td><c:out value="${promocion.nombre}"></c:out></td>
+                                        <td><c:out value="${promocion.nombre}"></c:out></td>
+                                        <td><c:out value="${promocion.tipo}"></c:out></td>
+                                        <td><c:out value="${promocion.nombre}"></c:out></td>
+                                        <td><c:out value="${promocion.tiempo}"></c:out></td>
+                                        <td><c:out value="${promocion.nombre}"></c:out></td>
+                                        <td><c:out value="${promocion.nombre}"></c:out></td>
                                     </tr>
-                                    <tr>
-                                        <td>Pack Paisaje</td>
-                                        <td>Paisaje</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>5</td>
-                                        <td>null</td>
-
-                                    </tr>
-
+								</c:forEach>
                                 </tbody>
-                                <tfoot>
-                                    <tr class="table-dark">
-                                        <th>Nombre</th>
-                                        <th>Tipo</th>
-                                        <th>Monto</th>
-                                        <th>Tiempo</th>
-                                        <th>Atraccion Gratis</th>
-                                        <th>Descuento</th>
-                                    </tr>
-                                </tfoot>
                             </table>
 
                         </div>
