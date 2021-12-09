@@ -13,10 +13,10 @@ public class PromocionPorcentual extends Promocion {
 
 	// realiza el descuento porcentual para un pack de atracciones
 	@Override
-	public Double getCosto() {
+	public Double getMonto() {
 		double precioFinal = 0;
 		for (Atraccion atraccion : this.packAtracciones) {
-			precioFinal += atraccion.getCosto();
+			precioFinal += atraccion.getMonto();
 		}
 
 		precioFinal -= precioFinal / 100 * this.getDescuento();
@@ -28,7 +28,7 @@ public class PromocionPorcentual extends Promocion {
 	@Override
 	public String toString() {
 		var aux = '\n'  + getNombre() + ": " + "descuento: " + descuento + ", precio: " 
-		+ getCosto() + ", duracion: " + getTiempo() + ", tipo: " + getTipo()
+		+ getMonto() + ", duracion: " + getTiempo() + ", tipo: " + getTipo()
 		+ ", atracciones incluidas: " + '\n';
 		
 		for (Atraccion atraccion : packAtracciones) {
@@ -40,6 +40,7 @@ public class PromocionPorcentual extends Promocion {
 	/*
 	 * se espera que devuelva el descuento
 	 */
+	@Override
 	public int getDescuento() {
 		return descuento;
 	}
@@ -66,7 +67,7 @@ public class PromocionPorcentual extends Promocion {
 
 	@Override
 	public int compareTo(Ofertable otro) {
-		return -this.getCosto().compareTo(otro.getCosto());
+		return -this.getMonto().compareTo(otro.getMonto());
 	}
 
 }

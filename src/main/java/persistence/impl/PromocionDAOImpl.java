@@ -56,7 +56,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 		}
 		
 		if (promocion.getClass().getSimpleName().equals(PromocionAbsoluta.class.getSimpleName())) {
-			statement.setDouble(5, ((PromocionAbsoluta)promocion).getCosto());
+			statement.setDouble(5, ((PromocionAbsoluta)promocion).getMonto());
 			statement.setString(9, "ABSOLUTA");
 		}
 

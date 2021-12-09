@@ -20,10 +20,10 @@ public class PromocionAxB extends Promocion {
 	 */
 
 	@Override
-	public Double getCosto() {
+	public Double getMonto() {
 		double precioFinal = 0;
 		for (Atraccion atraccion : this.packAtracciones) {
-			precioFinal += atraccion.getCosto();
+			precioFinal += atraccion.getMonto();
 		}
 		return precioFinal;
 	}
@@ -46,6 +46,7 @@ public class PromocionAxB extends Promocion {
 	 * se espera que devuelva una atraccion gratis
 	 */
 
+	@Override
 	public Atraccion getAtraccionGratis() {
 		return atraccionGratis;
 	}
@@ -95,7 +96,7 @@ public class PromocionAxB extends Promocion {
 
 	@Override
 	public String toString() {
-		var aux = '\n' + getNombre() + ": " + "precio: " + getCosto() + ", duracion: " + getTiempo() + ", tipo: "
+		var aux = '\n' + getNombre() + ": " + "precio: " + getMonto() + ", duracion: " + getTiempo() + ", tipo: "
 				+ getTipo() + ", atracciones incluidas: \n";
 		for (Atraccion atraccion : packAtracciones) {
 			aux += atraccion.toString();
@@ -106,7 +107,7 @@ public class PromocionAxB extends Promocion {
 
 	@Override
 	public int compareTo(Ofertable otro) {
-		return -this.getCosto().compareTo(otro.getCosto());
+		return -this.getMonto().compareTo(otro.getMonto());
 	}
 
 }

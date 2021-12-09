@@ -128,7 +128,7 @@ public class Usuario {
 		double costoFinal = 0;
 		for (Ofertable ofertable : ofertables) {
 			horas += ofertable.getTiempo();
-			costoFinal += ofertable.getCosto();
+			costoFinal += ofertable.getMonto();
 		}
 
 		String aux = '\n' + "Usuario: " + nombre + ", presupuesto: " + presupuesto + ", tiempo disponible: "
@@ -166,7 +166,7 @@ public class Usuario {
 	 */
 	public void comprarOfertable(Ofertable o) {
 		double tiempoO = o.getTiempo();
-		double presupuesto = o.getCosto();
+		double presupuesto = o.getMonto();
 
 		restarTiempo(tiempoO);
 		restarPresupuesto(presupuesto);
@@ -175,7 +175,7 @@ public class Usuario {
 	}
 
 	public boolean puedeComprar(Ofertable ofertable) {
-		return this.getPresupuesto() >= ofertable.getCosto() && this.getTiempoDisponible() >= ofertable.getTiempo();
+		return this.getPresupuesto() >= ofertable.getMonto() && this.getTiempoDisponible() >= ofertable.getTiempo();
 	}
 
 	public boolean checkPassword(String password) {

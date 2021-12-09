@@ -11,20 +11,17 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 
 	private String nombre;
 	protected Atraccion[] packAtracciones;
-
-	protected void setPackAtracciones(Atraccion[] packAtracciones) {
-		this.packAtracciones = packAtracciones;
-	}
-
 	private TipoAtraccion tipoDeAtraccion;
-	private double tiempo;
-
-	
+	private double tiempo;	
 	
 	public Promocion(String nombre, Atraccion[] atraccion, TipoAtraccion tipoDeAtraccion) {
 		this.packAtracciones = atraccion;
 		this.nombre = nombre;
 		this.tipoDeAtraccion = tipoDeAtraccion;
+	}
+	
+	protected void setPackAtracciones(Atraccion[] packAtracciones) {
+		this.packAtracciones = packAtracciones;
 	}
 	
 	public Atraccion[] getPackAtracciones() {
@@ -43,7 +40,14 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 	public Atraccion getPackAtracciones2() {
 		return packAtracciones[1];
 	}
+	
+	public Atraccion getAtraccionGratis() {
+		return null;
+	}
 
+	public int getDescuento() {
+		return 0;
+	}
 	/*
 	 * se espera que devuelva el nombre
 	 */
@@ -55,7 +59,7 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 	/*
 	 * get costo se encargara de calcular los descuentos en cada promocion
 	 */
-	public abstract Double getCosto();
+	public abstract Double getMonto();
 
 	/*
 	 * calcula el tiempo que necesita el usuario para adiquir una promocion

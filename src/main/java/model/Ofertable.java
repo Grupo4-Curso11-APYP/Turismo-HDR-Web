@@ -7,7 +7,7 @@ public interface Ofertable {
 	/*
 	 * devuelve el costo
 	 */
-	public Double getCosto();
+	public Double getMonto();
 
 	/*
 	 * devuelve el tiempo

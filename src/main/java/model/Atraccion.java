@@ -117,7 +117,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 * se espera que devuelva el costo
 	 */
 	@Override
-	public Double getCosto() {
+	public Double getMonto() {
 
 		return this.costo;
 	}
@@ -154,13 +154,13 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 */
 	@Override
 	public String toString() {
-		return getNombre() + ": " + "precio: " + getCosto() + ", duracion: " + getTiempo() + ", tipo: " + getTipo()
+		return getNombre() + ": " + "precio: " + getMonto() + ", duracion: " + getTiempo() + ", tipo: " + getTipo()
 				+ '\n';
 	}
 
 	@Override
 	public int compareTo(Ofertable otro) {
-		return -this.getCosto().compareTo(otro.getCosto());
+		return -this.getMonto().compareTo(otro.getMonto());
 	}
 
 }

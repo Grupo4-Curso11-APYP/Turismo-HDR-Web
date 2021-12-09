@@ -22,10 +22,10 @@ public class OfertaSegunPreferencia implements Comparator<Ofertable> {
 
 		if (o1.getTipo().compareTo(o2.getTipo()) == 0) {
 			if (o1.getClass().getSimpleName().compareTo(o2.getClass().getSimpleName()) == 0) {
-				if (o1.getCosto().compareTo(o2.getCosto()) == 0) {
+				if (o1.getMonto().compareTo(o2.getMonto()) == 0) {
 					return o2.getTiempo().compareTo(o1.getTiempo()); // prioriza mayor tiempo al estar o2 primero.
 				}
-				return o2.getCosto().compareTo(o1.getCosto()); // prioriza mayor costo al estar o2 primero.
+				return o2.getMonto().compareTo(o1.getMonto()); // prioriza mayor costo al estar o2 primero.
 			}
 			if (o1.getClass() != Atraccion.class)
 				return	-1;
@@ -50,10 +50,10 @@ public class OfertaSegunPreferencia implements Comparator<Ofertable> {
 				return 1;
 			}
 			if (o1.getClass() != Atraccion.class && o2.getClass() != Atraccion.class){
-				if (o1.getCosto().compareTo(o2.getCosto()) == 0) {
+				if (o1.getMonto().compareTo(o2.getMonto()) == 0) {
 					return o2.getTiempo().compareTo(o1.getTiempo());
 				}
-				return o2.getCosto().compareTo(o1.getCosto());
+				return o2.getMonto().compareTo(o1.getMonto());
 			}
 		}
 
@@ -62,10 +62,10 @@ public class OfertaSegunPreferencia implements Comparator<Ofertable> {
 		if (o2.getClass() != Atraccion.class)
 			return 1;
 
-		if (o1.getCosto().compareTo(o2.getCosto()) == 0)
+		if (o1.getMonto().compareTo(o2.getMonto()) == 0)
 			return o2.getTiempo().compareTo(o1.getTiempo());
 
-		return o2.getCosto().compareTo(o1.getCosto());
+		return o2.getMonto().compareTo(o1.getMonto());
 	}
 
 }

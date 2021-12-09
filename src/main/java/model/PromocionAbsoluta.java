@@ -12,16 +12,16 @@ public class PromocionAbsoluta extends Promocion {
 	}
 
 	/*
-	 * getCosto devuelve el monto final
+	 * getMonto devuelve el monto final
 	 */
-	@Override
-	public Double getCosto() {
+	
+	public Double getMonto() {
 		return monto;
 	}
 
 	@Override
 	public String toString() {
-		var aux = '\n' + getNombre() + ": " + "precio: " + getCosto() + ", duracion: " 
+		var aux = '\n' + getNombre() + ": " + "precio: " + getMonto() + ", duracion: " 
 				+ getTiempo() + ", tipo: " + getTipo()
 				+ ", atracciones incluidas: \n";
 		for (Atraccion atraccion : packAtracciones) {
@@ -52,7 +52,7 @@ public class PromocionAbsoluta extends Promocion {
 
 	@Override
 	public int compareTo(Ofertable otro) {
-		return -this.getCosto().compareTo(otro.getCosto());
+		return -this.getMonto().compareTo(otro.getMonto());
 	}
 
 }

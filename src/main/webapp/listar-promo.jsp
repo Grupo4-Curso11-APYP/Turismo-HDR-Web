@@ -320,11 +320,10 @@
                                         <th>Nombre</th>
                                         <th>Atraccion 1</th>
                                         <th>Atraccion 2</th>
-                                        <th>Tipo</th>
-                                        <th>Monto</th>
-                                        <th>Tiempo</th>
                                         <th>Atraccion Gratis</th>
                                         <th>Descuento</th>
+                                        <th>Monto</th>
+                                        <th>Tiempo</th>                                                                             
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -333,11 +332,10 @@
                                         <td><c:out value="${promocion.nombre}"></c:out></td>
                                         <td><c:out value="${promocion.packAtracciones[0]}"></c:out></td>
                                         <td><c:out value="${promocion.packAtracciones[1]}"></c:out></td>
-                                        <td><c:out value="${promocion.tipo}"></c:out></td>
-                                        <td><c:out value="${promocion.nombre}"></c:out></td>
-                                        <td><c:out value="${promocion.tiempo}"></c:out></td>
-                                        <td><c:out value="${promocion.nombre}"></c:out></td>
-                                        <td><c:out value="${promocion.nombre}"></c:out></td>
+                                        <td><c:out value="${promocion.atraccionGratis}"></c:out></td>
+                                        <td><c:out value="${promocion.descuento}"></c:out>%</td>
+                                        <td><c:out value="${promocion.monto}"></c:out></td>
+                                        <td><c:out value="${promocion.tiempo}"></c:out></td>                                       
                                     </tr>
 								</c:forEach>
                                 </tbody>
