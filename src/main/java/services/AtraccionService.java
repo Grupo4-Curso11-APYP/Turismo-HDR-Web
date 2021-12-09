@@ -57,6 +57,28 @@ public class AtraccionService {
 
 		return atraccion;
 	}
+	
+	/*
+	 * Servicio usado por EditAttractionServlet
+	 */
+	public Atraccion enumerar(Integer id, String name, Integer cost, Double duration, Integer capacity) {
+
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+		//Atraccion atraccion = atraccionDAO.find(id);
+		Atraccion atraccion = atraccionDAO.find(name);
+
+		//atraccion.setName(name);
+		//atraccion.setCost(cost);
+		//atraccion.setDuration(duration);
+		//atraccion.setCapacity(capacity);
+
+		/*if (atraccion.esValido()) {
+			atraccionDAO.update(atraccion);
+			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
+		}*/
+
+		return atraccion;
+	}
 
 /*
  * Servicio usado por DeleteAttractionServlet

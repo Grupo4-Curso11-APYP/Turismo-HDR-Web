@@ -6,13 +6,10 @@
 
 <head>
 <jsp:include page="partials/head.jsp"></jsp:include>
+<jsp:include page="partials/verificador-de-sesion-activa.jsp"></jsp:include>
 </head>
 
 <body>
-<!-- sin sesion no hay panel para el usuario kakersillo -->
-<% if (session.getAttribute("usuario") == null) { %>
-	<jsp:forward page="login.jsp" />
-<% } %>
 
 	<!---NAV BAR --->
 	<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
