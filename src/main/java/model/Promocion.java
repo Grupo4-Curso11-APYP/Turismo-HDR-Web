@@ -16,15 +16,15 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 		this.packAtracciones = packAtracciones;
 	}
 
-	private TipoAtraccion tipo;
+	private TipoAtraccion tipoDeAtraccion;
 	private double tiempo;
 
 	
 	
-	public Promocion(String nombre, Atraccion[] atraccion, TipoAtraccion tipo) {
+	public Promocion(String nombre, Atraccion[] atraccion, TipoAtraccion tipoDeAtraccion) {
 		this.packAtracciones = atraccion;
 		this.nombre = nombre;
-		this.tipo = tipo;
+		this.tipoDeAtraccion = tipoDeAtraccion;
 	}
 	
 	public Atraccion[] getPackAtracciones() {
@@ -57,7 +57,7 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 	}
 
 	public TipoAtraccion getTipo() {
-		return tipo;
+		return tipoDeAtraccion;
 	}
 	
 
@@ -85,7 +85,7 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Arrays.hashCode(packAtracciones);
-		result = prime * result + Objects.hash(nombre, tiempo, tipo);
+		result = prime * result + Objects.hash(nombre, tiempo, tipoDeAtraccion);
 		return result;
 	}
 
@@ -99,7 +99,7 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 			return false;
 		Promocion other = (Promocion) obj;
 		return Objects.equals(nombre, other.nombre) && Arrays.equals(packAtracciones, other.packAtracciones)
-				&& Double.doubleToLongBits(tiempo) == Double.doubleToLongBits(other.tiempo) && tipo == other.tipo;
+				&& Double.doubleToLongBits(tiempo) == Double.doubleToLongBits(other.tiempo) && tipoDeAtraccion == other.tipoDeAtraccion;
 	}
 	
 

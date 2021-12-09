@@ -22,7 +22,7 @@ public class EditAttractionServlet extends HttpServlet {
 		super.init();
 		this.attractionService = new AtraccionService();
 	}
-	/*
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
@@ -36,23 +36,23 @@ public class EditAttractionServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		String name = req.getParameter("name");
-		Integer cost = Integer.parseInt(req.getParameter("cost"));
+		//Integer id = Integer.parseInt(req.getParameter("id"));
+		String name = req.getParameter("nombre");
+		Integer cost = Integer.parseInt(req.getParameter("costo"));
 		// Integer cost = req.getParameter("cost").trim() == "" ? null : Integer.parseInt(req.getParameter("cost"));
-		Double duration = Double.parseDouble(req.getParameter("duration"));
-		Integer capacity = Integer.parseInt(req.getParameter("capacity"));
+		Double duration = Double.parseDouble(req.getParameter("duracion"));
+		Integer capacity = Integer.parseInt(req.getParameter("capacidad"));
 
-		Atraccion attraction = attractionService.update(id, name, cost, duration, capacity);
+		Atraccion atraccion = attractionService.update(id, name, cost, duration, capacity);
 
-		if (attraction.isValid()) {
-			resp.sendRedirect("/turismo/attractions/index.do");
+		if (atraccion.esValido(name, capacity, capacity, capacity, name)) {
+			resp.sendRedirect("/turismoHDR/listar-atraccion.jsp");
 		} else {
-			req.setAttribute("attraction", attraction);
+			req.setAttribute("attraccion", atraccion);
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/turismoHDR/actualizar-atraccion.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}
-	*/
+	
 }

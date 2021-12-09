@@ -1,6 +1,7 @@
 package controller.attractions;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,13 +32,20 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		List<Atraccion> atracciones = null;
 		try {
 			atracciones = atraccionService.list();
-		} catch (Exception e) {
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		/*
+		 * try { atracciones = atraccionService.list(); } catch (SQLException e1) {
+		 * e1.printStackTrace(); }
+		 */
+
 		req.setAttribute("atracciones", atracciones);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listar-atraccion.jsp");
 		dispatcher.forward(req, resp);
+		
 
 	}
 }

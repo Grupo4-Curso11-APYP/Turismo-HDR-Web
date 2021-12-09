@@ -16,13 +16,13 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 * @Param nombre , costo, tiempo , cupoDisponible y tipo se inicializan todos
 	 * los atributos de la atraccion
 	 */
-	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipo)
+	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
 			throws Exception {
 		this.nombre = nombre;
 		validandoCosto(costo);
 		validandoTiempo(tiempo);
 		validandoCupo(cupoDisponible);
-		this.tipoAtraccion = tipo;
+		this.tipoAtraccion = tipoDeAtraccion;
 	}
 
 	public boolean esValido(String nombre, double costo, double tiempo, int cupo, String tipo) {

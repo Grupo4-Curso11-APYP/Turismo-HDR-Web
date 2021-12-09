@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-
+<!--<jsp:include page="partials/verificador-de-sesion-activa.jsp"></jsp:include>-->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"

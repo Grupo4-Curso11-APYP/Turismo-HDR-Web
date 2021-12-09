@@ -14,7 +14,8 @@ public class AtraccionService {
 	/*
 	 * Servicio usado por ListAttractionsServlet
 	 */
-	public List<Atraccion> list() throws Exception {
+	public List<Atraccion> list() throws SQLException {
+		//System.out.println(DAOFactory.getAtraccionDAO().findAll());
 		return DAOFactory.getAtraccionDAO().findAll();
 	}
 
@@ -57,6 +58,35 @@ public class AtraccionService {
 
 		return atraccion;
 	}
+	
+	/*
+	/*
+	 * Servicio usado por EditAttractionServlet
+	 *//*
+	public Atraccion enumerar() throws SQLException {
+
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+		//Atraccion atraccion = atraccionDAO.find(id);
+		try {
+			List<Atraccion> atracDI = AtraccionDAOImpl.findAll();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//Atraccion atraccion = (Atraccion) AtraccionDAOImpl.findAll();
+
+		//atraccion.setName(name);
+		//atraccion.setCost(cost);
+		//atraccion.setDuration(duration);
+		//atraccion.setCapacity(capacity);
+
+		/*if (atraccion.esValido()) {
+			atraccionDAO.update(atraccion);
+			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
+		}*/
+
+		/*return atraccion;
+	}*/
 
 /*
  * Servicio usado por DeleteAttractionServlet
