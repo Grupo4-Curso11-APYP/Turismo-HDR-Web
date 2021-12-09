@@ -58,21 +58,21 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	@Override
 	public int insert(Usuario usuario) throws SQLException {
 		try {
-		String sql = "INSERT INTO USUARIO (NOMBRE, PRESUPUESTO,TIEMPODISPONIBLE,"
-				+ "TIPOFAVORITO, PASSWORD) VALUES (?, ?, ?, ?, ?)";
-		Connection conn = ConnectionProvider.getConnection();
+			String sql = "INSERT INTO USUARIO (NOMBRE, PRESUPUESTO,TIEMPODISPONIBLE,"
+					+ "TIPOFAVORITO, PASSWORD) VALUES (?, ?, ?, ?, ?)";
+			Connection conn = ConnectionProvider.getConnection();
 
-		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setString(1, usuario.getNombre());
-		statement.setDouble(2, usuario.getPresupuesto());
-		statement.setDouble(3, usuario.getTiempoDisponible());
-		statement.setObject(4, usuario.getTipoFavorito());
-		statement.setString(5, usuario.getPassword());
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, usuario.getNombre());
+			statement.setDouble(2, usuario.getPresupuesto());
+			statement.setDouble(3, usuario.getTiempoDisponible());
+			statement.setObject(4, usuario.getTipoFavorito());
+			statement.setString(5, usuario.getPassword());
 
-		int rows = statement.executeUpdate();
+			int rows = statement.executeUpdate();
 
-		return rows;
-		}catch (Exception e) {
+			return rows;
+		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
 	}
@@ -88,7 +88,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		PreparedStatement statement = conn.prepareStatement(sql);
 		statement.setDouble(1, usuario.getPresupuesto());
 		statement.setDouble(2, usuario.getTiempoDisponible());
-		statement.setString(3, usuario.getNombre()); 
+		statement.setString(3, usuario.getNombre());
 		int rows = statement.executeUpdate();
 
 		return rows;
@@ -115,7 +115,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	 * Busca por nombre a un usuario en la base de datos y lo devuelve
 	 */
 	@Override
-	public Usuario findByNombre(String nombre){
+	public Usuario findByNombre(String nombre) {
 		try {
 			String sql = "SELECT * FROM USUARIO WHERE NOMBRE = ?";
 			Connection conn = ConnectionProvider.getConnection();
@@ -144,8 +144,8 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(resultados.getString(5));
 		String password = resultados.getString(6);
 		Boolean admin = resultados.getBoolean(7);
-		return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, 
-				password, admin);
+		//return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
+		return new Usuario(0, nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 	}
 
 }

@@ -1,5 +1,6 @@
 package model;
 
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -13,10 +14,25 @@ public class Usuario {
 	private Set<Ofertable> ofertables; // Las sugerencias que va aceptando.
 	private String password;
 	private Boolean admin;
+	//datos necesarios para insertar usuarios en la bd
+	private Integer id;
 
-	public Usuario(String nombre, double presupuesto, double tiempoDisponible, 
-			TipoAtraccion tipoFavorito, String password, Boolean admin)
-			throws Exception {
+
+	/*public Usuario(String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,
+			String password, Boolean admin) throws Exception {
+		this.nombre = nombre;
+		validandoPresupuesto(presupuesto);
+		validandoTiempoDisponible(tiempoDisponible);
+		this.tipoFavorito = tipoFavorito;
+		this.ofertables = new LinkedHashSet<>();
+		this.password = password;
+		this.admin = admin;
+
+	}*/
+	
+	public Usuario(int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,
+			String password, Boolean admin) throws Exception {
+		this.id = id;
 		this.nombre = nombre;
 		validandoPresupuesto(presupuesto);
 		validandoTiempoDisponible(tiempoDisponible);
@@ -88,6 +104,10 @@ public class Usuario {
 		return this.ofertables;
 	}
 
+	public boolean esValido(String nombre, String password, double presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito) {
+		return ((nombre != null) && (password != null) && (presupuesto > 0) && (tiempoDisponible > 0)&&((tipoFavorito == tipoFavorito.AVENTURA)||(tipoFavorito == tipoFavorito.DEGUSTACION)||(tipoFavorito == tipoFavorito.PAISAJE)));
+	}
+
 	/*
 	 * Muestra todos los datos del usuario mas sus ofertables aceptados en formato
 	 * itinerario, calculando el tiempo y costo total para completar su agenda.
@@ -144,25 +164,24 @@ public class Usuario {
 		ofertables.add(o);
 
 	}
-	
+
 	public boolean puedeComprar(Ofertable ofertable) {
-		return this.getPresupuesto() >= ofertable.getCosto()
-				&& this.getTiempoDisponible() >= ofertable.getTiempo();
+		return this.getPresupuesto() >= ofertable.getCosto() && this.getTiempoDisponible() >= ofertable.getTiempo();
 	}
-	
+
 	public boolean checkPassword(String password) {
 		// this.password en realidad es el hash del password
 		return Crypt.match(password, this.password);
 	}
-	
+
 	public Boolean getAdmin() {
 		return admin;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public Boolean isAdmin() {
 		return admin;
 	}
@@ -174,7 +193,7 @@ public class Usuario {
 	public void setAdmin(Boolean admin) {
 		this.admin = admin;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = Crypt.hash(password);
 	}
