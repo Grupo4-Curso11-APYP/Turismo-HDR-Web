@@ -150,7 +150,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
                 <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="/turismoHDR/attractions/edit.do">Atraccion</a>
                         <a class="collapse-item" href="#">Promocion</a>
                         <a class="collapse-item" href="#">Usuario</a>
                          <a class="collapse-item" href="#">Tipo Atraccion</a>
