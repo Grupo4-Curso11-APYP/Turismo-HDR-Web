@@ -2,6 +2,8 @@ package controller.usuarios;
 
 import java.io.IOException;
 
+import com.oracle.wls.shaded.org.apache.xpath.operations.Bool;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -36,20 +38,28 @@ public class CrearUsuarioServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id = req.getParameter("id");
+		int id = Integer.parseInt(req.getParameter("id"));
 		String nombre = req.getParameter("nombre");
-		double presupuesto = req.getParameter("presupuesto");
 		String password = req.getParameter("password");
-		Integer coins = Integer.parseInt(req.getParameter("coins"));
-		Double time = Double.parseDouble(req.getParameter("time"));
+		double presupuesto = Double.parseDouble(req.getParameter("presupuesto"));
+		double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
+		String tipoFavorito = req.getParameter("tipoFavorito");//aca solo se me ocurre parsearlo como String, pero habria que reformatear el metodo de creacion
+		boolean admin = false;//req.getParameter("bool"));
 
 		//int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
-		Usuario tmp_user = usuarioService.crear(id,nombre, presupuesto, tiempoDisponible,tipoFavorito, password, admin);
-		
-		if (tmp_user.esValido(password, password, time, time, null)) {
+		//User tmp_user = userService.create(username, password, coins, time);
+		Usuario usuario_2 = null;
+		try {
+			usuario_2 = usuarioService.crear(id,nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//String nombre, String password, double presupuesto, Double tiempoDisponible,String tipoFavorito
+		if (usuario_2.esValido(nombre, password, presupuesto, tiempoDisponible, tipoFavorito)) {
 			resp.sendRedirect("/turismo/users/index.do");
 		} else {
-			req.setAttribute("tmp_user", tmp_user);
+			req.setAttribute("tmp_user", usuario_2);
 
 			RequestDispatcher dispatcher = getServletContext()
 					.getRequestDispatcher("/views/users/create.jsp");
