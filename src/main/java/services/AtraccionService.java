@@ -14,7 +14,8 @@ public class AtraccionService {
 	/*
 	 * Servicio usado por ListAttractionsServlet
 	 */
-	public List<Atraccion> list() throws Exception {
+	public List<Atraccion> list() throws SQLException {
+		//System.out.println(DAOFactory.getAtraccionDAO().findAll());
 		return DAOFactory.getAtraccionDAO().findAll();
 	}
 

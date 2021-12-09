@@ -166,6 +166,8 @@
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="#">Usuarios</a>
+                        <a class="collapse-item" href="/turismoHDR/listar-atraccion.do">Atracciones</a>
+                        <a class="collapse-item" href="#">Usuarios</a>
                     </div>
                 </div>
             </li>

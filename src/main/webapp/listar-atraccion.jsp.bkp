@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-<!--<jsp:include page="partials/verificador-de-sesion-activa.jsp"></jsp:include>-->
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -62,7 +62,7 @@
 <script defer src="scripts/dashboard-2-min.js"></script>
 
 
-<script ></script>
+<script src="scripts/ocultar.js" defer></script>
 <script src="scripts/jQuery3.6.0.js" defer></script>
 <!----FIN DASHBOARD ESTILOS Y SCRIPTS-->
 
@@ -122,97 +122,97 @@
 			<hr class="sidebar-divider">
 
 			<!-- SIDEBAR HEADING MENU ADMIN  -->
-			<div class="sidebar-heading">
-				<a href="#" style="text-decoration: none;">Crud</a>
+			<div class="sidebar-heading"> 
+			  <a href="#" style="text-decoration: none;">Crud</a> 
+           
 
+            <!-- ITEMS DEL MENU COLAPSE-->
+           
+                          <!---Insertar Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInsertar"
+                    aria-expanded="true" aria-controls="collapseTwo">Insertar</a>
+                <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
+                    </div>
+                </div>
+            </li>
+            <!---Fin insertar Menu-->
 
-				<!-- ITEMS DEL MENU COLAPSE-->
+            <!---Actualizar Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseActualizar"
+                    aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
+                <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                         <a class="collapse-item" href="#">Tipo Atraccion</a>
+                    </div>
+                </div>
+            </li>
+            <!---Fin Actualizar Menu-->
 
-				<!---Insertar Menu -->
-				<li class="nav-item"><a class="nav-link collapsed" href="#"
-					data-toggle="collapse" data-target="#collapseInsertar"
-					aria-expanded="true" aria-controls="collapseTwo">Insertar</a>
-					<div id="collapseInsertar" class="collapse"
-						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-							<a class="collapse-item" href="#">Atraccion</a> <a
-								class="collapse-item" href="#">Promocion</a> <a
-								class="collapse-item" href="#">Usuario</a> <a
-								class="collapse-item" href="#">Tipo Atraccion</a>
-						</div>
-					</div></li>
-				<!---Fin insertar Menu-->
+            <!---Listar  Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseListar"
+                    aria-expanded="true" aria-controls="collapseTwo">Listar</a>
+                <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Usuarios</a>
+                    </div>
+                </div>
+            </li>
+            <!---Fin Listar Menu-->
 
-				<!---Actualizar Menu -->
-				<li class="nav-item"><a class="nav-link collapsed" href="#"
-					data-toggle="collapse" data-target="#collapseActualizar"
-					aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
-					<div id="collapseActualizar" class="collapse"
-						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" href="#">Atraccion</a> <a
-								class="collapse-item" href="#">Promocion</a> <a
-								class="collapse-item" href="#">Usuario</a> <a
-								class="collapse-item" href="#">Tipo Atraccion</a>
-						</div>
-					</div></li>
-				<!---Fin Actualizar Menu-->
-
-				<!---Listar  Menu -->
-				<li class="nav-item"><a class="nav-link collapsed" href="#"
-					data-toggle="collapse" data-target="#collapseListar"
-					aria-expanded="true" aria-controls="collapseTwo">Listar</a>
-					<div id="collapseListar" class="collapse"
-						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item active" href="#">Usuario</a>
-						</div>
-					</div></li>
-				<!---Fin Listar Menu-->
-
-				<!-- -BORRAR MENU -->
-				<li class="nav-item"><a class="nav-link collapsed" href="#"
-					data-toggle="collapse" data-target="#collapseBorrar"
-					aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
-					<div id="collapseBorrar" class="collapse"
-						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" href="#">Atraccion</a> <a
-								class="collapse-item" href="#">Promocion</a> <a
-								class="collapse-item" href="#">Usuario</a> <a
-								class="collapse-item" href="#">Tipo Atraccion</a>
-						</div>
-					</div></li>
-				<!-- BORRAR MENU -->
-				<!-- BORRAR MENU -->
-
-			</div>
+             <!-- -BORRAR MENU -->
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBorrar"
+                    aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
+                <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Atraccion</a>
+                        <a class="collapse-item" href="#">Promocion</a>
+                        <a class="collapse-item" href="#">Usuario</a>
+                        <a class="collapse-item" href="#">Tipo Atraccion</a>
+                    </div>
+                </div>
+            </li>
+            <!-- BORRAR MENU -->
+            <!-- BORRAR MENU -->
+			
+</div>
 			<!-- ITEM  Collapse Menu PERFILES -->
 
-			<div class="sidebar-heading">
+		  <div class="sidebar-heading">
+             
+<!-- --OTRAS OPCIONES -->
 
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOpciones"
+                    aria-expanded="true" aria-controls="collapseTwo">Gestión del usuario</a>
+                <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item active" href="#">Ver atracciones</a>
+                        <a class="collapse-item" href="#">Ver promociones</a>
+                        <a class="collapse-item" href="#">Tu itinerario</a>
+                        <a class="collapse-item" href="#">Tu historial</a>
+                    </div>
+                </div>
+            </li>
+            <!---Fin insertar Menu-->
 
+         
 
-				<li class="nav-item"><a class="nav-link collapsed" href="#"
-					data-toggle="collapse" data-target="#collapseOpciones"
-					aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
-					<div id="collapseOpciones" class="collapse"
-						aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" href="#">Atraccion</a> <a
-								class="collapse-item" href="#">Promocion</a> <a
-								class="collapse-item" href="#">Itinerario</a> 
-							
-						</div>
-					</div></li>
-				<!---Fin insertar Menu-->
-
-
-
-
-
-			</div>
+          
+         
+            </div>
 
 
 			<!-- Divider -->
@@ -309,57 +309,65 @@
 					<!-- HAEDER FIN  -->
 
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
-					<div id="" class="row row-cols-12 row-cols-xl-12">
+				  <!-----SECCION TABLA ATRACCIONES-->
+                    <div id="" class="row row-cols-12 row-cols-xl-12">
 
-						<div class="col-lg-12">
-							<table id="example"
-								class="table  table-bordered table-white  table-hover"
-								style="width: 100%">
-								<thead>
-									<tr class="table-dark">
-										<th>Nombre</th>
-										<th>Presupuesto</th>
-										<th>Tiempo Disponible</th>
-										<th>Tipo Favorito</th>
+                        <h2 class="fw-bolder display-4 mb-3 ">Atracciones</h2>
+                        <div class="col-lg-12">
 
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Gandalf</td>
-										<td>100</td>
-										<td>5</td>
-										<td>Paisaje</td>
+                            <c:if test="${flash != null}">
+                                <div class="alert alert-danger">
+                                    <p>
+                                        <c:out value="${flash}" />
 
-									</tr>
-									<tr>
-										<td>Sam</td>
-										<td>36</td>
-										<td>8</td>
-										<td>Degustacion</td>
+                                    </p>
+                                </div>
+                            </c:if>
+                            <table class="table table-stripped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th><a> Nombre</a></th>
+                                        <th>Costo</th>
+                                        <th>Tiempo</th>
+                                        <th>Cupo</th>
+                                        <th>Tipo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${atracciones}" var="atraccion">
+                                        <tr>
+                                            <td><strong>
+                                                    <c:out value="${atraccion.nombre}"></c:out>
+                                                </strong>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.costo}"></c:out>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.tiempo}"></c:out>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.cupoDisponible}"></c:out>
+                                            </td>
+                                            <td>
+                                                <c:out value="${atraccion.tipo}"></c:out>
+                                            </td>
 
-									</tr>
 
-								</tbody>
-								<tfoot>
-									<tr>
-										<th>Nombre</th>
-										<th>Presupuesto</th>
-										<th>Tiempo Disponible</th>
-										<th>Tipo Favorito</th>
-									</tr>
-								</tfoot>
-							</table>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
 
-						</div>
 
-					</div>
-					<!-- FIN SECCION BUSCAR LISTAR -->
+                        </div>
+                    </div>
+				
 					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
 
 
 
-
+					
 
 				</div>
 			</div>
