@@ -113,7 +113,7 @@
 
 			<!-- SIDEBAR HEADING MENU ADMIN  -->
 			<div class="sidebar-heading"> 
-			  <a href="#" style="text-decoration: none;">Crud</a> 
+			  <a href="#" style="text-decoration: none;">Gestión del admin</a> 
            
 
             <!-- ITEMS DEL MENU COLAPSE-->
@@ -155,7 +155,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Listar</a>
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-usuario.jsp">Usuario</a>
+                        <a class="collapse-item" href="listar-usuario.jsp">Usuarios</a>
                     </div>
                 </div>
             </li>
@@ -176,7 +176,6 @@
             </li>
             <!-- BORRAR MENU -->
             <!-- BORRAR MENU -->
-			
 </div>
 			<!-- ITEM  Collapse Menu PERFILES -->
 
@@ -186,12 +185,12 @@
 
               <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOpciones"
-                    aria-expanded="true" aria-controls="collapseTwo">Otras Opciones</a>
+                    aria-expanded="true" aria-controls="collapseTwo">Gestión del usuario</a>
                 <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.do">Atraccion</a>
-                        <a class="collapse-item" href="listar-promo.do">Promocion</a>
-                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
+                        <a class="collapse-item" href="listar-atraccion.do">Ver atracciones</a>
+                        <a class="collapse-item" href="listar-promo.do">Ver promociones</a>
+                        <a class="collapse-item" href="listar-itinerario.do">Ver itinerario</a>
                         
                     </div>
                 </div>

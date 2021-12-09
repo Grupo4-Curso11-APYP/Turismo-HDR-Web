@@ -50,7 +50,7 @@
                                                 </strong>
                                             </td>
                                             <td>
-                                                <c:out value="${atraccion.costo}"></c:out>
+                                                <c:out value="${atraccion.monto}"></c:out>
                                             </td>
                                             <td>
                                                 <c:out value="${atraccion.tiempo}"></c:out>
