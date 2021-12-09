@@ -68,7 +68,7 @@ public class Usuario {
 			throw new SinTiempoDisponible();
 		this.tiempoDisponible = tiempo;
 	}
-
+	
 	/*
 	 * se espera que devuelva el tiempo disponible
 	 */

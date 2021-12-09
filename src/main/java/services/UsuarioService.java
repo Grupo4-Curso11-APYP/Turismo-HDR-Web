@@ -18,6 +18,7 @@ public class UsuarioService {
 
 	public Usuario crear(int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin) throws Exception {
 		//int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
+		//User user = new User(-1, username, password, coins, time, false);
 		Usuario usuario = new Usuario(-1, nombre, presupuesto, tiempoDisponible, tipoFavorito,password, false);
 		usuario.setPassword(password);
 		//String nombre, String password, int presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito
@@ -28,4 +29,6 @@ public class UsuarioService {
 
 		return usuario;
 	}
+
+	
 }

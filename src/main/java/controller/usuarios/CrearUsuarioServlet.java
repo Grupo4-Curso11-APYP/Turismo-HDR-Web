@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.TipoAtraccion;
 import model.Usuario;
 import services.UsuarioService;
 
@@ -35,12 +36,15 @@ public class CrearUsuarioServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String username = req.getParameter("username");
+		int id = req.getParameter("id");
+		String nombre = req.getParameter("nombre");
+		double presupuesto = req.getParameter("presupuesto");
 		String password = req.getParameter("password");
 		Integer coins = Integer.parseInt(req.getParameter("coins"));
 		Double time = Double.parseDouble(req.getParameter("time"));
 
-		Usuario tmp_user = usuarioService.crear(username, password, coins, time);
+		//int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
+		Usuario tmp_user = usuarioService.crear(id,nombre, presupuesto, tiempoDisponible,tipoFavorito, password, admin);
 		
 		if (tmp_user.esValido(password, password, time, time, null)) {
 			resp.sendRedirect("/turismo/users/index.do");
