@@ -141,7 +141,8 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		String nombre = resultados.getString(2);
 		Double presupuesto = resultados.getDouble(3);
 		Double tiempoDisponible = resultados.getDouble(4);
-		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(resultados.getString(5));
+		String tipoFavorito = resultados.getString(5);
+		//TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(resultados.getString(5));<<====================== esto lo cambio para que no rompa al hacer el insert
 		String password = resultados.getString(6);
 		Boolean admin = resultados.getBoolean(7);
 		//return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);

@@ -92,6 +92,10 @@ public class Usuario {
 	/*public TipoAtraccion getTipoFavorito() { <<=============================================== esto lo comente porque dado que lo pase a string no tiene uso, y rompe todo si se lo dejo
 		return this.tipoFavorito;
 	}*/
+	
+	public String getTipoFavorito() {//<<=============================================== esto lo agregue porque dado que lo pase a string no tiene uso, y rompe todo si se lo saco
+		return this.tipoFavorito;
+	}
 
 	/*
 	 * se espera que devuelva el nombre
