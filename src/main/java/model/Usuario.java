@@ -16,7 +16,7 @@ public class Usuario {
 	private String password;
 	private Boolean admin;
 	//datos necesarios para insertar usuarios en la bd
-	private Integer id;
+	protected Integer id;
 
 
 	/*public Usuario(String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,

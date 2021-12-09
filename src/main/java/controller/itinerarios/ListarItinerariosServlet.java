@@ -7,6 +7,7 @@ import java.util.Set;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ import model.Ofertable;
 import model.Promocion;
 import services.ItinerarioServicio;
 import services.PromocionServicio;
-
+@WebServlet("/listar-itinerario.do")
 public class ListarItinerariosServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 3289163451632910661L;
 	private ItinerarioServicio itinerarioServicio;

@@ -47,7 +47,7 @@ public class Sistema {
 	public void sugerir() throws IOException, SQLException {
 
 		for (Usuario usuario : usuarios) {
-			this.ofertables = ordenarOfertasSegunPreferencia(usuario.getTipoFavorito());
+		this.ofertables = ordenarOfertasSegunPreferencia(usuario.getTipoFavorito());
 			usuario.getOfertables().addAll(iDAO.findByNombre(usuario.getNombre())); // carga de bd el itinerario del
 																					// usuario en su lista de ofertable
 																					// por si no es la primera vez que entro.																																			

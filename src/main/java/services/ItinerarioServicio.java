@@ -12,7 +12,6 @@ public class ItinerarioServicio {
 	 * Servicio usado por ListarPromocionServlet
 	 */
 	public Set<Ofertable> listar(String nombre) throws Exception {
-		//return DAOFactory.getItinerarioDAO().findByNombre(nombre);
-		return null;
+		return ((ItinerarioDAOImpl) DAOFactory.getItinerarioDAO()).findByNombre(nombre);
 	}
 }

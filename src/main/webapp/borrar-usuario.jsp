@@ -4,8 +4,81 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<jsp:include page="partials/headNavSidebarDeLosDash.jsp"></jsp:include>
+ <!-- ENVOLTURA -->
+   <div id="wrapper">
 
+
+
+	<!-- --SIDEBAR -->
+	<jsp:include page="partials/headNavSidebarDeLosDash.jsp"></jsp:include>
+	<!-- FIN SIDEBAR -->
+
+
+	<!-- CONTENIDO ENVUELTO-->
+	<div id="content-wrapper" class="d-flex flex-column">
+
+		<!-- CONTENIDO DEL MENU-->
+		<div id="content">
+
+			<!-- BARRA DE ARRIBA  -->
+			<nav
+				class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+				<button id="sidebarToggleTop"
+					class="btn btn-link d-md-none rounded-circle mr-3">
+					<i class="fa fa-bars"></i>
+				</button>
+
+
+				<div
+					class="d-none d-sm-inline-block form-inline text-black-50      ">
+					<div>
+						<h2 class="me-2">Turismo en Tierra Media</h2>
+					</div>
+				</div>
+
+
+				<!-- Topbar Navbar -->
+				<ul class="navbar-nav ml-auto">
+					<div class="topbar-divider d-none d-sm-block"></div>
+					<li class="nav-item dropdown no-arrow"><a
+						class="nav-link dropdown-toggle" href="#" id="userDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> <span
+							class="mr-2 d-none d-lg-inline text-gray-600 small"><c:out
+									value="${usuario.nombre}"></c:out></span> <img
+							class="img-profile rounded-circle"
+							src="assets/img/undraw_profile.svg">
+					</a>
+
+						<div
+							class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+							aria-labelledby="userDropdown">
+							<a class="dropdown-item disabled" style="color: black;"><i
+								title="monedas" style="color: gold;" class="me-2 fas fa-coins"></i>Presupuesto:
+								<c:out value="${usuario.presupuesto}"></c:out> </a> <a
+								class="dropdown-item disabled" style="color: black;"> <i
+								title="tiempo" style="color: blue;"
+								class="me-2 fas fa-stopwatch"></i>Tiempo: <c:out
+									value="${usuario.tiempoDisponible}h"></c:out>
+							</a> <a class="dropdown-item disabled" style="color: black;"> <i
+								title="preferencia" style="color: red;"
+								class="me-2 fab fa-gratipay"></i>Preferencia: <c:out
+									value="${usuario.tipoFavorito}"></c:out>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="/turismoHDR/logout"
+								data-toggle="modal" data-target="#logoutModal"> <i
+								class="fas fa-sign-out-alt fa-sm fa-fw mr-2 "
+								style="color: black;"></i> Salir
+							</a>
+						</div></li>
+
+				</ul>
+
+			</nav>
+			<!-- FIN BARRA DE ARRIBA -->
 				<!-- INICIO DEL CONTENIDO ,LA COMIDA VA AQUI-->
 				<div class="container-fluid">
 
@@ -19,7 +92,7 @@
 
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
 				   <!-- BORRAR USUARIO -->
-                    <div id="borrar-oculto" class="row row-cols-12 row-cols-xl-12">
+                    <div id="" class="row row-cols-12 row-cols-xl-12">
                         <!--BORRAR USUARIO-->
                         <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
                             <h2 class="fw-bolder mt-3  text-white">
@@ -48,12 +121,13 @@
 				</div>
 			</div>
 
-		</div>
+		
 		<!-- FIN CONTEINER -->
 
 	</div>
 	<!-- FIN MENU CONTENIDO -->
-
+</div>
+</div>
 	<!-- FOOTER -->
 	<footer class="sticky-footer bg-white ">
 		<div class="container mb-4">
