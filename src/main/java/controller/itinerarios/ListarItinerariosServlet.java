@@ -27,9 +27,10 @@ public class ListarItinerariosServlet extends HttpServlet implements Servlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String nombre = req.getParameter("nombre");
 		Set<Ofertable> itinerarios = null;
 		try {
-			itinerarios = itinerarioServicio.listar();
+			itinerarios = itinerarioServicio.listar(nombre);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
