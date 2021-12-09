@@ -20,6 +20,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	/*
 	 * Busca un itinerario por nombre de usuario
 	 */
+	@Override
 	public Set<Ofertable> findByNombre(String nombre) {
 		try {
 			String sql = "SELECT Itinerario.ID_Promocion, Itinerario.ID_Atraccion\r\n" + "FROM Itinerario\r\n"
@@ -59,6 +60,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	/*
 	 * inserta un itinerario en la base de datos.
 	 */
+	@Override
 	public int insertar(String nombreUsuario, String nombreOfertable) {
 		try {
 			String sql = "INSERT INTO Itinerario (ID_Atraccion, ID_Usuario, ID_Promocion) VALUES ((SELECT ID_Atraccion FROM Atraccion WHERE Nombre = ?)\r\n"
