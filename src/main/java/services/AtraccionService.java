@@ -110,6 +110,10 @@ public class AtraccionService {
 		Atraccion atraccion = DAOFactory.getAtraccionDAO().buscarPorId(id);
 		DAOFactory.getAtraccionDAO().delete(atraccion);
 	}
+	
+	public Atraccion buscar(Long id) throws SQLException {
+		return DAOFactory.getAtraccionDAO().buscarPorId(id);
+	}
 
 	/*public int find(int nombreAtrac) throws SQLException {
 		//public int find(String nombreAtrac) throws SQLException {<====== asi estaba antes de esta modificacion
