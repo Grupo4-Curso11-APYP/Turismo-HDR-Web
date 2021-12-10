@@ -97,42 +97,21 @@
                             <table id="itinerario" class="table  table-bordered table-white  table-hover"
                                 style="width: 100%">
                                 <thead>
-                                    <tr class="table-dark">
-                                        <th>Id-itinerario</th>
+                                    <tr class="table-dark">                                       
                                         <th>Id-Atraccion</th>
                                         <th>Id-Promocion</th>
-                                        <th>Id-Usuario</th>
 
 
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>4</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>6</td>
-                                        <td>7</td>
-                                        <td>8</td>
-
+                                        <td><c:out value="${itinerario.atraccion}"></c:out></td>
+                                        <td><c:out value="${itinerario.promocion}"></c:out></td>
 
                                     </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr class="table-dark">
-                                        <th>Id-itinerario</th>
-                                        <th>Id-Atraccion</th>
-                                        <th>Id-Promocion</th>
-                                        <th>Id-Usuario</th>
-
-                                    </tr>
-                                </tfoot>
                             </table>
 
                         </div>
