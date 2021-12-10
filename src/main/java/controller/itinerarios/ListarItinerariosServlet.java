@@ -1,7 +1,6 @@
 package controller.itinerarios;
 
 import java.io.IOException;
-
 import java.util.Set;
 
 import jakarta.servlet.RequestDispatcher;
@@ -28,17 +27,19 @@ public class ListarItinerariosServlet extends HttpServlet implements Servlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String nombre = req.getParameter("nombre");
+		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
 		Set<Ofertable> itinerarios = null;
 		try {
-			itinerarios = itinerarioServicio.listar(nombre);
+			itinerarios = itinerarioServicio.listar(usuario.getNombre());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		req.setAttribute("itinerarios", itinerarios);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listar-itinerario.jsp");
 		dispatcher.forward(req, resp);
+		
 
 	}
 }

@@ -98,16 +98,14 @@
                                 style="width: 100%">
                                 <thead>
                                     <tr class="table-dark">                                       
-                                        <th>Id-Atraccion</th>
-                                        <th>Id-Promocion</th>
+                                        <th>Ofertables adquiridos</th>
 
 
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><c:out value="${itinerario.atraccion}"></c:out></td>
-                                        <td><c:out value="${itinerario.promocion}"></c:out></td>
+                                        <td><c:out value="${usuario.ofertables}"></c:out></td>
 
                                     </tr>
 

@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
 import services.AtraccionService;
 
-@WebServlet("/attractions/edit.do")
+@WebServlet("/actualizar-atraccion.do")
 public class EditAttractionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 7598291131560345626L;

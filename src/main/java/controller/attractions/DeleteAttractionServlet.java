@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
 import services.AtraccionService;
 
-@WebServlet("/attractions/delete.do")
+@WebServlet("/borrar-atraccion.do")
 public class DeleteAttractionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1537949074766873118L;
