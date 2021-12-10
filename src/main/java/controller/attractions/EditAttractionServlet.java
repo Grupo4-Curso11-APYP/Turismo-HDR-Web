@@ -15,20 +15,21 @@ import services.AtraccionService;
 public class EditAttractionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 7598291131560345626L;
-	private AtraccionService attractionService;
+	private AtraccionService atraccionService;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		this.attractionService = new AtraccionService();
+		this.atraccionService = new AtraccionService();
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
+		//String id = req.getParameter("id");//Long.parseLong(req.getParameter("id"));
 
-		Atraccion attraction = attractionService.find(id);
-		req.setAttribute("attraction", attraction);
+		Atraccion atraccion = atraccionService.find(id);
+		req.setAttribute("attraction", atraccion);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
 		dispatcher.forward(req, resp);
@@ -37,13 +38,14 @@ public class EditAttractionServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//Integer id = Integer.parseInt(req.getParameter("id"));
+		Integer id = Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("nombre");
 		Integer cost = Integer.parseInt(req.getParameter("costo"));
 		// Integer cost = req.getParameter("cost").trim() == "" ? null : Integer.parseInt(req.getParameter("cost"));
 		Double duration = Double.parseDouble(req.getParameter("duracion"));
 		Integer capacity = Integer.parseInt(req.getParameter("capacidad"));
 
-		Atraccion atraccion = attractionService.update(id, name, cost, duration, capacity);
+		Atraccion atraccion = atraccionService.update(id, name, cost, duration, capacity);
 
 		if (atraccion.esValido(name, capacity, capacity, capacity, name)) {
 			resp.sendRedirect("/turismoHDR/listar-atraccion.jsp");

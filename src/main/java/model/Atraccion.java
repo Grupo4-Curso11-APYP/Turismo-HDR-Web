@@ -162,5 +162,33 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	public int compareTo(Ofertable otro) {
 		return -this.getMonto().compareTo(otro.getMonto());
 	}
+	
+	public double getCosto() {
+		return costo;
+	}
+
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}
+
+	public TipoAtraccion getTipoAtraccion() {
+		return tipoAtraccion;
+	}
+
+	public void setTipoAtraccion(TipoAtraccion tipoAtraccion) {
+		this.tipoAtraccion = tipoAtraccion;
+	}
+
+	public void setTiempo(double tiempo) {
+		this.tiempo = tiempo;
+	}
+
+	public void setCupoDisponible(int cupoDisponible) {
+		this.cupoDisponible = cupoDisponible;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
 }

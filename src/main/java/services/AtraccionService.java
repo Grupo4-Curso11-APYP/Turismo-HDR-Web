@@ -41,17 +41,18 @@ public class AtraccionService {
 	/*
 	 * Servicio usado por EditAttractionServlet
 	 */
-	/*public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
+	public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
+		
 
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		Atraccion atraccion = atraccionDAO.find(id);
 
-		atraccion.setName(name);
-		atraccion.setCost(cost);
-		atraccion.setDuration(duration);
-		atraccion.setCapacity(capacity);
+		atraccion.setNombre(name);
+		atraccion.setCosto(cost);
+		atraccion.setTiempo(duration);
+		atraccion.setCupoDisponible(capacity);
 
-		if (atraccion.isValid()) {
+		if (atraccion.esValido(name, capacity, capacity, capacity, name)) {
 			atraccionDAO.update(atraccion);
 			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
 		}
@@ -99,15 +100,22 @@ public class AtraccionService {
 		attractionDAO.delete(attraction);
 	}
 */
-	public int find(String nombreAtrac) throws SQLException {
+	/*public int find(int nombreAtrac) throws SQLException {
+		//public int find(String nombreAtrac) throws SQLException {<====== asi estaba antes de esta modificacion
+	//public String find(String nombreAtrac) throws SQLException {
 		
 		
-		//AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
-		//return attractionDAO.buscarPorId(id_Atrac);
+		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
+		return attractionDAO.buscarPorId(id_Atrac);
 		
-		AtraccionDAO atrac = new AtraccionDAOImpl();
-		return atrac.find(nombreAtrac);
+		//AtraccionDAO atrac = new AtraccionDAOImpl();<====== asi estaba antes de esta modificacion
+		//return atrac.find(nombreAtrac);<====== asi estaba antes de esta modificacion
+		
 		//return (Atraccion) atrac;
+	}*/
+	
+	public Atraccion find(Integer id) {
+		return DAOFactory.getAtraccionDAO().find(id);
 	}
 
 }

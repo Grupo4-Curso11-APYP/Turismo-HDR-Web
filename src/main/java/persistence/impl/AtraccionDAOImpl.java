@@ -161,6 +161,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 
 	@Override
 	public int find(String nombre) throws SQLException {
+		
 
 		String sql = "SELECT ID_Atraccion, Nombre FROM Atraccion WHERE Nombre LIKE \"%" + nombre + "%\"";
 
@@ -168,7 +169,20 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		PreparedStatement statement = conn.prepareStatement(sql);
 		ResultSet resultados = statement.executeQuery();
 
+		
 		return Integer.parseInt(resultados.getString(1));
 
+	}
+
+	@Override
+	public Atraccion find(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int insert(Atraccion t) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
