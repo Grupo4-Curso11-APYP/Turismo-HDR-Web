@@ -22,16 +22,17 @@ public class AtraccionService {
 	/*
 	 * Servicio usado por CreateAttractionServlet
 	 */
-	public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
+	public Atraccion crear(String name, Double cost, Double duration, Integer capacity, String tipo) throws Exception {
+		//public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
 
 		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipo);
 
-		if (atraccion.esValido(name, cost, duration, capacity,tipo.name())) {
+		if (atraccion.esValido(name, cost, duration, capacity,tipo)) {
 			//AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 			AtraccionDAOImpl atracDI = new AtraccionDAOImpl();
-			String tipo_s = tipo.name();
+			//String tipo_s = tipo.name();
 			//public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
-			atracDI.insertarAtrac(name, cost, duration, capacity, tipo_s);
+			atracDI.insertarAtrac(name, cost, duration, capacity, tipo);
 			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
 		}
 

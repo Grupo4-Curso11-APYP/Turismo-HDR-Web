@@ -17,7 +17,8 @@ public interface Ofertable {
 	/*
 	 * devuelve el tipo
 	 */
-	public TipoAtraccion getTipo();
+	public String getTipo();
+	//public TipoAtraccion getTipo();
 
 	/*
 	 * pregunta si hay cupo disponible

@@ -53,7 +53,8 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		double costo = resultados.getDouble(3);
 		double tiempo = resultados.getInt(4);
 		int cupoDisponible = resultados.getInt(5);
-		TipoAtraccion tipo = TipoAtraccion.valueOf(resultados.getString(6).toUpperCase());
+		String tipo = resultados.getString(6).toUpperCase();
+		//TipoAtraccion tipo = TipoAtraccion.valueOf(resultados.getString(6).toUpperCase());
 
 		return new Atraccion(nombre, costo, tiempo, cupoDisponible, tipo);
 
@@ -78,8 +79,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	/*
 	 * Inserta una atracciï¿½n nueva en la base de datos
 	 */
-	@Override
-	public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
+	public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, String tipoAtraccion)
 			throws SQLException {
 
 		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
@@ -90,7 +90,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		statement.setString(1, nombre);
 		statement.setDouble(2, costo);
 		statement.setDouble(3, tiempo);
-		statement.setDouble(4, cupoDisponible);
+		statement.setInt(4, capacity);
 		statement.setString(5, tipoAtraccion);
 
 		int rows = statement.executeUpdate();
@@ -185,6 +185,13 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 
 	@Override
 	public int insert(Atraccion t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
+			throws SQLException {
 		// TODO Auto-generated method stub
 		return 0;
 	}

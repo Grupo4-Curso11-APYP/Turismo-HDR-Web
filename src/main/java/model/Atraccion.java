@@ -10,14 +10,16 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	protected double costo;
 	protected double tiempo;
 	protected int cupoDisponible;
-	protected TipoAtraccion tipoAtraccion;
+	protected String tipoAtraccion;
+	//protected TipoAtraccion tipoAtraccion;
 	protected String nombre;
 
 	/*
 	 * @Param nombre , costo, tiempo , cupoDisponible y tipo se inicializan todos
 	 * los atributos de la atraccion
 	 */
-	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
+	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, String tipoDeAtraccion)
+	//public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
 			throws Exception {
 		super();
 		this.nombre = nombre;
@@ -50,8 +52,11 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 
 	public boolean esValido(String nombre, double costo, double tiempo, int cupo, String tipo) {
 		return ((nombre != null) && (costo > 0) && (tiempo > 0) && (cupo > 0)
-				&& (tipo == TipoAtraccion.DEGUSTACION.name() || tipo == TipoAtraccion.PAISAJE.name()
-						|| tipo == TipoAtraccion.AVENTURA.name()));
+				&& (tipo == "DEGUSTACION" || tipo == "PAISAJE"
+						|| tipo == "AVENTURA"));
+		/*return ((nombre != null) && (costo > 0) && (tiempo > 0) && (cupo > 0)
+		&& (tipo == TipoAtraccion.DEGUSTACION.name() || tipo == TipoAtraccion.PAISAJE.name()
+				|| tipo == TipoAtraccion.AVENTURA.name()));*/
 	}
 
 	/*
@@ -150,10 +155,17 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 * se espera que devuelva el tipo
 	 */
 	@Override
+	public String getTipo() {
+
+		return this.tipoAtraccion;
+	}
+	/*
+	 * @Override
 	public TipoAtraccion getTipo() {
 
 		return this.tipoAtraccion;
 	}
+	 */
 
 	/*
 	 * Metodo hayCupo : pregunta si todavia hay cupo disponible
@@ -195,13 +207,24 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		this.costo = costo;
 	}
 
-	public TipoAtraccion getTipoAtraccion() {
+	public String getTipoAtraccion() {
 		return tipoAtraccion;
 	}
+	
+	/*
+	 * public TipoAtraccion getTipoAtraccion() {
+		return tipoAtraccion;
+	}
+	 */
 
-	public void setTipoAtraccion(TipoAtraccion tipoAtraccion) {
+	public void setTipoAtraccion(String tipoAtraccion) {
 		this.tipoAtraccion = tipoAtraccion;
 	}
+	/*
+	 * public void setTipoAtraccion(TipoAtraccion tipoAtraccion) {
+		this.tipoAtraccion = tipoAtraccion;
+	}
+	 */
 
 	public void setTiempo(double tiempo) {
 		this.tiempo = tiempo;

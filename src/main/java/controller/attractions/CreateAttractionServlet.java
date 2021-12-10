@@ -36,16 +36,23 @@ public class CreateAttractionServlet extends HttpServlet {
 	/*
 	 * Envía los datos introducidos en el formulario para crear la atracción
 	 */
-/*
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String nombre = req.getParameter("nombre");
 		Double costo = Double.parseDouble(req.getParameter("costo"));
 		Double tiempo = Double.parseDouble(req.getParameter("tiempo"));
 		Integer cupoDisponible = Integer.parseInt(req.getParameter("cupoDisponible"));
-
-		Atraccion attraction = atraccionService.create(nombre, costo, tiempo, cupoDisponible);
-		if (atraccion.isValid()) {
+		String tipoDeAtraccion = req.getParameter("tipoDeAtraccion");
+		//String name, Integer cost, Integer duration, Integer capacity, String tipo
+		Atraccion atraccion = null;
+		try {
+			atraccion = atraccionService.crear(nombre, costo, tiempo, cupoDisponible,tipoDeAtraccion);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (atraccion.esValido(nombre, costo, tiempo, cupoDisponible,tipoDeAtraccion)) {
 			resp.sendRedirect("/turismoHDR/attractions/index.do");
 		} else {
 			req.setAttribute("atraccion", atraccion);
@@ -56,6 +63,5 @@ public class CreateAttractionServlet extends HttpServlet {
 		}
 
 	}
-	*/
 
 }
