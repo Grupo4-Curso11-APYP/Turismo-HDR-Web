@@ -1,6 +1,7 @@
 package controller.attractions;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Map;
 
 import jakarta.servlet.RequestDispatcher;
@@ -24,15 +25,27 @@ public class BuyAttractionServlet extends HttpServlet {
 		super.init();
 		this.buyAttractionService = new BuyAttractionService();
 	}
-/*
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		Integer atraccionId = Integer.parseInt(req.getParameter("id"));
 		Usuario usuario = (Usuario) req.getSession().getAttribute("user");
-		Map<String, String> errors = buyAttractionService.buy(usuario.getId(), atraccionId);
+		Map<String, String> errors = null;
+		try {
+			errors = buyAttractionService.buy(usuario.getNombre(), atraccionId);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
-		Usuario usuario2 = DAOFactory.getUsuarioDAO().find(usuario.getId());
+		Usuario usuario2 =null;
+		try {
+			usuario2 = DAOFactory.getUsuarioDAO().findByNombre(usuario.getNombre());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		req.getSession().setAttribute("user", usuario2);
 		
 		if (errors.isEmpty()) {
@@ -43,8 +56,8 @@ public class BuyAttractionServlet extends HttpServlet {
 		}
 
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/attractions/index.do");
+				.getRequestDispatcher("listar-atraccion.do");
 		dispatcher.forward(req, resp);
 	}
-	*/
+	
 }

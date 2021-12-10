@@ -12,7 +12,7 @@ public class Usuario {
 	private double tiempoDisponible;
 	//private TipoAtraccion tipoFavorito;
 	private String tipoFavorito;//tuve que cambiar esto para poder pasarselo a la BD
-	private Set<Ofertable> ofertables; // Las sugerencias que va aceptando.
+	private Set<Atraccion> ofertables; // Las sugerencias que va aceptando.
 	private String password;
 	private Boolean admin;
 	//datos necesarios para insertar usuarios en la bd
@@ -60,7 +60,7 @@ public class Usuario {
 	private void validandoPresupuesto(double presupuesto) throws Exception {
 		if (presupuesto < 0.0)
 			throw new SinMontoDisponible();
-		this.presupuesto = presupuesto;
+	this.presupuesto = presupuesto;
 	}
 
 	/*
@@ -107,7 +107,7 @@ public class Usuario {
 	/*
 	 * se espera que devuelva una lista de ofertables
 	 */
-	public Set<Ofertable> getOfertables() {
+	public Set<Atraccion> getOfertables() {
 		return this.ofertables;
 	}
 
@@ -164,7 +164,7 @@ public class Usuario {
 	 * presupuesto y el tiempo del ofertable comprado finalmente guarda el ofertable
 	 * en su lista de ofertables
 	 */
-	public void comprarOfertable(Ofertable o) {
+	public void comprarOfertable(Atraccion o) {
 		double tiempoO = o.getTiempo();
 		double presupuesto = o.getMonto();
 
@@ -172,11 +172,26 @@ public class Usuario {
 		restarPresupuesto(presupuesto);
 		ofertables.add(o);
 
-	}
+}
+//	public void comprarOfertable(Ofertable o) {
+//		double tiempoO = o.getTiempo();
+//		double presupuesto = o.getMonto();
+//
+//		restarTiempo(tiempoO);
+//		restarPresupuesto(presupuesto);
+//		ofertables.add(o);
+//
+//}
 
-	public boolean puedeComprar(Ofertable ofertable) {
-		return this.getPresupuesto() >= ofertable.getMonto() && this.getTiempoDisponible() >= ofertable.getTiempo();
+	public boolean puedeComprar(Atraccion atrac) {
+		return this.getPresupuesto() >= atrac.getMonto() && this.getTiempoDisponible() >= atrac.getTiempo();
 	}
+	
+	
+//	public boolean puedeComprar(Ofertable atrac) {
+//		return this.getPresupuesto() >= atrac.getMonto() && this.getTiempoDisponible() >= atrac.getTiempo();
+//	}
+
 
 	public boolean checkPassword(String password) {
 		// this.password en realidad es el hash del password

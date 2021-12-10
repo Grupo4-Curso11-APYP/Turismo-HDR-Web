@@ -96,24 +96,24 @@
 							Usuario</h2>
 
 						<form id="form-contact"
-							class="row text-white g-3 needs-validation " novalidate>
+							class="row text-white g-3 needs-validation " novalidate action="/insertar-usuario.do" method="post">
 							<div class="col-md-4">
 								<label for="validationCustom01" class="form-label">Nombre</label>
 								<input type="text" class="form-control" id="validationCustom01"
-									required>
+									required value="${usuario.nombre }">
 								<div class="valid-feedback">¡Se ve bien!</div>
 							</div>
 							<div class="col-md-4">
 								<label for="validationCustom02" class="form-label">Presupuesto</label>
 								<input type="number" class="form-control"
-									id="validationCustom02" required>
+									id="validationCustom02" required value="${usuario.presupuesto }">
 								<div class="valid-feedback">Por favor , Ingrese un costo
 									valido</div>
 							</div>
 							<div class="col-md-4">
 								<label for="validationCustom02" class="form-label">Tiempo
 									Disponible</label> <input type="number" class="form-control"
-									id="validationCustom02" required>
+									id="validationCustom02" required value="${usuario.tiempoDisponible }">
 								<div class="invalid-feedback">Por favor, Ingrese un tiempo
 									valido.</div>
 							</div>
@@ -123,11 +123,19 @@
 							<div class="col-md-6">
 								<label for="validationCustom02" class="form-label">Tipo
 									de Atraccion Favorito</label> <input type="text" class="form-control"
-									id="validationCustom02" required>
+									id="validationCustom02" required value="${usuario.tipoFavorito }">
 
 								<div class="invalid-feedback">por favor ingrese un Tipo de
 									Atraccion valido</div>
 							</div>
+							
+							<div class="col-md-6">
+								<label for="validationCustom02" class="form-label">Contraseña</label> <input type="password" class="form-control"
+									id="validationCustom02" required value="${usuario.password }">
+
+								<div class="invalid-feedback">por favor ingrese una contrasenia valida</div>
+							</div>
+							
 
 							<div class="col-12">
 								<button class="btn btn-primary mb-3" type="submit">Ingresar

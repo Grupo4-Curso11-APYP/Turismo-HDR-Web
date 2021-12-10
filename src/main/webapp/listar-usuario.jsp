@@ -107,20 +107,15 @@
 									</tr>
 								</thead>
 								<tbody>
+								<c:forEach items="${usuario}" var="usu">
 									<tr>
-										<td>Gandalf</td>
-										<td>100</td>
-										<td>5</td>
-										<td>Paisaje</td>
+										<td><c:out value="${usu.nombre }"></c:out></td>
+										<td><c:out value="${usu.presupuesto }"></c:out> </td>
+										<td><c:out value="${usu.tiempoDisponible }"></c:out>  </td>
+										<td><c:out value="${usu.tipoFavorito }"></c:out> </td>
 
 									</tr>
-									<tr>
-										<td>Sam</td>
-										<td>36</td>
-										<td>8</td>
-										<td>Degustacion</td>
-
-									</tr>
+                                   </c:forEach>									 
 
 								</tbody>
 								<tfoot>

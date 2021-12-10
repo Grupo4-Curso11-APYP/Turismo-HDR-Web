@@ -3,7 +3,6 @@ package model;
 import java.sql.SQLException;
 
 public interface Ofertable {
-
 	/*
 	 * devuelve el costo
 	 */
@@ -17,8 +16,7 @@ public interface Ofertable {
 	/*
 	 * devuelve el tipo
 	 */
-	public String getTipo();
-	//public TipoAtraccion getTipo();
+	public TipoAtraccion getTipo();
 
 	/*
 	 * pregunta si hay cupo disponible
@@ -34,4 +32,5 @@ public interface Ofertable {
 	 * devuelve el nombre del ofertable.
 	 */
 	public String getNombre();
+
 }

@@ -101,7 +101,13 @@
 							<div class="alert alert-danger">
 								<p>
 									<c:out value="${flash}" />
-
+									<c:if test="${errors != null}">
+										<ul>
+											<c:forEach items="${errors}" var="entry">
+												<li><c:out value="${entry.getValue()}"></c:out></li>
+											</c:forEach>
+										</ul>
+									</c:if>
 								</p>
 							</div>
 						</c:if>
@@ -113,20 +119,26 @@
 									<th>Tiempo</th>
 									<th>Cupo</th>
 									<th>Tipo</th>
+									<th>Accion</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${atracciones}" var="atraccion">
 									<tr>
 										<td><a class=" fw-bolder text-dark"
-											style="text-decoration: none;font-size:18px;"  href="#"> <c:out
-													value="${atraccion.nombre}"></c:out></a></td>
+											style="text-decoration: none; font-size: 18px;" href="#" data-toggle="modal" data-target="#ComprarModal">
+												<c:out value="${atraccion.nombre}"></c:out>
+										</a></td>
 										<td><c:out value="${atraccion.monto}"></c:out></td>
 										<td><c:out value="${atraccion.tiempo}"></c:out></td>
 										<td><c:out value="${atraccion.cupoDisponible}"></c:out></td>
 										<td><c:out value="${atraccion.tipo}"></c:out></td>
-
-
+										<td>
+												
+												<a href="#"
+													class="btn btn-success rounded" role="button">Comprar</a>
+											
+											</td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -172,7 +184,7 @@
 <!-- FIN SCROLL -->
 
 <!-- MODAL SALIDA-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+<div class="modal fade" id="ComprarModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">

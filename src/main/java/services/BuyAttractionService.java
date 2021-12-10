@@ -1,5 +1,6 @@
 package services;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,28 +12,26 @@ import persistence.commons.DAOFactory;
 
 public class BuyAttractionService {
 
-	AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
-/*
-	public Map<String, String> buy(Integer userId, Integer attractionId) {
+
+	public Map<String, String> buy(String nombre, Integer attractionId) throws SQLException {
 		Map<String, String> errors = new HashMap<String, String>();
 
-		Usuario user = usuarioDAO.find(userId);
+		Usuario user = usuarioDAO.findByNombre(nombre);
 		Atraccion atraccion = atraccionDAO.find(attractionId);
 
-		if (!atraccion.canHost(1)) {
+		if (!atraccion.hayCupo()) {
 			errors.put("atraccion", "No hay cupo disponible");
 		}
-		if (!user.canAfford(atraccion)) {
-			errors.put("user", "No tienes dinero suficiente");
+		if (!user.puedeComprar(atraccion)) {
+			errors.put("user", "No tienes dinero suficiente y no tienes tiempo suficiente");
 		}
-		if (!user.canAttend(atraccion)) {
-			errors.put("user", "No tienes tiempo suficiente");
-		}
+		
 
 		if (errors.isEmpty()) {
-			user.addToItinerary(atraccion);
-			atraccion.host(1);
+			user.comprarOfertable(atraccion);
+			atraccion.reservarCupo();
 
 			// no grabamos para no afectar la base de pruebas
 			atraccionDAO.update(atraccion);
@@ -42,6 +41,6 @@ public class BuyAttractionService {
 		return errors;
 
 	}
-	*/
+	
 
 }
