@@ -6,20 +6,20 @@ import java.util.Objects;
 import persistence.impl.AtraccionDAOImpl;
 
 public class Atraccion implements Ofertable, Comparable<Ofertable> {
-	protected int id;
+	//protected int id;
 	protected double costo;
 	protected double tiempo;
 	protected int cupoDisponible;
-	protected String tipoAtraccion;
-	//protected TipoAtraccion tipoAtraccion;
+	//protected String tipoAtraccion;
+	protected TipoAtraccion tipoAtraccion;
 	protected String nombre;
 
 	/*
 	 * @Param nombre , costo, tiempo , cupoDisponible y tipo se inicializan todos
 	 * los atributos de la atraccion
 	 */
-	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, String tipoDeAtraccion)
-	//public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
+	//public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, String tipoDeAtraccion)
+	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
 			throws Exception {
 		super();
 		this.nombre = nombre;
@@ -28,7 +28,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		validandoCupo(cupoDisponible);
 		this.tipoAtraccion = tipoDeAtraccion;
 	}
-	
+	/*
 	public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible) throws Exception {
 		//public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion) throws Exception {
 		//this(nombre, costo, tiempo, cupoDisponible);
@@ -37,6 +37,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	public Atraccion(Integer id) {
 		this.id = id;
 	}
+	*/
 	
 	/*
 	 * public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
@@ -154,18 +155,20 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	/*
 	 * se espera que devuelva el tipo
 	 */
+	/*
 	@Override
 	public String getTipo() {
 
 		return this.tipoAtraccion;
 	}
-	/*
-	 * @Override
+	*/
+	
+	@Override
 	public TipoAtraccion getTipo() {
 
 		return this.tipoAtraccion;
 	}
-	 */
+	
 
 	/*
 	 * Metodo hayCupo : pregunta si todavia hay cupo disponible
@@ -207,24 +210,28 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		this.costo = costo;
 	}
 
+	/*
 	public String getTipoAtraccion() {
 		return tipoAtraccion;
 	}
+	*/
 	
-	/*
-	 * public TipoAtraccion getTipoAtraccion() {
+	
+	public TipoAtraccion getTipoAtraccion() {
 		return tipoAtraccion;
 	}
-	 */
+	
 
+	/*
 	public void setTipoAtraccion(String tipoAtraccion) {
 		this.tipoAtraccion = tipoAtraccion;
 	}
-	/*
-	 * public void setTipoAtraccion(TipoAtraccion tipoAtraccion) {
+	*/
+
+	public void setTipoAtraccion(TipoAtraccion tipoAtraccion) {
 		this.tipoAtraccion = tipoAtraccion;
 	}
-	 */
+
 
 	public void setTiempo(double tiempo) {
 		this.tiempo = tiempo;
