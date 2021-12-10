@@ -3,16 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
- <!-- ENVOLTURA -->
-   <div id="wrapper">
+
+<!-- ENVOLTURA -->
+<div id="wrapper">
 
 
 
 	<!-- --SIDEBAR -->
 	<jsp:include page="partials/headNavSidebarDeLosDash.jsp"></jsp:include>
 	<!-- FIN SIDEBAR -->
-
-
 	<!-- CONTENIDO ENVUELTO-->
 	<div id="content-wrapper" class="d-flex flex-column">
 
@@ -90,52 +89,64 @@
 					</div>
 					<!-- HAEDER FIN  -->
 
+
+
+
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
-					<div id="" class="row row-cols-12 row-cols-xl-12">
+				                <!---ACTUALIZACION ATRACCION-->
+    <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
+        <h2 class="fw-bolder mt-3 text-white">Actualizar Datos de
+            Atraccion</h2>
 
-						<div class="col-lg-12">
-							<table id="example"
-								class="table  table-bordered table-white  table-hover"
-								style="width: 100%">
-								<thead>
-									<tr class="table-dark">
-										<th>Nombre</th>
-										<th>Presupuesto</th>
-										<th>Tiempo Disponible</th>
-										<th>Tipo Favorito</th>
+        <form id="form-contact" class="row g-3 needs-validation " novalidate action="/actualizar-atraccion-form.do"> 
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label text-white">Nombre</label>
+                <input type="text" class="form-control" id="validationCustom01" required>
+                <div class="valid-feedback text-white">¡Se ve bien!</div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label text-white">Costo</label>
+                <input type="number" class="form-control" id="validationCustom02" required>
+                <div class="valid-feedback text-white">Por favor ,
+                    Ingrese un costo valido</div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label text-white">Tiempo</label>
+                <input type="number" class="form-control" id="validationCustom02" required>
+                <div class="invalid-feedback text-white">Por favor,
+                    Ingrese un tiempo valido.</div>
+            </div>
 
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><c:out value="${usuario.nombre }"></c:out></td>
-										<td><c:out value="${usuario.presupuesto }"></c:out> </td>
-										<td><c:out value="${usuario.tiempoDisponible }"></c:out>  </td>
-										<td><c:out value="${usuario.tipoFavorito }"></c:out> </td>
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label text-white">Cupo
+                    Disponible</label> <input type="text" class="form-control"
+                    id="validationCustom03" required>
+                <div class="invalid-feedback text-white">Por favor ingre
+                    un Cupo valido .</div>
+            </div>
 
-									</tr>
-									
+            <div class="col-md-6">
+                <label for="validationCustom02" class="form-label text-white">Tipo
+                    de Atraccion</label> <input type="text" class="form-control"
+                    id="validationCustom02" required>
 
-								</tbody>
-								<tfoot>
-									<tr>
-										<th>Nombre</th>
-										<th>Presupuesto</th>
-										<th>Tiempo Disponible</th>
-										<th>Tipo Favorito</th>
-									</tr>
-								</tfoot>
-							</table>
+                <div class="invalid-feedback text-white">por favor
+                    ingrese un Tipo de Atraccion valido</div>
+            </div>
 
-						</div>
+            <div class="col-12">
+                <button class="btn btn-warning mb-3" type="submit">Actualizar
+                    Atraccion</button>
+            </div>
+        </form>
 
-					</div>
-					<!-- FIN SECCION BUSCAR LISTAR -->
+    </div>
+    <!---FIN ACTUALIZACION ATRACCIONES-->
 					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
 
 
 
-
+					
 
 				</div>
 			</div>
