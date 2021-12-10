@@ -4,10 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
+import model.Atraccion;
 import model.Ofertable;
+import model.Promocion;
 import model.Usuario;
 import persistence.commons.ConnectionProvider;
 import persistence.ItinerarioDAO;
@@ -136,6 +141,34 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 
 		return total;
 	}
+	
+	/*
+	 * public ArrayList<Ofertable> findItinerarioUsuario(int ID_Usuario) {
+
+		AtraccionDAOImpl atrraccionDAO = new AtraccionDAOImpl();
+		PromocionDAOImpl promocionDAO = new PromocionDAOImpl();
+		ArrayList<Ofertable> itinerario = new ArrayList<Ofertable>();
+		try {
+			String sql = "SELECT * FROM Itinerario where ID_Usuario = ?";
+			Connection conn = Conexion.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, ID_Usuario);
+			ResultSet resultados = statement.executeQuery();
+
+			while (resultados.next()) {
+				if (resultados.getString(3).equals("Atraccion")) {
+					itinerario.add(atrraccionDAO.buscarPorId(resultados.getInt(5)));
+				} else {
+					itinerario.add(promocionDAO.buscarPorId(resultados.getInt(4)));
+				}
+			}
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+		return itinerario;
+	}
+	 */
+	
 
 	@Override
 	public Usuario find(Integer id) {
