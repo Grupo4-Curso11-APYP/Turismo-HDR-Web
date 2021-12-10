@@ -16,9 +16,9 @@ import persistence.commons.ConnectionProvider;
 import persistence.commons.DAOFactory;
 import persistence.impl.AtraccionDAOImpl;
 
-public class pruebaSQL_2 {
+public class pruebaSQL2Test {
 
-	/*@Test
+	@Test
 	public void test() throws SQLException {
 		String nombre = "Erebor";
 		String sql = "SELECT ID_Atraccion, Nombre FROM Atraccion WHERE Nombre LIKE \"%" + nombre + "%\"";
@@ -50,7 +50,7 @@ public class pruebaSQL_2 {
 		String nombreAtrac = "Erebor";
 		AtraccionDAO atrac = new AtraccionDAOImpl();
 		System.out.println(atrac.find(nombreAtrac));
-	}*/
+	}
 	
 	@Test
 	public void test4() {
