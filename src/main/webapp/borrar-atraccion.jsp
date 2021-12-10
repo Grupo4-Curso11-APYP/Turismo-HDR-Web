@@ -96,10 +96,10 @@
                             <h2 class="fw-bolder mt-3 text-white ">
                                 Ingrese el Nombre de la Atraccion <br> Que desea Eliminar
                             </h2>
-                            <form id="form-contact" class="row g-3 needs-validation " novalidate>
+                            <form id="form-contact" class="row g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/borrar-atraccion.do" method="post">
                                 <div class="col-md-4">
-                                    <label for="validationCustom01" class="form-label text-white">Nombre</label>
-                                    <input type="text" class="form-control" id="validationCustom01" required>
+                                    <label for="id" class="form-label text-white">Id</label>
+                                    <input name="id" type="text" class="form-control" id="id" required>
                                     <div class="valid-feedback">¡Se ve bien!</div>
                                 </div>
                                 <div class="col-12">

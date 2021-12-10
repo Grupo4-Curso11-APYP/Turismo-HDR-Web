@@ -24,21 +24,28 @@ public class DeleteAttractionServlet extends HttpServlet {
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer id = Integer.parseInt(req.getParameter("id"));
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Long id = Long.parseLong(req.getParameter("id"));
+		//Integer id = Integer.parseInt(req.getParameter("id"));
 		//String id = req.getParameter("id");//Long.parseLong(req.getParameter("id"));
-
+		/*
 		Atraccion atraccion = atraccionService.find(id);
 		req.setAttribute("attraction", atraccion);
 
 		try {
 			atraccionService.delete(id);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+	
+			e.printStackTrace();
+		}
+		*/
+		try {
+			atraccionService.delete(id);
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-		resp.sendRedirect("/turismo/attractions/index.do");
+		resp.sendRedirect("/turismoHDR/dashboard.jsp");
 	}
 
 
