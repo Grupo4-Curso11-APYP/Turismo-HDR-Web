@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
+import model.TipoAtraccion;
 import services.AtraccionService;
 
 
@@ -43,7 +44,7 @@ public class CreateAttractionServlet extends HttpServlet {
 		Double costo = Double.parseDouble(req.getParameter("costo"));
 		Double tiempo = Double.parseDouble(req.getParameter("tiempo"));
 		Integer cupoDisponible = Integer.parseInt(req.getParameter("cupoDisponible"));
-		String tipoDeAtraccion = req.getParameter("tipoDeAtraccion");
+		TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));//(req.getParameter("tipoDeAtraccion"));
 		//String name, Integer cost, Integer duration, Integer capacity, String tipo
 		Atraccion atraccion = null;
 		try {

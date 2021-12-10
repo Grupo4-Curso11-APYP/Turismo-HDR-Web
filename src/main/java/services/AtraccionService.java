@@ -23,29 +23,29 @@ public class AtraccionService {
 	 * Servicio usado por CreateAttractionServlet
 	 */
 	
-	/*
-	public Atraccion crear(String name, Double cost, Double duration, Integer capacity, String tipo) throws Exception {
+	
+	public Atraccion crear(String name, Double cost, Double duration, Integer capacity, TipoAtraccion tipoDeAtraccion) throws Exception {
 		//public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
 
-		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipo);
+		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipoDeAtraccion);
 
-		if (atraccion.esValido(name, cost, duration, capacity,tipo)) {
+		if (atraccion.esValido(name, cost, duration, capacity,tipoDeAtraccion)) {
 			//AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 			AtraccionDAOImpl atracDI = new AtraccionDAOImpl();
 			//String tipo_s = tipo.name();
 			//public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
-			atracDI.insertarAtrac(name, cost, duration, capacity, tipo);
+			atracDI.insertarAtrac(name, cost, duration, capacity, tipoDeAtraccion);
 			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
 		}
 
 		return atraccion;
 	}
-	*/
+	
 
 	/*
 	 * Servicio usado por EditAttractionServlet
 	 */
-	public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
+	public Atraccion update(Integer id, String name, Double cost, Double duration, Integer capacity,TipoAtraccion tipoDeAtraccion) {
 		
 
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
@@ -55,8 +55,9 @@ public class AtraccionService {
 		atraccion.setCosto(cost);
 		atraccion.setTiempo(duration);
 		atraccion.setCupoDisponible(capacity);
+		atraccion.setTipoAtraccion(tipoDeAtraccion);
 
-		if (atraccion.esValido(name, capacity, capacity, capacity, name)) {
+		if (atraccion.esValido(name, cost, duration, capacity,tipoDeAtraccion)) {
 			atraccionDAO.update(atraccion);
 			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
 		}

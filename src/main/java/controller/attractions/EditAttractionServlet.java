@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
+import model.TipoAtraccion;
 import services.AtraccionService;
 
 @WebServlet("/actualizar-atraccion-form.do")
@@ -40,14 +41,15 @@ public class EditAttractionServlet extends HttpServlet {
 		//Integer id = Integer.parseInt(req.getParameter("id"));
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("nombre");
-		Integer cost = Integer.parseInt(req.getParameter("costo"));
+		Double cost = Double.parseDouble(req.getParameter("costo"));
 		// Integer cost = req.getParameter("cost").trim() == "" ? null : Integer.parseInt(req.getParameter("cost"));
 		Double duration = Double.parseDouble(req.getParameter("duracion"));
 		Integer capacity = Integer.parseInt(req.getParameter("capacidad"));
-
-		Atraccion atraccion = atraccionService.update(id, name, cost, duration, capacity);
-
-		if (atraccion.esValido(name, capacity, capacity, capacity, name)) {
+		TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));//(req.getParameter("tipoDeAtraccion"));
+		//Integer id, String name, Double cost, Double duration, Integer capacity,TipoAtraccion tipoDeAtraccion
+		Atraccion atraccion = atraccionService.update(id, name, cost, duration, capacity,tipoDeAtraccion);
+		//String nombre, Double costo, Double tiempo, Integer cupo, TipoAtraccion tipo
+		if (atraccion.esValido(name, cost, duration, capacity, tipoDeAtraccion)) {
 			resp.sendRedirect("/turismoHDR/listar-atraccion.jsp");
 		} else {
 			req.setAttribute("attraccion", atraccion);

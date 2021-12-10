@@ -79,7 +79,8 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	/*
 	 * Inserta una atracciï¿½n nueva en la base de datos
 	 */
-	public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, String tipoAtraccion)
+	public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, TipoAtraccion tipoAtraccion)
+	//public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, String tipoAtraccion)
 			throws SQLException {
 
 		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
@@ -91,7 +92,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		statement.setDouble(2, costo);
 		statement.setDouble(3, tiempo);
 		statement.setInt(4, capacity);
-		statement.setString(5, tipoAtraccion);
+		statement.setString(5, tipoAtraccion.name());
 
 		int rows = statement.executeUpdate();
 
