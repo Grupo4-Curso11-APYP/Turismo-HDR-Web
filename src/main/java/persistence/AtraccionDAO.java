@@ -13,11 +13,14 @@ public interface AtraccionDAO extends GenericDAO<Atraccion> {
 		
 		public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion) throws SQLException;
 		
-		public List<Atraccion> findAll() throws SQLException;
+		public List<Atraccion> findAll();
+		//public List<Atraccion> findAll() throws SQLException;
 		
 		public int delete(Atraccion atraccion) throws SQLException;
+		//public int delete(Atraccion atraccion) throws SQLException;
 		
-		public int update(Atraccion atraccion) throws SQLException;
+		public int update(Atraccion atraccion);
+		//public int update(Atraccion atraccion) throws SQLException;
 		
 		public int find(String nombre) throws SQLException;
 	}

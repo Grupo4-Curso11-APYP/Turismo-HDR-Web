@@ -9,13 +9,16 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import model.Atraccion;
+import model.Attraction;
 import persistence.AtraccionDAO;
+import persistence.AttractionDAO;
 import persistence.commons.ConnectionProvider;
+import persistence.commons.DAOFactory;
 import persistence.impl.AtraccionDAOImpl;
 
 public class pruebaSQL_2 {
 
-	@Test
+	/*@Test
 	public void test() throws SQLException {
 		String nombre = "Erebor";
 		String sql = "SELECT ID_Atraccion, Nombre FROM Atraccion WHERE Nombre LIKE \"%" + nombre + "%\"";
@@ -47,6 +50,16 @@ public class pruebaSQL_2 {
 		String nombreAtrac = "Erebor";
 		AtraccionDAO atrac = new AtraccionDAOImpl();
 		System.out.println(atrac.find(nombreAtrac));
+	}*/
+	
+	@Test
+	public void test4() {
+		Integer idAtrac = 9;
+		Atraccion atraccion = new Atraccion(idAtrac);
+
+		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
+		attractionDAO.delete(atraccion);
+		System.out.println(atraccion);
 	}
 
 }

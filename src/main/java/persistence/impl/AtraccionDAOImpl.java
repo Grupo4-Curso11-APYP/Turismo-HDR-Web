@@ -21,7 +21,8 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 * Busca y devuelve todas las atracciones de la base de datos
 	 */
 	@Override
-	public List<Atraccion> findAll() throws SQLException {
+	public List<Atraccion> findAll() {
+		//public List<Atraccion> findAll() throws SQLException {
 		try {
 			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Cupo_Disponible,"
 					+ " Atraccion.Costo, Atraccion.Tiempo," + " TipoAtraccion.id_tipoAtraccion"
@@ -101,7 +102,8 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 * Actualiza una atracciï¿½n en la base de datos
 	 */
 	@Override
-	public int update(Atraccion atraccion) throws SQLException {
+	public int update(Atraccion atraccion) {
+		//public int update(Atraccion atraccion) throws SQLException {
 		try {
 			String sql = "UPDATE Atraccion SET Cupo_Disponible = ? WHERE Nombre = ?";
 			Connection conn = ConnectionProvider.getConnection();
@@ -123,6 +125,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 */
 	@Override
 	public int delete(Atraccion atraccion) throws SQLException {
+		//public int delete(Atraccion atraccion) throws SQLException {
 		String sql = "DELETE FROM Atraccion WHERE Nombre = ?";
 		Connection conn = ConnectionProvider.getConnection();
 

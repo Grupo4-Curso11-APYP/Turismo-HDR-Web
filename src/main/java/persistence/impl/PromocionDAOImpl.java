@@ -226,4 +226,10 @@ public class PromocionDAOImpl implements PromocionDAO {
 		return promo;
 	}
 
+	@Override
+	public Promocion find(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

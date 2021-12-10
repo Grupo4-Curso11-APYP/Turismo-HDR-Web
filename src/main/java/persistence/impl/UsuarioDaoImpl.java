@@ -149,4 +149,10 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		return new Usuario(0, nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 	}
 
+	@Override
+	public Usuario find(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

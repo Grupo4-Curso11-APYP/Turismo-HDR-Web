@@ -6,6 +6,7 @@ import java.util.Objects;
 import persistence.impl.AtraccionDAOImpl;
 
 public class Atraccion implements Ofertable, Comparable<Ofertable> {
+	protected int id;
 	protected double costo;
 	protected double tiempo;
 	protected int cupoDisponible;
@@ -18,12 +19,34 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 */
 	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
 			throws Exception {
+		super();
 		this.nombre = nombre;
 		validandoCosto(costo);
 		validandoTiempo(tiempo);
 		validandoCupo(cupoDisponible);
 		this.tipoAtraccion = tipoDeAtraccion;
 	}
+	
+	public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible) throws Exception {
+		//public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion) throws Exception {
+		//this(nombre, costo, tiempo, cupoDisponible);
+		this.id = id;
+	}
+	public Atraccion(Integer id) {
+		this.id = id;
+	}
+	
+	/*
+	 * public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
+			throws Exception {
+		this.nombre = nombre;
+		validandoCosto(costo);
+		validandoTiempo(tiempo);
+		validandoCupo(cupoDisponible);
+		this.tipoAtraccion = tipoDeAtraccion;
+	}
+
+	 */
 
 	public boolean esValido(String nombre, double costo, double tiempo, int cupo, String tipo) {
 		return ((nombre != null) && (costo > 0) && (tiempo > 0) && (cupo > 0)
@@ -63,10 +86,11 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 * Constructor auxiliar usado para comparar con el nombre de la lista de
 	 * ofertables.
 	 */
-	public Atraccion(String nombre) {
-		this.nombre = nombre;
-	}
+	
 
+	
+
+	
 	/*
 	 * se espera que devuelva el cupo disponible
 	 */

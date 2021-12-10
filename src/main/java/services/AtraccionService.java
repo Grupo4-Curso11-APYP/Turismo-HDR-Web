@@ -92,14 +92,14 @@ public class AtraccionService {
 /*
  * Servicio usado por DeleteAttractionServlet
  */
-	/*
-	public void delete(Integer id) {
-		Atraccion attraction = new Atraccion(id, null, null, null, null);
+	
+	public void delete(Integer id) throws SQLException {
+		Atraccion atraccion = new Atraccion(id);
 
 		AtraccionDAO attractionDAO = DAOFactory.getAtraccionDAO();
-		attractionDAO.delete(attraction);
+		attractionDAO.delete(atraccion);
 	}
-*/
+
 	/*public int find(int nombreAtrac) throws SQLException {
 		//public int find(String nombreAtrac) throws SQLException {<====== asi estaba antes de esta modificacion
 	//public String find(String nombreAtrac) throws SQLException {

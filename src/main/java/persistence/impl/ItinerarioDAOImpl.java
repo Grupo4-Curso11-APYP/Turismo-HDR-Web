@@ -8,6 +8,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import model.Ofertable;
+import model.Usuario;
 import persistence.commons.ConnectionProvider;
 import persistence.ItinerarioDAO;
 import persistence.commons.MissingDataException;
@@ -134,6 +135,30 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		int total = resultados.getInt("TOTAL");
 
 		return total;
+	}
+
+	@Override
+	public Usuario find(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int insert(Usuario t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Usuario t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(Usuario t) throws SQLException {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
