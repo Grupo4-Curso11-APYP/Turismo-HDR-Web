@@ -30,7 +30,8 @@ public class ListarItinerariosServlet extends HttpServlet implements Servlet {
 		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
 		Set<Ofertable> itinerarios = null;
 		try {
-			itinerarios = itinerarioServicio.listar(usuario.getNombre());
+			usuario.getOfertables().addAll(itinerarioServicio.listar(usuario.getNombre()));
+			itinerarios = usuario.getOfertables();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -39,7 +40,6 @@ public class ListarItinerariosServlet extends HttpServlet implements Servlet {
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listar-itinerario.jsp");
 		dispatcher.forward(req, resp);
-		
 
 	}
 }
