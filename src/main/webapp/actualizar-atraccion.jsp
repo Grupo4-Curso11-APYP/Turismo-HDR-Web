@@ -97,17 +97,16 @@
     <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
         <h2 class="fw-bolder mt-3 text-white">Ingrese el ID de la Atraccion que desee Actualizar</h2>
 
-        <form id="form-contact" class="row g-3 needs-validation " novalidate action="turismoHDR/actualizar-atraccion-form.do" method="post">
+        <form id="form-contact" class="row g-3 needs-validation" novalidate action="/actualizar-atraccion" method="post">
             <div class="col-md-4">
-                <label for="validationCustom01" class="form-label text-white">ID</label>
-                <input type="number" class="form-control" id="validationCustom01" required>
+                <label for="id" class="form-label text-white">ID</label>
+                <input name="id" type="number" class="form-control" id="id" required>
                 <div class="valid-feedback text-white">¡Se ve bien!</div>
             </div>
    
 
             <div class="col-12">
-                <a href="actualizar-atraccion-form.jsp" class="btn btn-warning mb-3" type="submit">Buscar
-                    Atraccion</a>
+                <button class="btn btn-danger mb-3" type="submit">Buscar</button>
             </div>
         </form>
 
