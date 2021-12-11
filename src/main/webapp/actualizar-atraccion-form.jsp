@@ -101,11 +101,11 @@
         <form id="form-contact" class="row g-3 needs-validation " novalidate action="actualizar-atraccion-form" method="post"> 
             
             <div class="col-md-6">
-                <label for="validationCustom03" class="form-label text-white">Cupo
-                    Disponible</label> <input type="text" class="form-control"
-                    id="validationCustom03" required>
-                <div class="invalid-feedback text-white">Por favor ingre
-                    un Cupo valido .</div>
+                <label for="cupo" class="form-label text-white">Cupo
+                    Disponible</label> <input name="cupo" type="text" class="form-control"
+                    id="cupo" required>
+                <div class="invalid-feedback text-white">Por favor ingrese
+                    un Cupo valido.</div>
             </div>
 
            
