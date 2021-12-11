@@ -131,14 +131,9 @@
 								aria-label="Default select example">
 								<%@ page import="model.TipoAtraccion" %>
 								<% pageContext.setAttribute("tipoDeAtraccion", model.TipoAtraccion.values()); %>
-								
-								
-
 								<c:forEach var="entry" items="${tipoDeAtraccion}">
 								    <option>${entry.name()}</option>
 								</c:forEach>
-								
-								
 								<!-- <option selected>Tipo De atracciones</option>
 								<option type="text" class="form-control" name="tipoDeAtraccion" id="validationCustom02"
 									required value="AVENTURA">AVENTURA</option>
