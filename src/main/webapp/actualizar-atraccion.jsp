@@ -97,7 +97,7 @@
     <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
         <h2 class="fw-bolder mt-3 text-white">Ingrese el ID de la Atraccion que desee Actualizar</h2>
 
-        <form id="form-contact" class="row g-3 needs-validation" novalidate action="/actualizar-atraccion" method="post">
+        <form id="form-contact" class="row g-3 needs-validation" novalidate action="actualizar-atraccion" method="get">
             <div class="col-md-4">
                 <label for="id" class="form-label text-white">ID</label>
                 <input name="id" type="number" class="form-control" id="id" required>

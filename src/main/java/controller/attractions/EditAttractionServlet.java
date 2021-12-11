@@ -23,18 +23,6 @@ public class EditAttractionServlet extends HttpServlet {
 		super.init();
 		this.atraccionService = new AtraccionService();
 	}
-	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		//String id = req.getParameter("id");//Long.parseLong(req.getParameter("id"));
-
-		Atraccion atraccion = atraccionService.find(id);
-		req.setAttribute("attraction", atraccion);
-
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion-form.jsp");
-		dispatcher.forward(req, resp);
-	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,7 +42,7 @@ public class EditAttractionServlet extends HttpServlet {
 		} else {
 			req.setAttribute("attraccion", atraccion);
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/turismoHDR/actualizar-atraccion-form.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion-form.jsp");
 			dispatcher.forward(req, resp);
 		}
 	}

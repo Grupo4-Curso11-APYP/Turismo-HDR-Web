@@ -98,7 +98,7 @@
         <h2 class="fw-bolder mt-3 text-white">Actualizar Datos de
             Atraccion</h2>
 
-        <form id="form-contact" class="row g-3 needs-validation " novalidate action="/actualizar-atraccion-form.do"> 
+        <form id="form-contact" class="row g-3 needs-validation " novalidate action="actualizar-atraccion-form" method="post"> 
             <div class="col-md-4">
                 <label for="validationCustom01" class="form-label text-white">Nombre</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
