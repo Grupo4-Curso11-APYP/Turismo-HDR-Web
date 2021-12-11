@@ -48,7 +48,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 
 		String nombre = resultados.getString(2);
 		double costo = resultados.getDouble(3);
-		double tiempo = resultados.getInt(4);
+		double tiempo = resultados.getDouble(4);
 		int cupoDisponible = resultados.getInt(5);
 		//String tipo = resultados.getString(6).toUpperCase();
 		TipoAtraccion tipo = TipoAtraccion.valueOf(resultados.getString(6).toUpperCase());
