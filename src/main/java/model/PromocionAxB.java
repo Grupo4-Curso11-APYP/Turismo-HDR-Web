@@ -69,7 +69,7 @@ public class PromocionAxB extends Promocion {
 		AtraccionDAOImpl aDAO = new AtraccionDAOImpl();
 		for (Atraccion atraccion : packAtracciones) {
 			atraccion.cupoDisponible -= 1;
-			aDAO.update(atraccion);
+	//		aDAO.update(atraccion);
 		}
 		atraccionGratis.cupoDisponible -= 1;
 	}
