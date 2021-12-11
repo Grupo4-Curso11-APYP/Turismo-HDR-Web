@@ -95,28 +95,11 @@
 					<!-- ----------------------------------CRUD-------------------------------------------------- -->
 				                <!---ACTUALIZACION ATRACCION-->
     <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
-        <h2 class="fw-bolder mt-3 text-white">Actualizar Datos de
+        <h2 class="fw-bolder mt-3 text-white">Actualizar El Cupo de
             Atraccion</h2>
 
         <form id="form-contact" class="row g-3 needs-validation " novalidate action="actualizar-atraccion-form" method="post"> 
-            <div class="col-md-4">
-                <label for="validationCustom01" class="form-label text-white">Nombre</label>
-                <input type="text" class="form-control" id="validationCustom01" required>
-                <div class="valid-feedback text-white">¡Se ve bien!</div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationCustom02" class="form-label text-white">Costo</label>
-                <input type="number" class="form-control" id="validationCustom02" required>
-                <div class="valid-feedback text-white">Por favor ,
-                    Ingrese un costo valido</div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationCustom02" class="form-label text-white">Tiempo</label>
-                <input type="number" class="form-control" id="validationCustom02" required>
-                <div class="invalid-feedback text-white">Por favor,
-                    Ingrese un tiempo valido.</div>
-            </div>
-
+            
             <div class="col-md-6">
                 <label for="validationCustom03" class="form-label text-white">Cupo
                     Disponible</label> <input type="text" class="form-control"
@@ -125,14 +108,7 @@
                     un Cupo valido .</div>
             </div>
 
-            <div class="col-md-6">
-                <label for="validationCustom02" class="form-label text-white">Tipo
-                    de Atraccion</label> <input type="text" class="form-control"
-                    id="validationCustom02" required>
-
-                <div class="invalid-feedback text-white">por favor
-                    ingrese un Tipo de Atraccion valido</div>
-            </div>
+           
 
             <div class="col-12">
                 <button class="btn btn-warning mb-3" type="submit">Actualizar
