@@ -22,10 +22,9 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	public List<Atraccion> findAll() {
 		//public List<Atraccion> findAll() throws SQLException {
 		try {
-			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Cupo_Disponible,"
-					+ " Atraccion.Costo, Atraccion.Tiempo," + " TipoAtraccion.id_tipoAtraccion"
-					+ " FROM Atraccion INNER JOIN TipoAtraccion "
-					+ " ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion";
+			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Costo, Atraccion.Tiempo, Atraccion.Cupo_Disponible, TipoAtraccion.id_tipoAtraccion\r\n"
+					+ "FROM Atraccion INNER JOIN TipoAtraccion\r\n"
+					+ "ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion";
 
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
