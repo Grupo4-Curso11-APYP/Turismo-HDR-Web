@@ -53,24 +53,25 @@ public class CreateAttractionServlet extends HttpServlet {
 		TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));
 		//TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion")); <===== asi estaba antes
 		//(req.getParameter("tipoDeAtraccion"));
-		System.out.println(tipoDeAtraccion);
 		//String name, Integer cost, Integer duration, Integer capacity, String tipo
-		Atraccion atraccion = null;
+		Atraccion atraccion = new Atraccion();
 		try {
 			atraccion = atraccionService.crear(nombre, costo, tiempo, cupoDisponible,tipoDeAtraccion);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		if (atraccion.esValidoFull(nombre, costo, tiempo, cupoDisponible,tipoDeAtraccion)) {
-			resp.sendRedirect("/turismoHDR/attractions/index.do");
+			resp.sendRedirect("/turismoHDR/listar-atraccion.do");
 		} else {
 			req.setAttribute("atraccion", atraccion);
 
 			RequestDispatcher dispatcher = getServletContext()
-					.getRequestDispatcher("/views/attractions/create.jsp");
+					.getRequestDispatcher("/insertar-atraccion.jsp");
 			dispatcher.forward(req, resp);
 		}
+		
 
 	}
 

@@ -118,14 +118,6 @@
 								</c:forEach>
 
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Nombre</th>
-									<th>Presupuesto</th>
-									<th>Tiempo Disponible</th>
-									<th>Tipo Favorito</th>
-								</tr>
-							</tfoot>
 						</table>
 
 					</div>
