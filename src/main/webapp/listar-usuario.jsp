@@ -109,7 +109,7 @@
 								<tbody>
 									<tr>
 										<td><c:out value="${usuario.nombre }"></c:out></td>
-										<td><c:out value="${usuario.presupuesto }"></c:out> </td>
+										<td><c:out value="${usuario.presupuesto }"></c:out> </td>s
 										<td><c:out value="${usuario.tiempoDisponible }"></c:out>  </td>
 										<td><c:out value="${usuario.tipoFavorito }"></c:out> </td>
 

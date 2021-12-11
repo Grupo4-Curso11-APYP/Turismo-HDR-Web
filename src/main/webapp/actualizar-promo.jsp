@@ -95,7 +95,7 @@
 
 				<!-- ----------------------------------CRUD-------------------------------------------------- -->
 				<!---ACTUALIZACION PROMOS-->
-				<div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
+				<div class="col-xl-4 col-lg-5 bg-dark me-5 ms-5 mb-3 rounded-2">
 					<h2 class="fw-bolder mt-3 text-white">Actualizar Datos de
 						Promocion</h2>
 
@@ -108,10 +108,17 @@
 								required>
 							<div class="valid-feedback text-white">¡Se ve bien!</div>
 						</div>
-						<div class="col-md-4">
-							<label for="validationCustom02" class="form-label text-white">Tipo</label>
-							<input type="number" class="form-control" id="validationCustom02"
-								required>
+						<div class="col-md-4 ">
+							<select for="validationCustom02" class="form-select mt-4 pb-1 "
+								aria-label="Default select example">
+								<option selected>Tipo De atracciones</option>
+								<option type="text" class="form-control" id="validationCustom02"
+									required value="1">AVENTURA</option>
+								<option type="text" class="form-control" id="validationCustom02"
+									requiredvalue="2">DEGUSTACION</option>
+								<option type="text" class="form-control" id="validationCustom02"
+									requiredvalue="3">PAISAJE</option>
+							</select>
 							<div class="valid-feedback">Por favor , Ingrese un costo
 								valido</div>
 						</div>
