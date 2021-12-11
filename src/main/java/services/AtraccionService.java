@@ -23,7 +23,7 @@ public class AtraccionService {
 	 * Servicio usado por CreateAttractionServlet
 	 */
 	
-	
+	/*
 	public Atraccion crear(String name, Double cost, Double duration, Integer capacity, TipoAtraccion tipoDeAtraccion) throws Exception {
 		//public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
 
@@ -40,11 +40,14 @@ public class AtraccionService {
 
 		return atraccion;
 	}
+	*/
 	
 
 	/*
 	 * Servicio usado por EditAttractionServlet
 	 */
+	
+	/*
 	public Atraccion update(Integer id, String name, Double cost, Double duration, Integer capacity,TipoAtraccion tipoDeAtraccion) {
 		
 
@@ -64,6 +67,7 @@ public class AtraccionService {
 
 		return atraccion;
 	}
+	*/
 	
 	/*
 	/*
@@ -105,6 +109,9 @@ public class AtraccionService {
 		attractionDAO.delete(atraccion);
 	}
 	*/
+	public void update(Atraccion atraccion) {
+		DAOFactory.getAtraccionDAO().update(atraccion);
+	}
 	
 	public void delete(Long id) throws SQLException {
 		Atraccion atraccion = DAOFactory.getAtraccionDAO().buscarPorId(id);

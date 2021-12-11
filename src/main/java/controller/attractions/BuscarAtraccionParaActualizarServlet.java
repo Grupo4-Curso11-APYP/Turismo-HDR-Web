@@ -32,7 +32,7 @@ public class BuscarAtraccionParaActualizarServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		req.setAttribute("atraccion", atraccion);
+		req.setAttribute("atraccionAEditar", atraccion);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion-form.jsp");
 		dispatcher.forward(req, resp);

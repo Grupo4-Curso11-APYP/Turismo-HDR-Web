@@ -26,21 +26,13 @@ public class EditAttractionServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//Integer id = Integer.parseInt(req.getParameter("id"));
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		String name = req.getParameter("nombre");
-		Double cost = Double.parseDouble(req.getParameter("costo"));
-		// Integer cost = req.getParameter("cost").trim() == "" ? null : Integer.parseInt(req.getParameter("cost"));
-		Double duration = Double.parseDouble(req.getParameter("duracion"));
-		Integer capacity = Integer.parseInt(req.getParameter("capacidad"));
-		TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));//(req.getParameter("tipoDeAtraccion"));
-		//Integer id, String name, Double cost, Double duration, Integer capacity,TipoAtraccion tipoDeAtraccion
-		Atraccion atraccion = atraccionService.update(id, name, cost, duration, capacity,tipoDeAtraccion);
-		//String nombre, Double costo, Double tiempo, Integer cupo, TipoAtraccion tipo
-		if (atraccion.esValido(name, cost, duration, capacity, tipoDeAtraccion)) {
+		Integer cupo = Integer.parseInt(req.getParameter("cupo"));
+		Atraccion atraccion = (Atraccion) req.getSession().getAttribute("atraccionAEditar");
+		atraccionService.update(atraccion);
+		if (atraccion.esValido(cupo)) {
 			resp.sendRedirect("/turismoHDR/listar-atraccion.jsp");
 		} else {
-			req.setAttribute("attraccion", atraccion);
+			//req.setAttribute("atraccionAEditar", atraccion);
 
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion-form.jsp");
 			dispatcher.forward(req, resp);
