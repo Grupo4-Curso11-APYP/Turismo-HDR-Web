@@ -86,11 +86,19 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		Connection conn = ConnectionProvider.getConnection();
 		PreparedStatement statement = conn.prepareStatement(sql);
 
-		statement.setString(1, nombre);
+		statement.setString(2, nombre);
+		statement.setDouble(3, costo);
+		statement.setDouble(4, tiempo);
+		statement.setInt(5, capacity);
+		statement.setString(6, tipoAtraccion.name());
+		
+		/*
+		 * statement.setString(1, nombre);
 		statement.setDouble(2, costo);
 		statement.setDouble(3, tiempo);
 		statement.setInt(4, capacity);
 		statement.setString(5, tipoAtraccion.name());
+		 */
 
 		int rows = statement.executeUpdate();
 

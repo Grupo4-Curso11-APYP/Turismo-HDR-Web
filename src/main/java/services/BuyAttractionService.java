@@ -34,7 +34,7 @@ AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 			atraccion.reservarCupo();
 
 			// no grabamos para no afectar la base de pruebas
-			atraccionDAO.update(atraccion);
+			atraccionDAO.update(atraccion,-1);
 			usuarioDAO.update(user);
 		}
 
