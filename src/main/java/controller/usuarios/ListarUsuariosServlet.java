@@ -36,7 +36,7 @@ public class ListarUsuariosServlet extends HttpServlet implements Servlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		req.setAttribute("usuario", usuarios);
+		req.setAttribute("usuarios", usuarios);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listar-usuario.jsp");
 		dispatcher.forward(req, resp);
