@@ -127,7 +127,7 @@
                 <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                        <a class="collapse-item" href="insertar-atraccion.jsp">Atraccion</a>
+                        <a class="collapse-item" href="insertar-atraccion.do">Atraccion</a>
                         <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
                         <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
                          <a class="collapse-item" href="insertar-tipoAtraccion.jsp">Tipo Atraccion</a>
@@ -159,7 +159,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="listar-usuario.do">Usuarios</a>
                         <a class="collapse-item" href="<%= request.getContextPath() %>/listar-atraccion.do">Atracciones</a>
-                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
+                        <a class="collapse-item" href="listar-itinerarios.do">Itinerarios</a>
                     </div>
                 </div>
             </li>

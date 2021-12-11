@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 import model.Atraccion;
+import model.Itinerario;
 import model.Ofertable;
 import model.Promocion;
 import model.Usuario;
@@ -22,6 +23,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 
 	private AtraccionDAOImpl atraccionDao;
 	private PromocionDAOImpl promocionDao;
+	private UsuarioDaoImpl usuarioDao;
 	
 	/*
 	 * Busca un itinerario por nombre de usuario
@@ -45,6 +47,41 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
+	}
+	
+	@Override
+	public List<Itinerario> findAll() throws SQLException {
+		String sql = "SELECT * FROM Itinerario ORDER BY ID_Usuario";
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement statement = conn.prepareStatement(sql);
+		ResultSet resultados = statement.executeQuery();
+		
+		List<Itinerario> itinerarios = new LinkedList<Itinerario>();
+		while (resultados.next()) {
+			try { itinerarios.add(aItinerario(resultados));
+			} catch (Exception e) {
+
+				throw new MissingDataException(e);
+			}
+		} return itinerarios;
+	}
+
+	private Itinerario aItinerario(ResultSet resultados) throws SQLException {
+		int idPromocion = resultados.getInt(1);
+		Long id = resultados.getLong(2);
+		usuarioDao = new UsuarioDaoImpl();
+		atraccionDao = new AtraccionDAOImpl();
+		promocionDao = new PromocionDAOImpl();
+		Usuario usuario = this.usuarioDao.buscarPorId(resultados.getLong(3));
+		Long idAtraccion = resultados.getLong(4);
+		Ofertable ofertable;
+		if (idPromocion > 0) {
+			ofertable = this.promocionDao.consultarID_Promo(idPromocion);
+		} else {
+			ofertable = this.atraccionDao.buscarPorId(idAtraccion);
+		}
+		Itinerario itinerario = new Itinerario(id, usuario, ofertable);
+		return itinerario;
 	}
 
 	/*
