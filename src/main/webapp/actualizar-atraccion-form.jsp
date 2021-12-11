@@ -98,7 +98,7 @@
         <h2 class="fw-bolder mt-3 text-white">Actualizar El Cupo de
             Atraccion</h2>
 
-        <form id="form-contact" class="row g-3 needs-validation " novalidate action="actualizar-atraccion-form" method="post"> 
+        <form id="form-contact" class="row g-3 needs-validation " novalidate action="actualizar-atraccion-form.do" method="post"> 
             
             <div class="col-md-6">
                 <label for="cupo" class="form-label text-white">Cupo
