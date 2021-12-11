@@ -31,7 +31,7 @@ public class EditAttractionServlet extends HttpServlet {
 		Atraccion atraccion = (Atraccion) req.getSession().getAttribute("atraccionAEditar");
 		atraccionService.update(atraccion, cupo);
 		if (atraccion.esValido(cupo)) {
-			resp.sendRedirect("/turismoHDR/listar-atraccion.jsp");
+			resp.sendRedirect("/turismoHDR/listar-atraccion.do");
 		} else {
 			//req.setAttribute("atraccionAEditar", atraccion);
 
