@@ -5,7 +5,7 @@ import java.util.List;
 
 import model.Atraccion;
 import model.TipoAtraccion;
-import persistence.AtraccionDAO;
+//import persistence.AtraccionDAO;
 import persistence.commons.DAOFactory;
 import persistence.impl.AtraccionDAOImpl;
 
@@ -23,13 +23,13 @@ public class AtraccionService {
 	 * Servicio usado por CreateAttractionServlet
 	 */
 	
-	/*
+	
 	public Atraccion crear(String name, Double cost, Double duration, Integer capacity, TipoAtraccion tipoDeAtraccion) throws Exception {
 		//public Atraccion crear(String name, Integer cost, Integer duration, Integer capacity, TipoAtraccion tipo) throws Exception {
 
 		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipoDeAtraccion);
 
-		if (atraccion.esValido(name, cost, duration, capacity,tipoDeAtraccion)) {
+		if (atraccion.esValidoFull(name, cost, duration, capacity,tipoDeAtraccion)) {
 			//AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 			AtraccionDAOImpl atracDI = new AtraccionDAOImpl();
 			//String tipo_s = tipo.name();
@@ -40,7 +40,7 @@ public class AtraccionService {
 
 		return atraccion;
 	}
-	*/
+	
 	
 
 	/*

@@ -51,13 +51,13 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 
 	 */
 	
-	/*
-	public boolean esValido(String nombre, Double costo, Double tiempo, Integer cupo, TipoAtraccion tipo) {
+	
+	public boolean esValidoFull(String nombre, Double costo, Double tiempo, Integer cupo, TipoAtraccion tipo) {
 		return ((nombre != null) && (costo > 0) && (tiempo > 0) && (cupo > 0)
 		&& (tipo == TipoAtraccion.DEGUSTACION || tipo == TipoAtraccion.PAISAJE
 				|| tipo == TipoAtraccion.AVENTURA));
 	}
-	*/
+	
 	
 	public boolean esValido(Integer cupo) {
 		return cupo > 0;
