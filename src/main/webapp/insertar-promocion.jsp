@@ -114,8 +114,16 @@
                                 <div class="valid-feedback">¡Se ve bien!</div>
                             </div>
                             <div class="col-md-4">
-                                <label for="validationCustom02" class="form-label">Tipo</label>
-                                <input type="number" class="form-control" id="validationCustom02" required>
+                               <select for="validationCustom02" class="form-select mt-4 pb-1 "
+								aria-label="Default select example">
+								<option selected>Tipo De atracciones</option>
+								<option type="text" class="form-control" id="validationCustom02"
+									required value="1">AVENTURA</option>
+								<option type="text" class="form-control" id="validationCustom02"
+									requiredvalue="2">DEGUSTACION</option>
+								<option type="text" class="form-control" id="validationCustom02"
+									requiredvalue="3">PAISAJE</option>
+							</select>
                                 <div class="valid-feedback">Por favor , Ingrese un costo
                                     valido</div>
                             </div>
