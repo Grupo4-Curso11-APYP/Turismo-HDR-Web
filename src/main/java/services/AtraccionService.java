@@ -109,8 +109,8 @@ public class AtraccionService {
 		attractionDAO.delete(atraccion);
 	}
 	*/
-	public void update(Atraccion atraccion) {
-		DAOFactory.getAtraccionDAO().update(atraccion);
+	public void update(Atraccion atraccion, int cupo) {
+		DAOFactory.getAtraccionDAO().update(atraccion, cupo);
 	}
 	
 	public void delete(Long id) throws SQLException {

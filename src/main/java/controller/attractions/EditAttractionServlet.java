@@ -1,6 +1,7 @@
 package controller.attractions;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -28,7 +29,7 @@ public class EditAttractionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer cupo = Integer.parseInt(req.getParameter("cupo"));
 		Atraccion atraccion = (Atraccion) req.getSession().getAttribute("atraccionAEditar");
-		atraccionService.update(atraccion);
+		atraccionService.update(atraccion, cupo);
 		if (atraccion.esValido(cupo)) {
 			resp.sendRedirect("/turismoHDR/listar-atraccion.jsp");
 		} else {

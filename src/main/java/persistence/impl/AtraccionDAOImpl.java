@@ -101,14 +101,14 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 * Actualiza una atracciï¿½n en la base de datos
 	 */
 	@Override
-	public int update(Atraccion atraccion) {
+	public int update(Atraccion atraccion, int cupo) {
 		//public int update(Atraccion atraccion) throws SQLException {
 		try {
 			String sql = "UPDATE Atraccion SET Cupo_Disponible = ? WHERE Nombre = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, atraccion.getCupoDisponible());
+			statement.setInt(1, cupo);
 			statement.setString(2, atraccion.getNombre());
 
 			int rows = statement.executeUpdate();
@@ -194,4 +194,5 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 }

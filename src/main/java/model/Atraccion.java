@@ -141,7 +141,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		AtraccionDAOImpl aDAO = new AtraccionDAOImpl();
 		if (this.hayCupo()) {
 			this.cupoDisponible -= 1;
-			aDAO.update(this);
+//			aDAO.update(this);
 		}
 
 	}
