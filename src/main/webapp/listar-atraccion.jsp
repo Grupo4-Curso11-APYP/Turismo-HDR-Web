@@ -87,14 +87,110 @@
 					class="d-sm-flex align-items-center justify-content-between mb-4">
 					<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 
+
 				</div>
 				<!-- HAEDER FIN  -->
 
+				<h2 class="fw-bolder display-4 mb-3 ">Atracciones</h2>
+				<!-- CARRUSEL DE ATRACCIONES COMPRA -->
+				<div class="container bg-light mb-4 ">
+					<div class=" align-items-center ">
+						<div id="carouselExampleControls"
+							class="carousel slide mb-5  border border-3 border-dark rounded-2 shadow"
+							data-bs-ride="carousel">
+
+
+
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="assets/img/card-1.jpg" class="  w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6">Mordor</h5>
+
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="assets/img/card-2.jpg" class=" w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6 text-white  ">Minas Thirt</h5>
+
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="assets/img/card-3.png" class=" w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6">Abismo de Helm</h5>
+
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="assets/img/card-4.jpg" class=" w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6">Moria</h5>
+
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="assets/img/card-5.jpg" class=" w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6">Bosque Negro</h5>
+
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="assets/img/card-6.jpg" class=" w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6">La Comarca</h5>
+
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="assets/img/card-7.jpg" class=" w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6">Erebor</h5>
+
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="assets/img/card-8.jpg" class=" w-100" height="270px"
+										alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5 class="fw-bold display-6">Lothlorien</h5>
+
+									</div>
+								</div>
+
+							</div>
+							<button class="carousel-control-prev" type="button"
+								data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button"
+								data-bs-target="#carouselExampleControls" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- FIN CARRUSEL ATRACCIONES COMPRA -->
 				<!-- ----------------------------------CRUD-------------------------------------------------- -->
 				<!-----SECCION TABLA ATRACCIONES-->
 				<div id="" class="row row-cols-12 row-cols-xl-12">
 
-					<h2 class="fw-bolder display-4 mb-3 ">Atracciones</h2>
+
+
+
+
+
 					<div class="col-lg-12">
 
 						<c:if test="${flash != null}">
@@ -126,19 +222,16 @@
 								<c:forEach items="${atracciones}" var="atraccion">
 									<tr>
 										<td><a class=" fw-bolder text-dark"
-											style="text-decoration: none; font-size: 18px;" href="#" data-toggle="modal" data-target="#ComprarModal">
-												<c:out value="${atraccion.nombre}"></c:out>
+											style="text-decoration: none; font-size: 18px;" href="#"
+											data-toggle="modal" data-target="#ComprarModal"> <c:out
+													value="${atraccion.nombre}"></c:out>
 										</a></td>
 										<td><c:out value="${atraccion.monto}"></c:out></td>
 										<td><c:out value="${atraccion.tiempo}"></c:out></td>
 										<td><c:out value="${atraccion.cupoDisponible}"></c:out></td>
 										<td><c:out value="${atraccion.tipo}"></c:out></td>
-										<td>
-												
-												<a href="#"
-													class="btn btn-success rounded" role="button">Comprar</a>
-											
-											</td>
+										<td><a href="#" class="btn btn-success rounded"
+											role="button">Comprar</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
