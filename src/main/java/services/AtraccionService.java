@@ -104,7 +104,7 @@ public class AtraccionService {
 
 	public void delete(Long id) throws SQLException {
 		Atraccion atraccion = DAOFactory.getAtraccionDAO().buscarPorId(id);
-		DAOFactory.getAtraccionDAO().delete(atraccion);
+		DAOFactory.getAtraccionDAO().deleteLogico(atraccion);
 	}
 
 	public Atraccion buscar(Long id) throws SQLException {

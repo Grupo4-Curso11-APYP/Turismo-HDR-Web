@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import model.Promocion;
 import model.TipoAtraccion;
 import model.Usuario;
 import persistence.commons.ConnectionProvider;
@@ -155,4 +156,57 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		return null;
 	}
 
+	@Override
+	public Usuario buscarPorId(Long IdUsuario) {
+		try {
+			String sql = "SELECT * FROM USUARIO WHERE ID_Usuario = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setLong(1, IdUsuario);
+			ResultSet resultados = statement.executeQuery();
+
+			Usuario usuario = null;
+
+			if (resultados.next()) {
+				usuario = toUser(resultados);
+			}
+
+			return usuario;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int deleteLogico(Usuario usuario) throws SQLException {
+		try {
+			String sql = "UPDATE Usuario SET Estado = ? WHERE ID_Usuario = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, 0);
+			statement.setLong(2, find(usuario.getNombre()));
+
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int find(String nombre) throws SQLException {
+		
+
+		String sql = "SELECT ID_Usuario, Nombre FROM Usuario WHERE Nombre LIKE \"%" + nombre + "%\"";
+
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement statement = conn.prepareStatement(sql);
+		ResultSet resultados = statement.executeQuery();
+
+		
+		return Integer.parseInt(resultados.getString(1));
+
+	}
 }

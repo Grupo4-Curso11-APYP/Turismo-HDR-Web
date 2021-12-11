@@ -4,8 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Set;
 
-
-
+import model.Promocion;
 import model.Usuario;
 
 import persistence.commons.DAOFactory;
@@ -34,6 +33,11 @@ public class UsuarioService {
 		}
 
 	return usuario;
+	}
+
+	public void delete(Long id) throws SQLException {
+		Usuario usuario = DAOFactory.getUsuarioDAO().buscarPorId(id);
+		DAOFactory.getUsuarioDAO().deleteLogico(usuario);
 	}
 
 }

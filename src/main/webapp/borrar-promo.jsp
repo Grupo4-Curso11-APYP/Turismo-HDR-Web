@@ -94,12 +94,12 @@
 				       <!--BORRAR PROMOCION-->
                         <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
                             <h2 class="fw-bolder mt-3 text-white ">
-                                Ingrese el Nombre de la Promocion <br> Que desea Eliminar
+                                Ingrese el ID de la Promocion <br> Que desea Eliminar
                             </h2>
-                            <form id="form-contact" class="row g-3 needs-validation " novalidate>
+                            <form action="borrar-promo.do" id="form-contact" class="row g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/borrar-promocion.do" method="post">
                                 <div class="col-md-4">
-                                    <label for="validationCustom01" class="form-label text-white">Nombre</label>
-                                    <input type="text" class="form-control" id="validationCustom01" required>
+                                    <label for="id" class="form-label text-white">Id</label>
+                                    <input name="id" type="text" class="form-control" id="id" required>
                                     <div class="valid-feedback">¡Se ve bien!</div>
                                 </div>
                                 <div class="col-12">

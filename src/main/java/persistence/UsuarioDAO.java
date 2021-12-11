@@ -24,4 +24,10 @@ public interface UsuarioDAO extends GenericDAO<Usuario> {
 	
 	public int update(Usuario usuario) throws SQLException;
 	 */
+
+	public abstract Usuario buscarPorId(Long id)throws SQLException;
+
+	public abstract int deleteLogico(Usuario usuario)throws SQLException;
+
+	public int find(String nombre) throws SQLException;
 }

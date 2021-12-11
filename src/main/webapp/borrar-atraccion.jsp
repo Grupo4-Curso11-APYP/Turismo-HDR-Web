@@ -94,9 +94,9 @@
 				  <!--BORRAR ACTRACCION-->
                         <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
                             <h2 class="fw-bolder mt-3 text-white ">
-                                Ingrese el Nombre de la Atraccion <br> Que desea Eliminar
+                                Ingrese el ID de la Atraccion <br> Que desea Eliminar
                             </h2>
-                            <form id="form-contact" class="row g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/borrar-atraccion.do" method="post">
+                            <form action="borrar-atraccion.do" id="form-contact" class="row g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/borrar-atraccion.do" method="post">
                                 <div class="col-md-4">
                                     <label for="id" class="form-label text-white">Id</label>
                                     <input name="id" type="text" class="form-control" id="id" required>

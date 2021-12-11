@@ -24,7 +24,8 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		try {
 			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Costo, Atraccion.Tiempo, Atraccion.Cupo_Disponible, TipoAtraccion.id_tipoAtraccion\r\n"
 					+ "FROM Atraccion INNER JOIN TipoAtraccion\r\n"
-					+ "ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion";
+					+ "ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion"
+					+ "WHERE Estado <> 0";
 
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -200,6 +201,27 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			throws SQLException {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	/*
+	 * Actualiza estado de atracciï¿½n en la base de datos para borrado lógico
+	 */
+	@Override
+	public int deleteLogico(Atraccion atraccion) throws SQLException {
+		try {
+			String sql = "UPDATE Atraccion SET Estado = ? WHERE ID_Atraccion = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, 0);
+			statement.setLong(2, find(atraccion.getNombre()));
+
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 
 }

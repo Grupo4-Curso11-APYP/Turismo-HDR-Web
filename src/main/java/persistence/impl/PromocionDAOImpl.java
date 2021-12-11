@@ -209,7 +209,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 	@Override
 	public List<Promocion> findAll() throws SQLException {
 
-		String sql = "SELECT * FROM Promocion";
+		String sql = "SELECT * FROM Promocion WHERE Estado <> 0";
 		Connection conn = ConnectionProvider.getConnection();
 		PreparedStatement statement = conn.prepareStatement(sql);
 		ResultSet resultados = statement.executeQuery();
@@ -230,6 +230,67 @@ public class PromocionDAOImpl implements PromocionDAO {
 	public Promocion find(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int deleteLogico(Promocion promocion) throws SQLException {
+		try {
+			String sql = "UPDATE Promocion SET Estado = ? WHERE ID_Promocion = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, 0);
+			statement.setLong(2, find(promocion.getNombre()));
+
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+	
+	@Override
+	public int find(String nombre) throws SQLException {
+		
+
+		String sql = "SELECT ID_Promocion, Nombre FROM Promocion WHERE Nombre LIKE \"%" + nombre + "%\"";
+
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement statement = conn.prepareStatement(sql);
+		ResultSet resultados = statement.executeQuery();
+
+		
+		return Integer.parseInt(resultados.getString(1));
+
+	}
+
+	@Override
+	public Promocion buscarPorId(Long IdPromocion) {
+		try {
+			String sql = " SELECT Promocion.ID_Promocion, Promocion.Nombre,Promocion.Tipo "
+					   + " FROM Promocion" 
+					   + " WHERE Promocion.ID_Promocion = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setLong(1, IdPromocion);
+			ResultSet resultados = statement.executeQuery();
+
+			Promocion promocion = null;
+
+			if (resultados.next()) {
+				promocion = toPromocion(resultados);
+			}
+
+			return promocion;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	private Promocion toPromocion(ResultSet resultados) throws SQLException {
+		String nombre = resultados.getString(2);
+		return new PromocionAbsoluta(nombre, null, null, 0);
 	}
 
 }
