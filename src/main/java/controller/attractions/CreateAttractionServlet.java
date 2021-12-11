@@ -31,7 +31,8 @@ public class CreateAttractionServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/insertar-atraccion.jsp");
+		//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
 		dispatcher.forward(req, resp);
 	}
 	/*
@@ -40,11 +41,19 @@ public class CreateAttractionServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println(req);
 		String nombre = req.getParameter("nombre");
+		System.out.println(nombre);
 		Double costo = Double.parseDouble(req.getParameter("costo"));
+		System.out.println(costo);
 		Double tiempo = Double.parseDouble(req.getParameter("tiempo"));
+		System.out.println(tiempo);
 		Integer cupoDisponible = Integer.parseInt(req.getParameter("cupoDisponible"));
-		TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));//(req.getParameter("tipoDeAtraccion"));
+		System.out.println(cupoDisponible);
+		TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));
+		//TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion")); <===== asi estaba antes
+		//(req.getParameter("tipoDeAtraccion"));
+		System.out.println(tipoDeAtraccion);
 		//String name, Integer cost, Integer duration, Integer capacity, String tipo
 		Atraccion atraccion = null;
 		try {
@@ -53,7 +62,7 @@ public class CreateAttractionServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (atraccion.esValido(nombre, costo, tiempo, cupoDisponible,tipoDeAtraccion)) {
+		if (atraccion.esValidoFull(nombre, costo, tiempo, cupoDisponible,tipoDeAtraccion)) {
 			resp.sendRedirect("/turismoHDR/attractions/index.do");
 		} else {
 			req.setAttribute("atraccion", atraccion);

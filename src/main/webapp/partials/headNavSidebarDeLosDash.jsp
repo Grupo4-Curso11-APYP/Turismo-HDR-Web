@@ -158,6 +158,8 @@
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="listar-usuario.jsp">Usuarios</a>
+                        <a class="collapse-item" href="<%= request.getContextPath() %>/listar-atraccion.do">Atracciones</a>
+                        <a class="collapse-item" href="listar-itinerario.jsp">Itinerario</a>
                     </div>
                 </div>
             </li>

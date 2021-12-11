@@ -182,11 +182,11 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		return 0;
 	}
 
-	@Override
+	/*@Override
 	public int update(Usuario t) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
+	}*/
 
 	@Override
 	public int delete(Usuario t) throws SQLException {
