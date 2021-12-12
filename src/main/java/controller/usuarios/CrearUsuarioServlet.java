@@ -42,20 +42,23 @@ public class CrearUsuarioServlet extends HttpServlet {
 		String password = req.getParameter("password");
 		double presupuesto = Double.parseDouble(req.getParameter("presupuesto"));
 		double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
-		String tipoFavorito = req.getParameter("tipoFavorito");//aca solo se me ocurre parsearlo como String, pero habria que reformatear el metodo de creacion
+		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(req.getParameter("tipoFavorito"));//aca solo se me ocurre parsearlo como String, pero habria que reformatear el metodo de creacion
+		//String tipoFavorito = req.getParameter("tipoFavorito");
 		boolean admin = false;//req.getParameter("bool"));
 
 		//int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
 		//User tmp_user = userService.create(username, password, coins, time);
 		Usuario usuario_2 = null;
 		try {
-			usuario_2 = usuarioService.crear(id,nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
+			usuario_2 = usuarioService.crear(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
+			//usuario_2 = usuarioService.crear(id,nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//String nombre, String password, double presupuesto, Double tiempoDisponible,String tipoFavorito
-		if (usuario_2.esValido(nombre, password, presupuesto, tiempoDisponible, tipoFavorito)) {
+		//String nombre, String password, Double presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito
+		if (usuario_2.esUsuarioValido(nombre, password, presupuesto, tiempoDisponible, tipoFavorito)) {
 			resp.sendRedirect("/listar-usuario.do");
 		} else {
 			req.setAttribute("usuario", usuario_2);

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import model.Promocion;
+import model.TipoAtraccion;
 import model.Usuario;
 
 import persistence.commons.DAOFactory;
@@ -18,16 +19,18 @@ public class UsuarioService {
 	// public Usuario crear(int id, String nombre, double presupuesto, double
 	// tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin)
 	// throws Exception {
-	public Usuario crear(int id, String nombre, double presupuesto, double tiempoDisponible, String tipoFavorito,
+	public Usuario crear(String nombre, Double presupuesto, Double tiempoDisponible, TipoAtraccion tipoFavorito,
 			String password, Boolean admin) throws Exception {
+	//public Usuario crear(int id, String nombre, double presupuesto, double tiempoDisponible, String tipoFavorito,
+	//	String password, Boolean admin) throws Exception {
 		// int id, String nombre, double presupuesto, double tiempoDisponible,
 		// TipoAtraccion tipoFavorito,String password, Boolean admin
 		// User user = new User(-1, username, password, coins, time, false);
-		Usuario usuario = new Usuario(-1, nombre, presupuesto, tiempoDisponible, tipoFavorito, password, false);
+		Usuario usuario = new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 	usuario.setPassword(password);
 		// String nombre, String password, int presupuesto, Double
 		// tiempoDisponible,TipoAtraccion tipoFavorito
-		if (usuario.esValido(nombre, password, presupuesto, tiempoDisponible, tipoFavorito)) {
+		if (usuario.esUsuarioValido(nombre, password, presupuesto, tiempoDisponible, tipoFavorito)) {
 		DAOFactory.getUsuarioDAO().insert(usuario);
 			// XXX: si no devuelve "1", es que hubo mÃ¡s errores
 		}
