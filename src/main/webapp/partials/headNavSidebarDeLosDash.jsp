@@ -196,7 +196,7 @@
                         <a class="collapse-item" href="listar-atraccion.do">Ver atracciones</a>
                         <a class="collapse-item" href="listar-promo.do">Ver promociones</a>
                         <a class="collapse-item" href="listar-itinerario.do">Ver itinerario</a>
-                        <a class="collapse-item" href="listar-ofertardor.do">Ver Ofertador</a>
+                        <a class="collapse-item" href="listar-ofertador.do">Ver Ofertador</a>
                     </div>
                 </div>
             </li>
