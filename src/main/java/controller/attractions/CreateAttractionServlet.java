@@ -13,7 +13,7 @@ import model.TipoAtraccion;
 import services.AtraccionService;
 
 
-@WebServlet("insertar-atraccion.do")
+@WebServlet("/insertar-atraccion.do")
 public class CreateAttractionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 3455721046062278592L;
