@@ -22,11 +22,11 @@ public class Itinerario {
 		return id;
 	}
 	
-	public Usuario getUsuarios() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 	
-	public Ofertable getOfertables() {
+	public Ofertable getOfertable() {
 		return ofertable;
 	}
 
