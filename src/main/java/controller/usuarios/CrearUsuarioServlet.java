@@ -37,19 +37,35 @@ public class CrearUsuarioServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id = Integer.parseInt(req.getParameter("id"));
+		//int id = Integer.parseInt(req.getParameter("id"));
 		String nombre = req.getParameter("nombre");
+		System.out.println(nombre);
 		String password = req.getParameter("password");
+		System.out.println(password);
 		double presupuesto = Double.parseDouble(req.getParameter("presupuesto"));
+		System.out.println(presupuesto);
 		double tiempoDisponible = Double.parseDouble(req.getParameter("tiempoDisponible"));
-		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(req.getParameter("tipoFavorito"));//aca solo se me ocurre parsearlo como String, pero habria que reformatear el metodo de creacion
+		System.out.println(tiempoDisponible);
+		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));//aca solo se me ocurre parsearlo como String, pero habria que reformatear el metodo de creacion
+		System.out.println(tipoFavorito);
 		//String tipoFavorito = req.getParameter("tipoFavorito");
 		boolean admin = false;//req.getParameter("bool"));
+		System.out.println(admin);
+		
+		/*
+		 * <option selected>Tipo De atracciones</option>
+								<%@ page import="model.TipoAtraccion" %>
+								<% pageContext.setAttribute("tipoDeAtraccion", model.TipoAtraccion.values()); %>
+								<c:forEach var="entry" items="${tipoDeAtraccion}">
+								    <option>${entry.name()}</option>
+								</c:forEach>
+		 */
 
 		//int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
 		//User tmp_user = userService.create(username, password, coins, time);
 		Usuario usuario_2 = null;
 		try {
+			//String nombre, Double presupuesto, Double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
 			usuario_2 = usuarioService.crear(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 			//usuario_2 = usuarioService.crear(id,nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 		} catch (Exception e) {
