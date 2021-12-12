@@ -126,6 +126,27 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			throw new MissingDataException(e);
 		}
 	}
+	
+	/*
+	 * Update de la compra que settea segun atributo de atraccion
+	 */
+	@Override
+	public int update(Atraccion atraccion) throws SQLException {
+		try {
+			String sql = "UPDATE Atraccion SET Cupo_Disponible = ? WHERE Nombre = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, atraccion.getCupoDisponible());
+			statement.setString(2, atraccion.getNombre());
+
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
 
 	/*
 	 * Borra una atracciï¿½n en la base de datos

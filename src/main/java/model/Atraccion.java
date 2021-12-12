@@ -1,6 +1,8 @@
 package model;
 
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 import persistence.impl.AtraccionDAOImpl;
@@ -13,6 +15,8 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	//protected String tipoAtraccion;
 	protected TipoAtraccion tipoAtraccion;
 	protected String nombre;
+	private Integer id;
+	private Map<String, String> errors;
 
 	/*
 	 * @Param nombre , costo, tiempo , cupoDisponible y tipo se inicializan todos
@@ -27,6 +31,37 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		validandoTiempo(tiempo);
 		validandoCupo(cupoDisponible);
 		this.tipoAtraccion = tipoDeAtraccion;
+	}
+	
+	public boolean puedeAlbergar(int i) {
+		return this.cupoDisponible >= i;
+	}
+
+	public void albergar(int i) {
+		this.cupoDisponible -= i;
+	}
+	
+	public boolean isValid() {
+		validate();
+		return errors.isEmpty();
+	}
+	
+	public void validate() {
+		errors = new HashMap<String, String>();
+
+		if (this.costo <= 0) {
+			errors.put("costo", "Debe ser positivo");
+		}
+		if (this.tiempo <= 0) {
+			errors.put("tiempo", "Debe ser positivo");
+		}
+		if (this.cupoDisponible <= 0) {
+			errors.put("cupoDisponible", "Debe ser positivo");
+		}
+	}
+	
+	public Map<String, String> getErrors() {
+		return errors;
 	}
 	/*
 	public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible) throws Exception {
@@ -274,6 +309,10 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	@Override
 	public Atraccion[] getPackAtracciones() {
 		return null;
+	}
+
+	public Integer getId() {
+		return id;
 	}
 
 }

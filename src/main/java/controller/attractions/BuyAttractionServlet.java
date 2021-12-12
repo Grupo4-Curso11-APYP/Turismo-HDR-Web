@@ -1,7 +1,9 @@
 package controller.attractions;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
 
 import jakarta.servlet.RequestDispatcher;
@@ -14,7 +16,7 @@ import model.Usuario;
 import persistence.commons.DAOFactory;
 import services.BuyAttractionService;
 
-@WebServlet("/attractions/buy.do")
+@WebServlet("/comprar.do")
 public class BuyAttractionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 3455721046062278592L;
@@ -30,23 +32,25 @@ public class BuyAttractionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		Integer atraccionId = Integer.parseInt(req.getParameter("id"));
-		Usuario usuario = (Usuario) req.getSession().getAttribute("user");
-		Map<String, String> errors = null;
+		PrintWriter out = resp.getWriter();
+		out.println(atraccionId);
+		
+		/*
+		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
+		Map<String, String> errors = new HashMap<String, String>();
 		try {
 			errors = buyAttractionService.buy(usuario.getNombre(), atraccionId);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
-		Usuario usuario2 =null;
+		Usuario usuario2 = new Usuario();
 		try {
 			usuario2 = DAOFactory.getUsuarioDAO().findByNombre(usuario.getNombre());
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		req.getSession().setAttribute("user", usuario2);
+		req.getSession().setAttribute("usuario", usuario2);
 		
 		if (errors.isEmpty()) {
 			req.setAttribute("flash", "¡Gracias por comprar!");
@@ -56,8 +60,9 @@ public class BuyAttractionServlet extends HttpServlet {
 		}
 
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("listar-atraccion.do");
+				.getRequestDispatcher("/turismoHDR/listar-ofertador.do");
 		dispatcher.forward(req, resp);
+		*/
 	}
 	
 }

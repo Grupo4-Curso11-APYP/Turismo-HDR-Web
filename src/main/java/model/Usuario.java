@@ -59,12 +59,12 @@ public class Usuario {
 	}
 	
 	public void agregarAItinerario(Atraccion atraccion) {
-		this.presupuesto -= atraccion.getCosto();
+		this.presupuesto -= atraccion.getMonto();
 		this.tiempoDisponible -= atraccion.getTiempo();
 	}
 	
 	public boolean puedeComprar(Atraccion atraccion) {
-		return atraccion.getCosto() <= this.presupuesto;
+		return atraccion.getMonto() <= this.presupuesto;
 	}
 	
 	public boolean puedeAsistir(Atraccion atraccion) {

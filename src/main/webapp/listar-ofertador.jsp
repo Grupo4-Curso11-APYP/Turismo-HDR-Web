@@ -81,6 +81,20 @@
 
 			<!-- INICIO DEL CONTENIDO ,LA COMIDA VA AQUI-->
 			<div class="container-fluid">
+			<c:if test="${flash != null}">
+							<div class="alert alert-danger">
+								<p>
+									<c:out value="${flash}" />
+									<c:if test="${errors != null}">
+										<ul>
+											<c:forEach items="${errors}" var="entry">
+												<li><c:out value="${entry.getValue()}"></c:out></li>
+											</c:forEach>
+										</ul>
+									</c:if>
+								</p>
+							</div>
+						</c:if>
 
 				<!-- HEADER DE PAGINA-->
 				<div
@@ -104,20 +118,7 @@
 
 					<div class="col-lg-12">
 
-						<c:if test="${flash != null}">
-							<div class="alert alert-danger">
-								<p>
-									<c:out value="${flash}" />
-									<c:if test="${errors != null}">
-										<ul>
-											<c:forEach items="${errors}" var="entry">
-												<li><c:out value="${entry.getValue()}"></c:out></li>
-											</c:forEach>
-										</ul>
-									</c:if>
-								</p>
-							</div>
-						</c:if>
+						
 						<table class="table table-stripped table-hover">
 							<thead>
 								<tr>
@@ -142,9 +143,13 @@
 										<td><c:out value="${ofertable.packAtracciones[0]}"></c:out></td>
 										<td><c:out value="${ofertable.packAtracciones[1]}"></c:out></td>
 										<td><c:out value="${ofertable.atraccionGratis}"></c:out></td>
-										<td><c:out value="${ofertable.descuento}"></c:out></td>
-										<td><a href="#" class="btn btn-success rounded"
-											role="button">Comprar</a></td>
+										<td><c:out value="${ofertable.descuento}"></c:out></td>										 
+										<td><c:choose>
+										<c:when
+									test="${usuario.puedeComprar(ofertable) && usuario.puedeAsistir(ofertable) && atraccion.puedeAlbergar(1)}"><a href="comprar.do?id=${ofertable.id}" class="btn btn-success rounded"
+											role="button">Comprar</a></c:when>
+								<c:otherwise><a href="#" class="btn btn-secondary rounded disabled"
+											role="button">No se puede Comprar</a></c:otherwise></c:choose></td>
 									</tr>
 								</c:forEach>
 							</tbody>

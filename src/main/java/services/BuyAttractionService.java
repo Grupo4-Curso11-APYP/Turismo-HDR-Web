@@ -12,7 +12,7 @@ import persistence.commons.DAOFactory;
 
 public class BuyAttractionService {
 
-AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+	AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 	UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 
 	public Map<String, String> buy(String nombre, Integer attractionId) throws SQLException {
@@ -21,26 +21,27 @@ AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		Usuario user = usuarioDAO.findByNombre(nombre);
 		Atraccion atraccion = atraccionDAO.find(attractionId);
 
-		if (!atraccion.hayCupo()) {
+		if (!atraccion.puedeAlbergar(1)) {
 			errors.put("atraccion", "No hay cupo disponible");
 		}
 		if (!user.puedeComprar(atraccion)) {
-			errors.put("user", "No tienes dinero suficiente y no tienes tiempo suficiente");
+			errors.put("usuario", "No tienes dinero suficiente");
 		}
-		
+		if (!user.puedeAsistir(atraccion)) {
+			errors.put("usuario", "No tienes tiempo suficiente");
+		}
 
 		if (errors.isEmpty()) {
-			user.comprarOfertable(atraccion);
-			atraccion.reservarCupo();
+			user.agregarAItinerario(atraccion);
+			atraccion.albergar(1);
 
 			// no grabamos para no afectar la base de pruebas
-			atraccionDAO.update(atraccion,-1);
+			atraccionDAO.update(atraccion);
 			usuarioDAO.update(user);
 		}
 
 		return errors;
 
 	}
-	
 
 }
