@@ -25,7 +25,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Costo, Atraccion.Tiempo, Atraccion.Cupo_Disponible, TipoAtraccion.id_tipoAtraccion\r\n"
 					+ "FROM Atraccion INNER JOIN TipoAtraccion\r\n"
 					+ "ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion"
-					+ "WHERE Estado <> 0";
+					+ "WHERE Atraccion.Estado <> 0";
 
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);

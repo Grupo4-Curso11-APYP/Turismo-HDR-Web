@@ -21,7 +21,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	@Override
 	public Set<Usuario> findAll() {
 		try {
-			String sql = "SELECT * FROM USUARIO";
+			String sql = "SELECT * FROM USUARIO WHERE Estado <> 0";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();

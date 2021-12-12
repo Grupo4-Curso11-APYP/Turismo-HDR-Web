@@ -35,10 +35,6 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		/*
-		 * try { atracciones = atraccionService.list(); } catch (SQLException e1) {
-		 * e1.printStackTrace(); }
-		 */
 
 		req.setAttribute("atracciones", atracciones);
 
