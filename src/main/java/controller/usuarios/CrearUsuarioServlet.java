@@ -75,7 +75,7 @@ public class CrearUsuarioServlet extends HttpServlet {
 		//String nombre, String password, double presupuesto, Double tiempoDisponible,String tipoFavorito
 		//String nombre, String password, Double presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito
 		if (usuario_2.esUsuarioValido(nombre, password, presupuesto, tiempoDisponible, tipoFavorito)) {
-			resp.sendRedirect("/listar-usuario.do");
+			resp.sendRedirect("/turismoHDR/listar-usuario.do");
 		} else {
 			req.setAttribute("usuario", usuario_2);
 

@@ -92,15 +92,17 @@
 
 					<!-- -USUARIOS ALTA -->
 					<div class="col-xl-5 col-lg-6 bg-dark ms-5 mb-3 rounded-2">
-						<h2 class="fw-bolder mt-3  text-white">Ingresar Una Nuevo
+						<h2 class="fw-bolder mt-3  text-white">Ingresar Un Nuevo
 							Usuario</h2>
 
 						<form id="form-contact"
+
 							class="row text-white g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/insertar-usuario.do" method="post">
 							<div class="col-md-4">
 								<label for="validationCustom01" class="form-label">Nombre</label>
 								<input type="text" class="form-control" name="nombre" id="validationCustom01"
 									required value="${usuario.nombre }">
+
 								<div class="valid-feedback">¡Se ve bien!</div>
 							</div>
 							<div class="col-md-4">
@@ -108,12 +110,14 @@
 								<input type="number" class="form-control"
 									id="validationCustom02" name="presupuesto" required value="${usuario.presupuesto }">
 								<div class="valid-feedback">Por favor , Ingrese un costo
+
 									valido</div>
 							</div>
 							<div class="col-md-4">
 								<label for="validationCustom02" class="form-label">Tiempo
 									Disponible</label> <input type="number" class="form-control"
 									id="validationCustom02" name="tiempoDisponible" required value="${usuario.tiempoDisponible }">
+
 								<div class="invalid-feedback">Por favor, Ingrese un tiempo
 									valido.</div>
 							</div>
