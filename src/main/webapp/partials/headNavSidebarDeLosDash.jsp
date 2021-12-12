@@ -142,7 +142,7 @@
                     aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
                 <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="actualizar-atraccion.jsp">Atraccion</a>
+                        <a class="collapse-item" href="actualizar-atraccion.do">Atraccion</a>
                         <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
                         <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
                          <a class="collapse-item" href="actualizar-tipo.jsp">Tipo Atraccion</a>
@@ -171,9 +171,9 @@
                     aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
                 <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="borrar-atraccion.jsp">Atraccion</a>
-                        <a class="collapse-item" href="borrar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="borrar-usuario.jsp">Usuario</a>
+                        <a class="collapse-item" href="borrar-atraccion.do">Atraccion</a>
+                        <a class="collapse-item" href="borrar-promo.do">Promocion</a>
+                        <a class="collapse-item" href="borrar-usuario.do">Usuario</a>
                         <a class="collapse-item" href="borrar-tipo.jsp">Tipo Atraccion</a>
                     </div>
                 </div>
