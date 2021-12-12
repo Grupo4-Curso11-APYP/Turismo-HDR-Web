@@ -130,17 +130,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								
+								<c:forEach items="${ofertables}" var="ofertable">
 									<tr>
-										<td>Nombre</td>
+										<td><c:out value="${ofertable.nombre}"></c:out></td>
 										<td>Costo</td>
 										<td>Tiempo</td>
 										<td>Cupo</td>
 										<td>Tipo</td>
-										<td>Accion<a href="#" class="btn btn-success rounded"
+										<td><a href="#" class="btn btn-success rounded"
 											role="button">Comprar</a></td>
 									</tr>
-								
+								</c:forEach>
 							</tbody>
 						</table>
 
