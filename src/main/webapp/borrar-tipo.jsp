@@ -94,13 +94,14 @@
 				  <!-- TIPO ATRACCION BORRAR -->
 
                         <div class="col-xl-5 col-lg-6 bg-dark ms-5 mb-3 rounded-2">
-                            <h2 class="fw-bolder mt-3  text-white">BorrarTipo de
-                                Atraccion</h2>
+                            <h2 class="fw-bolder mt-3 text-white ">
+                                Ingrese el ID del Tipo de Atraccion <br> Que desea Eliminar
+                            </h2>
 
-                            <form id="form-contact" class="row text-white g-3 needs-validation " novalidate>
+                            <form action="borrar-tipo.do" id="form-contact" class="row g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/borrar-tipo.do" method="post">
                                 <div class="col-md-4">
-                                    <label for="validationCustom01" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="validationCustom01" required>
+                                    <label for="id" class="form-label text-white">Id</label>
+                                    <input name="id" type="text" class="form-control" id="id" required>
                                     <div class="valid-feedback">¡Se ve bien!</div>
                                 </div>
 
