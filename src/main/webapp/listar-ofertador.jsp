@@ -122,10 +122,13 @@
 							<thead>
 								<tr>
 									<th>Nombre</th>
+									<th>Tipo</th>
 									<th>Costo</th>
 									<th>Tiempo</th>
-									<th>Cupo</th>
-									<th>Tipo</th>
+									<th>Contiene</th>
+									<th>Contiene</th>
+									<th>Gratis</th>
+									<th>Descuento</th>
 									<th>Accion</th>
 								</tr>
 							</thead>
@@ -133,10 +136,13 @@
 								<c:forEach items="${ofertables}" var="ofertable">
 									<tr>
 										<td><c:out value="${ofertable.nombre}"></c:out></td>
-										<td>Costo</td>
-										<td>Tiempo</td>
-										<td>Cupo</td>
-										<td>Tipo</td>
+										<td><c:out value="${ofertable.tipo}"></c:out></td>
+										<td><c:out value="${ofertable.monto}"></c:out></td>
+										<td><c:out value="${ofertable.tiempo}"></c:out></td>
+										<td><c:out value="${ofertable.packAtracciones[0]}"></c:out></td>
+										<td><c:out value="${ofertable.packAtracciones[1]}"></c:out></td>
+										<td><c:out value="${ofertable.atraccionGratis}"></c:out></td>
+										<td><c:out value="${ofertable.descuento}"></c:out></td>
 										<td><a href="#" class="btn btn-success rounded"
 											role="button">Comprar</a></td>
 									</tr>

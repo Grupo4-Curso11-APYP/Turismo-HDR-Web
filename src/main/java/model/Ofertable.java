@@ -32,5 +32,16 @@ public interface Ofertable {
 	 * devuelve el nombre del ofertable.
 	 */
 	public String getNombre();
+	
+	/*
+	 * Los siguientes getters son necesarios para mostrar en el ofertador los
+	 * atributos prioritarios de las promociones
+	 */
+	
+	public Atraccion[] getPackAtracciones();
+	public Atraccion getPackAtracciones1();
+	public Atraccion getPackAtracciones2();
+	public Atraccion getAtraccionGratis();
+	public int getDescuento();
 
 }

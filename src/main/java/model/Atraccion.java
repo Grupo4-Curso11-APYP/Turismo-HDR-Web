@@ -251,4 +251,29 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		this.nombre = nombre;
 	}
 
+	@Override
+	public Atraccion getPackAtracciones1() {
+		return null;
+	}
+
+	@Override
+	public Atraccion getPackAtracciones2() {
+		return null;
+	}
+
+	@Override
+	public Atraccion getAtraccionGratis() {
+		return null;
+	}
+
+	@Override
+	public int getDescuento() {
+		return 0;
+	}
+
+	@Override
+	public Atraccion[] getPackAtracciones() {
+		return null;
+	}
+
 }
