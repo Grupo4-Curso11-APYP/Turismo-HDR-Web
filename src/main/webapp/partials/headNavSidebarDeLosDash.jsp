@@ -158,9 +158,10 @@
                 <div id="collapseListar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="listar-usuario.do">Usuarios</a>
-                        <a class="collapse-item" href="<%= request.getContextPath() %>/listar-atraccion.do">Atracciones</a>
+                        <a class="collapse-item" href="listar-atraccion.do">Atracciones</a>
+                        <a class="collapse-item" href="listar-promo.do">Promociones</a>
                         <a class="collapse-item" href="listar-itinerarios.do">Itinerarios</a>
-                        <a class="collapse-item" href="listar-tipo.jsp">Tipo De <br> Atracciones</a>
+                        <a class="collapse-item" href="listar-tipo.jsp">Tipos De <br> Atracciones</a>
                     </div>
                 </div>
             </li>
@@ -193,10 +194,8 @@
                     aria-expanded="true" aria-controls="collapseTwo">Gestión del usuario</a>
                 <div id="collapseOpciones" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="listar-atraccion.do">Ver atracciones</a>
-                        <a class="collapse-item" href="listar-promo.do">Ver promociones</a>
-                        <a class="collapse-item" href="listar-itinerario.do">Ver itinerario</a>
-                        <a class="collapse-item" href="listar-ofertador.do">Ver Ofertador</a>
+                        <a class="collapse-item" href="listar-itinerario.do">Tu itinerario</a>
+                        <a class="collapse-item" href="listar-ofertador.do">Ofertador</a>
                     </div>
                 </div>
             </li>
