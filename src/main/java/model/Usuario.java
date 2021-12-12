@@ -56,6 +56,9 @@ public class Usuario {
 		this.ofertables = new LinkedHashSet<>();
 	}
 
+	public Usuario() {
+	}
+
 	/*
 	 * validación para evitar presupuesto negativo, si lo es, lanza una excepción
 	 */

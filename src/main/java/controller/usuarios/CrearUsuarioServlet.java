@@ -63,7 +63,7 @@ public class CrearUsuarioServlet extends HttpServlet {
 
 		//int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
 		//User tmp_user = userService.create(username, password, coins, time);
-		Usuario usuario_2 = null;
+		Usuario usuario_2 = new Usuario();
 		try {
 			//String nombre, Double presupuesto, Double tiempoDisponible, TipoAtraccion tipoFavorito,String password, Boolean admin
 			usuario_2 = usuarioService.crear(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
