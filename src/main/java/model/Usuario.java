@@ -1,6 +1,5 @@
 package model;
 
-import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -57,6 +56,19 @@ public class Usuario {
 	}
 
 	public Usuario() {
+	}
+	
+	public void agregarAItinerario(Atraccion atraccion) {
+		this.presupuesto -= atraccion.getCosto();
+		this.tiempoDisponible -= atraccion.getTiempo();
+	}
+	
+	public boolean puedeComprar(Atraccion atraccion) {
+		return atraccion.getCosto() <= this.presupuesto;
+	}
+	
+	public boolean puedeAsistir(Atraccion atraccion) {
+		return atraccion.getTiempo() <= this.tiempoDisponible;
 	}
 
 	/*
