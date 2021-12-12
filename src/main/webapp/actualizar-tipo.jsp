@@ -92,20 +92,20 @@
 				<!-- ----------------------------------CRUD-------------------------------------------------- -->
 				<!-- ACTUALIZAR TIPO ATRACCION -->
 				<div class="col-xl-5 col-lg-6 bg-dark ms-5 mb-3 rounded-2">
-					<h2 class="fw-bolder mt-3  text-white">Actualizar Tipo de
+					<h2 class="fw-bolder mt-3  text-white"> Ingresar id del Tipo de
 						Atraccion</h2>
 
 					<form id="form-contact"
-						class="row text-white g-3 needs-validation " novalidate>
+						class="row text-white g-3 needs-validation " novalidate action="actualizar-tipo.do" method="get">
 						<div class="col-md-4">
-							<label for="validationCustom01" class="form-labe text-white">Nombre</label>
-							<input type="text" class="form-control" id="validationCustom01"
+							<label for="validationCustom01" class="form-labe text-white">ID</label>
+							<input type="number" class="form-control" id="validationCustom01"
 								required>
 							<div class="valid-feedback text-white">¡Se ve bien!</div>
 						</div>
 
 						<div class="col-12">
-							<button class="btn btn-warning mb-3" type="submit">Actualizar
+							<button class="btn btn-warning mb-3" type="submit">Buscar
 								Tipo de Atraccion</button>
 						</div>
 					</form>
