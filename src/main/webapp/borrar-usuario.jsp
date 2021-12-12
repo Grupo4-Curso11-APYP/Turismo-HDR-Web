@@ -96,7 +96,7 @@
                             <h2 class="fw-bolder mt-3 text-white ">
                                 Ingrese el ID de Usuario <br> Que desea Eliminar
                             </h2>
-                            <form action="borrar-usuario.do" id="form-contact" class="row g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/borrar-promocion.do" method="post">
+                            <form action="borrar-usuario.do" id="form-contact" class="row g-3 needs-validation " novalidate action="<%= request.getContextPath() %>/borrar-usuario.do" method="post">
                                 <div class="col-md-4">
                                     <label for="id" class="form-label text-white">Id</label>
                                     <input name="id" type="text" class="form-control" id="id" required>
