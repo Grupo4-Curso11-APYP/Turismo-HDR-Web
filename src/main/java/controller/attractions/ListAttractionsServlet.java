@@ -33,7 +33,6 @@ public class ListAttractionsServlet extends HttpServlet implements Servlet {
 		try {
 			atracciones = atraccionService.list();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		/*
