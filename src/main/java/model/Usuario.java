@@ -10,8 +10,8 @@ public class Usuario {
 	private String nombre;
 	private double presupuesto;
 	private double tiempoDisponible;
-	//private TipoAtraccion tipoFavorito;
-	private String tipoFavorito;//tuve que cambiar esto para poder pasarselo a la BD
+	private TipoAtraccion tipoFavorito;
+	//private String tipoFavorito;//tuve que cambiar esto para poder pasarselo a la BD
 	private Set<Ofertable> ofertables; // Las sugerencias que va aceptando.
 	private String password;
 	private Boolean admin;
@@ -31,10 +31,12 @@ public class Usuario {
 
 	}*/
 	
-	public Usuario(int id, String nombre, double presupuesto, double tiempoDisponible, String tipoFavorito,
+	public Usuario(String nombre, Double presupuesto, Double tiempoDisponible, TipoAtraccion tipoFavorito,
 			String password, Boolean admin) throws Exception {
+		//public Usuario(int id, String nombre, double presupuesto, double tiempoDisponible, String tipoFavorito,
+		//String password, Boolean admin) throws Exception {
 		//public Usuario(int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito, String password, Boolean admin) throws Exception {
-		this.id = id;
+		//this.id = id;
 		this.nombre = nombre;
 		validandoPresupuesto(presupuesto);
 		validandoTiempoDisponible(tiempoDisponible);
@@ -45,7 +47,7 @@ public class Usuario {
 
 	}
 
-	public Usuario(String string, double i, double j, String tipo, Set<Ofertable> object) throws Exception {
+	public Usuario(String string, double i, double j, TipoAtraccion tipo, Set<Ofertable> object) throws Exception {
 	//public Usuario(String string, double i, double j, TipoAtraccion tipo, Set<Ofertable> object) throws Exception {
 		this.nombre = string;
 		validandoPresupuesto(i);
@@ -93,7 +95,7 @@ public class Usuario {
 		return this.tipoFavorito;
 	}*/
 	
-	public String getTipoFavorito() {//<<=============================================== esto lo agregue porque dado que lo pase a string no tiene uso, y rompe todo si se lo saco
+	public TipoAtraccion getTipoFavorito() {//<<=============================================== esto lo agregue porque dado que lo pase a string no tiene uso, y rompe todo si se lo saco
 		return this.tipoFavorito;
 	}
 
@@ -111,9 +113,9 @@ public class Usuario {
 		return this.ofertables;
 	}
 
-	public boolean esValido(String nombre, String password, double presupuesto, Double tiempoDisponible,String tipoFavorito) {
+	public boolean esUsuarioValido(String nombre, String password, Double presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito) {
 		//public boolean esValido(String nombre, String password, double presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito) {
-		return ((nombre != null) && (password != null) && (presupuesto > 0) && (tiempoDisponible > 0)&&((tipoFavorito == "AVENTURA")||(tipoFavorito == "DEGUSTACION")||(tipoFavorito == "PAISAJE")));
+		return ((nombre != null) && (password != null) && (presupuesto > 0) && (tiempoDisponible > 0)&&((tipoFavorito == TipoAtraccion.AVENTURA)||(tipoFavorito == TipoAtraccion.DEGUSTACION)||(tipoFavorito == TipoAtraccion.PAISAJE)));
 		//return ((nombre != null) && (password != null) && (presupuesto > 0) && (tiempoDisponible > 0)&&((tipoFavorito == tipoFavorito.AVENTURA)||(tipoFavorito == tipoFavorito.DEGUSTACION)||(tipoFavorito == tipoFavorito.PAISAJE)));
 	}
 

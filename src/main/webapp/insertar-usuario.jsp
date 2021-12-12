@@ -121,7 +121,25 @@
 
 
 							<div class="col-md-6">
-							<select for="validationCustom02" class="form-select mt-4 pb-1 "
+							<select for="validationCustom02" name="tipoDeAtraccion" class="form-select mt-4 pb-1 "
+								aria-label="Default select example">
+								<option selected>Tipo De atracciones</option>
+								<%@ page import="model.TipoAtraccion" %>
+								<% pageContext.setAttribute("tipoDeAtraccion", model.TipoAtraccion.values()); %>
+								<c:forEach var="entry" items="${tipoDeAtraccion}">
+								    <option>${entry.name()}</option>
+								</c:forEach>
+								<!-- <option selected>Tipo De atracciones</option>
+								<option type="text" class="form-control" name="tipoDeAtraccion" id="validationCustom02"
+									required value="AVENTURA">AVENTURA</option>
+								<option type="text" name="tipoDeAtraccion" class="form-control" id="validationCustom02"
+									required value="DEGUSTACION">DEGUSTACION</option>
+								<option type="text" name="tipoDeAtraccion" class="form-control" id="validationCustom02"
+									required value="PAISAJE">PAISAJE</option> -->
+							</select>
+							
+							
+							<!-- <select for="validationCustom02" class="form-select mt-4 pb-1 "
 								aria-label="Default select example"  required value="${usuario.tipoFavorito }">
 								<option selected>Tipo De atracciones</option>
 								<option type="text" class="form-control" id="validationCustom02"
@@ -130,7 +148,7 @@
 									requiredvalue="2">DEGUSTACION</option>
 								<option type="text" class="form-control" id="validationCustom02"
 									requiredvalue="3">PAISAJE</option>
-							</select>
+							</select>-->
 							
 
 								<div class="invalid-feedback">por favor ingrese un Tipo de
