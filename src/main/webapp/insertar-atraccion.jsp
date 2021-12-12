@@ -96,7 +96,7 @@
 						Atraccion</h2>
 					<!-- <form action="results.php" method="POST" role="form" class="form-horizontal"> -->
 					<form id="form-contact"
-						class="row text-white g-3 needs-validation " novalidate action="/turismoHDR/attractions/create.do" method="POST">
+						class="row text-white g-3 needs-validation" novalidate action="insertar-atraccion.do" method="post">
 						<div class="col-md-4">
 							<label for="validationCustom01" class="form-label">Nombre</label>
 							<input type="text" class="form-control" name="nombre" id="validationCustom01"

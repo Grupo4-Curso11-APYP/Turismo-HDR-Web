@@ -96,7 +96,7 @@
 							Usuario</h2>
 
 						<form id="form-contact"
-							class="row text-white g-3 needs-validation " novalidate action="/insertar-usuario.do" method="post">
+							class="row text-white g-3 needs-validation " novalidate action="insertar-usuario.do" method="post">
 							<div class="col-md-4">
 								<label for="validationCustom01" class="form-label">Nombre</label>
 								<input type="text" class="form-control" id="validationCustom01"
