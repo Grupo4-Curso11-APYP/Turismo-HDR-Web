@@ -6,9 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import model.Promocion;
-import model.TipoAtraccion;
 import model.Usuario;
 import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
