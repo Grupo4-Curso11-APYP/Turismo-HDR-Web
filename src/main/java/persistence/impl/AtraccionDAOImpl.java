@@ -15,12 +15,32 @@ import model.TipoAtraccion;
 
 public class AtraccionDAOImpl implements AtraccionDAO {
 
+	public Atraccion findByNombre(String nombre) {
+		try {
+			String sql = "SELECT * FROM Atraccion INNER JOIN TipoAtraccion ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion WHERE Nombre = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, nombre);
+			ResultSet resultados = statement.executeQuery();
+
+			Atraccion atraccion = null;
+
+			if (resultados.next()) {
+				atraccion = toAtraccion(resultados);
+			}
+
+			return atraccion;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
 	/*
 	 * Busca y devuelve todas las atracciones de la base de datos
 	 */
 	@Override
 	public List<Atraccion> findAll() {
-		//public List<Atraccion> findAll() throws SQLException {
+		// public List<Atraccion> findAll() throws SQLException {
 		try {
 			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Costo, Atraccion.Tiempo, Atraccion.Cupo_Disponible, TipoAtraccion.id_tipoAtraccion\r\n"
 					+ "FROM Atraccion INNER JOIN TipoAtraccion\r\n"
@@ -51,7 +71,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		double costo = resultados.getDouble(3);
 		double tiempo = resultados.getDouble(4);
 		int cupoDisponible = resultados.getInt(5);
-		//String tipo = resultados.getString(6).toUpperCase();
+		// String tipo = resultados.getString(6).toUpperCase();
 		TipoAtraccion tipo = TipoAtraccion.valueOf(resultados.getString(6).toUpperCase());
 
 		return new Atraccion(nombre, costo, tiempo, cupoDisponible, tipo);
@@ -78,7 +98,8 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 * Inserta una atracciï¿½n nueva en la base de datos
 	 */
 	public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, TipoAtraccion tipoAtraccion)
-	//public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, String tipoAtraccion)
+			// public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer
+			// capacity, String tipoAtraccion)
 			throws SQLException {
 
 		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
@@ -91,13 +112,11 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		statement.setDouble(3, tiempo);
 		statement.setInt(4, capacity);
 		statement.setString(5, tipoAtraccion.name());
-		
+
 		/*
-		 * statement.setString(1, nombre);
-		statement.setDouble(2, costo);
-		statement.setDouble(3, tiempo);
-		statement.setInt(4, capacity);
-		statement.setString(5, tipoAtraccion.name());
+		 * statement.setString(1, nombre); statement.setDouble(2, costo);
+		 * statement.setDouble(3, tiempo); statement.setInt(4, capacity);
+		 * statement.setString(5, tipoAtraccion.name());
 		 */
 
 		int rows = statement.executeUpdate();
@@ -110,7 +129,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 */
 	@Override
 	public int update(Atraccion atraccion, int cupo) {
-		//public int update(Atraccion atraccion) throws SQLException {
+		// public int update(Atraccion atraccion) throws SQLException {
 		try {
 			String sql = "UPDATE Atraccion SET Cupo_Disponible = ? WHERE Nombre = ?";
 			Connection conn = ConnectionProvider.getConnection();
@@ -126,7 +145,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	
+
 	/*
 	 * Update de la compra que settea segun atributo de atraccion
 	 */
@@ -153,7 +172,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 */
 	@Override
 	public int delete(Atraccion atraccion) throws SQLException {
-		//public int delete(Atraccion atraccion) throws SQLException {
+		// public int delete(Atraccion atraccion) throws SQLException {
 		String sql = "DELETE FROM Atraccion WHERE Nombre = ?";
 		Connection conn = ConnectionProvider.getConnection();
 
@@ -192,7 +211,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 
 	@Override
 	public int find(String nombre) throws SQLException {
-		
 
 		String sql = "SELECT ID_Atraccion, Nombre FROM Atraccion WHERE Nombre LIKE \"%" + nombre + "%\"";
 
@@ -200,7 +218,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		PreparedStatement statement = conn.prepareStatement(sql);
 		ResultSet resultados = statement.executeQuery();
 
-		
 		return Integer.parseInt(resultados.getString(1));
 
 	}

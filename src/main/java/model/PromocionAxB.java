@@ -60,6 +60,12 @@ public class PromocionAxB extends Promocion {
 		return ((this.packAtracciones[0].getCupoDisponible() > 0) && (this.packAtracciones[1].getCupoDisponible() > 0)
 				&& this.atraccionGratis.getCupoDisponible() > 0);
 	}
+	
+	@Override
+	public boolean puedeAlbergar(int i) {
+		return ((this.packAtracciones[0].getCupoDisponible() > 0) && (this.packAtracciones[1].getCupoDisponible() > 0)
+				&& this.atraccionGratis.getCupoDisponible() > 0);
+	}
 
 	/*
 	 * si hay cupo disponible en la atraccion gratis se resta un cupo
@@ -70,6 +76,14 @@ public class PromocionAxB extends Promocion {
 		for (Atraccion atraccion : packAtracciones) {
 			atraccion.cupoDisponible -= 1;
 	//		aDAO.update(atraccion);
+		}
+		atraccionGratis.cupoDisponible -= 1;
+	}
+	
+	@Override
+	public void albergar(int i) {
+		for (Atraccion atraccion : packAtracciones) {
+			atraccion.cupoDisponible -= 1;
 		}
 		atraccionGratis.cupoDisponible -= 1;
 	}

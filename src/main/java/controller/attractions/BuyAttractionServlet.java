@@ -1,7 +1,6 @@
 package controller.attractions;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,15 +30,12 @@ public class BuyAttractionServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Integer atraccionId = Integer.parseInt(req.getParameter("id"));
-		PrintWriter out = resp.getWriter();
-		out.println(atraccionId);
+		String ofertableNombre = req.getParameter("nombre");
 		
-		/*
 		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
 		Map<String, String> errors = new HashMap<String, String>();
 		try {
-			errors = buyAttractionService.buy(usuario.getNombre(), atraccionId);
+			errors = buyAttractionService.buy(usuario.getNombre(), ofertableNombre);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
@@ -60,9 +56,9 @@ public class BuyAttractionServlet extends HttpServlet {
 		}
 
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/turismoHDR/listar-ofertador.do");
+				.getRequestDispatcher("/listar-ofertador.do");
 		dispatcher.forward(req, resp);
-		*/
+		
 	}
 	
 }

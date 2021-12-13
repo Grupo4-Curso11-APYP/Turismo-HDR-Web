@@ -58,16 +58,16 @@ public class Usuario {
 	public Usuario() {
 	}
 	
-	public void agregarAItinerario(Atraccion atraccion) {
+	public void agregarAItinerario(Ofertable atraccion) {
 		this.presupuesto -= atraccion.getMonto();
 		this.tiempoDisponible -= atraccion.getTiempo();
 	}
 	
-	public boolean puedeComprar(Atraccion atraccion) {
+	public boolean puedeComprar(Ofertable atraccion) {
 		return atraccion.getMonto() <= this.presupuesto;
 	}
 	
-	public boolean puedeAsistir(Atraccion atraccion) {
+	public boolean puedeAsistir(Ofertable atraccion) {
 		return atraccion.getTiempo() <= this.tiempoDisponible;
 	}
 
@@ -207,10 +207,11 @@ public class Usuario {
 	}
 	*/
 	
-	
+	/*
 	public boolean puedeComprar(Ofertable atrac) {
 		return this.getPresupuesto() >= atrac.getMonto() && this.getTiempoDisponible() >= atrac.getTiempo();
 	}
+	*/
 
 
 	public boolean checkPassword(String password) {

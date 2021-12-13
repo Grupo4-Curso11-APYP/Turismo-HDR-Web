@@ -43,5 +43,11 @@ public interface Ofertable {
 	public Atraccion getPackAtracciones2();
 	public Atraccion getAtraccionGratis();
 	public int getDescuento();
+	
+	/*
+	 * El siguiente método es necesario para saber si se puede comprar ofertables
+	 */
+	public boolean puedeAlbergar(int i);
+	public void albergar(int i);
 
 }

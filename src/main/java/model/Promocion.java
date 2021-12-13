@@ -96,6 +96,13 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 		//	aDAO.update(atraccion);
 			}
 	}
+	
+	@Override
+	public void albergar(int i) {
+		for (Atraccion atraccion : packAtracciones) {
+			atraccion.cupoDisponible -= 1;
+		}
+	}
 
 	@Override
 	public int hashCode() {
@@ -119,8 +126,11 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 				&& Double.doubleToLongBits(tiempo) == Double.doubleToLongBits(other.tiempo) && tipoDeAtraccion == other.tipoDeAtraccion;
 	}
 	
-
-
+	@Override
+	public boolean puedeAlbergar(int i) {
+		return ((this.packAtracciones[0].getCupoDisponible() > 0) && 
+				(this.packAtracciones[1].getCupoDisponible() > 0));
+	}
 	
 	
 }

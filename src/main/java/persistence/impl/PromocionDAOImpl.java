@@ -27,6 +27,26 @@ public class PromocionDAOImpl implements PromocionDAO {
 		this.atraccionDao = new AtraccionDAOImpl();
 	}
 
+	public Promocion findByNombre(String nombre) {
+		try {
+			String sql = "SELECT * FROM Promocion WHERE Nombre = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, nombre);
+			ResultSet resultados = statement.executeQuery();
+
+			Promocion promocion = null;
+
+			if (resultados.next()) {
+				promocion = toPromo(resultados);
+			}
+
+			return promocion;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+	
 	/*
 	 * Inserta una promocion nueva en la base de datos
 	 */
