@@ -93,7 +93,6 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 		AtraccionDAOImpl aDAO = new AtraccionDAOImpl();
 		for (Atraccion atraccion : packAtracciones) {
 			atraccion.cupoDisponible -= 1;
-		//	aDAO.update(atraccion);
 			}
 	}
 	

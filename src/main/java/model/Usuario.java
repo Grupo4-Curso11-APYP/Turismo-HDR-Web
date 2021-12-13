@@ -10,32 +10,14 @@ public class Usuario {
 	private double presupuesto;
 	private double tiempoDisponible;
 	private TipoAtraccion tipoFavorito;
-	//private String tipoFavorito;//tuve que cambiar esto para poder pasarselo a la BD
 	private Set<Ofertable> ofertables; // Las sugerencias que va aceptando.
 	private String password;
 	private Boolean admin;
-	//datos necesarios para insertar usuarios en la bd
 	protected Integer id;
-
-
-	/*public Usuario(String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito,
-			String password, Boolean admin) throws Exception {
-		this.nombre = nombre;
-		validandoPresupuesto(presupuesto);
-		validandoTiempoDisponible(tiempoDisponible);
-		this.tipoFavorito = tipoFavorito;
-		this.ofertables = new LinkedHashSet<>();
-		this.password = password;
-		this.admin = admin;
-
-	}*/
 	
 	public Usuario(String nombre, Double presupuesto, Double tiempoDisponible, TipoAtraccion tipoFavorito,
 			String password, Boolean admin) throws Exception {
-		//public Usuario(int id, String nombre, double presupuesto, double tiempoDisponible, String tipoFavorito,
-		//String password, Boolean admin) throws Exception {
-		//public Usuario(int id, String nombre, double presupuesto, double tiempoDisponible, TipoAtraccion tipoFavorito, String password, Boolean admin) throws Exception {
-		//this.id = id;
+
 		this.nombre = nombre;
 		validandoPresupuesto(presupuesto);
 		validandoTiempoDisponible(tiempoDisponible);
@@ -47,7 +29,7 @@ public class Usuario {
 	}
 
 	public Usuario(String string, double i, double j, TipoAtraccion tipo, Set<Ofertable> object) throws Exception {
-	//public Usuario(String string, double i, double j, TipoAtraccion tipo, Set<Ofertable> object) throws Exception {
+
 		this.nombre = string;
 		validandoPresupuesto(i);
 		validandoTiempoDisponible(j);
@@ -106,10 +88,7 @@ public class Usuario {
 	/*
 	 * se espera que devuelva el tipo favorito de atraccion
 	 */
-	/*public TipoAtraccion getTipoFavorito() { <<=============================================== esto lo comente porque dado que lo pase a string no tiene uso, y rompe todo si se lo dejo
-		return this.tipoFavorito;
-	}*/
-	
+
 	public TipoAtraccion getTipoFavorito() {//<<=============================================== esto lo agregue porque dado que lo pase a string no tiene uso, y rompe todo si se lo saco
 		return this.tipoFavorito;
 	}
@@ -129,9 +108,9 @@ public class Usuario {
 	}
 
 	public boolean esUsuarioValido(String nombre, String password, Double presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito) {
-		//public boolean esValido(String nombre, String password, double presupuesto, Double tiempoDisponible,TipoAtraccion tipoFavorito) {
+		
 		return ((nombre != null) && (password != null) && (presupuesto > 0) && (tiempoDisponible > 0)&&((tipoFavorito == TipoAtraccion.AVENTURA)||(tipoFavorito == TipoAtraccion.DEGUSTACION)||(tipoFavorito == TipoAtraccion.PAISAJE)));
-		//return ((nombre != null) && (password != null) && (presupuesto > 0) && (tiempoDisponible > 0)&&((tipoFavorito == tipoFavorito.AVENTURA)||(tipoFavorito == tipoFavorito.DEGUSTACION)||(tipoFavorito == tipoFavorito.PAISAJE)));
+
 	}
 
 	/*
@@ -181,17 +160,7 @@ public class Usuario {
 	 * presupuesto y el tiempo del ofertable comprado finalmente guarda el ofertable
 	 * en su lista de ofertables
 	 */
-	/*
-	public void comprarOfertable(Atraccion o) {
-		double tiempoO = o.getTiempo();
-		double presupuesto = o.getMonto();
-
-		restarTiempo(tiempoO);
-		restarPresupuesto(presupuesto);
-		ofertables.add(o);
-
-}
-*/
+	
 	public void comprarOfertable(Ofertable o) {
 		double tiempoO = o.getTiempo();
 		double presupuesto = o.getMonto();
@@ -201,21 +170,8 @@ public class Usuario {
 		ofertables.add(o);
 
 }
-/*
-	public boolean puedeComprar(Atraccion atrac) {
-		return this.getPresupuesto() >= atrac.getMonto() && this.getTiempoDisponible() >= atrac.getTiempo();
-	}
-	*/
-	
-	/*
-	public boolean puedeComprar(Ofertable atrac) {
-		return this.getPresupuesto() >= atrac.getMonto() && this.getTiempoDisponible() >= atrac.getTiempo();
-	}
-	*/
-
 
 	public boolean checkPassword(String password) {
-		// this.password en realidad es el hash del password
 		return Crypt.match(password, this.password);
 	}
 

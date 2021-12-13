@@ -179,55 +179,19 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		return total;
 	}
 	
-	/*
-	 * public ArrayList<Ofertable> findItinerarioUsuario(int ID_Usuario) {
-
-		AtraccionDAOImpl atrraccionDAO = new AtraccionDAOImpl();
-		PromocionDAOImpl promocionDAO = new PromocionDAOImpl();
-		ArrayList<Ofertable> itinerario = new ArrayList<Ofertable>();
-		try {
-			String sql = "SELECT * FROM Itinerario where ID_Usuario = ?";
-			Connection conn = Conexion.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, ID_Usuario);
-			ResultSet resultados = statement.executeQuery();
-
-			while (resultados.next()) {
-				if (resultados.getString(3).equals("Atraccion")) {
-					itinerario.add(atrraccionDAO.buscarPorId(resultados.getInt(5)));
-				} else {
-					itinerario.add(promocionDAO.buscarPorId(resultados.getInt(4)));
-				}
-			}
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-		return itinerario;
-	}
-	 */
-	
 
 	@Override
 	public Usuario find(Integer id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int insert(Usuario t) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	/*@Override
-	public int update(Usuario t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}*/
-
 	@Override
 	public int delete(Usuario t) throws SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

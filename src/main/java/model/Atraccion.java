@@ -8,11 +8,10 @@ import java.util.Objects;
 import persistence.impl.AtraccionDAOImpl;
 
 public class Atraccion implements Ofertable, Comparable<Ofertable> {
-	//protected int id;
+
 	protected double costo;
 	protected double tiempo;
 	protected int cupoDisponible;
-	//protected String tipoAtraccion;
 	protected TipoAtraccion tipoAtraccion;
 	protected String nombre;
 	private Integer id;
@@ -22,7 +21,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 * @Param nombre , costo, tiempo , cupoDisponible y tipo se inicializan todos
 	 * los atributos de la atraccion
 	 */
-	//public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, String tipoDeAtraccion)
+
 	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
 			throws Exception {
 		super();
@@ -62,30 +61,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	
 	public Map<String, String> getErrors() {
 		return errors;
-	}
-	/*
-	public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible) throws Exception {
-		//public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion) throws Exception {
-		//this(nombre, costo, tiempo, cupoDisponible);
-		this.id = id;
-	}
-	public Atraccion(Integer id) {
-		this.id = id;
-	}
-	*/
-	
-	/*
-	 * public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
-			throws Exception {
-		this.nombre = nombre;
-		validandoCosto(costo);
-		validandoTiempo(tiempo);
-		validandoCupo(cupoDisponible);
-		this.tipoAtraccion = tipoDeAtraccion;
-	}
-
-	 */
-	
+	}	
 	
 	public Atraccion() {
 	}
@@ -127,16 +103,6 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 			throw new CupoNegativoException();
 		this.cupoDisponible = cupoDisponible;
 	}
-
-	/*
-	 * @param nombre permite pasar un nombre para inicializar el atributo nombre
-	 * Constructor auxiliar usado para comparar con el nombre de la lista de
-	 * ofertables.
-	 */
-	
-
-	
-
 	
 	/*
 	 * se espera que devuelva el cupo disponible
@@ -179,7 +145,6 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		AtraccionDAOImpl aDAO = new AtraccionDAOImpl();
 		if (this.hayCupo()) {
 			this.cupoDisponible -= 1;
-//			aDAO.update(this);
 		}
 
 	}
@@ -196,13 +161,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	/*
 	 * se espera que devuelva el tipo
 	 */
-	/*
-	@Override
-	public String getTipo() {
 
-		return this.tipoAtraccion;
-	}
-	*/
 	
 	@Override
 	public TipoAtraccion getTipo() {
@@ -250,24 +209,11 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	public void setCosto(double costo) {
 		this.costo = costo;
 	}
-
-	/*
-	public String getTipoAtraccion() {
-		return tipoAtraccion;
-	}
-	*/
 	
 	
 	public TipoAtraccion getTipoAtraccion() {
 		return tipoAtraccion;
 	}
-	
-
-	/*
-	public void setTipoAtraccion(String tipoAtraccion) {
-		this.tipoAtraccion = tipoAtraccion;
-	}
-	*/
 
 	public void setTipoAtraccion(TipoAtraccion tipoAtraccion) {
 		this.tipoAtraccion = tipoAtraccion;

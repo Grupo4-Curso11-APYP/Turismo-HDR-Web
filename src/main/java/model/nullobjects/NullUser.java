@@ -11,7 +11,6 @@ public class NullUser extends Usuario {
 
 	public NullUser()throws Exception{
 		super("",0.0,0.0, null,"", false);
-		//super(0, "",0.0,0.0, null,"", false);
 	}
 	
 	public boolean isNull() {

@@ -1,1 +1,0 @@
-datasource=jdbc:sqlite:D:\\Proyectos\\VisualStudioCode\\Java\\Argentina_Programa_2da_Parte\\======= Grupo4\\BD_Todas\\TurismoTierraMediaBD-2.db

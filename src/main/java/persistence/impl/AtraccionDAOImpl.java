@@ -40,7 +40,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 */
 	@Override
 	public List<Atraccion> findAll() {
-		// public List<Atraccion> findAll() throws SQLException {
 		try {
 			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Costo, Atraccion.Tiempo, Atraccion.Cupo_Disponible, TipoAtraccion.id_tipoAtraccion\r\n"
 					+ "FROM Atraccion INNER JOIN TipoAtraccion\r\n"
@@ -71,7 +70,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		double costo = resultados.getDouble(3);
 		double tiempo = resultados.getDouble(4);
 		int cupoDisponible = resultados.getInt(5);
-		// String tipo = resultados.getString(6).toUpperCase();
 		TipoAtraccion tipo = TipoAtraccion.valueOf(resultados.getString(6).toUpperCase());
 
 		return new Atraccion(nombre, costo, tiempo, cupoDisponible, tipo);
@@ -98,8 +96,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 * Inserta una atracciï¿½n nueva en la base de datos
 	 */
 	public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, TipoAtraccion tipoAtraccion)
-			// public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer
-			// capacity, String tipoAtraccion)
 			throws SQLException {
 
 		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
@@ -113,12 +109,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		statement.setInt(4, capacity);
 		statement.setString(5, tipoAtraccion.name());
 
-		/*
-		 * statement.setString(1, nombre); statement.setDouble(2, costo);
-		 * statement.setDouble(3, tiempo); statement.setInt(4, capacity);
-		 * statement.setString(5, tipoAtraccion.name());
-		 */
-
 		int rows = statement.executeUpdate();
 
 		return rows;
@@ -129,7 +119,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 */
 	@Override
 	public int update(Atraccion atraccion, int cupo) {
-		// public int update(Atraccion atraccion) throws SQLException {
 		try {
 			String sql = "UPDATE Atraccion SET Cupo_Disponible = ? WHERE Nombre = ?";
 			Connection conn = ConnectionProvider.getConnection();
@@ -172,7 +161,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 */
 	@Override
 	public int delete(Atraccion atraccion) throws SQLException {
-		// public int delete(Atraccion atraccion) throws SQLException {
 		String sql = "DELETE FROM Atraccion WHERE Nombre = ?";
 		Connection conn = ConnectionProvider.getConnection();
 
@@ -224,20 +212,17 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 
 	@Override
 	public Atraccion find(Integer id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int insert(Atraccion t) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
 			throws SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

@@ -13,10 +13,7 @@ public interface GenericDAO<T> {
 	 */
 	public int countAll() throws SQLException;
 	
-	public T find(Integer id); // prueba para ver si soluciona inconvenientes
-	//public Set<Usuario> findAll();
-	//public List<T> findAll();
-	//public int countAll();
+	public T find(Integer id);
 	public int insert(T t) throws SQLException;
 	public int delete(T t) throws SQLException;
 }

@@ -7,20 +7,12 @@ import persistence.commons.GenericDAO;
 
 public interface PromocionDAO extends GenericDAO<Promocion> {
 	public List<Promocion> findAll() throws SQLException;
-	//public List<Promocion> findAll() throws SQLException;
 	
 	public int insert(Promocion promocion) throws SQLException;
 	
 	public int delete(Promocion promocion) throws SQLException;
 	
 	public int update(Promocion promocion) throws SQLException;
-	/*
-	 * public int insert(Promocion promocion) throws SQLException;
-	
-	public int delete(Promocion promocion) throws SQLException;
-	
-	public int update(Promocion promocion) throws SQLException;
-	 */
 
 	public int deleteLogico(Promocion promocion)throws SQLException;
 
@@ -28,7 +20,7 @@ public interface PromocionDAO extends GenericDAO<Promocion> {
 
 	public int find(String nombre) throws SQLException;
 	
-public Promocion consultarID_Promo(int promo) throws SQLException;
+	public Promocion consultarID_Promo(int promo) throws SQLException;
 
 	public int update(Promocion promocion, String nombre) throws SQLException;
 

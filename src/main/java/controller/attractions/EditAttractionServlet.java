@@ -33,7 +33,6 @@ public class EditAttractionServlet extends HttpServlet {
 		if (atraccion.esValido(cupo)) {
 			resp.sendRedirect("/turismoHDR/listar-atraccion.do");
 		} else {
-			//req.setAttribute("atraccionAEditar", atraccion);
 
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion-form.jsp");
 			dispatcher.forward(req, resp);

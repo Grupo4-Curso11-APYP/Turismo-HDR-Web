@@ -142,17 +142,13 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		Double presupuesto = resultados.getDouble(3);
 		Double tiempoDisponible = resultados.getDouble(4);
 		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(resultados.getString(5));
-		//TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(resultados.getString(5));<<====================== esto lo cambio para que no rompa al hacer el insert
 		String password = resultados.getString(6);
 		Boolean admin = resultados.getBoolean(7);
-		//return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 		return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
-		//return new Usuario(0, nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 	}
 
 	@Override
 	public Usuario find(Integer id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

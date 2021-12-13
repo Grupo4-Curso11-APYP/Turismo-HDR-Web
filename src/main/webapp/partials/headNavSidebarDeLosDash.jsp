@@ -114,7 +114,8 @@
 			<hr class="sidebar-divider">
 
 			<!-- SIDEBAR HEADING MENU ADMIN  -->
-			<div class="sidebar-heading"> 
+			<div class="sidebar-heading">
+			<c:if test="${usuario.isAdmin()}">
 			  <a href="#" style="text-decoration: none;">Gestión del admin</a> 
            
 
@@ -180,6 +181,7 @@
                     </div>
                 </div>
             </li>
+            </c:if>
             <!-- BORRAR MENU -->
             <!-- BORRAR MENU -->
 </div>

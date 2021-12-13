@@ -32,7 +32,6 @@ public class CreateAttractionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/insertar-atraccion.jsp");
-		//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/create.jsp");
 		dispatcher.forward(req, resp);
 	}
 	/*
@@ -41,24 +40,22 @@ public class CreateAttractionServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println(req);
+		
 		String nombre = req.getParameter("nombre");
-		System.out.println(nombre);
+		
 		Double costo = Double.parseDouble(req.getParameter("costo"));
-		System.out.println(costo);
+		
 		Double tiempo = Double.parseDouble(req.getParameter("tiempo"));
-		System.out.println(tiempo);
+		
 		Integer cupoDisponible = Integer.parseInt(req.getParameter("cupoDisponible"));
-		System.out.println(cupoDisponible);
+		
 		TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion"));
-		//TipoAtraccion tipoDeAtraccion = TipoAtraccion.valueOf(req.getParameter("tipoDeAtraccion")); <===== asi estaba antes
-		//(req.getParameter("tipoDeAtraccion"));
-		//String name, Integer cost, Integer duration, Integer capacity, String tipo
+		
 		Atraccion atraccion = new Atraccion();
 		try {
 			atraccion = atraccionService.crear(nombre, costo, tiempo, cupoDisponible,tipoDeAtraccion);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		

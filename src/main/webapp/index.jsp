@@ -28,25 +28,25 @@
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="#" id="inicio">Inicio</a></li>
-				
-					      <li class="nav-item dropdown">
-                        <a id="perfiles-creados" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Perfil
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="dashboard.jsp" id="usuario">Ver Perfil</a></li>
 
-                          
+					<li class="nav-item dropdown"><a id="perfiles-creados"
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Perfil </a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="dashboard.jsp"
+								id="usuario">Ver Perfil</a></li>
 
-                        </ul>
-                    </li>
+
+
+						</ul></li>
 					<li class="nav-item"><a class="nav-link" href="#quienes-somos"
 						tabindex="-1" aria-disabled="false">Quienes Somos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#contacto"
 						tabindex="-1" aria-disabled="false">Contacto</a></li>
-					<li class="nav-item"><a class="nav-link " href="/turismoHDR/logout"
-						data-toggle="modal" data-target="#logoutModal">Salir</a></li>
+					<li class="nav-item"><a class="nav-link "
+						href="/turismoHDR/logout" data-toggle="modal"
+						data-target="#logoutModal">Salir</a></li>
 				</ul>
 
 			</div>
@@ -59,15 +59,15 @@
 
 		<div
 			class="container align-items-center  text-center pt-2 mb-5 mt-5   ">
-			<h1 class="text-center fw-bolder pt-5">¡Bienvenido A Turismo En Tierra Media!</h1>
-			
+			<h1 class="text-center fw-bolder pt-5">¡Bienvenido A Turismo En
+				Tierra Media!</h1>
+
 			<h2 class="display-3 fw-bolder">
 				<c:out value="${usuario.nombre}"></c:out>
 			</h2>
 			<a type="menu"
 				class=" text-center btn btn-light btn-sm mt-5   border border-light fw-bold "
-				 href="#ayp"> Explorar Ahora
-			</a>
+				href="#ayp"> Explorar Ahora </a>
 		</div>
 	</section>
 	<!---FIN SECCION-->
@@ -79,20 +79,17 @@
 
 			<!-----CARRUSEL SLIDER-->
 
-			<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
-                data-bs-interval="false">
+			<div id="carouselExampleControlsNoTouching" class="carousel slide"
+				data-bs-touch="false" data-bs-interval="false">
 				<div class="carousel-inner">
 					<!--PRIMER ITEM-->
-					<div class="carousel-item active"
-						id="atracciones">
+					<div class="carousel-item active" id="atracciones">
 						<h2 class="display-2 fw-bold">Atracciones</h2>
 
-					
 
-						<p class="">La secretarÃ­a de turismo de la Tierra Media ha
-							decidido crear un sistema para promocionar el turismo en su
-							territorio. Ãste contarÃ¡ con la informaciÃ³n de las distintas
-							atracciones de toda la Tierra Media.</p>
+
+						<p class="">En Esta Seccion Podras Encontrar todas las
+							Atracciones y Promociones Disponibles hasta el momento .</p>
 
 
 						<!----ATRACCIONES-->
@@ -103,10 +100,12 @@
 										alt="mordor">
 									<div class="card-body card-1">
 										<h5 class="card-title fw-bold">Mordor</h5>
-										<p class="card-text">
-											Mordor es una atraccion muy tenebrosa <br>su costo de
-											entrada es de $ 10 y requiere un tiempo de 2.5 horas
-										</p>
+										<p class="card-text">Mordor era una llanura volcánica
+											negra ubicada en el sureste de la Tierra Media al este de
+											Gondor, Ithilien y el gran río Anduin. Mordor fue elegido por
+											Sauron para ser su reino debido a las cadenas montañosas que
+											lo rodean por tres lados, creando una fortaleza natural
+											contra sus enemigos.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
@@ -119,11 +118,11 @@
 										alt="minas-thirt">
 									<div class="card-body" id="card-2">
 										<h5 class="card-title fw-bold">Minas Thirt</h5>
-										<p class="card-text">
-											Minas Thirt es una de las Atracciones mas visitadas <br>
-											su costo de entrada es de $ 15 y requiere un tiempo de 6.5
-											horas .
-										</p>
+										<p class="card-text">Minas Tirith (S. 'Torre de la
+											Guardia') era una ciudad de Gondor , originalmente llamada
+											Minas Anor. Desde TA 1640 en adelante fue la capital del
+											reino del Sur y la sede de sus reyes y mayordomos
+											gobernantes.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
@@ -135,11 +134,12 @@
 									<img src="assets/img/card-3.png" class="card-img-top" alt="...">
 									<div class="card-body" id="card-3">
 										<h5 class="card-title fw-bold">Abismo de Helm</h5>
-										<p class="card-text">
-											Abismo de Helm es una atraccion que tiene el mejor campo de
-											batalla <br> su costo de entrada es de $ 20 y requiere
-											un tiempo de 1.5 horas.
-										</p>
+										<p class="card-text">El abismo de Helm es un lugar
+											ficticio perteneciente al legendarium del escritor inglés J.
+											R. R. Tolkien y que aparece en su novela El Señor de los
+											Anillos. Se trata de una profunda garganta que se abre al pie
+											del pico Thrihyrne, en la vertiente norte de las Montañas
+											Blancas.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
@@ -150,11 +150,12 @@
 									<img src="assets/img/card-4.jpg" class="card-img-top" alt="...">
 									<div class="card-body" id="card-4">
 										<h5 class="card-title  fw-bold">Moria</h5>
-										<p class="card-text">
-											Moria es una atraccion donde siempre pasan hechos
-											sobrenaturales <br> su costo de entrada es de $ 36 y
-											requiere un tiempo de 3 horas .
-										</p>
+										<p class="card-text">Fue una gran mina que durante muchas
+											Edades produjo inmensas riquezas, símbolo del poderío enano
+											en la Tierra Media, pero también causa de muchas desdichas y
+											pesares. Durante más de un milenio fue un gran centro de
+											comercio enano, hasta que los habitantes de la ciudad
+											excavaron demasiado profundo, en busca de mithril.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
@@ -165,10 +166,12 @@
 									<img src="assets/img/card-5.jpg" class="card-img-top" alt="...">
 									<div class="card-body" id="card-5">
 										<h5 class="card-title fw-bold">Bosque Negro</h5>
-										<p class="card-text">
-											Bosque Negro es una atraccion donde predomina la oscuridad <br>
-											su costo de entrada es $ 3 y requiere un tiempo de 12 horas.
-										</p>
+										<p class="card-text">La zona forestal más grande que aún
+											perdura en la Tierra Media. Se halla al este del tramo
+											superior del Anduin y al sur de las Montañas Grises. Su
+											nombre original era el Gran Bosque Verde o Bosque Verde el
+											Grande (S. Eryn Galen) y formaba el hábitat de los elfos
+											silvanos</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
@@ -179,43 +182,45 @@
 									<img src="assets/img/card-6.jpg" class="card-img-top" alt="...">
 									<div class="card-body" id="card-6">
 										<h5 class="card-title fw-bold">La Comarca</h5>
-										<p class="card-text">
-											La Comarca es una de las atracciones mas alegres y mas
-											tranquilas del parque <br> su costo de entrada es $ 8 y
-											requiere un tiempo de 4 horas.
-										</p>
+										<p class="card-text">También llamada las Cuatro Cuadernas,
+											el nombre original en hobbítico es Sûza. Es una región de
+											colinas en Eriador con pequeños bosques que se extiende desde
+											el Brandivino hasta las Colinas Lejanas (unas 18.000 millas
+											cuadradas), a unas cuarenta horas de camino hacia el oeste.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="col-lg-6   col-sm-6" id="col6">
 								<div class="card h-100">
 									<img src="assets/img/card-7.jpg" class="card-img-top" alt="...">
 									<div class="card-body" id="card-6">
 										<h5 class="card-title fw-bold">Erebor</h5>
-										<p class="card-text">
-											Erebor es una de las atracciones mas alegres y mas
-											tranquilas del parque <br> su costo de entrada es $ 8 y
-											requiere un tiempo de 4 horas.
-										</p>
+										<p class="card-text">Erebor, también llamada la Montaña
+											Solitaria, es un lugar ficticio perteneciente al legendarium
+											del escritor J. R. R. Tolkien y que aparece en su novela El
+											hobbit. Se trata de una elevación aislada situada al noreste
+											de Rhovanion, que fue arrebatada por un dragón, llamado
+											Smaug, al rey Thrór de los enanos.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="col-lg-6   col-sm-6" id="col6">
 								<div class="card h-100">
 									<img src="assets/img/card-8.jpg" class="card-img-top" alt="...">
 									<div class="card-body" id="card-6">
 										<h5 class="card-title fw-bold">Lothlórien</h5>
-										<p class="card-text">
-											La Comarca es una de las atracciones mas alegres y mas
-											tranquilas del parque <br> su costo de entrada es $ 8 y
-											requiere un tiempo de 4 horas.
-										</p>
+										<p class="card-text">En el legendario de JRR Tolkien,
+											Lothlórien o Lórien es el reino más hermoso de los Elfos que
+											permanecieron en la Tierra Media durante la Tercera Edad .
+											... El reino, un amplio bosque entre las Montañas Nubladas y
+											el río Anduin, es el centro élfico de resistencia contra el
+											Señor Oscuro Sauron en El Señor de los Anillos.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
@@ -229,11 +234,10 @@
 
 
 					<!---SEGUNDO ITEM-->
-					<div class="carousel-item " 
-						id="promociones">
+					<div class="carousel-item " id="promociones">
 						<h2 class="display-2 fw-bold">Promociones</h2>
-						<p class="">Lorem ipsum, dolor sit amet consectetur
-							adipisicing elit. Accusamus eveniet ipsam cumque .</p>
+						<p class="">En Esta Seccion Podras Encontrar todas las
+							Atracciones y Promociones Disponibles hasta el momento .</p>
 						<!---PROMOCIONES-->
 						<div class=" pt-5 row row-cols-1 row-cols-md-3 g-4">
 							<div class="col-lg-6 col-sm-6" id="col1">
@@ -243,7 +247,7 @@
 									<div class="card-body card-1">
 										<h5 class="card-title fw-bold">Pack Degustacion</h5>
 										<p class="card-text">
-											Â¡NO TE PIERDAS ESTA OFERTA INCREIBLE!<br> Llevando
+											¡NO TE PIERDAS ESTA OFERTA INCREIBLE!<br> Llevando
 											Lothlorien y La Comarca Te hacemos un descuento unico de $36
 											monedas
 										</p>
@@ -261,8 +265,8 @@
 										<h5 class="card-title fw-bold">Pack Paisaje</h5>
 										<p class="card-text">
 											Con la compra de Erebor y Minas Tirith te llevas de regalo
-											una visita a Abismo de Helm <br> Â¡LLEVATE ESTE
-											INCREIBLE COMBO POR SOLO $120 MONEDAS!
+											una visita a Abismo de Helm <br> ¡LLEVATE ESTE INCREIBLE
+											COMBO POR SOLO $120 MONEDAS!
 										</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
@@ -277,7 +281,7 @@
 									<div class="card-body" id="card-3">
 										<h5 class="card-title fw-bold">Pack Adrenalina</h5>
 										<p class="card-text">
-											Â¡QUERES VIVIR UNA EXPERIENCIA UNICA?!<br> Â¡QUE TE DEJE
+											¡QUERES VIVIR UNA EXPERIENCIA UNICA?!<br> ¡QUE TE DEJE
 											LOS PELOS DE PUNTA?!<br> Entonces este pack es el tuyo,
 											no esperes mas y empeza a disfrutar de Mordor y Bosque Negro.
 											<br>comprando ahora te hacemos un descuento del 25%
@@ -294,7 +298,7 @@
 									<div class="card-body" id="card-4">
 										<h5 class="card-title  fw-bold">Pack Aventura</h5>
 										<p class="card-text">
-											Â¡APROVECHA ESTE COMBO INCREIBLE!<br> Combo ideal para
+											¡APROVECHA ESTE COMBO INCREIBLE!<br> Combo ideal para
 											visitar con la familia, no te pierdas la posibilidad de
 											conocer Mordor y Moria,<br> y tener una experiencia
 											unica a tan solo el precio de $ 140 monedas
@@ -315,13 +319,13 @@
 				</div>
 				<button class="carousel-control-prev bg-dark-50" type="button"
 					data-bs-target="#carouselExampleControlsNoTouching"
-                            data-bs-slide="prev">
+					data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Previous</span>
 				</button>
 				<button class="carousel-control-next bg-dark-50" type="button"
 					data-bs-target="#carouselExampleControlsNoTouching"
-                            data-bs-slide="next">
+					data-bs-slide="next">
 					<span class="carousel-control-next-icon " aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
@@ -347,10 +351,11 @@
 					Turismo en Tierra Media <br>Fue desarrollado por el grupo <br>
 					<b>Hijos Del Rigor</b>
 				</h2>
-				<p class="text-center">Lorem ipsum dolor sit, amet consectetur
-					adipisicing elit. Tempore repellat nulla eum et explicabo provident
-					officia, impedit consectetur vitae aspernatur suscipit perferendis
-					quia quam. Est rem accusamus aliquid ipsum sint!</p>
+				<p class="text-center">La Tierra Media (Middle Earth en inglés),
+					también conocida como Endor, es el continente ficticio donde tienen
+					lugar la mayoría de los acontecimientos de las obras del escritor
+					J. R. R. Tolkien. ... Es uno de los continentes de Arda, el mundo
+					donde se sitúa la totalidad del legendarium de Tolkien.</p>
 			</div>
 			<div class=" pt-5 row row-cols-1 row-cols-md-3 g-4">
 				<div class="col-lg-3 col-sm-6">
@@ -381,7 +386,8 @@
 					<div class="contenido-miembro">
 						<div class="contenido-detalles">
 							<h5 class="text-start ps-1 mt-2">Sam</h5>
-							<span class="ps-1">Sherk Con la posima de felices por siempre </span>
+							<span class="ps-1">Sherk Con la posima de felices por
+								siempre </span>
 							<ul class="list-inline pe-3">
 								<li class=" list-inline-item"><a href=""> <ion-icon
 											name="logo-instagram"></ion-icon>
@@ -460,10 +466,10 @@
 				<div class="col-lg-6 col-sm-6 mt-5 pt-5 mb-2">
 					<h2 class="fw-bolder ">Estas Listo Para ser Parte de esta
 						aventura?</h2>
-					<p class="pp">Lorem ipsum dolor sit amet consectetur
-						adipisicing elit. Eaque adipisci repellat illum, suscipit enim
-						vitae corporis maxime tempora tempore deserunt qui aspernatur
-						dolores iure esse? Deserunt reprehenderit culpa sit distinctio.</p>
+					<p class="pp">Por favor en este espacio nos gustaria que nos
+						puedan dejar un comentario de como la pasaron , recomendaciones
+						que nos quieran aportar , o cualquier consulta que quieran
+						hacernos. Muchas Gracias Por Ser Parte De Esta Aventura!!</p>
 
 				</div>
 				<div class="col-lg-6 col-sm-6 mt-5 pt-5 pe-3 mb-2">
@@ -548,10 +554,7 @@
 						src="assets/img/logo_small.png" alt="logo" width="200px"></a>
 					<div>
 						<ul class="list-unstyled  small  text-muted">
-							<li class="mb-2">
-								<p>This card has supporting text below as a natural lead-in
-									to additional content.</p>
-							</li>
+							<li class="mb-2"></li>
 							<li class="mb-2">Gracias Por visitar Nuestra web</li>
 
 
@@ -565,9 +568,7 @@
 						<ul class="list-unstyled  small  text-muted">
 							<li class="mb-2"><a href="" class="text-dark">Lista De
 									Atracciones</a></li>
-							<li class="mb-2">
-								<p>Lorem ipsum</p>
-							</li>
+
 
 
 						</ul>
@@ -578,10 +579,7 @@
 							<ul class="list-unstyled  small  text-muted">
 								<li class="mb-2"><a href="" class="text-dark">Promociones
 										Disponibles</a></li>
-								<li class="mb-2">
-									<p>Lorem ipsum</p>
-								</li>
-
+								
 
 							</ul>
 						</div>
@@ -593,10 +591,7 @@
 							<ul class="list-unstyled  small  text-muted">
 								<li class="mb-2"><a href="" class="text-dark">Argentina
 										Programa</a></li>
-								<li class="mb-2">
-									<p>Lorem ipsum</p>
-								</li>
-
+							
 
 							</ul>
 						</div>
