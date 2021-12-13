@@ -19,5 +19,13 @@ public class PromocionServicio {
 		Promocion promocion = DAOFactory.getPromocionDAO().buscarPorId(id);
 		DAOFactory.getPromocionDAO().deleteLogico(promocion);
 	}
+public Promocion buscar(Integer id) throws SQLException {
+		return DAOFactory.getPromocionDAO().consultarID_Promo(id);
+	}
+
+	public void actualizar(Promocion promo, String nombreNuevo) throws SQLException {
+		DAOFactory.getPromocionDAO().update(promo, nombreNuevo);
+		
+	}
 
 }

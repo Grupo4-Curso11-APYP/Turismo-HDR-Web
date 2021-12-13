@@ -99,11 +99,11 @@
 					<h2 class="fw-bolder mt-3 text-white">Ingrese el Id de 
 						Promocion</h2>
 
-					<form id="form-contact" class="row g-3 needs-validation" novalidate action="actualizar-promo.do" method="get">
+					<form action="actualizar-promo.do" id="form-contact" class="row g-3 needs-validation" novalidate method="post">
 
 						<div class="col-md-4">
-							<label for="validationCustom01" class="form-label text-white">ID</label>
-							<input type="number" class="form-control" id="validationCustom01"
+							<label for="id" class="form-label text-white">ID</label>
+							<input name="id" type="number" class="form-control" id="id"
 								required>
 							<div class="valid-feedback text-white">¡Se ve bien!</div>
 						</div>

@@ -312,5 +312,18 @@ public class PromocionDAOImpl implements PromocionDAO {
 		String nombre = resultados.getString(2);
 		return new PromocionAbsoluta(nombre, null, null, 0);
 	}
+@Override
+	public int update(Promocion promocion, String nombre) throws SQLException {
+		String sql = "UPDATE Promocion SET Nombre = ?  WHERE Nombre LIKE ? ";
+		Connection conn = ConnectionProvider.getConnection();
+
+		PreparedStatement statement = conn.prepareStatement(sql);
+		statement.setString(1, nombre);
+		statement.setObject(2, promocion.getNombre());
+		int rows = statement.executeUpdate();
+
+		return rows;
+
+	}
 
 }

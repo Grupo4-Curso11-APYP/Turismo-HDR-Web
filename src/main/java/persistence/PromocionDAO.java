@@ -28,5 +28,10 @@ public interface PromocionDAO extends GenericDAO<Promocion> {
 
 	public int find(String nombre) throws SQLException;
 	
+public Promocion consultarID_Promo(int promo) throws SQLException;
+
+	public int update(Promocion promocion, String nombre) throws SQLException;
+
+	
 	public Promocion findByNombre(String nombre);
 }
