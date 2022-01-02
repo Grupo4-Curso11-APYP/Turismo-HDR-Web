@@ -215,7 +215,6 @@
 									<th>Tiempo</th>
 									<th>Cupo</th>
 									<th>Tipo</th>
-									<th>Accion</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -230,8 +229,6 @@
 										<td><c:out value="${atraccion.tiempo}"></c:out></td>
 										<td><c:out value="${atraccion.cupoDisponible}"></c:out></td>
 										<td><c:out value="${atraccion.tipo}"></c:out></td>
-										<td><a href="#" class="btn btn-success rounded"
-											role="button">Comprar</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
