@@ -92,8 +92,8 @@
 
 				<!-- ATRACCIONES ALTA -->
 				<div class="col-xl-5 col-lg-6 bg-dark ms-5 mb-3 rounded-2">
-					<h2 class="fw-bolder mt-3  text-white">Ingresar Una Nueva
-						Atraccion</h2>
+					<h2 class="fw-bolder mt-3  text-white">Ingresar una nueva
+						atracción</h2>
 					<!-- <form action="results.php" method="POST" role="form" class="form-horizontal"> -->
 					<form id="form-contact"
 						class="row text-white g-3 needs-validation" novalidate action="insertar-atraccion.do" method="post">
@@ -107,49 +107,40 @@
 							<label for="validationCustom02" class="form-label">Costo</label>
 							<input type="number" class="form-control" name="costo" id="validationCustom02"
 								required>
-							<div class="valid-feedback">Por favor , Ingrese un costo
-								valido</div>
+							<div class="valid-feedback">Por favor ingrese un costo
+								válido</div>
 						</div>
 						<div class="col-md-4">
-							<label for="validationCustom02" class="form-label">Tiempo</label>
-							<input type="number" class="form-control" name="tiempo" id="validationCustom02"
+							<label for="validationCustom03" class="form-label">Tiempo</label>
+							<input type="number" class="form-control" name="tiempo" id="validationCustom03"
 								required>
-							<div class="invalid-feedback">Por favor, Ingrese un tiempo
-								valido.</div>
+							<div class="invalid-feedback">Por favor ingrese un tiempo
+								válido.</div>
 						</div>
 
 						<div class="col-md-6">
-							<label for="validationCustom03" class="form-label">Cupo
+							<label for="validationCustom04" class="form-label">Cupo
 								Disponible</label> <input type="text" name="cupoDisponible" class="form-control"
-								id="validationCustom03" required>
-							<div class="invalid-feedback">Por favor ingre un Cupo
-								valido .</div>
+								id="validationCustom04" required>
+							<div class="invalid-feedback">Por favor ingrese un Cupo
+								válido.</div>
 						</div>
 
 						<div class="col-md-6 ">
-							<select for="validationCustom02" name="tipoDeAtraccion" class="form-select mt-4 pb-1 "
-								aria-label="Default select example">
-								<%@ page import="model.TipoAtraccion" %>
-								<% pageContext.setAttribute("tipoDeAtraccion", model.TipoAtraccion.values()); %>
+						<label for="validationCustom05" class="form-label">Tipo de Atracción</label> <select id="validationCustom05" name="tipoDeAtraccion" class="form-select"
+								aria-label="Default select example"><%@ page import="model.TipoAtraccion" %><% pageContext.setAttribute("tipoDeAtraccion", model.TipoAtraccion.values()); %>
 								<c:forEach var="entry" items="${tipoDeAtraccion}">
 								    <option>${entry.name()}</option>
 								</c:forEach>
-								<!-- <option selected>Tipo De atracciones</option>
-								<option type="text" class="form-control" name="tipoDeAtraccion" id="validationCustom02"
-									required value="AVENTURA">AVENTURA</option>
-								<option type="text" name="tipoDeAtraccion" class="form-control" id="validationCustom02"
-									required value="DEGUSTACION">DEGUSTACION</option>
-								<option type="text" name="tipoDeAtraccion" class="form-control" id="validationCustom02"
-									required value="PAISAJE">PAISAJE</option> -->
 							</select>
 
 							<div class="invalid-feedback">por favor ingrese un Tipo de
-								Atraccion valido</div>
+								Atraccion válido</div>
 						</div>
 
 						<div class="col-12"><!-- /attractions/create.do -->
-							<button class="btn btn-primary mb-3" type="submit">Ingresar
-								Atraccion </button>
+							<button class="btn btn-primary mb-3" type="submit">Crear
+								atracción </button>
 						</div>
 					</form>
 
