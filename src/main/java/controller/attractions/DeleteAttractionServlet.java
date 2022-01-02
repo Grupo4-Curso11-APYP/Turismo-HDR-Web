@@ -1,6 +1,8 @@
 package controller.attractions;
 
 import java.io.IOException;
+
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,7 +14,7 @@ import services.AtraccionService;
 @WebServlet("/borrar-atraccion.do")
 public class DeleteAttractionServlet extends HttpServlet {
 
-	private static final long serialVersionUID = -8108877554178300148L;
+	private static final long serialVersionUID = -4562462717346197435L;
 	private AtraccionService attractionService;
 
 	@Override
@@ -21,7 +23,19 @@ public class DeleteAttractionServlet extends HttpServlet {
 		this.attractionService = new AtraccionService();
 	}
 
+	/*
+	 * Muestra el formulario para borrar atraccion
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/borrar-atraccion.jsp");
+		dispatcher.forward(req, resp);
+	}
+	
+	/*
+	 * Toma el id pasado por el usuario para borrar la atraccion correspondiente
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Long id = Long.parseLong(req.getParameter("id"));
