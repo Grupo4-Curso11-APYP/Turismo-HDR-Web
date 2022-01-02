@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
 <jsp:include page="partials/head.jsp"></jsp:include>
@@ -41,7 +41,7 @@
 
 						</ul></li>
 					<li class="nav-item"><a class="nav-link" href="#quienes-somos"
-						tabindex="-1" aria-disabled="false">Quienes Somos</a></li>
+						tabindex="-1" aria-disabled="false">Quiénes Somos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#contacto"
 						tabindex="-1" aria-disabled="false">Contacto</a></li>
 					<li class="nav-item"><a class="nav-link "
@@ -59,11 +59,11 @@
 
 		<div
 			class="container align-items-center  text-center pt-2 mb-5 mt-5   ">
-			<h1 class="text-center fw-bolder pt-5">¡Bienvenido A Turismo En
-				Tierra Media!</h1>
+			<h1 class="text-center fw-bolder pt-5">Turismo en
+				Tierra Media</h1>
 
-			<h2 class="display-3 fw-bolder">
-				<c:out value="${usuario.nombre}"></c:out>
+			<h2 class="display-3 fw-bolder">¡Hola
+				<c:out value="${usuario.nombre}"></c:out>!
 			</h2>
 			<a type="menu"
 				class=" text-center btn btn-light btn-sm mt-5   border border-light fw-bold "
@@ -88,8 +88,8 @@
 
 
 
-						<p class="">En Esta Seccion Podras Encontrar todas las
-							Atracciones y Promociones Disponibles hasta el momento .</p>
+						<p class="">En esta sección podrás encontrar todas las
+							atracciones y promociones disponibles hasta el momento.</p>
 
 
 						<!----ATRACCIONES-->
@@ -117,7 +117,7 @@
 									<img src="assets/img/card-2.jpg" class="card-img-top"
 										alt="minas-thirt">
 									<div class="card-body" id="card-2">
-										<h5 class="card-title fw-bold">Minas Thirt</h5>
+										<h5 class="card-title fw-bold">Minas Tirith</h5>
 										<p class="card-text">Minas Tirith (S. 'Torre de la
 											Guardia') era una ciudad de Gondor , originalmente llamada
 											Minas Anor. Desde TA 1640 en adelante fue la capital del
@@ -134,10 +134,7 @@
 									<img src="assets/img/card-3.png" class="card-img-top" alt="...">
 									<div class="card-body" id="card-3">
 										<h5 class="card-title fw-bold">Abismo de Helm</h5>
-										<p class="card-text">El abismo de Helm es un lugar
-											ficticio perteneciente al legendarium del escritor inglés J.
-											R. R. Tolkien y que aparece en su novela El Señor de los
-											Anillos. Se trata de una profunda garganta que se abre al pie
+										<p class="card-text">El Abismo de Helm se trata de una profunda garganta que se abre al pie
 											del pico Thrihyrne, en la vertiente norte de las Montañas
 											Blancas.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
@@ -151,7 +148,7 @@
 									<div class="card-body" id="card-4">
 										<h5 class="card-title  fw-bold">Moria</h5>
 										<p class="card-text">Fue una gran mina que durante muchas
-											Edades produjo inmensas riquezas, símbolo del poderío enano
+											edades produjo inmensas riquezas, símbolo del poderío enano
 											en la Tierra Media, pero también causa de muchas desdichas y
 											pesares. Durante más de un milenio fue un gran centro de
 											comercio enano, hasta que los habitantes de la ciudad
@@ -168,7 +165,7 @@
 										<h5 class="card-title fw-bold">Bosque Negro</h5>
 										<p class="card-text">La zona forestal más grande que aún
 											perdura en la Tierra Media. Se halla al este del tramo
-											superior del Anduin y al sur de las Montañas Grises. Su
+											superior de Anduin y al sur de las Montañas Grises. Su
 											nombre original era el Gran Bosque Verde o Bosque Verde el
 											Grande (S. Eryn Galen) y formaba el hábitat de los elfos
 											silvanos</p>
@@ -199,9 +196,7 @@
 									<div class="card-body" id="card-6">
 										<h5 class="card-title fw-bold">Erebor</h5>
 										<p class="card-text">Erebor, también llamada la Montaña
-											Solitaria, es un lugar ficticio perteneciente al legendarium
-											del escritor J. R. R. Tolkien y que aparece en su novela El
-											hobbit. Se trata de una elevación aislada situada al noreste
+											Solitaria, se trata de una elevación aislada situada al noreste
 											de Rhovanion, que fue arrebatada por un dragón, llamado
 											Smaug, al rey Thrór de los enanos.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
@@ -215,12 +210,11 @@
 									<img src="assets/img/card-8.jpg" class="card-img-top" alt="...">
 									<div class="card-body" id="card-6">
 										<h5 class="card-title fw-bold">Lothlórien</h5>
-										<p class="card-text">En el legendario de JRR Tolkien,
-											Lothlórien o Lórien es el reino más hermoso de los Elfos que
-											permanecieron en la Tierra Media durante la Tercera Edad .
-											... El reino, un amplio bosque entre las Montañas Nubladas y
+										<p class="card-text">Lothlórien o Lórien es el reino más hermoso de los Elfos que
+											permanecieron en la Tierra Media durante la Tercera Edad.
+											Un amplio bosque entre las Montañas Nubladas y
 											el río Anduin, es el centro élfico de resistencia contra el
-											Señor Oscuro Sauron en El Señor de los Anillos.</p>
+											Señor Oscuro Sauron.</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
 									</div>
@@ -248,7 +242,7 @@
 										<h5 class="card-title fw-bold">Pack Degustacion</h5>
 										<p class="card-text">
 											¡NO TE PIERDAS ESTA OFERTA INCREIBLE!<br> Llevando
-											Lothlorien y La Comarca Te hacemos un descuento unico de $36
+											Lothlórien y La Comarca Te hacemos un descuento unico de $36
 											monedas
 										</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
@@ -281,9 +275,9 @@
 									<div class="card-body" id="card-3">
 										<h5 class="card-title fw-bold">Pack Adrenalina</h5>
 										<p class="card-text">
-											¡QUERES VIVIR UNA EXPERIENCIA UNICA?!<br> ¡QUE TE DEJE
+											¡QUERES VIVIR UNA EXPERIENCIA ÚNICA?!<br> ¡QUE TE DEJE
 											LOS PELOS DE PUNTA?!<br> Entonces este pack es el tuyo,
-											no esperes mas y empeza a disfrutar de Mordor y Bosque Negro.
+											no esperes más y empieza a disfrutar de Mordor y Bosque Negro.
 											<br>comprando ahora te hacemos un descuento del 25%
 										</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
@@ -298,10 +292,10 @@
 									<div class="card-body" id="card-4">
 										<h5 class="card-title  fw-bold">Pack Aventura</h5>
 										<p class="card-text">
-											¡APROVECHA ESTE COMBO INCREIBLE!<br> Combo ideal para
+											¡APROVECHA ESTE COMBO INCREÍBLE!<br> Combo ideal para
 											visitar con la familia, no te pierdas la posibilidad de
 											conocer Mordor y Moria,<br> y tener una experiencia
-											unica a tan solo el precio de $ 140 monedas
+											única a tan sólo el precio de $140 monedas
 										</p>
 										<a type="button" class="btn btn-transparent border-dark mt-2"
 											href="dashboard.jsp">Visitar</a>
@@ -433,7 +427,7 @@
 					<div class="contenido-miembro">
 						<div class="contenido-detalles">
 							<h5 class="text-start ps-1 mt-2">Eowyn</h5>
-							<span class="ps-1">Reina De muy muy Lejano</span>
+							<span class="ps-1">Reina de muy muy Lejano</span>
 							<ul class="list-inline pe-3">
 								<li class=" list-inline-item"><a href=""> <ion-icon
 											name="logo-instagram"></ion-icon>
@@ -464,12 +458,12 @@
 		<div class="container bg-light mt-2 mb-3">
 			<div class="row">
 				<div class="col-lg-6 col-sm-6 mt-5 pt-5 mb-2">
-					<h2 class="fw-bolder ">Estas Listo Para ser Parte de esta
+					<h2 class="fw-bolder ">¿Estás listo para ser parte de esta
 						aventura?</h2>
-					<p class="pp">Por favor en este espacio nos gustaria que nos
+					<p class="pp">Por favor en este espacio nos gustaría que nos
 						puedan dejar un comentario de como la pasaron , recomendaciones
 						que nos quieran aportar , o cualquier consulta que quieran
-						hacernos. Muchas Gracias Por Ser Parte De Esta Aventura!!</p>
+						hacernos. ¡¡Muchas gracias por ser parte de esta aventura!!</p>
 
 				</div>
 				<div class="col-lg-6 col-sm-6 mt-5 pt-5 pe-3 mb-2">
@@ -480,13 +474,13 @@
 							<label for="validationCustom01" class="form-label">Nombre</label>
 							<input type="text" class="form-control" id="validationCustom01"
 								required>
-							<div class="valid-feedback">Â¡Se ve bien!</div>
+							<div class="valid-feedback">¡Se ve bien!</div>
 						</div>
 						<div class="col-md-4">
 							<label for="validationCustom02" class="form-label">Apellido</label>
 							<input type="text" class="form-control" id="validationCustom02"
 								required>
-							<div class="valid-feedback">Â¡Se ve bien!</div>
+							<div class="valid-feedback">¡Se ve bien!</div>
 						</div>
 						<div class="col-md-4">
 							<label type="Email" for="validationCustomUsername"
@@ -504,7 +498,7 @@
 							<input type="text" class="form-control" id="validationCustom03"
 								required>
 							<div class="invalid-feedback">Proporcione una ciudad
-								vÃ¡lida.</div>
+								válida.</div>
 						</div>
 
 						<div class="col-md-3">
@@ -519,7 +513,7 @@
 								<input class="form-check-input" type="checkbox" value=""
 									id="invalidCheck" required> <label
 									class="form-check-label" for="invalidCheck"> Acepta
-									terminos y condiciones </label>
+									términos y condiciones </label>
 								<div class="invalid-feedback">Debes estar de acuerdo antes
 									de enviar.</div>
 							</div>
@@ -555,7 +549,7 @@
 					<div>
 						<ul class="list-unstyled  small  text-muted">
 							<li class="mb-2"></li>
-							<li class="mb-2">Gracias Por visitar Nuestra web</li>
+							<li class="mb-2">Gracias por visitar nuestra web</li>
 
 
 						</ul>
@@ -622,11 +616,11 @@
 					</button>
 				</div>
 				<div class="modal-body">Seleccione "Cerrar sesion" a
-					continuacion si esta listo para finalizar su sesion actual.</div>
+					continuación si está listo para finalizar su sesión actual.</div>
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancelar</button>
-					<a class="btn btn-primary" href="login.jsp">Cerrar sesion</a>
+					<a class="btn btn-primary" href="login.jsp">Cerrar sesión</a>
 				</div>
 			</div>
 		</div>
