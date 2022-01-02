@@ -26,7 +26,7 @@
 				</div>
 			</c:if>
 			
-        <form class="row g-3 needs-validation" novalidate  action="login" method="post"><!-- antes mandaba al propio login.jsp -->
+        <form class="row g-3 needs-validation" novalidate  action="login" method="post">
           <div class="mb-4">
             <label for="nombre" class="form-label">Nombre</label>
             <input name="nombre" class="form-control" id="nombre" aria-describedby="nombrehelp" required>
