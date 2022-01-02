@@ -107,7 +107,7 @@
 
 			<!--ITEM Dashboard -->
 			<li class="nav-item active"><a class="nav-link" href="index.jsp">
-					<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
+					<i class="fas fa-fw fa-tachometer-alt"></i> <span>Tablero de mando</span>
 			</a></li>
 
 			<!-- Divider -->

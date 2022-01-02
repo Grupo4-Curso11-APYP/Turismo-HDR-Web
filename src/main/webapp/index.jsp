@@ -32,10 +32,10 @@
 					<li class="nav-item dropdown"><a id="perfiles-creados"
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Perfil </a>
+							Gestión</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<li><a class="dropdown-item" href="dashboard.jsp"
-								id="usuario">Ver Perfil</a></li>
+								id="usuario">Ir al tablero de mando</a></li>
 
 
 
