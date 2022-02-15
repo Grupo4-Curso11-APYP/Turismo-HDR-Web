@@ -14,6 +14,7 @@ public class AtraccionService {
 	/*
 	 * Servicio usado por ListAttractionsServlet
 	 */
+	
 	public List<Atraccion> list() throws SQLException {
 		return DAOFactory.getAtraccionDAO().findAll();
 	}
@@ -43,11 +44,19 @@ public class AtraccionService {
 	public void update(Atraccion atraccion, int cupo) {
 		DAOFactory.getAtraccionDAO().update(atraccion, cupo);
 	}
+	
+	/*
+	 * Servicio usado por DeleteAttractionServlet
+	 */
 
 	public void delete(Long id) throws SQLException {
 		Atraccion atraccion = DAOFactory.getAtraccionDAO().buscarPorId(id);
 		DAOFactory.getAtraccionDAO().deleteLogico(atraccion);
 	}
+	
+	/*
+	 * Servicio usado por BuscarAtraccionParaActualizarServlet
+	 */
 
 	public Atraccion buscar(Long id) throws SQLException {
 		return DAOFactory.getAtraccionDAO().buscarPorId(id);
