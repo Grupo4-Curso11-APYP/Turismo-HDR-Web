@@ -37,22 +37,6 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	}
 
 	/*
-	 * Cuenta todos los usuarios de la base de datos
-	 */
-	@Override
-	public int countAll() throws SQLException {
-		String sql = "SELECT COUNT(1) AS TOTAL FROM USUARIO";
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-		ResultSet resultados = statement.executeQuery();
-
-		resultados.next();
-		int total = resultados.getInt("TOTAL");
-
-		return total;
-	}
-
-	/*
 	 * Inserta un usuario nuevo en la base de datos
 	 */
 	@Override
@@ -89,22 +73,6 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		statement.setDouble(1, usuario.getPresupuesto());
 		statement.setDouble(2, usuario.getTiempoDisponible());
 		statement.setString(3, usuario.getNombre());
-		int rows = statement.executeUpdate();
-
-		return rows;
-
-	}
-
-	/*
-	 * Borra un usuario
-	 */
-	@Override
-	public int delete(Usuario usuario) throws SQLException {
-		String sql = "DELETE FROM USUARIO WHERE NOMBRE = ?";
-		Connection conn = ConnectionProvider.getConnection();
-
-		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setString(1, usuario.getNombre());
 		int rows = statement.executeUpdate();
 
 		return rows;

@@ -15,8 +15,6 @@ public interface AtraccionDAO extends GenericDAO<Atraccion> {
 		
 		public List<Atraccion> findAll();
 		
-		public int delete(Atraccion atraccion) throws SQLException;
-		
 		public int find(String nombre) throws SQLException;
 
 		public int update(Atraccion atraccion, int cupo);

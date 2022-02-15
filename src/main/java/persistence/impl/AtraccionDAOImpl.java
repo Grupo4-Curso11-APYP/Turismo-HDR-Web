@@ -62,7 +62,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Instancia un objeto atracciï¿½n a partir de la base de datos
+	 * Instancia un objeto atraccion a partir de la base de datos
 	 */
 	public Atraccion toAtraccion(ResultSet resultados) throws Exception {
 
@@ -74,26 +74,10 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 
 		return new Atraccion(nombre, costo, tiempo, cupoDisponible, tipo);
 
-	}
+	}	
 
 	/*
-	 * Cuenta todas las atracciones en la base de datos
-	 */
-	@Override
-	public int countAll() throws SQLException {
-		String sql = "SELECT COUNT(1) AS TOTAL FROM Atraccion";
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-		ResultSet resultados = statement.executeQuery();
-
-		resultados.next();
-		int total = resultados.getInt("TOTAL");
-
-		return total;
-	}
-
-	/*
-	 * Inserta una atracciï¿½n nueva en la base de datos
+	 * Inserta una atraccion nueva en la base de datos
 	 */
 	public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, TipoAtraccion tipoAtraccion)
 			throws SQLException {
@@ -115,7 +99,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Actualiza una atracciï¿½n en la base de datos
+	 * Actualiza una atraccion en la base de datos
 	 */
 	@Override
 	public int update(Atraccion atraccion, int cupo) {
@@ -154,21 +138,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
-	}
-
-	/*
-	 * Borra una atracciï¿½n en la base de datos
-	 */
-	@Override
-	public int delete(Atraccion atraccion) throws SQLException {
-		String sql = "DELETE FROM Atraccion WHERE Nombre = ?";
-		Connection conn = ConnectionProvider.getConnection();
-
-		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setString(1, atraccion.getNombre());
-		int rows = statement.executeUpdate();
-
-		return rows;
 	}
 
 	/*
@@ -227,7 +196,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Actualiza estado de atracciï¿½n en la base de datos para borrado lógico
+	 * Actualiza estado de atraccion en la base de datos para borrado lógico
 	 */
 	@Override
 	public int deleteLogico(Atraccion atraccion) throws SQLException {

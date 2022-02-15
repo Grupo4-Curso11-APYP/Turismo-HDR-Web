@@ -10,8 +10,6 @@ public interface PromocionDAO extends GenericDAO<Promocion> {
 	
 	public int insert(Promocion promocion) throws SQLException;
 	
-	public int delete(Promocion promocion) throws SQLException;
-	
 	public int update(Promocion promocion) throws SQLException;
 
 	public int deleteLogico(Promocion promocion)throws SQLException;
@@ -24,6 +22,5 @@ public interface PromocionDAO extends GenericDAO<Promocion> {
 
 	public int update(Promocion promocion, String nombre) throws SQLException;
 
-	
 	public Promocion findByNombre(String nombre);
 }

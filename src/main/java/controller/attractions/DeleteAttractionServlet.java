@@ -46,6 +46,6 @@ public class DeleteAttractionServlet extends HttpServlet {
 			throw new MissingDataException(e);
 		}
 
-		resp.sendRedirect("/turismoHDR/dashboard.jsp");
+		resp.sendRedirect("/turismoHDR/listar-atraccion.do");
 	}
 }

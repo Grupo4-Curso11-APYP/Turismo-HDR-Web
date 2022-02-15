@@ -144,42 +144,6 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		}
 	}
 
-	/*
-	 * Elimina un itinerario de la base de datos
-	 */
-	@Override
-	public int delete(int idItinerario) {
-		try {
-			String sql = "DELETE FROM Itinerario WHERE ID_Itinerario = ?";
-			Connection conn = ConnectionProvider.getConnection();
-
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, idItinerario);
-			int rows = statement.executeUpdate();
-
-			return rows;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
-	/*
-	 * Cuenta la cantidad de itinerarios que hay en la base de datos
-	 */
-	@Override
-	public int countAll() throws SQLException {
-		String sql = "SELECT COUNT(2) AS TOTAL FROM Itinerario";
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-		ResultSet resultados = statement.executeQuery();
-
-		resultados.next();
-		int total = resultados.getInt("TOTAL");
-
-		return total;
-	}
-	
-
 	@Override
 	public Usuario find(Integer id) {
 		return null;
@@ -187,11 +151,6 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 
 	@Override
 	public int insert(Usuario t) {
-		return 0;
-	}
-
-	@Override
-	public int delete(Usuario t) throws SQLException {
 		return 0;
 	}
 

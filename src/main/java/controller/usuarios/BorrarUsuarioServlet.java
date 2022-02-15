@@ -2,13 +2,13 @@ package controller.usuarios;
 
 import java.io.IOException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import persistence.commons.MissingDataException;
-import services.PromocionServicio;
 import services.UsuarioService;
 
 
@@ -24,6 +24,15 @@ public class BorrarUsuarioServlet extends HttpServlet {
 		this.usuarioService = new UsuarioService();
 	}
 
+	/*
+	 * Muestra el formulario para borrar promocion
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/borrar-usuario.jsp");
+		dispatcher.forward(req, resp);
+	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,7 +44,7 @@ public class BorrarUsuarioServlet extends HttpServlet {
 			throw new MissingDataException(e);
 		}
 
-		resp.sendRedirect("/turismoHDR/dashboard.jsp");
+		resp.sendRedirect("/turismoHDR/listar-usuario.do");
 	}
 
     

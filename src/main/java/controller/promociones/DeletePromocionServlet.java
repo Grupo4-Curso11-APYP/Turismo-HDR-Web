@@ -2,6 +2,7 @@ package controller.promociones;
 
 import java.io.IOException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,6 +28,15 @@ public class DeletePromocionServlet extends HttpServlet {
 		this.promocionServicio = new PromocionServicio();
 	}
 
+	/*
+	 * Muestra el formulario para borrar promocion
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/borrar-promo.jsp");
+		dispatcher.forward(req, resp);
+	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,7 +48,7 @@ public class DeletePromocionServlet extends HttpServlet {
 			throw new MissingDataException(e);
 		}
 
-		resp.sendRedirect("/turismoHDR/dashboard.jsp");
+		resp.sendRedirect("/turismoHDR/listar-promo.do");
 	}
 
 }

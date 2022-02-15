@@ -10,10 +10,7 @@ public interface GenericDAO<T> {
 
 	/*
 	 * Se encarga de contar todos los datos de una Tabla en especifico
-	 */
-	public int countAll() throws SQLException;
-	
+	 */	
 	public T find(Integer id);
 	public int insert(T t) throws SQLException;
-	public int delete(T t) throws SQLException;
 }

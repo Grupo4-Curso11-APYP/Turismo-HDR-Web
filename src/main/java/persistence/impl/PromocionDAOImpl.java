@@ -126,37 +126,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 	}
 
 	/*
-	 * Borra una promocion
-	 */
-	@Override
-	public int delete(Promocion promocion) throws SQLException {
-		String sql = "DELETE FROM Promocion WHERE Nombre LIKE ?";
-		Connection conn = ConnectionProvider.getConnection();
-
-		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setString(3, promocion.getNombre());
-		int rows = statement.executeUpdate();
-
-		return rows;
-
-	}
-
-	/*
-	 * Cuenta todas las promociones
-	 */
-	public int countAll() throws SQLException {
-		String sql = "SELECT COUNT(1) AS TOTAL FROM Promocion";
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-		ResultSet resultados = statement.executeQuery();
-
-		resultados.next();
-		int total = resultados.getInt("TOTAL");
-
-		return total;
-	}
-
-	/*
 	 * Pasa los datos para la creacion de una promocion
 	 */
 	private Promocion toPromo(ResultSet resultados) throws Exception {
@@ -312,7 +281,8 @@ public class PromocionDAOImpl implements PromocionDAO {
 		String nombre = resultados.getString(2);
 		return new PromocionAbsoluta(nombre, null, null, 0);
 	}
-@Override
+	
+	@Override
 	public int update(Promocion promocion, String nombre) throws SQLException {
 		String sql = "UPDATE Promocion SET Nombre = ?  WHERE Nombre LIKE ? ";
 		Connection conn = ConnectionProvider.getConnection();
