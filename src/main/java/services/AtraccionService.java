@@ -53,8 +53,4 @@ public class AtraccionService {
 		return DAOFactory.getAtraccionDAO().buscarPorId(id);
 	}
 
-	public Atraccion find(Integer id) {
-		return DAOFactory.getAtraccionDAO().find(id);
-	}
-
 }
