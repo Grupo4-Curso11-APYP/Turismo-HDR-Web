@@ -216,12 +216,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 	}
 
 	@Override
-	public Promocion find(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public int deleteLogico(Promocion promocion) throws SQLException {
 		try {
 			String sql = "UPDATE Promocion SET Estado = ? WHERE ID_Promocion = ?";

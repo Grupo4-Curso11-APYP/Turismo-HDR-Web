@@ -145,11 +145,6 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	}
 
 	@Override
-	public Usuario find(Integer id) {
-		return null;
-	}
-
-	@Override
 	public int insert(Usuario t) {
 		return 0;
 	}

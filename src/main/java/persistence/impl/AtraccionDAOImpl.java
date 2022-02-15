@@ -180,11 +180,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	@Override
-	public Atraccion find(Integer id) {
-		return null;
-	}
-
-	@Override
 	public int insert(Atraccion t) {
 		return 0;
 	}

@@ -116,11 +116,6 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	}
 
 	@Override
-	public Usuario find(Integer id) {
-		return null;
-	}
-
-	@Override
 	public Usuario buscarPorId(Long IdUsuario) {
 		try {
 			String sql = "SELECT * FROM USUARIO WHERE ID_Usuario = ?";
