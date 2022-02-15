@@ -77,28 +77,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}	
 
 	/*
-	 * Inserta una atraccion nueva en la base de datos
-	 */
-	public int insertarAtrac(String nombre, Double costo, Double tiempo, Integer capacity, TipoAtraccion tipoAtraccion)
-			throws SQLException {
-
-		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
-
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-
-		statement.setString(1, nombre);
-		statement.setDouble(2, costo);
-		statement.setDouble(3, tiempo);
-		statement.setInt(4, capacity);
-		statement.setString(5, tipoAtraccion.name());
-
-		int rows = statement.executeUpdate();
-
-		return rows;
-	}
-
-	/*
 	 * Actualiza una atraccion en la base de datos
 	 */
 	@Override
@@ -180,14 +158,21 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	@Override
-	public int insert(Atraccion t) {
-		return 0;
-	}
+	public int insert(Atraccion atraccion) throws SQLException {
+		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
 
-	@Override
-	public int insertarAtrac(String nombre, int costo, int tiempo, int cupoDisponible, String tipoAtraccion)
-			throws SQLException {
-		return 0;
+		Connection conn = ConnectionProvider.getConnection();
+		PreparedStatement statement = conn.prepareStatement(sql);
+
+		statement.setString(1, atraccion.getNombre());
+		statement.setDouble(2, atraccion.getCosto());
+		statement.setDouble(3, atraccion.getTiempo());
+		statement.setInt(4, atraccion.getCupoDisponible());
+		statement.setObject(5, atraccion.getTipoAtraccion());
+
+		int rows = statement.executeUpdate();
+
+		return rows;
 	}
 
 	/*

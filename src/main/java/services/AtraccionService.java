@@ -29,9 +29,7 @@ public class AtraccionService {
 		Atraccion atraccion = new Atraccion(name, cost, duration, capacity, tipoDeAtraccion);
 
 		if (atraccion.esValidoFull(name, cost, duration, capacity, tipoDeAtraccion)) {
-			
-			AtraccionDAOImpl atracDI = new AtraccionDAOImpl();
-			atracDI.insertarAtrac(name, cost, duration, capacity, tipoDeAtraccion);
+			DAOFactory.getAtraccionDAO().insert(atraccion);
 		}
 
 		return atraccion;
