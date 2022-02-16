@@ -7,8 +7,7 @@ public class Itinerario {
 
 	
 
-	public Itinerario(Long id, Usuario usuario, Ofertable ofertable) {
-		this.id = id;
+	public Itinerario(Usuario usuario, Ofertable ofertable) {
 		this.usuario = usuario;
 		this.ofertable = ofertable;
 	}

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import model.Atraccion;
+import model.Itinerario;
 import model.Ofertable;
 import model.Promocion;
 import model.Usuario;
@@ -53,7 +54,8 @@ public class BuyAttractionService {
 				atraccionDAO.update((Atraccion)ofertable);
 			}
 			usuarioDAO.update(user);
-			itinerarioDAO.insertar(user.getNombre(), ofertable.getNombre());
+			Itinerario itinerario = new Itinerario(user, ofertable);
+			itinerarioDAO.insert(itinerario);
 		}
 
 		return errors;

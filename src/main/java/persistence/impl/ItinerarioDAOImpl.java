@@ -4,16 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import model.Atraccion;
 import model.Itinerario;
 import model.Ofertable;
-import model.Promocion;
 import model.Usuario;
 import persistence.commons.ConnectionProvider;
 import persistence.ItinerarioDAO;
@@ -28,6 +25,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	/*
 	 * Busca un itinerario por nombre de usuario
 	 */
+	
 	@Override
 	public Set<Ofertable> findByNombre(String nombre) {
 		try {
@@ -49,6 +47,10 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		}
 	}
 	
+	/*
+	 * Busca y devuelve todos los itinerarios existentes
+	 */
+	
 	@Override
 	public List<Itinerario> findAll() throws SQLException {
 		String sql = "SELECT * FROM Itinerario ORDER BY ID_Usuario";
@@ -66,9 +68,12 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		} return itinerarios;
 	}
 
+	/*
+	 * Instancia un objeto Itinerario a partir de la base de datos
+	 */
+	
 	private Itinerario aItinerario(ResultSet resultados) throws SQLException {
 		int idPromocion = resultados.getInt(1);
-		Long id = resultados.getLong(2);
 		usuarioDao = new UsuarioDaoImpl();
 		atraccionDao = new AtraccionDAOImpl();
 		promocionDao = new PromocionDAOImpl();
@@ -80,13 +85,13 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		} else {
 			ofertable = this.atraccionDao.buscarPorId(idAtraccion);
 		}
-		Itinerario itinerario = new Itinerario(id, usuario, ofertable);
+		Itinerario itinerario = new Itinerario(usuario, ofertable);
 		return itinerario;
 	}
 
 	/*
-	 * mï¿½todo usado por findByNombre para determinar si el ofertable de un
-	 * itinerario es una promociï¿½n o atracciï¿½n.
+	 * Usado por findByNombre para determinar si el ofertable de un
+	 * itinerario es una promocion o atraccion.
 	 */
 	private void esPromoOesAtraccion(ResultSet resultados, Set<Ofertable> itinerario) throws SQLException {
 		while (resultados.next()) {
@@ -97,27 +102,6 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			} else {
 				itinerario.add(atraccionDao.buscarPorId(idAtraccion));
 			}
-		}
-	}
-
-	/*
-	 * inserta un itinerario en la base de datos.
-	 */
-	@Override
-	public int insertar(String nombreUsuario, String nombreOfertable) {
-		try {
-			String sql = "INSERT INTO Itinerario (ID_Atraccion, ID_Usuario, ID_Promocion) VALUES ((SELECT ID_Atraccion FROM Atraccion WHERE Nombre = ?)\r\n"
-					+ ",(SELECT ID_Usuario FROM Usuario WHERE Nombre = ?),(SELECT ID_Promocion FROM Promocion WHERE Nombre = ?))";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, nombreOfertable);
-			statement.setString(2, nombreUsuario);
-			statement.setString(3, nombreOfertable);
-			int rows = statement.executeUpdate();
-
-			return rows;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
 		}
 	}
 
@@ -143,10 +127,27 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			throw new MissingDataException(e);
 		}
 	}
+	
+	/*
+	 * Inserta un itinerario en la base de datos
+	 */
 
 	@Override
-	public int insert(Usuario t) {
-		return 0;
+	public int insert(Itinerario itinerario) throws SQLException {
+		try {
+			String sql = "INSERT INTO Itinerario (ID_Atraccion, ID_Usuario, ID_Promocion) VALUES ((SELECT ID_Atraccion FROM Atraccion WHERE Nombre = ?)\r\n"
+					+ ",(SELECT ID_Usuario FROM Usuario WHERE Nombre = ?),(SELECT ID_Promocion FROM Promocion WHERE Nombre = ?))";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, itinerario.getOfertable().getNombre());
+			statement.setString(2, itinerario.getUsuario().getNombre());
+			statement.setString(3, itinerario.getOfertable().getNombre());
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 
 }
