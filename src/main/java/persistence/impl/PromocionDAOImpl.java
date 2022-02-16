@@ -216,14 +216,14 @@ public class PromocionDAOImpl implements PromocionDAO {
 	}
 
 	@Override
-	public int deleteLogico(Promocion promocion) throws SQLException {
+	public int deleteLogico(Integer id) throws SQLException {
 		try {
 			String sql = "UPDATE Promocion SET Estado = ? WHERE ID_Promocion = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, 0);
-			statement.setLong(2, find(promocion.getNombre()));
+			statement.setLong(2, id);
 
 			int rows = statement.executeUpdate();
 
@@ -231,21 +231,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
-	}
-	
-	@Override
-	public int find(String nombre) throws SQLException {
-		
-
-		String sql = "SELECT ID_Promocion, Nombre FROM Promocion WHERE Nombre LIKE \"%" + nombre + "%\"";
-
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-		ResultSet resultados = statement.executeQuery();
-
-		
-		return Integer.parseInt(resultados.getString(1));
-
 	}
 
 	@Override

@@ -136,14 +136,14 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	}
 
 	@Override
-	public int deleteLogico(Usuario usuario) throws SQLException {
+	public int deleteLogico(Integer id) throws SQLException {
 		try {
 			String sql = "UPDATE Usuario SET Estado = ? WHERE ID_Usuario = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, 0);
-			statement.setLong(2, find(usuario.getNombre()));
+			statement.setLong(2, id);
 
 			int rows = statement.executeUpdate();
 
@@ -151,20 +151,5 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
-	}
-
-	@Override
-	public int find(String nombre) throws SQLException {
-		
-
-		String sql = "SELECT ID_Usuario, Nombre FROM Usuario WHERE Nombre LIKE \"%" + nombre + "%\"";
-
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-		ResultSet resultados = statement.executeQuery();
-
-		
-		return Integer.parseInt(resultados.getString(1));
-
 	}
 }

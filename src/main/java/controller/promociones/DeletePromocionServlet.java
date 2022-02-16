@@ -40,7 +40,7 @@ public class DeletePromocionServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Long id = Long.parseLong(req.getParameter("id"));
+		Integer id = Integer.parseInt(req.getParameter("id"));
 		
 		try {
 			promocionServicio.delete(id);

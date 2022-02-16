@@ -29,9 +29,8 @@ public class UsuarioService {
 	return usuario;
 	}
 
-	public void delete(Long id) throws SQLException {
-		Usuario usuario = DAOFactory.getUsuarioDAO().buscarPorId(id);
-		DAOFactory.getUsuarioDAO().deleteLogico(usuario);
+	public void delete(Integer id) throws SQLException {
+		DAOFactory.getUsuarioDAO().deleteLogico(id);
 	}
 
 }

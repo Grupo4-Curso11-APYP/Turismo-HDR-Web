@@ -15,9 +15,8 @@ public class PromocionServicio {
 		return DAOFactory.getPromocionDAO().findAll();
 	}
 
-	public void delete(Long id) throws SQLException {
-		Promocion promocion = DAOFactory.getPromocionDAO().buscarPorId(id);
-		DAOFactory.getPromocionDAO().deleteLogico(promocion);
+	public void delete(Integer id) throws SQLException {
+		DAOFactory.getPromocionDAO().deleteLogico(id);
 	}
 
 	public Promocion buscar(Integer id) throws SQLException {
