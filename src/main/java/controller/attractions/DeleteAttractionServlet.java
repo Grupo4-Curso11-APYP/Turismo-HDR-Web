@@ -38,7 +38,7 @@ public class DeleteAttractionServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Long id = Long.parseLong(req.getParameter("id"));
+		Integer id = Integer.parseInt(req.getParameter("id"));
 		
 		try {
 			attractionService.delete(id);

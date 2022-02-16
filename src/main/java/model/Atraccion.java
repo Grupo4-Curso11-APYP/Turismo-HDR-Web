@@ -14,7 +14,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	protected int cupoDisponible;
 	protected TipoAtraccion tipoAtraccion;
 	protected String nombre;
-	private Integer id;
+	protected Integer id;
 	private Map<String, String> errors;
 
 	/*

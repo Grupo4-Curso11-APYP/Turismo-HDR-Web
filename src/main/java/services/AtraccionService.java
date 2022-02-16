@@ -47,9 +47,8 @@ public class AtraccionService {
 	 * Servicio usado por DeleteAttractionServlet
 	 */
 
-	public void delete(Long id) throws SQLException {
-		Atraccion atraccion = DAOFactory.getAtraccionDAO().buscarPorId(id);
-		DAOFactory.getAtraccionDAO().deleteLogico(atraccion);
+	public void delete(Integer id) throws SQLException {
+		DAOFactory.getAtraccionDAO().deleteLogico(id);
 	}
 	
 	/*

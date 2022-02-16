@@ -145,19 +145,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	@Override
-	public int find(String nombre) throws SQLException {
-
-		String sql = "SELECT ID_Atraccion, Nombre FROM Atraccion WHERE Nombre LIKE \"%" + nombre + "%\"";
-
-		Connection conn = ConnectionProvider.getConnection();
-		PreparedStatement statement = conn.prepareStatement(sql);
-		ResultSet resultados = statement.executeQuery();
-
-		return Integer.parseInt(resultados.getString(1));
-
-	}
-
-	@Override
 	public int insert(Atraccion atraccion) throws SQLException {
 		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
 
@@ -179,14 +166,14 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 * Actualiza estado de atraccion en la base de datos para borrado lógico
 	 */
 	@Override
-	public int deleteLogico(Atraccion atraccion) throws SQLException {
+	public int deleteLogico(Integer id) throws SQLException {
 		try {
 			String sql = "UPDATE Atraccion SET Estado = ? WHERE ID_Atraccion = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, 0);
-			statement.setLong(2, find(atraccion.getNombre()));
+			statement.setInt(2, id);
 
 			int rows = statement.executeUpdate();
 
