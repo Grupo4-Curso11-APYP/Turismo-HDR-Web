@@ -6,7 +6,6 @@ import model.Promocion;
 import persistence.commons.GenericDAO;
 
 public interface PromocionDAO extends GenericDAO<Promocion> {
-	public List<Promocion> findAll() throws SQLException;
 	
 	public int insert(Promocion promocion) throws SQLException;
 	

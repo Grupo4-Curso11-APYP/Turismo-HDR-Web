@@ -1,15 +1,13 @@
 package persistence;
 
 import java.sql.SQLException;
-import java.util.Set;
-
+import java.util.List;
 import model.Usuario;
 import persistence.commons.GenericDAO;
 
 public interface UsuarioDAO extends GenericDAO<Usuario> {
-	public abstract Usuario findByNombre(String nombre) throws SQLException;
 	
-	public Set<Usuario> findAll();
+	public abstract Usuario findByNombre(String nombre) throws SQLException;
 	
 	public int insert(Usuario usuario) throws SQLException;
 	

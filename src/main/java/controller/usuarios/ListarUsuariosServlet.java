@@ -30,7 +30,7 @@ public class ListarUsuariosServlet extends HttpServlet implements Servlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Set<Usuario> usuarios = null;
+		List<Usuario> usuarios = null;
 		try {
 			usuarios = usuarioServicio.list();
 		} catch (Exception e) {

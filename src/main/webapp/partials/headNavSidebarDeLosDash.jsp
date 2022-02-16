@@ -131,7 +131,6 @@
                         <a class="collapse-item" href="insertar-atraccion.do">Atraccion</a>
                         <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
                         <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="insertar-tipoAtraccion.jsp">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -146,7 +145,6 @@
                         <a class="collapse-item" href="actualizar-atraccion.do">Atraccion</a>
                         <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
                         <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
-                         <a class="collapse-item" href="actualizar-tipo.jsp">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>
@@ -162,7 +160,6 @@
                         <a class="collapse-item" href="listar-atraccion.do">Atracciones</a>
                         <a class="collapse-item" href="listar-promo.do">Promociones</a>
                         <a class="collapse-item" href="listar-itinerarios.do">Itinerarios</a>
-                        <a class="collapse-item" href="listar-tipo.jsp">Tipos De <br> Atracciones</a>
                     </div>
                 </div>
             </li>
@@ -177,7 +174,6 @@
                         <a class="collapse-item" href="borrar-atraccion.do">Atraccion</a>
                         <a class="collapse-item" href="borrar-promo.do">Promocion</a>
                         <a class="collapse-item" href="borrar-usuario.do">Usuario</a>
-                        <a class="collapse-item" href="borrar-tipo.jsp">Tipo Atraccion</a>
                     </div>
                 </div>
             </li>

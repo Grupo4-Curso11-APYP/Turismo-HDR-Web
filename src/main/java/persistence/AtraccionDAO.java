@@ -12,8 +12,6 @@ public interface AtraccionDAO extends GenericDAO<Atraccion> {
 	
 		public abstract Atraccion buscarPorId(Long id) throws SQLException;
 		
-		public List<Atraccion> findAll();
-		
 		public int find(String nombre) throws SQLException;
 
 		public int update(Atraccion atraccion, int cupo);

@@ -12,7 +12,7 @@ import persistence.commons.DAOFactory;
 
 public class UsuarioService {
 
-	public Set<Usuario> list() throws SQLException {
+	public List<Usuario> list() throws SQLException {
 		return DAOFactory.getUsuarioDAO().findAll();
 	}
 

@@ -4,9 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
+import java.util.ArrayList;
+import java.util.List;
 import model.TipoAtraccion;
 import model.Usuario;
 import persistence.commons.ConnectionProvider;
@@ -19,14 +18,14 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	 * Busca y devuelve todos los usuarios de la base de datos
 	 */
 	@Override
-	public Set<Usuario> findAll() {
+	public List<Usuario> findAll() {
 		try {
 			String sql = "SELECT * FROM USUARIO WHERE Estado <> 0";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
 
-			Set<Usuario> usuarios = new LinkedHashSet<Usuario>();
+			ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 			while (resultados.next()) {
 				usuarios.add(toUser(resultados));
 			}

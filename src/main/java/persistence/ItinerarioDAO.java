@@ -15,6 +15,4 @@ public interface ItinerarioDAO extends GenericDAO<Itinerario>{
 	public int update(int idAtraccion, int idPromocion, int idUsuario, int idItinerario);
 	
 	public Set<Ofertable> findByNombre(String nombre);
-
-	public List<Itinerario> findAll() throws SQLException;
 }

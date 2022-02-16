@@ -39,7 +39,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 * Busca y devuelve todas las atracciones de la base de datos
 	 */
 	@Override
-	public List<Atraccion> findAll() {
+	public List<Atraccion> findAll() throws SQLException {
 		try {
 			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre, Atraccion.Costo, Atraccion.Tiempo, Atraccion.Cupo_Disponible, TipoAtraccion.id_tipoAtraccion\r\n"
 					+ "FROM Atraccion INNER JOIN TipoAtraccion\r\n"
