@@ -23,7 +23,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	private UsuarioDaoImpl usuarioDao;
 	
 	/*
-	 * Busca un itinerario por nombre de usuario
+	 * Busca el itinerario por nombre de usuario
 	 */
 	
 	@Override
@@ -69,6 +69,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	}
 
 	/*
+	 * Usado por el metodo findAll()
 	 * Instancia un objeto Itinerario a partir de la base de datos
 	 */
 	
@@ -90,8 +91,8 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	}
 
 	/*
-	 * Usado por findByNombre para determinar si el ofertable de un
-	 * itinerario es una promocion o atraccion.
+	 * Usado por el metodo findByNombre(String)
+	 * Define si el ofertable de un itinerario es promocion o atraccion.
 	 */
 	private void esPromoOesAtraccion(ResultSet resultados, Set<Ofertable> itinerario) throws SQLException {
 		while (resultados.next()) {

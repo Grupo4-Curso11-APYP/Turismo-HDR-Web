@@ -65,10 +65,10 @@ public class Sistema {
 						ofertable.reservarCupo();
 						/*
 						 * Se guarda itinerario en bd
-						 */
+						 
 						iDAO.insertar(usuario.getNombre(), ofertable.getNombre());
 
-						/*
+						
 						 * Se actualiza los cupos de las atracciones en bd
 						 */
 						if (ofertable instanceof Promocion) {
