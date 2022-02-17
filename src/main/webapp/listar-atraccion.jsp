@@ -210,6 +210,7 @@
 						<table class="table table-stripped table-hover">
 							<thead>
 								<tr>
+									<th>ID</th>
 									<th>Nombre</th>
 									<th>Costo</th>
 									<th>Tiempo</th>
@@ -223,8 +224,9 @@
 										<td><a class=" fw-bolder text-dark"
 											style="text-decoration: none; font-size: 18px;" href="#"
 											data-toggle="modal" data-target="#ComprarModal"> <c:out
-													value="${atraccion.nombre}"></c:out>
+													value="${atraccion.id}"></c:out>
 										</a></td>
+										<td><c:out value="${atraccion.nombre}"></c:out></td>
 										<td><c:out value="${atraccion.monto}"></c:out></td>
 										<td><c:out value="${atraccion.tiempo}"></c:out></td>
 										<td><c:out value="${atraccion.cupoDisponible}"></c:out></td>

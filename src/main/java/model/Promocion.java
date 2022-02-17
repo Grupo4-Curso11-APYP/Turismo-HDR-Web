@@ -12,7 +12,8 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 	private String nombre;
 	protected Atraccion[] packAtracciones;
 	private TipoAtraccion tipoDeAtraccion;
-	private double tiempo;	
+	private double tiempo;
+	private Integer id;
 	
 	public Promocion(String nombre, Atraccion[] atraccion, TipoAtraccion tipoDeAtraccion) {
 		this.packAtracciones = atraccion;
@@ -129,6 +130,11 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 	public boolean puedeAlbergar(int i) {
 		return ((this.packAtracciones[0].getCupoDisponible() > 0) && 
 				(this.packAtracciones[1].getCupoDisponible() > 0));
+	}
+	
+	@Override
+	public Integer getId() {
+		return id;
 	}
 	
 	

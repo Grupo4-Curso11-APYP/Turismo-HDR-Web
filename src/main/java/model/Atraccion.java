@@ -15,6 +15,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	protected TipoAtraccion tipoAtraccion;
 	protected String nombre;
 	protected Integer id;
+
 	private Map<String, String> errors;
 
 	/*
@@ -22,6 +23,24 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	 * los atributos de la atraccion
 	 */
 
+	/*
+	 * Constructor usado para instanciar objetos a partir de base de datos
+	 */
+	public Atraccion(Integer id, String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
+			throws Exception {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		validandoCosto(costo);
+		validandoTiempo(tiempo);
+		validandoCupo(cupoDisponible);
+		this.tipoAtraccion = tipoDeAtraccion;
+	}
+	
+	/*
+	 * Constructor usado para crear objetos nuevos sin id (se asigna en base de
+	 * datos automaticamente)
+	 */
 	public Atraccion(String nombre, double costo, double tiempo, int cupoDisponible, TipoAtraccion tipoDeAtraccion)
 			throws Exception {
 		super();
@@ -32,6 +51,11 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		this.tipoAtraccion = tipoDeAtraccion;
 	}
 	
+	public Atraccion() {
+	}
+
+
+
 	public boolean puedeAlbergar(int i) {
 		return this.cupoDisponible >= i;
 	}
@@ -62,9 +86,6 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 	public Map<String, String> getErrors() {
 		return errors;
 	}	
-	
-	public Atraccion() {
-	}
 
 	public boolean esValidoFull(String nombre, Double costo, Double tiempo, Integer cupo, TipoAtraccion tipo) {
 		return ((nombre != null) && (costo > 0) && (tiempo > 0) && (cupo > 0)
@@ -257,6 +278,7 @@ public class Atraccion implements Ofertable, Comparable<Ofertable> {
 		return null;
 	}
 
+	@Override
 	public Integer getId() {
 		return id;
 	}

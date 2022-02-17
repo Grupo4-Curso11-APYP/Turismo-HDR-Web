@@ -3,6 +3,12 @@ package model;
 import java.sql.SQLException;
 
 public interface Ofertable {
+	
+	/*
+	 * Devuelve el id
+	 */
+	public Integer getId();
+	
 	/*
 	 * devuelve el costo
 	 */

@@ -66,13 +66,14 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	 */
 	public Atraccion toAtraccion(ResultSet resultados) throws Exception {
 
+		Integer id = resultados.getInt(1);
 		String nombre = resultados.getString(2);
 		double costo = resultados.getDouble(3);
 		double tiempo = resultados.getDouble(4);
 		int cupoDisponible = resultados.getInt(5);
 		TipoAtraccion tipo = TipoAtraccion.valueOf(resultados.getString(6).toUpperCase());
 
-		return new Atraccion(nombre, costo, tiempo, cupoDisponible, tipo);
+		return new Atraccion(id, nombre, costo, tiempo, cupoDisponible, tipo);
 
 	}	
 
