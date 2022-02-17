@@ -105,13 +105,14 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	 * Instancia un Usuario a partir de la base de datos
 	 */
 	private Usuario toUser(ResultSet resultados) throws Exception {
+		Integer id = resultados.getInt(1);
 		String nombre = resultados.getString(2);
 		Double presupuesto = resultados.getDouble(3);
 		Double tiempoDisponible = resultados.getDouble(4);
 		TipoAtraccion tipoFavorito = TipoAtraccion.valueOf(resultados.getString(5));
 		String password = resultados.getString(6);
 		Boolean admin = resultados.getBoolean(7);
-		return new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
+		return new Usuario(id, nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 	}
 
 	@Override

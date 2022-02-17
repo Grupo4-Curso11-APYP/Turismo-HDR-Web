@@ -27,6 +27,20 @@ public class Usuario {
 		this.admin = admin;
 
 	}
+	
+	public Usuario(Integer id, String nombre, Double presupuesto, Double tiempoDisponible, TipoAtraccion tipoFavorito,
+			String password, Boolean admin) throws Exception {
+
+		this.id = id;
+		this.nombre = nombre;
+		validandoPresupuesto(presupuesto);
+		validandoTiempoDisponible(tiempoDisponible);
+		this.tipoFavorito = tipoFavorito;
+		this.ofertables = new LinkedHashSet<>();
+		this.password = password;
+		this.admin = admin;
+
+	}
 
 	public Usuario(String string, double i, double j, TipoAtraccion tipo, Set<Ofertable> object) throws Exception {
 
@@ -205,6 +219,10 @@ public class Usuario {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public Integer getId() {
+		return id;
 	}
 
 }

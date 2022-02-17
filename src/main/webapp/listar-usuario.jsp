@@ -99,6 +99,7 @@
 							style="width: 100%">
 							<thead>
 								<tr class="table-dark">
+									<th>ID</th>
 									<th>Nombre</th>
 									<th>Presupuesto</th>
 									<th>Tiempo Disponible</th>
@@ -109,6 +110,7 @@
 							<tbody>
 								<c:forEach items="${usuarios}" var="usuario">
 									<tr>
+										<td><c:out value="${usuario.id}"></c:out></td>
 										<td><c:out value="${usuario.nombre}"></c:out></td>
 										<td><c:out value="${usuario.presupuesto}"></c:out></td>
 										<td><c:out value="${usuario.tiempoDisponible}"></c:out></td>
