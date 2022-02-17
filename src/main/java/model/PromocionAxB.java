@@ -9,8 +9,20 @@ public class PromocionAxB extends Promocion {
 
 	private Atraccion atraccionGratis;
 
+	/*
+	 * Constructor usado para crear objetos nuevos sin id (se asigna en base de
+	 * datos automaticamente)
+	 */
 	public PromocionAxB(String nombre, Atraccion[] atraccion, TipoAtraccion tipo, Atraccion atraccionGratis) {
 		super(nombre, atraccion, tipo);
+		this.atraccionGratis = atraccionGratis;
+	}
+	
+	/*
+	 * Constructor usado para instanciar objetos a partir de base de datos
+	 */
+	public PromocionAxB(Integer id, String nombre, Atraccion[] atraccion, TipoAtraccion tipo, Atraccion atraccionGratis) {
+		super(id, nombre, atraccion, tipo);
 		this.atraccionGratis = atraccionGratis;
 	}
 

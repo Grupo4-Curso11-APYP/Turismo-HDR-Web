@@ -15,7 +15,21 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 	private double tiempo;
 	private Integer id;
 	
+	/*
+	 * Constructor usado para crear objetos nuevos sin id (se asigna en base de
+	 * datos automaticamente)
+	 */
 	public Promocion(String nombre, Atraccion[] atraccion, TipoAtraccion tipoDeAtraccion) {
+		this.packAtracciones = atraccion;
+		this.nombre = nombre;
+		this.tipoDeAtraccion = tipoDeAtraccion;
+	}
+	
+	/*
+	 * Constructor usado para instanciar objetos a partir de base de datos
+	 */
+	public Promocion(Integer id, String nombre, Atraccion[] atraccion, TipoAtraccion tipoDeAtraccion) {
+		this.id = id;
 		this.packAtracciones = atraccion;
 		this.nombre = nombre;
 		this.tipoDeAtraccion = tipoDeAtraccion;

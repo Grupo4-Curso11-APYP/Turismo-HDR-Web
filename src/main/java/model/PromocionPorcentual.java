@@ -6,8 +6,20 @@ public class PromocionPorcentual extends Promocion {
 
 	private int descuento;
 
+	/*
+	 * Constructor usado para crear objetos nuevos sin id (se asigna en base de
+	 * datos automaticamente)
+	 */
 	public PromocionPorcentual(String nombre, Atraccion[] packAtracciones, TipoAtraccion tipo, int descuento) {
 		super(nombre, packAtracciones, tipo);
+		this.descuento = descuento;
+	}
+	
+	/*
+	 * Constructor usado para instanciar objetos a partir de base de datos
+	 */
+	public PromocionPorcentual(Integer id, String nombre, Atraccion[] packAtracciones, TipoAtraccion tipo, int descuento) {
+		super(id, nombre, packAtracciones, tipo);
 		this.descuento = descuento;
 	}
 

@@ -6,8 +6,20 @@ public class PromocionAbsoluta extends Promocion {
 
 	private double monto;
 
+	/*
+	 * Constructor usado para crear objetos nuevos sin id (se asigna en base de
+	 * datos automaticamente)
+	 */
 	public PromocionAbsoluta(String nombre, Atraccion[] packAtracciones, TipoAtraccion tipo, double monto) {
 		super(nombre, packAtracciones, tipo);
+		this.monto = monto;
+	}
+	
+	/*
+	 * Constructor usado para instanciar objetos a partir de base de datos
+	 */
+	public PromocionAbsoluta(Integer id, String nombre, Atraccion[] packAtracciones, TipoAtraccion tipo, double monto) {
+		super(id, nombre, packAtracciones, tipo);
 		this.monto = monto;
 	}
 

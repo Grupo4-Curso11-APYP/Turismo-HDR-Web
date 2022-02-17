@@ -130,12 +130,13 @@ public class PromocionDAOImpl implements PromocionDAO {
 	 */
 	private Promocion toPromo(ResultSet resultados) throws Exception {
 
+		Integer id = resultados.getInt(1);
 		TipoAtraccion tipoAtraccion = TipoAtraccion.valueOf(resultados.getString(5));
 		Atraccion[] packAtracciones = atraccionesDeLaPromocion(resultados.getLong(2), resultados.getLong(3));
 		String nombre = resultados.getString(4);
 		String promocionTipo = resultados.getString(10);
 		Promocion promo = null;
-		promo = creacionPromo(resultados, tipoAtraccion, packAtracciones, nombre, promocionTipo, promo);
+		promo = creacionPromo(resultados, id, tipoAtraccion, packAtracciones, nombre, promocionTipo, promo);
 		return promo;
 
 	}
@@ -143,17 +144,17 @@ public class PromocionDAOImpl implements PromocionDAO {
 	/*
 	 * Usando los datos pasados por toPromo, instancia algun tipo de promocion
 	 */
-	private Promocion creacionPromo(ResultSet resultados, TipoAtraccion tipoAtraccion, Atraccion[] packAtracciones,
+	private Promocion creacionPromo(ResultSet resultados, Integer id, TipoAtraccion tipoAtraccion, Atraccion[] packAtracciones,
 			String nombre, String promocionTipo, Promocion promo) throws SQLException {
 		if (promocionTipo.equals("AxB")) {
 			Atraccion gratis = atraccionDao.buscarPorId(resultados.getLong(8));
-			promo = new PromocionAxB(nombre, packAtracciones, tipoAtraccion, gratis);
+			promo = new PromocionAxB(id, nombre, packAtracciones, tipoAtraccion, gratis);
 		} else if (promocionTipo.equals("PORCENTUAL")) {
 			int descuento = resultados.getInt(9);
-			promo = new PromocionPorcentual(nombre, packAtracciones, tipoAtraccion, descuento);
+			promo = new PromocionPorcentual(id, nombre, packAtracciones, tipoAtraccion, descuento);
 		} else if (promocionTipo.equals("ABSOLUTA")) {
 			double monto = resultados.getInt(6);
-			promo = new PromocionAbsoluta(nombre, packAtracciones, tipoAtraccion, monto);
+			promo = new PromocionAbsoluta(id, nombre, packAtracciones, tipoAtraccion, monto);
 		}
 		return promo;
 	}

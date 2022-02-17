@@ -98,6 +98,7 @@
                                 style="width: 100%">
                                 <thead>
                                     <tr class="table-dark">
+                                    	<th>ID</th>
                                         <th>Nombre</th>
                                         <th>Atraccion 1</th>
                                         <th>Atraccion 2</th>
@@ -110,6 +111,7 @@
                                 <tbody>
                                 <c:forEach items="${promociones}" var="promocion">
                                     <tr>
+                                    	<td><c:out value="${promocion.id}"></c:out></td>
                                         <td><c:out value="${promocion.nombre}"></c:out></td>
                                         <td><c:out value="${promocion.packAtracciones[0]}"></c:out></td>
                                         <td><c:out value="${promocion.packAtracciones[1]}"></c:out></td>
