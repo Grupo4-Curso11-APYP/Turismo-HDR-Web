@@ -74,17 +74,17 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	 */
 	
 	private Itinerario aItinerario(ResultSet resultados) throws SQLException {
-		int idPromocion = resultados.getInt(1);
+		Integer idPromocion = resultados.getInt(1);
 		usuarioDao = new UsuarioDaoImpl();
 		atraccionDao = new AtraccionDAOImpl();
 		promocionDao = new PromocionDAOImpl();
-		Usuario usuario = this.usuarioDao.buscarPorId(resultados.getLong(3));
-		Long idAtraccion = resultados.getLong(4);
+		Usuario usuario = this.usuarioDao.findOne(resultados.getInt(3));
+		Integer idAtraccion = resultados.getInt(4);
 		Ofertable ofertable;
 		if (idPromocion > 0) {
-			ofertable = this.promocionDao.consultarID_Promo(idPromocion);
+			ofertable = this.promocionDao.findOne(idPromocion);
 		} else {
-			ofertable = this.atraccionDao.buscarPorId(idAtraccion);
+			ofertable = this.atraccionDao.findOne(idAtraccion);
 		}
 		Itinerario itinerario = new Itinerario(usuario, ofertable);
 		return itinerario;
@@ -96,12 +96,12 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	 */
 	private void esPromoOesAtraccion(ResultSet resultados, Set<Ofertable> itinerario) throws SQLException {
 		while (resultados.next()) {
-			int idPromocion = resultados.getInt(1);
-			Long idAtraccion = resultados.getLong(2);
+			Integer idPromocion = resultados.getInt(1);
+			Integer idAtraccion = resultados.getInt(2);
 			if (idPromocion > 0) {
-				itinerario.add(promocionDao.consultarID_Promo(idPromocion));
+				itinerario.add(promocionDao.findOne(idPromocion));
 			} else {
-				itinerario.add(atraccionDao.buscarPorId(idAtraccion));
+				itinerario.add(atraccionDao.findOne(idAtraccion));
 			}
 		}
 	}

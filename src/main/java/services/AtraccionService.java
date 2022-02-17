@@ -55,8 +55,8 @@ public class AtraccionService {
 	 * Servicio usado por BuscarAtraccionParaActualizarServlet
 	 */
 
-	public Atraccion buscar(Long id) throws SQLException {
-		return DAOFactory.getAtraccionDAO().buscarPorId(id);
+	public Atraccion buscar(Integer id) throws SQLException {
+		return DAOFactory.getAtraccionDAO().findOne(id);
 	}
 
 }

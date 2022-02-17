@@ -25,8 +25,8 @@ public class BuscarAtraccionParaActualizarServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Long id = Long.parseLong(req.getParameter("id"));
-		Atraccion atraccion = null;
+		Integer id = Integer.parseInt(req.getParameter("id"));
+		Atraccion atraccion = new Atraccion();
 		try {
 			atraccion = atraccionService.buscar(id);
 		} catch (SQLException e) {

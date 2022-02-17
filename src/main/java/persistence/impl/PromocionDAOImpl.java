@@ -26,26 +26,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 	public PromocionDAOImpl() {
 		this.atraccionDao = new AtraccionDAOImpl();
 	}
-
-	public Promocion findByNombre(String nombre) {
-		try {
-			String sql = "SELECT * FROM Promocion WHERE Nombre = ?";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, nombre);
-			ResultSet resultados = statement.executeQuery();
-
-			Promocion promocion = null;
-
-			if (resultados.next()) {
-				promocion = toPromo(resultados);
-			}
-
-			return promocion;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
 	
 	/*
 	 * Inserta una promocion nueva en la base de datos
@@ -87,28 +67,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 	}
 
 	/*
-	 * Busca en la base de datos y devuelve una promocion a partir de su ID
-	 */
-	public Promocion consultarID_Promo(int promo) throws SQLException {
-		try {
-			String sql = "SELECT * FROM Promocion WHERE ID_Promocion=?";
-
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, promo);
-			ResultSet rows = statement.executeQuery();
-			Promocion pr = null;
-
-			while (rows.next()) {
-				pr = toPromo(rows);
-			}
-			return pr;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
-	/*
 	 * Actualiza el nombre de una promocion
 	 */
 	@Override
@@ -147,7 +105,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 	private Promocion creacionPromo(ResultSet resultados, Integer id, TipoAtraccion tipoAtraccion, Atraccion[] packAtracciones,
 			String nombre, String promocionTipo, Promocion promo) throws SQLException {
 		if (promocionTipo.equals("AxB")) {
-			Atraccion gratis = atraccionDao.buscarPorId(resultados.getLong(8));
+			Atraccion gratis = atraccionDao.findOne(resultados.getInt(8));
 			promo = new PromocionAxB(id, nombre, packAtracciones, tipoAtraccion, gratis);
 		} else if (promocionTipo.equals("PORCENTUAL")) {
 			int descuento = resultados.getInt(9);
@@ -234,29 +192,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 		}
 	}
 
-	@Override
-	public Promocion buscarPorId(Long IdPromocion) {
-		try {
-			String sql = " SELECT Promocion.ID_Promocion, Promocion.Nombre,Promocion.Tipo "
-					   + " FROM Promocion" 
-					   + " WHERE Promocion.ID_Promocion = ?";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setLong(1, IdPromocion);
-			ResultSet resultados = statement.executeQuery();
-
-			Promocion promocion = null;
-
-			if (resultados.next()) {
-				promocion = toPromocion(resultados);
-			}
-
-			return promocion;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
 	private Promocion toPromocion(ResultSet resultados) throws SQLException {
 		String nombre = resultados.getString(2);
 		return new PromocionAbsoluta(nombre, null, null, 0);
@@ -274,6 +209,27 @@ public class PromocionDAOImpl implements PromocionDAO {
 
 		return rows;
 
+	}
+
+	@Override
+	public Promocion findOne(Integer id) throws SQLException {
+		try {
+			String sql = "SELECT * FROM Promocion WHERE ID_Promocion=?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setLong(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Promocion promocion = null;
+
+			if (resultados.next()) {
+				promocion = toPromocion(resultados);
+			}
+
+			return promocion;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 
 }

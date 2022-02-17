@@ -79,6 +79,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	}
 
 	/*
+	 * Usado por el Servicio de Login
 	 * Busca por nombre a un usuario en la base de datos y lo devuelve
 	 */
 	@Override
@@ -116,27 +117,6 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	}
 
 	@Override
-	public Usuario buscarPorId(Long IdUsuario) {
-		try {
-			String sql = "SELECT * FROM USUARIO WHERE ID_Usuario = ?";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setLong(1, IdUsuario);
-			ResultSet resultados = statement.executeQuery();
-
-			Usuario usuario = null;
-
-			if (resultados.next()) {
-				usuario = toUser(resultados);
-			}
-
-			return usuario;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
-	@Override
 	public int deleteLogico(Integer id) throws SQLException {
 		try {
 			String sql = "UPDATE Usuario SET Estado = ? WHERE ID_Usuario = ?";
@@ -149,6 +129,27 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 			int rows = statement.executeUpdate();
 
 			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public Usuario findOne(Integer id) throws SQLException {
+		try {
+			String sql = "SELECT * FROM USUARIO WHERE ID_Usuario = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Usuario usuario = new Usuario();
+
+			if (resultados.next()) {
+				usuario = toUser(resultados);
+			}
+
+			return usuario;
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}

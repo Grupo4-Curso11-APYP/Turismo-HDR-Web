@@ -30,19 +30,19 @@ public class BuyAttractionServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String ofertableNombre = req.getParameter("nombre");
+		Integer idOfertable = Integer.parseInt(req.getParameter("id"));
 		
 		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
 		Map<String, String> errors = new HashMap<String, String>();
 		try {
-			errors = buyAttractionService.buy(usuario.getNombre(), ofertableNombre);
+			errors = buyAttractionService.buy(usuario.getId(), idOfertable);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
 		
 		Usuario usuario2 = new Usuario();
 		try {
-			usuario2 = DAOFactory.getUsuarioDAO().findByNombre(usuario.getNombre());
+			usuario2 = DAOFactory.getUsuarioDAO().findOne(usuario.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

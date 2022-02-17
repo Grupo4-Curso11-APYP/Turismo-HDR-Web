@@ -22,16 +22,16 @@ public class BuyAttractionService {
 	PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 	ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 
-	public Map<String, String> buy(String nombre, String ofertableNombre) throws SQLException {
+	public Map<String, String> buy(Integer id, Integer idOfertable) throws SQLException {
 
 		Map<String, String> errors = new HashMap<String, String>();
 
-		Usuario user = usuarioDAO.findByNombre(nombre);
-		Ofertable ofertable = atraccionDAO.findByNombre(ofertableNombre);
+		Usuario user = usuarioDAO.findOne(id);
+		Ofertable ofertable = atraccionDAO.findOne(idOfertable);
 		
 		if (ofertable == null) {
 			
-			ofertable = promocionDAO.findByNombre(ofertableNombre);
+			ofertable = promocionDAO.findOne(idOfertable);
 		}
 		
 		if (!ofertable.puedeAlbergar(1)) {

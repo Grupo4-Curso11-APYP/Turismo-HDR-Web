@@ -20,7 +20,7 @@ public class PromocionServicio {
 	}
 
 	public Promocion buscar(Integer id) throws SQLException {
-		return DAOFactory.getPromocionDAO().consultarID_Promo(id);
+		return DAOFactory.getPromocionDAO().findOne(id);
 	}
 
 	public void actualizar(Promocion promo, String nombreNuevo) throws SQLException {

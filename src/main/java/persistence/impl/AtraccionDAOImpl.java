@@ -15,26 +15,6 @@ import model.TipoAtraccion;
 
 public class AtraccionDAOImpl implements AtraccionDAO {
 
-	public Atraccion findByNombre(String nombre) {
-		try {
-			String sql = "SELECT * FROM Atraccion INNER JOIN TipoAtraccion ON Atraccion.TipoDeAtraccion = TipoAtraccion.id_tipoAtraccion WHERE Nombre = ?";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, nombre);
-			ResultSet resultados = statement.executeQuery();
-
-			Atraccion atraccion = null;
-
-			if (resultados.next()) {
-				atraccion = toAtraccion(resultados);
-			}
-
-			return atraccion;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
 	/*
 	 * Busca y devuelve todas las atracciones de la base de datos
 	 */
@@ -119,32 +99,6 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		}
 	}
 
-	/*
-	 * Busca una atracciï¿½n por su ID en la base de datos
-	 */
-	@Override
-	public Atraccion buscarPorId(Long IdAtraccion) {
-		try {
-			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre,Atraccion.Costo ,"
-					+ " Atraccion.Tiempo, Atraccion.Cupo_Disponible," + "  Atraccion.TipoDeAtraccion"
-					+ " FROM Atraccion" + " WHERE Atraccion.Id_Atraccion = ?";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setLong(1, IdAtraccion);
-			ResultSet resultados = statement.executeQuery();
-
-			Atraccion atraccion = null;
-
-			if (resultados.next()) {
-				atraccion = toAtraccion(resultados);
-			}
-
-			return atraccion;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
 	@Override
 	public int insert(Atraccion atraccion) throws SQLException {
 		String sql = "INSERT INTO ATRACCION (NOMBRE, COSTO, TIEMPO, CUPO_DISPONIBLE, TIPODEATRACCION) VALUES (?,?,?,?,?)";
@@ -179,6 +133,29 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			int rows = statement.executeUpdate();
 
 			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public Atraccion findOne(Integer id) throws SQLException {
+		try {
+			String sql = "SELECT Atraccion.ID_Atraccion, Atraccion.Nombre,Atraccion.Costo ,"
+					+ " Atraccion.Tiempo, Atraccion.Cupo_Disponible," + "  Atraccion.TipoDeAtraccion"
+					+ " FROM Atraccion" + " WHERE Atraccion.Id_Atraccion = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Atraccion atraccion = new Atraccion();
+
+			if (resultados.next()) {
+				atraccion = toAtraccion(resultados);
+			}
+
+			return atraccion;
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}

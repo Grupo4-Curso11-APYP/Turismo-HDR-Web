@@ -12,4 +12,5 @@ public interface GenericDAO<T> {
 	public int insert(T t) throws SQLException;
 	
 	public List<T> findAll() throws SQLException;
+
 }
