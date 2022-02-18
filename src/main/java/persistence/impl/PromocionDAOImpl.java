@@ -191,11 +191,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 			throw new MissingDataException(e);
 		}
 	}
-
-	private Promocion toPromocion(ResultSet resultados) throws SQLException {
-		String nombre = resultados.getString(2);
-		return new PromocionAbsoluta(nombre, null, null, 0);
-	}
 	
 	@Override
 	public int update(Promocion promocion, String nombre) throws SQLException {
