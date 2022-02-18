@@ -75,6 +75,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 	
 	private Itinerario aItinerario(ResultSet resultados) throws SQLException {
 		Integer idPromocion = resultados.getInt(1);
+		Long id = resultados.getLong(2);
 		usuarioDao = new UsuarioDaoImpl();
 		atraccionDao = new AtraccionDAOImpl();
 		promocionDao = new PromocionDAOImpl();
@@ -86,7 +87,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		} else {
 			ofertable = this.atraccionDao.findOne(idAtraccion);
 		}
-		Itinerario itinerario = new Itinerario(usuario, ofertable);
+		Itinerario itinerario = new Itinerario(id, usuario, ofertable);
 		return itinerario;
 	}
 

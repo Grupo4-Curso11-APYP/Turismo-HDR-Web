@@ -222,8 +222,8 @@ public class PromocionDAOImpl implements PromocionDAO {
 
 			Promocion promocion = null;
 
-			if (resultados.next()) {
-				promocion = toPromocion(resultados);
+			while (resultados.next()) {
+				promocion = toPromo(resultados);
 			}
 
 			return promocion;

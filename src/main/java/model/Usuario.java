@@ -124,22 +124,8 @@ public class Usuario {
 	 */
 	@Override
 	public String toString() {
-
-		double horas = 0;
-		double costoFinal = 0;
-		for (Ofertable ofertable : ofertables) {
-			horas += ofertable.getTiempo();
-			costoFinal += ofertable.getMonto();
-		}
-
-		String aux = '\n' + "Usuario: " + nombre + ", presupuesto: " + presupuesto + ", tiempo disponible: "
-				+ tiempoDisponible + ", tipo favorito: " + tipoFavorito + '\n'
-				+ "Su itinerario final le tomara un total " + "de: " + horas + " horas; con un costo final de: "
-				+ (int) costoFinal + " monedas." + '\n' + "Sugerencias incluidas:\n";
-
-		for (Ofertable ofertable : ofertables) {
-			aux += ofertable.toString();
-		}
+		String aux = '\n' + nombre + ", presupuesto: " + presupuesto + ", tiempo disponible: "
+				+ tiempoDisponible + ", tipo favorito: " + tipoFavorito;
 		return aux;
 	}
 

@@ -81,7 +81,7 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 	 */
 	public Double getTiempo() {
 		this.tiempo = 0;
-		for (Atraccion atraccion : this.packAtracciones) {
+		for (Atraccion atraccion : packAtracciones) {
 			tiempo += atraccion.getTiempo();
 		}
 
