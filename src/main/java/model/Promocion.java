@@ -35,6 +35,12 @@ public abstract class Promocion implements Ofertable, Comparable<Ofertable> {
 		this.tipoDeAtraccion = tipoDeAtraccion;
 	}
 	
+	/*
+	 * Constructor usado para que no falle la webapp en caso de null
+	 */
+	public Promocion() {		
+	}
+	
 	protected void setPackAtracciones(Atraccion[] packAtracciones) {
 		this.packAtracciones = packAtracciones;
 	}

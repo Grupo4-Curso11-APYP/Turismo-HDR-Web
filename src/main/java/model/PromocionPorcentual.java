@@ -22,6 +22,12 @@ public class PromocionPorcentual extends Promocion {
 		super(id, nombre, packAtracciones, tipo);
 		this.descuento = descuento;
 	}
+	
+	/*
+	 * Constructor usado para que no falle la webapp en caso de null
+	 */
+	public PromocionPorcentual() {
+	}
 
 	// realiza el descuento porcentual para un pack de atracciones
 	@Override
@@ -82,4 +88,9 @@ public class PromocionPorcentual extends Promocion {
 		return -this.getMonto().compareTo(otro.getMonto());
 	}
 
+	public boolean esValida(String nombre, Atraccion[] packAtracciones, TipoAtraccion tipo, int descuento) {
+		return ((nombre != null) && (descuento > 0) && (descuento < 100) && (packAtracciones != null)
+		&& (tipo == TipoAtraccion.DEGUSTACION || tipo == TipoAtraccion.PAISAJE
+				|| tipo == TipoAtraccion.AVENTURA));
+	}
 }

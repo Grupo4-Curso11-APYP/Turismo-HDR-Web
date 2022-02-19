@@ -27,6 +27,24 @@
 <!---DASHBOARD ESTILOS Y SCRRIPTS-->
 
 <link href="assets/stylesheets/dashboard-2.css" rel="stylesheet">
+<style type="text/css">
+.collapseprom{
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.5rem;
+    display: block !important;
+    color: #3a3b45 !important;
+    text-decoration: none;
+    border-radius: 0.35rem;
+    white-space: nowrap;
+    width: 124% !important;}
+.collapseprom::after {
+    font-size: .65rem !important;
+    padding: 4.1%;
+}
+.colaitems {
+	font-weight: 600 !important;
+    font-size: smaller !important;
+    padding: 0.2rem 1rem !important;}</style>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -126,11 +144,20 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInsertar"
                     aria-expanded="true" aria-controls="collapseTwo">Insertar</a>
                 <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="bg-white py-2 collapse-inner rounded" style="margin: 0;">
                     <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                        <a class="collapse-item" href="insertar-atraccion.do">Atraccion</a>
-                        <a class="collapse-item" href="insertar-promocion.jsp">Promocion</a>
-                        <a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
+                    	<a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
+                        <a class="collapse-item" href="insertar-atraccion.do">Atraccion</a>                       
+                        <div class="nav-item" style="margin: 0;">
+                        <a class="nav-link collapsed collapseprom" href="#" data-toggle="collapse" data-target="#collapsePromocion"
+                    aria-expanded="true" aria-controls="collapseTwo">Promocion</a>
+                <div id="collapsePromocion" class="collapse" aria-labelledby="headingTwo">
+                    <div class="bg-white py-2 collapse-inner rounded" style="margin: 0;">
+                        <a class="collapse-item colaitems" href="insertar-promo-porcentual.do">Porcentual</a>
+                        <a class="collapse-item colaitems" href="insertar-promocion.do">A x B</a>
+                        <a class="collapse-item colaitems" href="insertar-promocion.do">Absoluta</a>
+                        </div></div>
+                        </div>
                     </div>
                 </div>
             </li>

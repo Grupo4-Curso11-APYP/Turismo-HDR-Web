@@ -95,67 +95,44 @@
                     <div class="col-xl-5 col-lg-6 bg-dark ms-5 mb-3 rounded-2">
 
                         <h2 class="fw-bolder mt-3 text-white ">Ingresar Una Nueva
-                            Promocion</h2>
+                            Promocion porcentual</h2>
 
-                        <form id="form-contact" class="row text-white g-2 needs-validation mb-3 " novalidate>
-                            <div class="col-md-4">
-                                <label for="validationCustom01" class="form-label">ID-Atraccion1</label>
-                                <input type="number" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">¡Se ve bien!</div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationCustom01" class="form-label">ID-Atraccion2</label>
-                                <input type="text" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">¡Se ve bien!</div>
-                            </div>
-                            <div class="col-md-4">
+                        <form id="form-contact" class="row text-white g-2 needs-validation mb-3 " novalidate action="insertar-promo-porcentual.do" method="post">
+                        <div class="col-md-4">
                                 <label for="validationCustom01" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="validationCustom01" required>
+                                <input type="text" class="form-control" name="nombre" id="validationCustom01" required>
                                 <div class="valid-feedback">¡Se ve bien!</div>
                             </div>
-                            <div class="col-md-4">
+                        <div class="col-md-4">
                             <label for="validationCustom02" class="form-label">Tipo de atracciones</label>
                                <select id="validationCustom02" class="form-select"
-								aria-label="Default select example">
-								<option selected>Elige una</option>
+								aria-label="Default select example" name="tipoDeAtracciones">
+								<option selected>Elige uno</option>
 								<option type="text" class="form-control" id="validationCustom02"
 									required value="1">AVENTURA</option>
 								<option type="text" class="form-control" id="validationCustom02"
 									requiredvalue="2">DEGUSTACION</option>
 								<option type="text" class="form-control" id="validationCustom02"
 									requiredvalue="3">PAISAJE</option>
-							</select>
+								</select>
+                                <div class="valid-feedback">¡Se ve bien!</div>
+                        </div>
+                          <div class="col-md-4">
+                                <label for="validationCustom02" class="form-label">Descuento</label>
+                                <input type="number" class="form-control" name="descuento" id="validationCustom02">
+                                <div class="invalid-feedback">Por favor, ingrese un
+                                    porcentaje válido.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="validationCustom01" class="form-label">ID-Atraccion1</label>
+                                <input type="number" class="form-control" name="idAtraccion1" id="validationCustom01" required>
                                 <div class="valid-feedback">¡Se ve bien!</div>
                             </div>
                             <div class="col-md-4">
-                                <label for="validationCustom02" class="form-label">Monto</label>
-                                <input type="number" class="form-control" id="validationCustom02">
-                                <div class="invalid-feedback">Por favor, Ingrese un
-                                    tiempo valido.</div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationCustom02" class="form-label">Descuento</label>
-                                <input type="number" class="form-control" id="validationCustom02">
-                                <div class="invalid-feedback">Por favor, Ingrese un
-                                    tiempo valido.</div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <label for="validationCustom03" class="form-label">Tiempo</label>
-                                <input type="text" class="form-control" id="validationCustom03" required>
-                                <div class="invalid-feedback">Por favor ingre un Cupo
-                                    valido .</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="validationCustom02" class="form-label">Atraccion
-                                    Gratis</label> <input type="text" class="form-control" id="validationCustom02">
-
-                                <div class="invalid-feedback">por favor ingrese un Tipo
-                                    de Atraccion valido</div>
-                            </div>
-
+                                <label for="validationCustom01" class="form-label">ID-Atraccion2</label>
+                                <input type="text" class="form-control" name="idAtraccion2" id="validationCustom01" required>
+                                <div class="valid-feedback">¡Se ve bien!</div>
+                            </div>                           
                             <div class="col-12">
                                 <button class="btn btn-primary mb-3" type="submit">Ingresar
                                     Promocion</button>
