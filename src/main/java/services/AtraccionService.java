@@ -39,8 +39,8 @@ public class AtraccionService {
 	 * Servicio usado por EditAttractionServlet
 	 */
 
-	public void update(Atraccion atraccion, int cupo) {
-		DAOFactory.getAtraccionDAO().update(atraccion, cupo);
+	public void update(Atraccion atraccion) throws SQLException {
+		DAOFactory.getAtraccionDAO().update(atraccion);
 	}
 	
 	/*

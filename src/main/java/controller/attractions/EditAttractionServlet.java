@@ -2,6 +2,7 @@ package controller.attractions;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -27,13 +28,27 @@ public class EditAttractionServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer cupo = Integer.parseInt(req.getParameter("cupo"));
-		Atraccion atraccion = (Atraccion) req.getSession().getAttribute("atraccionAEditar");
-		atraccionService.update(atraccion, cupo);
-		if (atraccion.esValido(cupo)) {
+		String nombre = req.getParameter("nombre");
+		Double costo = Double.parseDouble(req.getParameter("costo"));
+		Double tiempo = Double.parseDouble(req.getParameter("tiempo"));
+		int cupoDisponible = Integer.parseInt(req.getParameter("cupoDisponible"));
+		TipoAtraccion tipo = TipoAtraccion.valueOf(req.getParameter("tipo"));
+		
+		Atraccion atraccion = new Atraccion();
+		try {
+			atraccion = new Atraccion(nombre, costo, tiempo, cupoDisponible, tipo);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		try {
+			atraccionService.update(atraccion);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		if (atraccion.esValidoFull(nombre, costo, tiempo, cupoDisponible, tipo)) {
 			resp.sendRedirect("/turismoHDR/listar-atraccion.do");
 		} else {
-
+			
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion-form.jsp");
 			dispatcher.forward(req, resp);
 		}

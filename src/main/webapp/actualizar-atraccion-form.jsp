@@ -78,105 +78,140 @@
 			</nav>
 			<!-- FIN BARRA DE ARRIBA -->
 
-				<!-- INICIO DEL CONTENIDO ,LA COMIDA VA AQUI-->
-				<div class="container-fluid">
+			<!-- INICIO DEL CONTENIDO ,LA COMIDA VA AQUI-->
+			<div class="container-fluid">
 
-					<!-- HEADER DE PAGINA-->
-					<div
-						class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">Tablero de mando</h1>
-
-					</div>
-					<!-- HAEDER FIN  -->
-
-
-
-
-					<!-- ----------------------------------CRUD-------------------------------------------------- -->
-				                <!---ACTUALIZACION ATRACCION-->
-    <div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
-        <h2 class="fw-bolder mt-3 text-white">Actualizar El Cupo de
-            Atraccion</h2>
-
-        <form id="form-contact" class="row g-3 needs-validation " novalidate action="actualizar-atraccion-form.do" method="post"> 
-            Cupo actual: <c:out value="${atraccionAEditar.cupoDisponible}"></c:out>
-            <div class="col-md-6">
-                <label for="cupo" class="form-label text-white">Nuevo cupo
-                    Disponible</label> <input name="cupo" type="text" class="form-control"
-                    id="cupo" required>
-                <div class="invalid-feedback text-white">Por favor ingrese
-                    un Cupo valido.</div>
-            </div>
-
-           
-
-            <div class="col-12">
-                <button class="btn btn-warning mb-3" type="submit">Actualizar
-                    Atraccion</button>
-            </div>
-        </form>
-
-    </div>
-    <!---FIN ACTUALIZACION ATRACCIONES-->
-					<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
-
-
-
-					
+				<!-- HEADER DE PAGINA-->
+				<div
+					class="d-sm-flex align-items-center justify-content-between mb-4">
+					<h1 class="h3 mb-0 text-gray-800">Tablero de mando</h1>
 
 				</div>
-			</div>
+				<!-- HAEDER FIN  -->
 
+
+
+
+				<!-- ----------------------------------CRUD-------------------------------------------------- -->
+				<!---ACTUALIZACION ATRACCION-->
+				<div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
+					<h2 class="fw-bolder mt-3 text-white">Actualizar Atraccion</h2>
+
+					<form id="form-contact" class="row g-3 needs-validation "
+						novalidate action="actualizar-atraccion-form.do" method="post">
+						<div class="col-md-4">
+							<label for="validationCustom01" class="form-label text-white">Nombre</label>
+							<input name="nombre" type="text" class="form-control"
+								id="validationCustom01"
+								value="<c:out value="${atraccionAEditar.nombre}"></c:out>"
+								required>
+							<div class="valid-feedback">¡Se ve bien!</div>
+						</div>
+						<div class="col-md-4">
+							<label for="validationCustom02" class="form-label text-white">Costo</label>
+							<input type="number" class="form-control" name="costo"
+								id="validationCustom02" value="<c:out value="${atraccionAEditar.monto}"></c:out>" required>
+							<div class="valid-feedback">Por favor ingrese un costo
+								válido</div>
+						</div>
+						<div class="col-md-4">
+							<label for="validationCustom03" class="form-label text-white">Tiempo</label>
+							<input type="number" class="form-control" name="tiempo"
+								id="validationCustom03" value="<c:out value="${atraccionAEditar.tiempo}"></c:out>" required>
+							<div class="invalid-feedback">Por favor ingrese un tiempo
+								válido.</div>
+						</div>
+
+						<div class="col-md-6">
+							<label for="validationCustom04" class="form-label text-white">Cupo
+								Disponible</label> <input type="text" name="cupoDisponible"
+								class="form-control" id="validationCustom04" value="<c:out value="${atraccionAEditar.cupoDisponible}"></c:out>" required>
+							<div class="invalid-feedback">Por favor ingrese un Cupo
+								válido.</div>
+						</div>
+
+						<div class="col-md-6 ">
+							<label for="validationCustom05" class="form-label text-white">Tipo
+								de Atracción</label> <select id="validationCustom05"
+								name="tipoDeAtraccion" class="form-select"
+								aria-label="Default select example" name="tipo">
+							 	<c:forEach var="entry" items="${tipoDeAtraccion}">
+								    <option value="${entry}" ${atraccionAEditar.tipo == entry.name() ? 'selected' : ''}>${entry.name()}</option>
+								</c:forEach>
+							</select>
+
+							<div class="invalid-feedback">por favor ingrese un Tipo de
+								Atraccion válido</div>
+						</div>
+
+
+
+						<div class="col-12">
+							<button class="btn btn-warning mb-3" type="submit">Actualizar
+								Atraccion</button>
+						</div>
+					</form>
+
+				</div>
+				<!---FIN ACTUALIZACION ATRACCIONES-->
+				<!-- -------------------------------FIN CRUD----------------------------------------------------------- -->
+
+
+
+
+
+			</div>
 		</div>
-		<!-- FIN CONTEINER -->
 
 	</div>
-	<!-- FIN MENU CONTENIDO -->
+	<!-- FIN CONTEINER -->
 
-	<!-- FOOTER -->
-	<footer class="sticky-footer bg-white ">
-		<div class="container mb-4">
-			<div class="copyright text-center my-auto">
-				<span>Copyright &copy;Turismo En Tierra Media 2021</span>
-			</div>
+</div>
+<!-- FIN MENU CONTENIDO -->
+
+<!-- FOOTER -->
+<footer class="sticky-footer bg-white ">
+	<div class="container mb-4">
+		<div class="copyright text-center my-auto">
+			<span>Copyright &copy;Turismo En Tierra Media 2021</span>
 		</div>
-	</footer>
-	<!-- FIN FOOTER -->
+	</div>
+</footer>
+<!-- FIN FOOTER -->
 
-	<!-- FIN CONTENIDO ENVUELTO-->
+<!-- FIN CONTENIDO ENVUELTO-->
 
-	<!-- FIN ENVOLTURA-->
+<!-- FIN ENVOLTURA-->
 
-	<!--SCROLL-->
-	<a class="scroll-to-top rounded" href="#page-top"> <i
-		class="fas fa-angle-up"></i>
-	</a>
-	<!-- FIN SCROLL -->
+<!--SCROLL-->
+<a class="scroll-to-top rounded" href="#page-top"> <i
+	class="fas fa-angle-up"></i>
+</a>
+<!-- FIN SCROLL -->
 
-	<!-- MODAL SALIDA-->
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">ï¿½Preparado
-						para Salir?</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">x</span>
-					</button>
-				</div>
-				<div class="modal-body">Seleccione "Cerrar sesion" a
-					continuacion si esta listo para finalizar su sesion actual.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancelar</button>
-					<a class="btn btn-primary" href="login.jsp">Cerrar sesion</a>
-				</div>
+<!-- MODAL SALIDA-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">ï¿½Preparado
+					para Salir?</h5>
+				<button class="close" type="button" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">x</span>
+				</button>
+			</div>
+			<div class="modal-body">Seleccione "Cerrar sesion" a
+				continuacion si esta listo para finalizar su sesion actual.</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+				<a class="btn btn-primary" href="login.jsp">Cerrar sesion</a>
 			</div>
 		</div>
 	</div>
-	<!-- FIN MODAL SALIDA -->
+</div>
+<!-- FIN MODAL SALIDA -->
 
 
 

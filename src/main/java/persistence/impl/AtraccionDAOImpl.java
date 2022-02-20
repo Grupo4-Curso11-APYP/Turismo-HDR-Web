@@ -80,7 +80,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 
 	/*
 	 * Update de la compra que settea segun atributo de atraccion
-	 */
+	
 	@Override
 	public int update(Atraccion atraccion) throws SQLException {
 		try {
@@ -90,6 +90,32 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, atraccion.getCupoDisponible());
 			statement.setString(2, atraccion.getNombre());
+
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+	*/
+	
+	/*
+	 * Update nuevo de prueba
+	 */
+	@Override
+	public int update(Atraccion atraccion) throws SQLException {
+		try {
+			String sql = "UPDATE Atraccion SET Nombre = ?, Costo = ?, Tiempo = ?, Cupo_Disponible = ?, TipoDeAtraccion = ? WHERE ID_Atraccion = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, atraccion.getNombre());
+			statement.setDouble(2, atraccion.getCosto());
+			statement.setDouble(3, atraccion.getTiempo());
+			statement.setInt(4, atraccion.getCupoDisponible());
+			statement.setObject(5, atraccion.getTipoAtraccion());
+			statement.setInt(6, atraccion.getId());
 
 			int rows = statement.executeUpdate();
 

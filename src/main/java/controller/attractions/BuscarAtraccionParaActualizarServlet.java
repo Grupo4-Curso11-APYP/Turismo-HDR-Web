@@ -41,6 +41,7 @@ public class BuscarAtraccionParaActualizarServlet extends HttpServlet {
 		}
 		if (atraccion != null) {
 			req.getSession().setAttribute("atraccionAEditar", atraccion);
+			req.getSession().setAttribute("tipoDeAtraccion", model.TipoAtraccion.values());
 			resp.sendRedirect("actualizar-atraccion-form.jsp");    		
        	} else {
     		req.setAttribute("flash", "No existe atracción con esa ID");
