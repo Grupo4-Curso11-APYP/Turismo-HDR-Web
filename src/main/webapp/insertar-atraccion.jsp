@@ -127,8 +127,10 @@
 						</div>
 
 						<div class="col-md-6 ">
-						<label for="validationCustom05" class="form-label">Tipo de Atracción</label> <select id="validationCustom05" name="tipoDeAtraccion" class="form-select"
-								aria-label="Default select example"><%@ page import="model.TipoAtraccion" %><% pageContext.setAttribute("tipoDeAtraccion", model.TipoAtraccion.values()); %>
+						<label for="validationCustom05" class="form-label">Tipo de Atracción</label> 
+						<select id="validationCustom05" name="tipoDeAtraccion" class="form-select"
+								aria-label="Default select example"><%@ page import="model.TipoAtraccion" %>
+								<% pageContext.setAttribute("tipoDeAtraccion", model.TipoAtraccion.values()); %>
 								<c:forEach var="entry" items="${tipoDeAtraccion}">
 								    <option>${entry.name()}</option>
 								</c:forEach>

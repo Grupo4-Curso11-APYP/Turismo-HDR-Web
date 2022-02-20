@@ -28,6 +28,8 @@ public class EditAttractionServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Atraccion atraccionEditar = (Atraccion) req.getSession().getAttribute("atraccionAEditar");
+		Integer id = atraccionEditar.getId();
 		String nombre = req.getParameter("nombre");
 		Double costo = Double.parseDouble(req.getParameter("costo"));
 		Double tiempo = Double.parseDouble(req.getParameter("tiempo"));
@@ -36,7 +38,7 @@ public class EditAttractionServlet extends HttpServlet {
 		
 		Atraccion atraccion = new Atraccion();
 		try {
-			atraccion = new Atraccion(nombre, costo, tiempo, cupoDisponible, tipo);
+			atraccion = new Atraccion(id, nombre, costo, tiempo, cupoDisponible, tipo);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}

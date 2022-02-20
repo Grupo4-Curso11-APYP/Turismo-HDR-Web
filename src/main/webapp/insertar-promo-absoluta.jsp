@@ -121,7 +121,7 @@
                                     monto válido.</div>
                             </div>
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">ID-Atraccion1</label>
+                                <label for="validationCustom01" class="form-label" >ID-Atraccion1</label>
                                 <input type="number" class="form-control" name="idAtraccion1" id="validationCustom01" required>
                                 <div class="valid-feedback">¡Se ve bien!</div>
                             </div>

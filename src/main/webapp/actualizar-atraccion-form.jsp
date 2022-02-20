@@ -110,14 +110,18 @@
 						<div class="col-md-4">
 							<label for="validationCustom02" class="form-label text-white">Costo</label>
 							<input type="number" class="form-control" name="costo"
-								id="validationCustom02" value="<c:out value="${atraccionAEditar.monto}"></c:out>" required>
+								id="validationCustom02"
+								value="<c:out value="${atraccionAEditar.monto}"></c:out>"
+								required>
 							<div class="valid-feedback">Por favor ingrese un costo
 								válido</div>
 						</div>
 						<div class="col-md-4">
 							<label for="validationCustom03" class="form-label text-white">Tiempo</label>
 							<input type="number" class="form-control" name="tiempo"
-								id="validationCustom03" value="<c:out value="${atraccionAEditar.tiempo}"></c:out>" required>
+								id="validationCustom03"
+								value="<c:out value="${atraccionAEditar.tiempo}"></c:out>"
+								required>
 							<div class="invalid-feedback">Por favor ingrese un tiempo
 								válido.</div>
 						</div>
@@ -125,23 +129,25 @@
 						<div class="col-md-6">
 							<label for="validationCustom04" class="form-label text-white">Cupo
 								Disponible</label> <input type="text" name="cupoDisponible"
-								class="form-control" id="validationCustom04" value="<c:out value="${atraccionAEditar.cupoDisponible}"></c:out>" required>
+								class="form-control" id="validationCustom04"
+								value="<c:out value="${atraccionAEditar.cupoDisponible}"></c:out>"
+								required>
 							<div class="invalid-feedback">Por favor ingrese un Cupo
 								válido.</div>
 						</div>
 
 						<div class="col-md-6 ">
 							<label for="validationCustom05" class="form-label text-white">Tipo
-								de Atracción</label> <select id="validationCustom05"
-								name="tipoDeAtraccion" class="form-select"
+								de Atracción</label> <select id="validationCustom05" class="form-select"
 								aria-label="Default select example" name="tipo">
-							 	<c:forEach var="entry" items="${tipoDeAtraccion}">
-								    <option value="${entry}" ${atraccionAEditar.tipo == entry.name() ? 'selected' : ''}>${entry.name()}</option>
+								<c:forEach var="entry" items="${tipoDeAtraccion}">
+									<option
+										${atraccionAEditar.tipo == entry.name() ? 'selected' : ''}>${entry.name()}</option>
 								</c:forEach>
 							</select>
 
-							<div class="invalid-feedback">por favor ingrese un Tipo de
-								Atraccion válido</div>
+							<div class="invalid-feedback">por favor, ingrese un Tipo de
+								Atracción válido</div>
 						</div>
 
 
