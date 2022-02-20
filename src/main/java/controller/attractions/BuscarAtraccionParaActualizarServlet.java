@@ -25,6 +25,13 @@ public class BuscarAtraccionParaActualizarServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion.jsp");
+		dispatcher.forward(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Atraccion atraccion = new Atraccion();
 		try {
@@ -32,10 +39,16 @@ public class BuscarAtraccionParaActualizarServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		req.getSession().setAttribute("atraccionAEditar", atraccion);
-		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actualizar-atraccion-form.jsp");
-		dispatcher.forward(req, resp);
+		if (atraccion != null) {
+			req.getSession().setAttribute("atraccionAEditar", atraccion);
+			resp.sendRedirect("actualizar-atraccion-form.jsp");    		
+       	} else {
+    		req.setAttribute("flash", "No existe atracción con esa ID");
+    		
+    		RequestDispatcher dispatcher = getServletContext()
+      		      .getRequestDispatcher("/actualizar-atraccion.jsp");
+      		    dispatcher.forward(req, resp);
+    	}
 	}
 
 }

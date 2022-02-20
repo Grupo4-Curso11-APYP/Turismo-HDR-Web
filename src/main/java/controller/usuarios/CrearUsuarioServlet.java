@@ -24,18 +24,14 @@ public class CrearUsuarioServlet extends HttpServlet {
 		super.init();
 		this.usuarioService = new UsuarioService();
 }
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = getServletContext()
 				.getRequestDispatcher("/insertar-usuario.jsp");
 		dispatcher.forward(req, resp);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String nombre = req.getParameter("nombre");

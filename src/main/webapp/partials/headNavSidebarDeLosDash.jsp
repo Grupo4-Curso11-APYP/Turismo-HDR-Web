@@ -146,7 +146,7 @@
                 <div id="collapseInsertar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded" style="margin: 0;">
                     <!-- EN CADA HREF IRIA CADA SERVLET EN DIRECCION A VISTA CORRESPONDIENTE -->
-                    	<a class="collapse-item" href="insertar-usuario.jsp">Usuario</a>
+                    	<a class="collapse-item" href="insertar-usuario.do">Usuario</a>
                         <a class="collapse-item" href="insertar-atraccion.do">Atraccion</a>                       
                         <div class="nav-item" style="margin: 0;">
                         <a class="nav-link collapsed collapseprom" href="#" data-toggle="collapse" data-target="#collapsePromocion"
