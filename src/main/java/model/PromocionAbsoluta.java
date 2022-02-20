@@ -22,6 +22,12 @@ public class PromocionAbsoluta extends Promocion {
 		super(id, nombre, packAtracciones, tipo);
 		this.monto = monto;
 	}
+	
+	/*
+	 * Constructor usado para que no falle la webapp en caso de null
+	 */
+	public PromocionAbsoluta() {		
+	}
 
 	/*
 	 * getMonto devuelve el monto final
@@ -65,6 +71,12 @@ public class PromocionAbsoluta extends Promocion {
 	@Override
 	public int compareTo(Ofertable otro) {
 		return -this.getMonto().compareTo(otro.getMonto());
+	}
+
+	public boolean esValida(String nombre, Atraccion[] pack, TipoAtraccion tipo, Double monto) {
+		return ((nombre != null) && (packAtracciones != null) && (monto >= 1)
+				&& (tipo == TipoAtraccion.DEGUSTACION || tipo == TipoAtraccion.PAISAJE
+						|| tipo == TipoAtraccion.AVENTURA));
 	}
 
 }

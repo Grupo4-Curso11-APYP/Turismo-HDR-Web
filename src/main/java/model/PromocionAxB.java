@@ -25,6 +25,12 @@ public class PromocionAxB extends Promocion {
 		super(id, nombre, atraccion, tipo);
 		this.atraccionGratis = atraccionGratis;
 	}
+	
+	/*
+	 * Constructor usado para que no falle la webapp en caso de null
+	 */
+	public PromocionAxB() {		
+	}
 
 	/*
 	 * se calcula el descuento de estas promociones y a su vez se le deposita a
@@ -133,6 +139,12 @@ public class PromocionAxB extends Promocion {
 	@Override
 	public int compareTo(Ofertable otro) {
 		return -this.getMonto().compareTo(otro.getMonto());
+	}
+
+	public boolean esValida(String nombre, Atraccion[] pack, TipoAtraccion tipo, Atraccion gratis) {
+		return ((nombre != null) && (gratis != null) && (packAtracciones != null)
+				&& (tipo == TipoAtraccion.DEGUSTACION || tipo == TipoAtraccion.PAISAJE
+						|| tipo == TipoAtraccion.AVENTURA));
 	}
 
 }

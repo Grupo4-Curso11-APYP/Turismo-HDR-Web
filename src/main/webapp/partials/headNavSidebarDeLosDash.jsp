@@ -154,8 +154,8 @@
                 <div id="collapsePromocion" class="collapse" aria-labelledby="headingTwo">
                     <div class="bg-white py-2 collapse-inner rounded" style="margin: 0;">
                         <a class="collapse-item colaitems" href="insertar-promo-porcentual.do">Porcentual</a>
-                        <a class="collapse-item colaitems" href="insertar-promocion.do">A x B</a>
-                        <a class="collapse-item colaitems" href="insertar-promocion.do">Absoluta</a>
+                        <a class="collapse-item colaitems" href="insertar-promo-axb.do">A x B</a>
+                        <a class="collapse-item colaitems" href="insertar-promo-absoluta.do">Absoluta</a>
                         </div></div>
                         </div>
                     </div>
