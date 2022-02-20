@@ -28,8 +28,8 @@ public class PromocionServicio {
 		return DAOFactory.getPromocionDAO().findOne(id);
 	}
 
-	public void actualizar(Promocion promo, String nombreNuevo) throws SQLException {
-		DAOFactory.getPromocionDAO().update(promo, nombreNuevo);
+	public void actualizar(Promocion promo) throws SQLException {
+		DAOFactory.getPromocionDAO().update(promo);
 
 	}
 	

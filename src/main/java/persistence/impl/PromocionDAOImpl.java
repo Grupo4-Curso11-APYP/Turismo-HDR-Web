@@ -71,12 +71,20 @@ public class PromocionDAOImpl implements PromocionDAO {
 	 */
 	@Override
 	public int update(Promocion promocion) throws SQLException {
-		String sql = "UPDATE Promocion SET Nombre = ?  WHERE Nombre  = ?";
+		String sql = "UPDATE Promocion SET ID_Atraccion1 = ?, ID_Atraccion2 = ?,"
+				+ "Nombre = ?, Tipo = ?, Monto = ?, AtraccionGratis = ?,"
+				+ "Descuento = ?  WHERE ID_Promocion  = ?";
 		Connection conn = ConnectionProvider.getConnection();
 
 		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setString(1, promocion.getNombre());
-		statement.setObject(2, promocion.getNombre());
+		statement.setInt(1, promocion.getPackAtracciones1().getId());
+		statement.setInt(2, promocion.getPackAtracciones2().getId());
+		statement.setString(3, promocion.getNombre());
+		statement.setObject(4, promocion.getTipo());
+		statement.setDouble(5, promocion.getMonto());
+		statement.setObject(6, promocion.getAtraccionGratis());
+		statement.setInt(7, promocion.getDescuento());
+		statement.setInt(8, promocion.getId());
 		int rows = statement.executeUpdate();
 
 		return rows;

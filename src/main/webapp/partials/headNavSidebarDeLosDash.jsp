@@ -169,9 +169,9 @@
                     aria-expanded="true" aria-controls="collapseTwo">Actualizar</a>
                 <div id="collapseActualizar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                    	<a class="collapse-item" href="actualizar-usuario.do">Usuario</a>
                         <a class="collapse-item" href="actualizar-atraccion.do">Atraccion</a>
-                        <a class="collapse-item" href="actualizar-promo.jsp">Promocion</a>
-                        <a class="collapse-item" href="actualizar-usuario.jsp">Usuario</a>
+                        <a class="collapse-item" href="actualizar-promo.do">Promocion</a>                        
                     </div>
                 </div>
             </li>
