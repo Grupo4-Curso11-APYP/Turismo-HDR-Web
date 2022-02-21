@@ -19,7 +19,7 @@ import services.AtraccionService;
 import services.PromocionServicio;
 
 @WebServlet("/actualizar-promoabs-form.do")
-public class ActualizarPromoServlet extends HttpServlet implements Servlet {
+public class ActualizarPromoAbsServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 2270133873221818569L;
 	private PromocionServicio promoService;
