@@ -82,7 +82,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 		statement.setString(3, promocion.getNombre());
 		statement.setObject(4, promocion.getTipo());
 		statement.setDouble(5, promocion.getMonto());
-		statement.setObject(6, promocion.getAtraccionGratis());
+		statement.setObject(6, promocion.getAtraccionGratis().getId());
 		statement.setInt(7, promocion.getDescuento());
 		statement.setInt(8, promocion.getId());
 		int rows = statement.executeUpdate();
