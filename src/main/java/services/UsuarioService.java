@@ -17,20 +17,24 @@ public class UsuarioService {
 	}
 
 	public Usuario crear(String nombre, Double presupuesto, Double tiempoDisponible, TipoAtraccion tipoFavorito,
-		String password, Boolean admin) throws Exception {
+			String password, Boolean admin) throws Exception {
 		Usuario usuario = new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
-	usuario.setPassword(password);
-	
+		usuario.setPassword(password);
+
 		if (usuario.esUsuarioValido(nombre, password, presupuesto, tiempoDisponible, tipoFavorito)) {
-		DAOFactory.getUsuarioDAO().insert(usuario);
-			
+			DAOFactory.getUsuarioDAO().insert(usuario);
+
 		}
 
-	return usuario;
+		return usuario;
 	}
 
 	public void delete(Integer id) throws SQLException {
 		DAOFactory.getUsuarioDAO().deleteLogico(id);
+	}
+	
+	public Usuario buscar(Integer id) throws SQLException {
+		return DAOFactory.getUsuarioDAO().findOne(id);
 	}
 
 }
