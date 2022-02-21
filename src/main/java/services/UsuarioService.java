@@ -36,5 +36,9 @@ public class UsuarioService {
 	public Usuario buscar(Integer id) throws SQLException {
 		return DAOFactory.getUsuarioDAO().findOne(id);
 	}
+	
+	public void update(Usuario usuario) throws SQLException {
+		DAOFactory.getUsuarioDAO().update(usuario);
+	}
 
 }

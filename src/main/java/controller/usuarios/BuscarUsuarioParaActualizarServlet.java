@@ -1,6 +1,7 @@
 package controller.usuarios;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
@@ -35,7 +36,22 @@ public class BuscarUsuarioParaActualizarServlet extends HttpServlet implements S
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Usuario usuario = new Usuario();
-		
+		try {
+			usuario = usuarioService.buscar(id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		if (usuario != null) {
+			req.getSession().setAttribute("usuarioAEditar", usuario);
+			req.getSession().setAttribute("tipoDeAtraccion", model.TipoAtraccion.values());
+			resp.sendRedirect("actualizar-usuario-form.jsp");    		
+       	} else {
+    		req.setAttribute("flash", "No existe usuario con ese ID");
+    		
+    		RequestDispatcher dispatcher = getServletContext()
+      		      .getRequestDispatcher("/actualizar-usuario.jsp");
+      		    dispatcher.forward(req, resp);
+    	}
 	}
 
 }

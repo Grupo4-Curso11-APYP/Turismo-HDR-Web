@@ -94,21 +94,21 @@
 				<!---ACTUALIZACION DE USUARIO-->
 				<div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
 					<h2 class="fw-bolder mt-3 text-white ">Ingrese ID del
-						Usuario</h2>
+						Usuario a actualizar</h2>
 
 					<form id="form-contact" class="row g-2 needs-validation mb-3 "
-						novalidate action="actualizar-usuario.do" method="get" >
+						novalidate action="actualizar-usuario.do" method="post" >
 
 						<div class="col-md-4">
 							<label for="validationCustom01" class="form-label text-white">ID</label>
-							<input type="number" class="form-control" id="validationCustom01"
+							<input type="number" class="form-control" name="id" id="validationCustom01"
 								required>
 							<div class="valid-feedback text-white">¡Se ve bien!</div>
 						</div>
 						
 
 						<div class="col-12">
-							<button class="btn btn-warning mb-3" type="submit">Actualizar
+							<button class="btn btn-warning mb-3" type="submit">Buscar
 								Usuario</button>
 						</div>
 					</form>

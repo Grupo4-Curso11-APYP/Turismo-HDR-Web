@@ -202,4 +202,12 @@ public class Usuario {
 		return id;
 	}
 
+	public boolean esValidoFull(String nombre, Double presupuesto, Double tiempo, TipoAtraccion tipo,
+			Boolean admin) {
+		return ((nombre != null) && (presupuesto >= 0) && (tiempo >= 0) && 
+				((admin = true) || (admin = false))
+				&& (tipo == TipoAtraccion.DEGUSTACION || tipo == TipoAtraccion.PAISAJE
+						|| tipo == TipoAtraccion.AVENTURA));
+	}
+
 }

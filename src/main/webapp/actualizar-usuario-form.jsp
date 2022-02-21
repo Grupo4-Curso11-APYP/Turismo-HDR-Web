@@ -94,54 +94,49 @@
 				<!---ACTUALIZACION DE USUARIO-->
 				<div class="col-xl-4 col-lg-5 bg-dark  ms-5 mb-3 rounded-2">
 					<h2 class="fw-bolder mt-3 text-white ">Actualizar Datos de
-						Usuarios</h2>
+						Usuario</h2>
 
 					<form id="form-contact" class="row g-2 needs-validation mb-3 "
 						novalidate action="actualizar-usuario-form.do" method="post">
 
-						<div class="col-md-4">
+						<div class="col-md-12">
 							<label for="validationCustom01" class="form-label text-white">Nombre</label>
 							<input type="text" class="form-control" id="validationCustom01"
-								required>
+								name="nombre" value="<c:out value="${usuarioAEditar.nombre}"></c:out>" required>
 							<div class="valid-feedback text-white">¡Se ve bien!</div>
 						</div>
-						<div class="col-md-4">
-							<label for="validationCustom02" class="form-label text-white">Presupuesto</label>
-							<input type="number" class="form-control" id="validationCustom02"
-								required>
-							<div class="valid-feedback text-white">Por favor , Ingrese
-								un costo valido</div>
+						<div class="col-md-6">
+							<label for="validationCustom01" class="form-label text-white">Presupuesto</label>
+							<input type="number" class="form-control" id="validationCustom01"
+								name="presupuesto" value="<c:out value="${usuarioAEditar.presupuesto}"></c:out>" required>
+							<div class="valid-feedback text-white">Por favor ingrese
+								un presupuesto válido</div>
 						</div>
 
 						<div class="col-md-6">
-							<label for="validationCustom03" class="form-label text-white">Tiempo</label>
-							<input type="number" class="form-control" id="validationCustom03"
-								required>
-							<div class="invalid-feedback text-white">Por favor ingre un
-								Cupo valido .</div>
-						</div>
-
-						<select for="validationCustom02" class="form-select mt-4 pb-1 "
-							aria-label="Default select example" required
-							value="${usuario.tipoFavorito }">
-							<option selected>Tipo De atracciones</option>
-							<option type="text" class="form-control" id="validationCustom02"
-								required value="1">AVENTURA</option>
-							<option type="text" class="form-control" id="validationCustom02"
-								requiredvalue="2">DEGUSTACION</option>
-							<option type="text" class="form-control" id="validationCustom02"
-								requiredvalue="3">PAISAJE</option>
-						</select>
-						<div class="col-md-4">
-							<label for="validationCustom01" class="form-label text-white">Password</label>
-							<input type="password" class="form-control"
-								id="validationCustom01" required>
-							<div class="valid-feedback text-white">¡Se ve bien!</div>
-						</div>
-						<div class="col-md-4">
-							<label for="validationCustom01" class="form-label text-white">Admin</label>
+							<label for="validationCustom01" class="form-label text-white">Tiempo disponible</label>
 							<input type="number" class="form-control" id="validationCustom01"
-								required>
+								name="tiempo" value="<c:out value="${usuarioAEditar.tiempoDisponible}"></c:out>" required>
+							<div class="invalid-feedback text-white">Por favor ingrese un
+								tiempo válido .</div>
+						</div>
+						<div class="col-md-6 ">
+							<label for="validationCustom05" class="form-label text-white">Tipo
+								favorito</label> <select id="validationCustom05" class="form-select"
+								aria-label="Default select example" name="tipo">
+								<c:forEach var="entry" items="${tipoDeAtraccion}">
+									<option
+										${usuarioAEditar.tipoFavorito == entry.name() ? 'selected' : ''}>${entry.name()}
+									</option>
+								</c:forEach>
+							</select>
+
+							<div class="invalid-feedback">por favor ingrese un Tipo favorito válido</div>
+						</div>
+						<div class="col-md-6">
+							<label for="validationCustom01" class="form-label text-white">Admin?</label>
+							<input type="text" class="form-control" id="validationCustom01"
+								name="admin" value="<c:out value="${usuarioAEditar.admin}"></c:out>" required>
 							<div class="valid-feedback text-white">¡Se ve bien!</div>
 						</div>
 
