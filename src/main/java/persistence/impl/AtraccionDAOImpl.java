@@ -56,52 +56,9 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		return new Atraccion(id, nombre, costo, tiempo, cupoDisponible, tipo);
 
 	}	
-
-	/*
-	 * Actualiza una atraccion en la base de datos
-	 */
-	@Override
-	public int update(Atraccion atraccion, int cupo) {
-		try {
-			String sql = "UPDATE Atraccion SET Cupo_Disponible = ? WHERE Nombre = ?";
-			Connection conn = ConnectionProvider.getConnection();
-
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, cupo);
-			statement.setString(2, atraccion.getNombre());
-
-			int rows = statement.executeUpdate();
-
-			return rows;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
-	/*
-	 * Update de la compra que settea segun atributo de atraccion
-	
-	@Override
-	public int update(Atraccion atraccion) throws SQLException {
-		try {
-			String sql = "UPDATE Atraccion SET Cupo_Disponible = ? WHERE Nombre = ?";
-			Connection conn = ConnectionProvider.getConnection();
-
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, atraccion.getCupoDisponible());
-			statement.setString(2, atraccion.getNombre());
-
-			int rows = statement.executeUpdate();
-
-			return rows;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-	*/
 	
 	/*
-	 * Update nuevo de prueba
+	 * Busca una atraccion por su id y la actualiza en la base de datos
 	 */
 	@Override
 	public int update(Atraccion atraccion) throws SQLException {
@@ -144,7 +101,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	}
 
 	/*
-	 * Actualiza estado de atraccion en la base de datos para borrado lógico
+	 * Actualiza Estado de atraccion en la base de datos para borrado lógico
 	 */
 	@Override
 	public int deleteLogico(Integer id) throws SQLException {
@@ -164,6 +121,9 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		}
 	}
 
+	/*
+	 * Busca una atraccion por id y retorna esa atraccion
+	 */
 	@Override
 	public Atraccion findOne(Integer id) throws SQLException {
 		try {

@@ -67,7 +67,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 	}
 
 	/*
-	 * Actualiza el nombre de una promocion
+	 * Busca una promocion por su id y la actualiza en la base de datos
 	 */
 	@Override
 	public int update(Promocion promocion) throws SQLException {
@@ -152,7 +152,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 	}
 
 	/*
-	 * sql utilizado en el mï¿½todo atraccionesDeLaPromocion
+	 * sql utilizado en el metodo atraccionesDeLaPromocion
 	 */
 	private String sqlAtraccion() {
 		String sql = "select *" + "from Atraccion WHERE ID_Atraccion = ?";
@@ -182,6 +182,10 @@ public class PromocionDAOImpl implements PromocionDAO {
 		return promo;
 	}
 
+	/*
+	 * Busca una promocion por su id y realiza un borrado logico:
+	 * Settea la propiedad Estado en cero
+	 */
 	@Override
 	public int deleteLogico(Integer id) throws SQLException {
 		try {
@@ -199,21 +203,10 @@ public class PromocionDAOImpl implements PromocionDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	
-	@Override
-	public int update(Promocion promocion, String nombre) throws SQLException {
-		String sql = "UPDATE Promocion SET Nombre = ?  WHERE Nombre LIKE ? ";
-		Connection conn = ConnectionProvider.getConnection();
 
-		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setString(1, nombre);
-		statement.setObject(2, promocion.getNombre());
-		int rows = statement.executeUpdate();
-
-		return rows;
-
-	}
-
+	/*
+	 * Busca una promocion por su id y la retorna
+	 */
 	@Override
 	public Promocion findOne(Integer id) throws SQLException {
 		try {

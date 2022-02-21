@@ -12,7 +12,5 @@ public interface PromocionDAO extends GenericDAO<Promocion> {
 	public int update(Promocion promocion) throws SQLException;
 
 	public int deleteLogico(Integer id)throws SQLException;
-
-	public int update(Promocion promocion, String nombre) throws SQLException;
 	
 }

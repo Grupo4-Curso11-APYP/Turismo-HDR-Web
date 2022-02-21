@@ -198,9 +198,9 @@
                     aria-expanded="true" aria-controls="collapseTwo">Borrar</a>
                 <div id="collapseBorrar" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                    	<a class="collapse-item" href="borrar-usuario.do">Usuario</a>
                         <a class="collapse-item" href="borrar-atraccion.do">Atraccion</a>
-                        <a class="collapse-item" href="borrar-promo.do">Promocion</a>
-                        <a class="collapse-item" href="borrar-usuario.do">Usuario</a>
+                        <a class="collapse-item" href="borrar-promo.do">Promocion</a>                       
                     </div>
                 </div>
             </li>

@@ -65,13 +65,17 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 	 */
 	@Override
 	public int update(Usuario usuario) throws SQLException {
-		String sql = "UPDATE USUARIO SET PRESUPUESTO = ?, TIEMPODISPONIBLE = ?  WHERE NOMBRE = ?";
+		String sql = "UPDATE USUARIO SET NOMBRE = ?, PRESUPUESTO = ?, TIEMPODISPONIBLE = ?,"
+				+ "TipoFavorito = ?, Admin = ?  WHERE ID_Usuario = ?";
 		Connection conn = ConnectionProvider.getConnection();
 
 		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setDouble(1, usuario.getPresupuesto());
-		statement.setDouble(2, usuario.getTiempoDisponible());
-		statement.setString(3, usuario.getNombre());
+		statement.setString(1, usuario.getNombre());
+		statement.setDouble(2, usuario.getPresupuesto());
+		statement.setDouble(3, usuario.getTiempoDisponible());
+		statement.setObject(4, usuario.getTipoFavorito());
+		statement.setBoolean(5, usuario.getAdmin());
+		statement.setInt(6, usuario.getId());
 		int rows = statement.executeUpdate();
 
 		return rows;
@@ -116,6 +120,10 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		return new Usuario(id, nombre, presupuesto, tiempoDisponible, tipoFavorito, password, admin);
 	}
 
+	/*
+	 * Busca un usuario en la base de datos por su id y realiza borrado logico:
+	 * Settea la propiedad Estado en cero
+	 */
 	@Override
 	public int deleteLogico(Integer id) throws SQLException {
 		try {
@@ -134,6 +142,9 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 		}
 	}
 
+	/*
+	 * Busca un usuario en la base de datos por su id y lo retorna
+	 */
 	@Override
 	public Usuario findOne(Integer id) throws SQLException {
 		try {
